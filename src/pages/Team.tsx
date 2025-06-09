@@ -53,6 +53,7 @@ const teamMembers: TeamMember[] = [
     role: "Marketing & Content Creator",
     bio: "Juda handles our marketing efforts and content creation, making sure PulseGuard reaches the right audience with the right message.",
     image: "/images/team/juda.jpg",
+    linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
     instagram: "https://www.instagram.com/judazwemer/",
     email: "juda@pulseguard.nl"
   },
