@@ -3,94 +3,15 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faFlask, faGlobe, faChevronDown, faArrowRight, faBars, faTimes, faCheck, faSun, faMoon, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
-
-// Type for supported languages
-type Language = 'en' | 'nl';
-
-// Interface for translations
-interface Translations {
-  [key: string]: {
-    [key: string]: string;
-  };
-}
-
-// Translations for UI elements
-const translations: Translations = {
-  navigation: {
-    en: 'Home',
-    nl: 'Home'
-  },
-  features: {
-    en: 'Features',
-    nl: 'Functies'
-  },
-  app: {
-    en: 'App',
-    nl: 'App'
-  },
-  pricing: {
-    en: 'Pricing',
-    nl: 'Prijzen'
-  },
-  team: {
-    en: 'Team',
-    nl: 'Team'
-  },
-  status: {
-    en: 'Status',
-    nl: 'Status'
-  },
-  joinBeta: {
-    en: 'Join Beta',
-    nl: 'Beta Testen'
-  },
-  register: {
-    en: 'Register',
-    nl: 'Registreren'
-  },
-  dashboard: {
-    en: 'App',
-    nl: 'App'
-  },
-  preview: {
-    en: 'Preview',
-    nl: 'Voorbeeld'
-  },
-  language: {
-    en: 'Language:',
-    nl: 'Taal:'
-  },
-  english: {
-    en: 'English',
-    nl: 'Engels'
-  },
-  dutch: {
-    en: 'Dutch',
-    nl: 'Nederlands'
-  },
-  joinBetaProgram: {
-    en: 'Join Beta Program',
-    nl: 'Doe Mee met Beta'
-  },
-  goToDashboard: {
-    en: 'Go to Dashboard',
-    nl: 'Ga naar Dashboard'
-  }
-};
+import { Language } from '../../utils/translations';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [languageOptionsOpen, setLanguageOptionsOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<Language>(() => {
-    // Check browser language or stored preference
-    const storedLang = localStorage.getItem('language') as Language;
-    if (storedLang === 'nl' || storedLang === 'en') {
-      return storedLang;
-    }
-    return navigator.language.startsWith('nl') ? 'nl' : 'en';
-  });
   const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+  const { currentLang, changeLanguage, t } = useTranslation();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -111,14 +32,8 @@ const Header: React.FC = () => {
 
   // Handle language change
   const handleLanguageChange = (lang: Language) => {
-    setCurrentLang(lang);
-    localStorage.setItem('language', lang);
+    changeLanguage(lang);
     setLanguageOptionsOpen(false);
-  };
-
-  // Translate function
-  const t = (key: string): string => {
-    return translations[key]?.[currentLang] || key;
   };
 
   return (
@@ -144,15 +59,15 @@ const Header: React.FC = () => {
                 <span className="font-medium">{t('navigation')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
-              <Link to="/#features" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+              <Link to="/features" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('features')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
-              <Link to="/#mockups" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+              <Link to="/app" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('app')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
-              <Link to="/#pricing" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+              <Link to="/pricing" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('pricing')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
@@ -267,21 +182,21 @@ const Header: React.FC = () => {
             <span className="font-medium">{t('navigation')}</span>
           </Link>
           
-          <Link to="/#features" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/features" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faStar} className="text-indigo-500" />
             </div>
             <span className="font-medium">{t('features')}</span>
           </Link>
           
-          <Link to="/#mockups" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/app" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faDesktop} className="text-purple-500" />
             </div>
-            <span className="font-medium">{t('preview')}</span>
+            <span className="font-medium">{t('app')}</span>
           </Link>
           
-          <Link to="/#pricing" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="/pricing" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faTag} className="text-green-500" />
             </div>

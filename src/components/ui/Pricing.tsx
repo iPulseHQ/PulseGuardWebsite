@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faTag, faArrowRight, faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const Pricing: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'card' | 'table'>('card');
   const tabIndicatorRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Update tab indicator position
@@ -22,8 +24,8 @@ const Pricing: React.FC = () => {
     <section id="pricing" className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Transparent pricing</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg">Choose the package that suits your monitoring needs.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">{t('pricingTitle')}</h2>
+          <p className="text-gray-600 dark:text-gray-400 text-lg">{t('pricingSubtitle')}</p>
         </div>
         
         {/* Tabs Navigation */}
@@ -47,7 +49,7 @@ const Pricing: React.FC = () => {
                 >
                   <span className="relative z-10 flex items-center justify-center">
                     <FontAwesomeIcon icon={faCreditCard} className="w-5 h-5 mr-2" />
-                    <span>Card View</span>
+                    <span>{t('cardView')}</span>
                   </span>
                 </button>
                 <button 
@@ -58,7 +60,7 @@ const Pricing: React.FC = () => {
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                     </svg>
-                    <span>Comparison Table</span>
+                    <span>{t('comparisonTable')}</span>
                   </span>
                 </button>
               </div>
@@ -72,9 +74,9 @@ const Pricing: React.FC = () => {
             {/* Free Plan */}
             <div className="pricing-card">
               <div className="pricing-header">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Free</h3>
-                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">€0<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/month</span></p>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">For personal use</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{t('freePlan')}</h3>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">€0<span className="text-lg font-normal text-gray-600 dark:text-gray-400">{t('perMonth')}</span></p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{t('forPersonalUse')}</p>
               </div>
               <div className="pricing-features">
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>1 domain</span></div>
@@ -83,33 +85,33 @@ const Pricing: React.FC = () => {
                 <div className="pricing-feature"><FontAwesomeIcon icon={faTimes} className="text-red-500" /> <span>No actions</span></div>
                 <div className="pricing-feature"><FontAwesomeIcon icon={faTimes} className="text-red-500" /> <span>No notifications</span></div>
               </div>
-              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium py-3 px-4 rounded-md text-center transition-colors">Start free</Link>
+              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium py-3 px-4 rounded-md text-center transition-colors">{t('startFree')}</Link>
             </div>
             
             {/* Standard Plan */}
             <div className="pricing-card popular">
-              <div className="popular-badge">Most popular</div>
+              <div className="popular-badge">{t('mostPopular')}</div>
               <div className="pricing-header">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Standard</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{t('standardPlan')}</h3>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   <span className="text-sm line-through text-gray-500 dark:text-gray-400 font-normal align-middle mr-1">€6.44</span>
-                  €5.99<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/month</span>
+                  €5.99<span className="text-lg font-normal text-gray-600 dark:text-gray-400">{t('perMonth')}</span>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2 mb-3">
                   <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                     <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
-                    <span>Save 7%</span>
+                    <span>{t('save')} 7%</span>
                   </span>
                   <span className="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span>14 days trial</span>
+                    <span>14 {t('trial')}</span>
                   </span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">For small websites</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{t('forSmallWebsites')}</p>
               </div>
               <div className="pricing-features">
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>5 domains (complete)</span></div>
@@ -119,32 +121,32 @@ const Pricing: React.FC = () => {
                 <div className="pricing-feature"><FontAwesomeIcon icon={faTimes} className="text-red-500" /> <span>No Telegram notifications</span></div>
                 <div className="pricing-feature"><FontAwesomeIcon icon={faTimes} className="text-red-500" /> <span>No API access</span></div>
               </div>
-              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors shadow-lg shadow-blue-600/20">Start now</Link>
+              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors shadow-lg shadow-blue-600/20">{t('startNow')}</Link>
             </div>
             
             {/* Pro Plan */}
             <div className="pricing-card">
               <div className="pricing-header">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Pro</h3>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{t('proPlan')}</h3>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   <span className="text-sm line-through text-gray-500 dark:text-gray-400 font-normal align-middle mr-1">€17.49</span>
-                  €13.99<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/month</span>
+                  €13.99<span className="text-lg font-normal text-gray-600 dark:text-gray-400">{t('perMonth')}</span>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-2 mb-3">
                   <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                     <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
                     </svg>
-                    <span>Save 20%</span>
+                    <span>{t('save')} 20%</span>
                   </span>
                   <span className="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
-                    <span>14 days trial</span>
+                    <span>14 {t('trial')}</span>
                   </span>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">For professionals</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{t('forProfessionals')}</p>
               </div>
               <div className="pricing-features">
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>15 domains (complete)</span></div>
@@ -154,15 +156,15 @@ const Pricing: React.FC = () => {
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>Telegram notifications</span></div>
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>API access</span></div>
               </div>
-              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors">Start now</Link>
+              <Link to="https://app.pulseguard.nl/register" className="mt-6 block bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors">{t('startNow')}</Link>
             </div>
             
             {/* Enterprise Plan */}
             <div className="pricing-card">
               <div className="pricing-header">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Enterprise</h3>
-                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Contact Us</p>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">For large organizations</p>
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{t('enterprisePlan')}</h3>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{t('contactUs')}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{t('forLargeOrg')}</p>
               </div>
               <div className="pricing-features">
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>25+ domains</span></div>
@@ -171,7 +173,7 @@ const Pricing: React.FC = () => {
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>Advanced Notifications</span></div>
                 <div className="pricing-feature"><FontAwesomeIcon icon={faCheck} className="text-green-500" /> <span>Priority Support</span></div>
               </div>
-              <a href="mailto:info@pulseguard.nl" className="mt-6 block bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors">Contact Sales</a>
+              <a href="mailto:info@pulseguard.nl" className="mt-6 block bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-4 rounded-md text-center transition-colors">{t('contactSales')}</a>
             </div>
           </div>
         </div>

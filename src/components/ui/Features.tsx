@@ -2,27 +2,28 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faGlobe, faShieldAlt, faServer, faClock, faBell, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../../hooks/useTranslation';
 
 // Define feature data with icons
-const features = [
+const getFeatures = (t: (key: string) => string) => [
   {
-    title: "Website Monitoring",
-    description: "We'll ping your websites regularly and let you know right away if they go down. No more finding out from an angry customer email.",
+    title: t('webMonitoringTitle'),
+    description: t('webMonitoringDesc'),
     bullets: [
-      "HTTP/HTTPS status monitoring",
-      "Response time tracking",
-      "Custom check intervals"
+      t('httpMonitoring'),
+      t('responseTime'),
+      t('checkIntervals')
     ],
     icon: faGlobe,
     color: "blue"
   },
   {
-    title: "SSL Certificate Monitoring",
-    description: "Never miss an SSL certificate expiration again. We'll remind you with plenty of time to renew before your visitors see those scary browser warnings.",
+    title: t('sslMonitoringTitle'),
+    description: t('sslMonitoringDesc'),
     bullets: [
-      "Certificate expiration alerts",
-      "30, 14, and 7-day warnings",
-      "Certificate details overview"
+      t('certExpiration'),
+      t('dayWarnings'),
+      t('certDetails')
     ],
     icon: faShieldAlt,
     color: "green"
@@ -118,6 +119,9 @@ const getColorClasses = (color: string) => {
 };
 
 const Features: React.FC = () => {
+  const { t } = useTranslation();
+  const features = getFeatures(t);
+  
   // Animation effect for cards
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -151,13 +155,13 @@ const Features: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-block bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 text-blue-600 dark:text-blue-400 font-medium text-sm mb-4">
-            What we offer
+            {t('whatWeOffer')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-            Everything you need to keep tabs on your digital world
+            {t('featuresTitle')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-            We've built PulseGuard to be simple yet powerful. Our features are designed for real people with real monitoring needs - from solo developers to large teams.
+            {t('featuresSubtitle')}
           </p>
         </div>
         
