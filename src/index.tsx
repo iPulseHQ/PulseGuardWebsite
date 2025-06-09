@@ -4,6 +4,74 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// FontAwesome configuration
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCheck,
+  faTimes,
+  faHome,
+  faStar,
+  faDesktop,
+  faTag,
+  faUsers,
+  faUserPlus,
+  faFlask,
+  faGlobe,
+  faChevronDown,
+  faArrowRight,
+  faBars,
+  faPlay,
+  faExpand,
+  faCheckCircle,
+  faExclamationCircle,
+  faSpinner,
+  faChevronRight,
+  faCreditCard,
+  faEnvelope,
+  faSun,
+  faMoon
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faLinkedin,
+  faGithub,
+  faTwitter,
+  faInstagram,
+  faTelegram
+} from '@fortawesome/free-brands-svg-icons';
+
+// Add icons to the library
+library.add(
+  faCheck,
+  faTimes,
+  faHome,
+  faStar,
+  faDesktop,
+  faTag,
+  faUsers,
+  faUserPlus,
+  faFlask,
+  faGlobe,
+  faChevronDown,
+  faArrowRight,
+  faBars,
+  faPlay,
+  faExpand,
+  faCheckCircle,
+  faExclamationCircle,
+  faSpinner,
+  faChevronRight,
+  faCreditCard,
+  faLinkedin,
+  faGithub,
+  faTwitter,
+  faInstagram,
+  faTelegram,
+  faEnvelope,
+  faSun,
+  faMoon
+);
+
+// Create root and render app
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
