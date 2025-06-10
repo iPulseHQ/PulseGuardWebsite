@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faGlobe, faShieldAlt, faServer, faClock, faBell, faChartLine, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faGlobe, faShieldAlt, faServer, faClock, faBell, faChartLine, faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -121,6 +121,10 @@ const getColorClasses = (color: string) => {
 const Features: React.FC = () => {
   const { t } = useTranslation();
   const features = getFeatures(t);
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+  
+  // Get features to display based on state
+  const displayedFeatures = showAllFeatures ? features : features.slice(0, 3);
   
   // Animation effect for cards
   useEffect(() => {
@@ -148,7 +152,7 @@ const Features: React.FC = () => {
         observer.unobserve(card);
       });
     };
-  }, []);
+  }, [showAllFeatures]); // Re-run when showAllFeatures changes
   
   return (
     <section id="features" className="py-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
@@ -166,7 +170,7 @@ const Features: React.FC = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
+          {displayedFeatures.map((feature, index) => {
             const colorClasses = getColorClasses(feature.color);
             return (
               <div 
@@ -201,6 +205,22 @@ const Features: React.FC = () => {
             );
           })}
         </div>
+        
+        {/* Show More Features Button */}
+        {!showAllFeatures && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setShowAllFeatures(true)}
+              className="inline-flex items-center group px-6 py-3 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              <FontAwesomeIcon 
+                icon={faPlus} 
+                className="mr-2 group-hover:rotate-90 transition-transform duration-300" 
+              />
+              <span>Ontdek meer functies</span>
+            </button>
+          </div>
+        )}
         
         <div className="text-center mt-20">
           <Link 
