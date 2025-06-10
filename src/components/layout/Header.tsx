@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faFlask, faGlobe, faChevronDown, faArrowRight, faBars, faTimes, faCheck, faSun, faMoon, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
-import { Language } from '../../utils/translations';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageOptionsOpen, setLanguageOptionsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { currentLang, changeLanguage, t } = useTranslation();
+  const { t } = useTranslation();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -29,12 +27,6 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Handle language change
-  const handleLanguageChange = (lang: Language) => {
-    changeLanguage(lang);
-    setLanguageOptionsOpen(false);
-  };
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm ${scrolled ? 'shadow-md' : ''}`}>
@@ -91,53 +83,6 @@ const Header: React.FC = () => {
               >
                 <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className="text-blue-500" />
               </button>
-            
-              {/* Language Switcher */}
-              <div className="relative">
-                <button 
-                  onClick={() => setLanguageOptionsOpen(!languageOptionsOpen)}
-                  className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors bg-gray-100 dark:bg-gray-800 px-3 py-2 rounded-full"
-                >
-                  <FontAwesomeIcon icon={faGlobe} className="mr-2 text-blue-500" />
-                  <span className="font-medium">{currentLang.toUpperCase()}</span>
-                  <FontAwesomeIcon icon={faChevronDown} className="text-xs ml-2" />
-                </button>
-                
-                {languageOptionsOpen && (
-                  <div className="absolute right-0 mt-2 py-2 w-36 bg-white dark:bg-gray-800 rounded-xl shadow-xl z-20 border border-gray-200 dark:border-gray-700">
-                    <button 
-                      onClick={() => handleLanguageChange('en')}
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center w-full text-left"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-2">
-                        <span className="text-xs text-blue-600 dark:text-blue-400 font-bold">EN</span>
-                      </span>
-                      {t('english')}
-                    </button>
-                    <button 
-                      onClick={() => handleLanguageChange('nl')}
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center w-full text-left"
-                    >
-                      <span className="w-5 h-5 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center mr-2">
-                        <span className="text-xs text-orange-600 dark:text-orange-400 font-bold">NL</span>
-                      </span>
-                      {t('dutch')}
-                    </button>
-                  </div>
-                )}
-              </div>
-              
-              <button 
-                className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
-                onClick={() => document.getElementById('beta-signup-modal')?.classList.remove('hidden')}
-              >
-                <FontAwesomeIcon icon={faFlask} />
-                <span>{t('joinBeta')}</span>
-              </button>
-              
-              <Link to="https://app.pulseguard.nl/register" className="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
-                <span>{t('register')}</span>
-              </Link>
               
               <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
                 <span className="relative">{t('dashboard')}</span>
@@ -223,49 +168,6 @@ const Header: React.FC = () => {
             </div>
             <span className="font-medium">{t('register')}</span>
           </Link>
-          
-          <div className="border-t border-gray-200 dark:border-gray-700 my-4 pt-4">
-            {/* Language Selector */}
-            <div className="px-4 mb-4">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{t('language')}</p>
-              <div className="flex space-x-2">
-                <button 
-                  className={`flex-1 py-2 px-3 ${currentLang === 'en' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'} rounded-lg font-medium flex items-center justify-center`}
-                  onClick={() => handleLanguageChange('en')}
-                >
-                  {currentLang === 'en' && <FontAwesomeIcon icon={faCheck} className="mr-2 text-xs" />}
-                  {t('english')}
-                </button>
-                
-                <button 
-                  className={`flex-1 py-2 px-3 ${currentLang === 'nl' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'} rounded-lg font-medium flex items-center justify-center`}
-                  onClick={() => handleLanguageChange('nl')}
-                >
-                  {currentLang === 'nl' && <FontAwesomeIcon icon={faCheck} className="mr-2 text-xs" />}
-                  {t('dutch')}
-                </button>
-              </div>
-            </div>
-            
-            <button 
-              className="w-full flex items-center justify-center py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium mb-4"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                document.getElementById('beta-signup-modal')?.classList.remove('hidden');
-              }}
-            >
-              <FontAwesomeIcon icon={faFlask} className="mr-2" />
-              <span>{t('joinBetaProgram')}</span>
-            </button>
-            
-            <a 
-              href="https://app.pulseguard.nl" 
-              className="block bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm px-4 py-3 rounded-xl transition-all duration-200 font-medium text-center shadow-md hover:shadow-xl hover:shadow-blue-500/30"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <FontAwesomeIcon icon={faArrowRight} className="mr-1.5" /> {t('goToDashboard')}
-            </a>
-          </div>
         </div>
       </div>
     </header>
