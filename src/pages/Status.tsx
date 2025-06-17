@@ -27,7 +27,7 @@ const Status: React.FC = () => {
             {/* Status Widget */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
               <iframe 
-                src="https://app.pulseguard.nl/status/pulseguard-f7epCvPD/widget" 
+                src="https://app.pulseguard.nl/status/pulseguard-1/widget" 
                 width="100%" 
                 height="400" 
                 frameBorder="0" 
