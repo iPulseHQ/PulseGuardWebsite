@@ -8,7 +8,7 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://api.producthunt.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://demo.pulseguard.nl https://www.youtube.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://api.producthunt.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://demo.pulseguard.nl https://app.pulseguard.nl https://www.youtube.com"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-Permitted-Cross-Domain-Policies = "none"
