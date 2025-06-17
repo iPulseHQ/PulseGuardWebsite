@@ -22,11 +22,10 @@ const Demo: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div style={{
             position: "relative", 
-            boxSizing: "content-box", 
-            height: "80svh", 
-            width: "100%", 
-            aspectRatio: "1.9623621025308242", 
-            padding: "40px 0 40px 0"
+            boxSizing: "border-box",
+            width: "100%",
+            paddingBottom: "51%", // This maintains the aspect ratio without excessive white space
+            overflow: "hidden"
           }}>
             <iframe 
               src={demoUrl}
@@ -39,7 +38,10 @@ const Demo: React.FC = () => {
                 top: 0, 
                 left: 0, 
                 width: "100%", 
-                height: "100%"
+                height: "100%",
+                border: "1px solid rgba(0,0,0,0.1)",
+                borderRadius: "8px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.08)"
               }}
               allowFullScreen
             />
