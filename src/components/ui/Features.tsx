@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faGlobe, faShieldAlt, faServer, faClock, faBell, faChartLine, faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faGlobe, faShieldAlt, faServer, faClock, faBell, faChartLine, faArrowRight, faPlus, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faTelegram, faSlack } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -52,7 +53,32 @@ const getFeatures = (t: (key: string) => string) => [
   },
   {
     title: "Smart Notifications",
-    description: "Get alerts where you actually check them - whether that's Telegram, email, Slack, or webhooks for custom integrations.",
+    description: (
+      <>
+        Get alerts where you actually check them.
+        <div className="mt-3 mb-1">
+          <p className="font-medium mb-2">Get alerts your way:</p>
+          <div className="flex flex-wrap gap-3 mb-2">
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faTelegram} className="text-blue-500 mr-1" />
+              <span>Telegram</span>
+            </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faEnvelope} className="text-gray-600 dark:text-gray-400 mr-1" />
+              <span>Email</span>
+            </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faSlack} className="text-purple-500 mr-1" />
+              <span>Slack</span>
+            </div>
+            <div className="flex items-center">
+              <FontAwesomeIcon icon={faGlobe} className="text-green-500 mr-1" />
+              <span>Webhooks</span>
+            </div>
+          </div>
+        </div>
+      </>
+    ),
     bullets: [
       "Multiple notification channels",
       "Customizable alert thresholds",

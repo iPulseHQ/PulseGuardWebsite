@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faChevronRight, faPlay, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faTelegram, faSlack } from '@fortawesome/free-brands-svg-icons';
 
 const Hero: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -70,15 +70,15 @@ const Hero: React.FC = () => {
                   <span className="text-sm text-white">Telegram</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <i className="fas fa-envelope text-blue-300 mr-2"></i>
+                  <FontAwesomeIcon icon={faEnvelope} className="text-blue-300 mr-2" />
                   <span className="text-sm text-white">Email</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <i className="fab fa-slack text-blue-300 mr-2"></i>
+                  <FontAwesomeIcon icon={faSlack} className="text-blue-300 mr-2" />
                   <span className="text-sm text-white">Slack</span>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <i className="fas fa-bell text-blue-300 mr-2"></i>
+                  <FontAwesomeIcon icon={faGlobe} className="text-blue-300 mr-2" />
                   <span className="text-sm text-white">Webhooks</span>
                 </div>
               </div>
