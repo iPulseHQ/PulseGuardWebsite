@@ -1,0 +1,10 @@
+# Security contact information for PulseGuard
+Contact: mailto:security@pulseguard.io
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en, nl
+Policy: https://app.pulseguard.nl/privacy
+# Replace with actual security policy URL when available
+
+# Optional fields
+Hiring: https://app.pulseguard.nl/teams
+# Replace with actual careers page when available 
