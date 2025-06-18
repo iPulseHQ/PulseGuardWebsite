@@ -1,0 +1,19 @@
+# PulseGuard - Website Monitoring Platform
+
+PulseGuard is a comprehensive website and server monitoring platform designed to help you keep an eye on your online world. Currently in beta, PulseGuard offers various monitoring solutions:
+
+## Core Features
+- Website Monitoring: HTTP monitoring, response time tracking, and configurable check intervals
+- SSL Certificate Monitoring: Certificate expiration alerts and detailed certificate information
+- Server Monitoring: CPU, memory, disk usage, network traffic, and process monitoring
+- Cronjob Monitoring: Heartbeat monitoring for background tasks
+- Smart Notifications: Multi-channel alerts via Telegram, Email, Slack, and Webhooks
+- Status Pages: Public or private status pages with customizable branding
+
+## Key Benefits
+- 99.9% Uptime guarantee
+- 24/7 Monitoring
+- Quick 5-minute setup time
+- Comprehensive dashboard for all your monitoring needs
+
+Visit our website at https://pulseguard.nl or try the platform at https://app.pulseguard.nl/register 
