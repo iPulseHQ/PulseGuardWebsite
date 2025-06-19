@@ -1,50 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
   <!-- Home Page -->
   <url>
     <loc>https://pulseguard.nl/</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pulseguard.nl/images/dashboard-preview.svg</image:loc>
+      <image:caption>PulseGuard Dashboard Interface - Website and Server Monitoring</image:caption>
+      <image:title>PulseGuard Monitoring Dashboard</image:title>
+    </image:image>
   </url>
   
   <!-- Features Page -->
   <url>
     <loc>https://pulseguard.nl/features</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pulseguard.nl/images/features-mockup.svg</image:loc>
+      <image:caption>PulseGuard Features Overview - Monitoring Tools</image:caption>
+    </image:image>
   </url>
   
   <!-- Pricing Page -->
   <url>
     <loc>https://pulseguard.nl/pricing</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Team Page -->
-  <url>
-    <loc>https://pulseguard.nl/team</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   
   <!-- Status Page -->
   <url>
     <loc>https://pulseguard.nl/status</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Team Page -->
+  <url>
+    <loc>https://pulseguard.nl/team</loc>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://pulseguard.nl/images/team/arjan.jpeg</image:loc>
+      <image:caption>PulseGuard Team Member</image:caption>
+    </image:image>
   </url>
   
   <!-- App Page -->
   <url>
     <loc>https://pulseguard.nl/app</loc>
-    <lastmod>2024-01-15T12:00:00+00:00</lastmod>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Demo Page -->
+  <url>
+    <loc>https://pulseguard.nl/demo</loc>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Additional Important Pages -->
+  <url>
+    <loc>https://pulseguard.nl/website-monitoring</loc>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pulseguard.nl/server-monitoring</loc>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pulseguard.nl/ssl-monitoring</loc>
+    <lastmod>2024-12-20T14:30:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset> 

@@ -40,15 +40,17 @@ const Hero: React.FC = () => {
               <span className="text-green-200 text-sm font-medium">WE'RE IN BETA</span>
             </div>
             
-            {/* Cleaner heading with better typography */}
+            {/* Cleaner heading with better typography and SEO optimization */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              <span>Keep an eye on your</span> <br className="hidden md:block" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">online world</span>
+              <span>Monitor and protect your</span> <br className="hidden md:block" />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">digital infrastructure</span>
             </h1>
             
-            {/* Simplified description */}
+            {/* Enhanced description with LSI keywords */}
             <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
-              We built PulseGuard because we needed a simpler way to monitor our websites and servers. Now you can check on everything from one dashboard, and get alerts when something needs your attention.
+              Professional website uptime monitoring, server health tracking, and SSL certificate monitoring with real-time alerts. 
+              Get instant notifications via Email, Telegram, and Slack when your websites or servers need attention. 
+              <strong className="text-white"> 99.9% uptime guarantee</strong> with 5-minute setup.
             </p>
             
             {/* Cleaner CTA buttons */}
