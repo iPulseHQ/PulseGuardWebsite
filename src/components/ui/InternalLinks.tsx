@@ -9,14 +9,25 @@ interface InternalLinksProps {
   className?: string;
 }
 
-interface LinkItem {
+interface InternalLinkItem {
   title: string;
   href: string;
   description: string;
   icon: IconDefinition;
   keywords: string;
-  external?: boolean;
+  external: false;
 }
+
+interface ExternalLinkItem {
+  title: string;
+  href: string;
+  description: string;
+  icon: IconDefinition;
+  keywords: string;
+  external: true;
+}
+
+type LinkItem = InternalLinkItem | ExternalLinkItem;
 
 const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', className = '' }) => {
   const linkSets: Record<string, LinkItem[]> = {
