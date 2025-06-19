@@ -68,6 +68,36 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     // Setup Google Analytics
     setupGoogleAnalytics();
 
+    // Microsoft Clarity setup
+    const setupMicrosoftClarity = () => {
+      // Remove existing Clarity script if it exists
+      const existingClarityScript = document.querySelector('script[src*="clarity.ms"]');
+      if (existingClarityScript) {
+        existingClarityScript.remove();
+      }
+
+      // Remove existing Clarity config script
+      const existingClarityConfigScript = document.querySelector('script[data-type="clarity-config"]');
+      if (existingClarityConfigScript) {
+        existingClarityConfigScript.remove();
+      }
+
+      // Add Microsoft Clarity configuration
+      const clarityScript = document.createElement('script');
+      clarityScript.setAttribute('data-type', 'clarity-config');
+      clarityScript.textContent = `
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "s21cmt1r0f");
+      `;
+      document.head.appendChild(clarityScript);
+    };
+
+    // Setup Microsoft Clarity
+    setupMicrosoftClarity();
+
     // Update document title
     document.title = title;
 
@@ -203,6 +233,17 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       const configScript = document.querySelector('script[data-type="gtag-config"]');
       if (configScript) {
         configScript.remove();
+      }
+
+      // Clean up Microsoft Clarity scripts when component unmounts
+      const clarityScript = document.querySelector('script[src*="clarity.ms"]');
+      if (clarityScript) {
+        clarityScript.remove();
+      }
+      
+      const clarityConfigScript = document.querySelector('script[data-type="clarity-config"]');
+      if (clarityConfigScript) {
+        clarityConfigScript.remove();
       }
     };
   }, [title, description, keywords, currentUrl, ogImage, ogImageAlt, robotsContent, structuredData, breadcrumbData, faqData, articleData]);

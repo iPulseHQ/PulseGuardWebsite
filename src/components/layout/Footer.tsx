@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">IMDigital</span> - All rights reserved. <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
+          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard</span> - All rights reserved. <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
         </div>
       </div>
     </footer>
