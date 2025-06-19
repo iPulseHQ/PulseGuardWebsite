@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="pt-32 pb-28 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 relative overflow-hidden mt-12" role="banner">
+    <section id="hero" className="pt-20 md:pt-32 pb-28 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 relative overflow-hidden mt-4 md:mt-12" role="banner">
       {/* Enhanced background patterns */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.15),transparent_70%)]" aria-hidden="true"></div>
