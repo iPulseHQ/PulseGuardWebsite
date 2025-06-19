@@ -2,14 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faGlobe, faServer, faShieldAlt, faClock } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface InternalLinksProps {
   currentPage?: string;
   className?: string;
 }
 
+interface LinkItem {
+  title: string;
+  href: string;
+  description: string;
+  icon: IconDefinition;
+  keywords: string;
+  external?: boolean;
+}
+
 const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', className = '' }) => {
-  const linkSets = {
+  const linkSets: Record<string, LinkItem[]> = {
     home: [
       {
         title: "Website Monitoring Features",
@@ -82,7 +92,7 @@ const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', cla
     ]
   };
 
-  const currentLinks = linkSets[currentPage as keyof typeof linkSets] || linkSets.home;
+  const currentLinks = linkSets[currentPage] || linkSets.home;
 
   return (
     <section className={`py-16 bg-gray-50 dark:bg-gray-800 ${className}`}>
