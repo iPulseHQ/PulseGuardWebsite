@@ -17,25 +17,26 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="pt-32 pb-28 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 relative overflow-hidden mt-12">
+    <section id="hero" className="pt-32 pb-28 bg-gradient-to-br from-blue-900 via-indigo-900 to-violet-900 relative overflow-hidden mt-12" role="banner">
       {/* Enhanced background patterns */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.15),transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(99,102,241,0.15),transparent_70%)]" aria-hidden="true"></div>
       
       {/* Simplified animated shapes with better positioning */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-[80px] animate-pulse"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-[80px] animate-pulse" aria-hidden="true"></div>
       <div 
         className="absolute bottom-10 left-10 w-72 h-72 bg-violet-500/10 rounded-full blur-[80px] animate-pulse" 
         style={{ animationDelay: '1.5s' }}
+        aria-hidden="true"
       ></div>
       
       {/* Clean container for content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="lg:w-1/2 text-center lg:text-left">
+          <header className="lg:w-1/2 text-center lg:text-left">
             {/* Simplified badge with subtle glow */}
-            <div className="inline-flex items-center mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
-              <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse mr-2"></div>
+            <div className="inline-flex items-center mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20" role="status" aria-label="Current status: Beta version">
+              <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse mr-2" aria-hidden="true"></div>
               <span className="text-green-200 text-sm font-medium">WE'RE IN BETA</span>
             </div>
             
@@ -83,7 +84,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </header>
           
           <div className="lg:w-1/2">
             {/* Cleaner browser mockup */}

@@ -7,10 +7,12 @@ import Features from './pages/Features';
 import AppPage from './pages/App';
 import Pricing from './pages/Pricing';
 import { DarkModeProvider } from './context/DarkModeContext';
+import PreloadResources from './components/layout/PreloadResources';
 
 const App: React.FC = () => {
   return (
     <DarkModeProvider>
+      <PreloadResources />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

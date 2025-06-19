@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/layout/Layout';
+import SEOHead from '../components/layout/SEOHead';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -85,119 +86,148 @@ const Team: React.FC = () => {
     };
   }, []);
   
+  const teamStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage", 
+    "name": "PulseGuard Team - Meet Our Monitoring Experts",
+    "description": "Meet the talented team behind PulseGuard. Experienced developers and designers dedicated to building the best monitoring solution for your infrastructure.",
+    "url": "https://pulseguard.nl/team",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "PulseGuard",
+      "url": "https://pulseguard.nl",
+      "employee": teamMembers.map(member => ({
+        "@type": "Person",
+        "name": member.name,
+        "jobTitle": member.role,
+        "image": `https://pulseguard.nl${member.image}`,
+        "sameAs": [member.linkedin, member.github].filter(Boolean)
+      }))
+    }
+  };
+
   return (
-    <Layout>
-      <section className="pt-32 pb-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 text-blue-600 dark:text-blue-400 font-medium text-sm mb-4">
-              Our Team
+    <>
+      <SEOHead
+        title="Meet Our Team - PulseGuard Monitoring Experts | About Us"
+        description="Meet the talented PulseGuard team. Experienced developers and designers building the best website and server monitoring solution. Learn about our mission and expertise."
+        keywords="PulseGuard team, monitoring experts, development team, about us, company team, monitoring developers, infrastructure experts"
+        canonicalUrl="https://pulseguard.nl/team"
+        structuredData={teamStructuredData}
+      />
+      <Layout>
+        <section className="pt-32 pb-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
+          <div className="container mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-block bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 text-blue-600 dark:text-blue-400 font-medium text-sm mb-4">
+                Our Team
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Meet The Team Behind PulseGuard</h1>
+              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                The passionate individuals behind PulseGuard, dedicated to providing you with the best monitoring solutions.
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Meet The Team Behind PulseGuard</h1>
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-              The passionate individuals behind PulseGuard, dedicated to providing you with the best monitoring solutions.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 opacity-0 animate-fadeIn">
-            {teamMembers.map((member, index) => (
-              <div 
-                key={member.id} 
-                className="team-member-card group opacity-0" 
-                style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-              >
-                <div className="h-64 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-                  <img 
-                    src={member.image} 
-                    alt={`${member.name} - ${member.role} at PulseGuard`} 
-                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x300?text=Team+Member';
-                    }}
-                  />
-                  <div className="absolute bottom-0 left-0 w-full p-4 z-20">
-                    <div className="flex space-x-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                      {member.linkedin && (
-                        <a 
-                          href={member.linkedin} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-blue-600 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
-                          aria-label={`${member.name}'s LinkedIn`}
-                        >
-                          <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
-                        </a>
-                      )}
-                      
-                      {member.github && (
-                        <a 
-                          href={member.github} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-gray-800 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
-                          aria-label={`${member.name}'s GitHub`}
-                        >
-                          <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
-                        </a>
-                      )}
-                      
-                      {member.instagram && (
-                        <a 
-                          href={member.instagram}
-                          target="_blank"
-                          rel="noopener noreferrer" 
-                          className="bg-white/90 hover:bg-gradient-to-br from-purple-500 to-pink-500 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
-                          aria-label={`${member.name}'s Instagram`}
-                        >
-                          <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
-                        </a>
-                      )}
-                      
-                      {member.email && (
-                        <a 
-                          href={`mailto:${member.email}`}
-                          className="bg-white/90 hover:bg-green-600 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
-                          aria-label={`Email ${member.name}`}
-                        >
-                          <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
-                        </a>
-                      )}
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 opacity-0 animate-fadeIn">
+              {teamMembers.map((member, index) => (
+                <div 
+                  key={member.id} 
+                  className="team-member-card group opacity-0" 
+                  style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+                >
+                  <div className="h-64 overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                    <img 
+                      src={member.image} 
+                      alt={`${member.name} - ${member.role} at PulseGuard`} 
+                      className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x300?text=Team+Member';
+                      }}
+                    />
+                    <div className="absolute bottom-0 left-0 w-full p-4 z-20">
+                      <div className="flex space-x-3 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        {member.linkedin && (
+                          <a 
+                            href={member.linkedin} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/90 hover:bg-blue-600 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
+                            aria-label={`${member.name}'s LinkedIn`}
+                          >
+                            <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+                          </a>
+                        )}
+                        
+                        {member.github && (
+                          <a 
+                            href={member.github} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/90 hover:bg-gray-800 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
+                            aria-label={`${member.name}'s GitHub`}
+                          >
+                            <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
+                          </a>
+                        )}
+                        
+                        {member.instagram && (
+                          <a 
+                            href={member.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer" 
+                            className="bg-white/90 hover:bg-gradient-to-br from-purple-500 to-pink-500 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
+                            aria-label={`${member.name}'s Instagram`}
+                          >
+                            <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+                          </a>
+                        )}
+                        
+                        {member.email && (
+                          <a 
+                            href={`mailto:${member.email}`}
+                            className="bg-white/90 hover:bg-green-600 text-gray-800 hover:text-white p-2 rounded-full transition-colors"
+                            aria-label={`Email ${member.name}`}
+                          >
+                            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
+                  <div className={`p-6 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{member.name}</h3>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">{member.role}</p>
+                    {member.bio && (
+                      <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-4 group-hover:line-clamp-none transition-all duration-300">{member.bio}</p>
+                    )}
+                  </div>
                 </div>
-                <div className={`p-6 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{member.name}</h3>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">{member.role}</p>
-                  {member.bio && (
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-4 group-hover:line-clamp-none transition-all duration-300">{member.bio}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-24 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg dark:shadow-gray-900/10 max-w-4xl mx-auto transform hover:-translate-y-1 transition-transform duration-300">
-            <div className="inline-block bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-purple-600 dark:text-purple-400 font-medium text-sm mb-4">
-              Join Us
+              ))}
             </div>
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">We're Growing Our Team</h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 text-lg">
-              We're always looking for talented individuals who are passionate about creating great software. 
-              If you think you'd be a good fit for our team, we'd love to hear from you!
-            </p>
-            <a 
-              href="mailto:jobs@pulseguard.nl" 
-              className="btn-primary inline-flex items-center group"
-            >
-              <span>Get in touch</span>
-              <FontAwesomeIcon icon={faArrowRight} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+            
+            <div className="text-center mt-24 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg dark:shadow-gray-900/10 max-w-4xl mx-auto transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="inline-block bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-purple-600 dark:text-purple-400 font-medium text-sm mb-4">
+                Join Us
+              </div>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">We're Growing Our Team</h2>
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 text-lg">
+                We're always looking for talented individuals who are passionate about creating great software. 
+                If you think you'd be a good fit for our team, we'd love to hear from you!
+              </p>
+              <a 
+                href="mailto:jobs@pulseguard.nl" 
+                className="btn-primary inline-flex items-center group"
+              >
+                <span>Get in touch</span>
+                <FontAwesomeIcon icon={faArrowRight} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </>
   );
 };
 

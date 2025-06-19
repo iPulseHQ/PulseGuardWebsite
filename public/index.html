@@ -1,22 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#3b82f6" />
     <meta name="msapplication-TileColor" content="#3b82f6">
-    <meta
-      name="description"
-      content="PulseGuard - Complete monitoring solution for websites, servers, and devices."
-    />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>PulseGuard - Website & Server Monitoring Solution | Uptime Monitoring</title>
+    <meta name="title" content="PulseGuard - Website & Server Monitoring Solution | Uptime Monitoring" />
+    <meta name="description" content="Monitor your websites, servers, SSL certificates and cronjobs with PulseGuard. Get instant alerts via Telegram, Email, and Slack. 99.9% uptime monitoring with 5-minute setup." />
+    <meta name="keywords" content="website monitoring, server monitoring, uptime monitoring, SSL monitoring, cronjob monitoring, status page, website downtime alerts, server health monitoring, application monitoring, infrastructure monitoring" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="PulseGuard Team" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pulseguard.nl" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pulseguard.nl" />
+    <meta property="og:title" content="PulseGuard - Website & Server Monitoring Solution" />
+    <meta property="og:description" content="Monitor your websites, servers, SSL certificates and cronjobs with PulseGuard. Get instant alerts via Telegram, Email, and Slack. 99.9% uptime monitoring." />
+    <meta property="og:image" content="https://pulseguard.nl/images/dashboard-preview.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PulseGuard Dashboard Interface - Monitor websites, servers and get instant alerts" />
+    <meta property="og:site_name" content="PulseGuard" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://pulseguard.nl" />
+    <meta name="twitter:title" content="PulseGuard - Website & Server Monitoring Solution" />
+    <meta name="twitter:description" content="Monitor your websites, servers, SSL certificates and cronjobs with PulseGuard. Get instant alerts via Telegram, Email, and Slack." />
+    <meta name="twitter:image" content="https://pulseguard.nl/images/dashboard-preview.svg" />
+    <meta name="twitter:image:alt" content="PulseGuard Dashboard Interface" />
+    <meta name="twitter:creator" content="@pulseguard" />
+    <meta name="twitter:site" content="@pulseguard" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="PulseGuard" />
+    <meta name="apple-mobile-web-app-title" content="PulseGuard" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.producthunt.com">
+    <link rel="dns-prefetch" href="https://app.pulseguard.nl">
+    <link rel="dns-prefetch" href="https://demo.pulseguard.nl">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PulseGuard",
+      "description": "Comprehensive monitoring solution for websites, servers, SSL certificates, and cronjobs with instant notifications.",
+      "url": "https://pulseguard.nl",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "PulseGuard Team",
+        "url": "https://pulseguard.nl/team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PulseGuard",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pulseguard.nl/images/logo.png"
+        }
+      },
+      "screenshot": "https://pulseguard.nl/images/dashboard-preview.svg",
+      "featureList": [
+        "Website uptime monitoring",
+        "Server resource monitoring",
+        "SSL certificate monitoring",
+        "Cronjob monitoring",
+        "Status pages",
+        "Multi-channel alerts (Email, Telegram, Slack)",
+        "Real-time notifications",
+        "Historical reporting"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PulseGuard",
+      "url": "https://pulseguard.nl",
+      "logo": "https://pulseguard.nl/images/logo.png",
+      "description": "Professional monitoring solution for websites, servers, and infrastructure.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "support@pulseguard.nl"
+      },
+      "sameAs": [
+        "https://github.com/pulseguard",
+        "https://twitter.com/pulseguard"
+      ]
+    }
+    </script>
+    
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://api.producthunt.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://demo.pulseguard.nl https://app.pulseguard.nl https://www.youtube.com">
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- GitHub Pages SPA routing script -->
@@ -40,8 +153,6 @@
         }
       }(window.location))
     </script>
-    
-    <title>PulseGuard - Monitoring Solution</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

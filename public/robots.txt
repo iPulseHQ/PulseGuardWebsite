@@ -1,3 +1,23 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Allow crawling of all important pages
+Allow: /features
+Allow: /pricing
+Allow: /team
+Allow: /status
+Allow: /app
+
+# Disallow unnecessary files
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*.map$
+Disallow: /manifest.json
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://pulseguard.nl/sitemap.xml
