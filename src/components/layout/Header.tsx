@@ -44,9 +44,9 @@ const Header: React.FC = () => {
             </Link>
           </div>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center justify-center">
-            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1.5 py-1.5 flex items-center space-x-1 mr-4 backdrop-blur-sm">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+            <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1.5 py-1.5 flex items-center space-x-1 backdrop-blur-sm">
               <Link to="/" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('navigation')}</span>
                 <span className="nav-link-indicator"></span>
@@ -72,24 +72,24 @@ const Header: React.FC = () => {
                 <span className="nav-link-indicator"></span>
               </Link>
             </div>
-            
-            {/* Action Buttons */}
-            <div className="flex items-center space-x-3">
-              {/* Dark Mode Toggle */}
-              <button 
-                onClick={toggleDarkMode}
-                className="flex items-center justify-center p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors bg-gray-100 dark:bg-gray-800 rounded-full"
-                aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-              >
-                <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className="text-blue-500" />
-              </button>
-              
-              <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
-                <span className="relative">{t('dashboard')}</span>
-                <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
           </nav>
+          
+          {/* Action Buttons - Right Side */}
+          <div className="hidden md:flex items-center space-x-3">
+            {/* Dark Mode Toggle */}
+            <button 
+              onClick={toggleDarkMode}
+              className="flex items-center justify-center p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors bg-gray-100 dark:bg-gray-800 rounded-full"
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className="text-blue-500" />
+            </button>
+            
+            <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+              <span className="relative">{t('dashboard')}</span>
+              <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
           
           {/* Mobile Menu Toggle */}
           <div className="flex items-center md:hidden">

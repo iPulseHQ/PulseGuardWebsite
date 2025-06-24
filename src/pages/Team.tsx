@@ -23,7 +23,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Michan van de Hoek",
     role: "Project Lead & Backend Developer",
-    bio: "Michan leads the development of PulseGuard with his expertise in backend systems and project management.",
+    bio: "",
     image: "/images/team/michan.jpeg",
     linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
     github: "https://github.com/IAMichan",
@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: "Arjan den Hartog",
     role: "Lead Developer & DevOps",
-    bio: "Arjan brings his extensive experience in DevOps and software engineering to ensure PulseGuard is reliable and scalable.",
+    bio: "",
     image: "/images/team/arjan.jpeg",
     linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
     github: "https://github.com/ArjanDenHartog",
@@ -42,8 +42,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Noah van den Broek",
-    role: "UX Designer & Frontend Developer",
-    bio: "Noah designs intuitive and beautiful user interfaces. His work ensures that PulseGuard is not just powerful but also a pleasure to use.",
+    role: "UX Designer & CMO",
+    bio: "",
     image: "/images/team/noah.jpeg",
     linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
     email: "noah@pulseguard.nl"
@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
     id: 4,
     name: "Juda Zwemer",
     role: "Marketing & Content Creator",
-    bio: "Juda handles our marketing efforts and content creation, making sure PulseGuard reaches the right audience with the right message.",
+    bio: "",
     image: "/images/team/juda.jpg",
     linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
     instagram: "https://www.instagram.com/judazwemer/",
@@ -217,7 +217,7 @@ const Team: React.FC = () => {
                 If you think you'd be a good fit for our team, we'd love to hear from you!
               </p>
               <a 
-                href="mailto:jobs@pulseguard.nl" 
+                href="mailto:info@pulseguard.nl" 
                 className="btn-primary inline-flex items-center group"
               >
                 <span>Get in touch</span>

@@ -1,12 +1,6 @@
 import React from 'react';
-import { useDarkMode } from '../../context/DarkModeContext';
 
 const Demo: React.FC = () => {
-  const { isDarkMode } = useDarkMode();
-  
-  // Add dark mode parameter to the iframe URL
-  const demoUrl = `https://demo.pulseguard.nl/embed/cmc0ndkcliukcsn1rky5p2dix?embed_v=2${isDarkMode ? '&theme=dark' : ''}`;
-  
   return (
     <section id="demo" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-6">
@@ -22,28 +16,26 @@ const Demo: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div style={{
             position: "relative", 
-            boxSizing: "border-box",
-            width: "100%",
-            paddingBottom: "51%", // This maintains the aspect ratio without excessive white space
-            overflow: "hidden"
+            boxSizing: "content-box", 
+            maxHeight: "80vh", 
+            width: "100%", 
+            aspectRatio: "1.9623621025308242", 
+            padding: "5px 0 5px 0"
           }}>
             <iframe 
-              src={demoUrl}
+              src="https://app.supademo.com/embed/cmc0ndkcliukcsn1rky5p2dix?embed_v=2"
               loading="lazy" 
               title="Pulseguard Demo" 
               allow="clipboard-write" 
               frameBorder="0" 
+              allowFullScreen
               style={{
                 position: "absolute", 
                 top: 0, 
                 left: 0, 
                 width: "100%", 
-                height: "100%",
-                border: "1px solid rgba(0,0,0,0.1)",
-                borderRadius: "8px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.08)"
+                height: "100%"
               }}
-              allowFullScreen
             />
           </div>
         </div>
