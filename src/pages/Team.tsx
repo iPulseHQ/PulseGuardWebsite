@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: "Michan van de Hoek",
-    role: "Developer and CEO",
+    role: "Developer & CEO",
     bio: "",
     image: "/images/team/michan.jpeg",
     linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 2,
     name: "Arjan den Hartog",
-    role: "Developer and CTO",
+    role: "Developer & CTO",
     bio: "",
     image: "/images/team/arjan.jpeg",
     linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
@@ -42,7 +42,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Noah van den Broek",
-    role: "Marketing and CMO",
+    role: "Marketing & CMO",
     bio: "",
     image: "/images/team/noah.jpeg",
     linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
@@ -51,7 +51,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 4,
     name: "Juda Zwemer",
-    role: "Marketing and content manager",
+    role: "Marketing & content manager",
     bio: "",
     image: "/images/team/juda.jpg",
     linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
