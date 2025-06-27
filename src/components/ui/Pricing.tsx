@@ -173,14 +173,6 @@ const Pricing: React.FC = () => {
               </div>
             </div>
           </div>
-          
-          {/* Current subscription notice */}
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              <FontAwesomeIcon icon={faTag} className="mr-2" />
-              Huidig Abonnement wordt weergegeven met aangepaste knoppen
-            </p>
-          </div>
         </div>
         
         {/* Table View */}
