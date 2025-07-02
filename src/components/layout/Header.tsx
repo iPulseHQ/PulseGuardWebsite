@@ -35,12 +35,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group transition-all duration-300 transform hover:scale-105">
-              <div className="flex items-center justify-center h-12 w-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-md group-hover:shadow-blue-500/30 mr-3 group-hover:-rotate-6 transition-all duration-300">
-                <svg className="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">PulseGuard</span>
+              <img src="/images/logofinal.png" alt="PulseGuard Logo" className="h-10" />
             </Link>
           </div>
           

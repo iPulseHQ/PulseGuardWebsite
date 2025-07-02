@@ -28,10 +28,10 @@ const Footer: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
             {/* ProductHunt Badge */}
             <div className="flex flex-col items-center">
-              <h3 className="text-lg font-semibold mb-4">Featured on Product Hunt</h3>
-              <a href="https://www.producthunt.com/products/pulseguard-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-pulseguard&#0045;2" target="_blank" rel="noopener noreferrer">
+              <h3 className="text-lg font-semibold mb-4">Rate us on Product Hunt</h3>
+              <a href="https://www.producthunt.com/products/pulseguard-2/reviews?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-pulseguard&#0045;2" target="_blank" rel="noopener noreferrer">
                 <img 
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=976244&theme=light&t=1749542380853" 
+                  src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark" 
                   alt="PulseGuard - Complete monitoring solution for websites, devices & services | Product Hunt" 
                   style={{ width: '250px', height: '54px' }} 
                   width="250" 

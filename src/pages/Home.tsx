@@ -7,7 +7,6 @@ import Features from '../components/ui/Features';
 import Mockups from '../components/ui/Mockups';
 import Pricing from '../components/ui/Pricing';
 import InternalLinks from '../components/ui/InternalLinks';
-import Partners from '../components/ui/Partners';
 
 const Home: React.FC = () => {
   const homeStructuredData = {
@@ -234,7 +233,6 @@ const Home: React.FC = () => {
       />
       <Layout showBreadcrumb={false}>
         <Hero />
-        <Partners />
         <Demo />
         <Features />
         <Mockups />

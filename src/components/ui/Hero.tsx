@@ -4,6 +4,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlay, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram, faSlack } from '@fortawesome/free-brands-svg-icons';
 
+const partners = [
+  {
+      name: 'IM Digital',
+      logo: 'https://imdigital.info/img/logo(los).png',
+      url: 'https://imdigital.info',
+      },
+    {
+      name: 'CHE',
+      logo: 'https://www.che.nl/themes/custom/che/images/logos/logo.svg',
+      url: 'https://www.che.nl',
+    },
+    {
+      name: 'Arjan den Hartog',
+      logo: 'https://arjandenhartog.com/favicon.ico',
+      url: 'https://arjandenhartog.com',
+    },
+    
+  ];
+
 const Hero: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
@@ -42,8 +61,8 @@ const Hero: React.FC = () => {
             
             {/* Cleaner heading with better typography and SEO optimization */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              <span>Monitor and protect your</span> <br className="hidden md:block" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">digital infrastructure</span>
+              <span>Your digital</span> <br className="hidden md:block" />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">pacemaker</span>
             </h1>
             
             {/* Enhanced description with LSI keywords */}
@@ -84,6 +103,28 @@ const Hero: React.FC = () => {
                   <FontAwesomeIcon icon={faGlobe} className="text-blue-300 mr-2" />
                   <span className="text-sm text-white">Webhooks</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Partners section */}
+            <div className="mt-12 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm text-blue-200 mb-4 font-medium text-center lg:text-left">Trusted by:</p>
+              <div className="mx-auto grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                {partners.map((partner) => (
+                  <a
+                    key={partner.name}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="col-span-1 flex justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  >
+                    <img
+                      className="max-h-8 w-full object-contain"
+                      src={partner.logo}
+                      alt={partner.name}
+                    />
+                  </a>
+                ))}
               </div>
             </div>
           </header>
