@@ -35,6 +35,10 @@ export const translations: Translations = {
     en: 'Status',
     nl: 'Status'
   },
+  blog: {
+    en: 'Blog',
+    nl: 'Blog'
+  },
   joinBeta: {
     en: 'Join Beta',
     nl: 'Beta Testen'

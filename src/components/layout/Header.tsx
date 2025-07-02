@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -69,6 +69,10 @@ const Header: React.FC = () => {
               </Link>
               <Link to="/status" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('status')}</span>
+                <span className="nav-link-indicator"></span>
+              </Link>
+              <Link to="/blog" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+                <span className="font-medium">{t('blog')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
             </div>
@@ -186,6 +190,13 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faChartLine} className="text-teal-500" />
             </div>
             <span className="font-medium">{t('status')}</span>
+          </Link>
+          
+          <Link to="/blog" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+            <div className="h-8 w-8 bg-gray-100 dark:bg-gray-900/30 rounded-lg flex items-center justify-center mr-3">
+              <FontAwesomeIcon icon={faNewspaper} className="text-gray-500" />
+            </div>
+            <span className="font-medium">{t('blog')}</span>
           </Link>
           
           <Link to="https://app.pulseguard.nl/register" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>

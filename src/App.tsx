@@ -6,6 +6,8 @@ import Status from './pages/Status';
 import Features from './pages/Features';
 import AppPage from './pages/App';
 import Pricing from './pages/Pricing';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import { DarkModeProvider } from './context/DarkModeContext';
 import PreloadResources from './components/layout/PreloadResources';
 
@@ -21,6 +23,8 @@ const App: React.FC = () => {
           <Route path="/features" element={<Features />} />
           <Route path="/app" element={<AppPage />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </Router>
     </DarkModeProvider>
