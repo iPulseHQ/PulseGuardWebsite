@@ -30,70 +30,45 @@ const getFeatures = (t: (key: string) => string) => [
     color: "green"
   },
   {
-    title: "Server Monitoring",
-    description: "Keep an eye on your server resources. Our lightweight agent gives you insights without bogging down your system.",
+    title: t('serverMonitoringTitle'),
+    description: t('serverMonitoringDesc'),
     bullets: [
-      "CPU, memory, and disk usage",
-      "Network traffic monitoring",
-      "Process monitoring"
+      t('serverCpu'),
+      t('serverNetwork'),
+      t('serverProcess')
     ],
     icon: faServer,
     color: "purple"
   },
   {
-    title: "Cronjob Monitoring",
-    description: "Those background tasks that silently fail? We'll make sure they don't go unnoticed. Set expected run times and get alerted when things don't go as planned.",
+    title: t('cronjobMonitoringTitle'),
+    description: t('cronjobMonitoringDesc'),
     bullets: [
-      "Heartbeat monitoring",
-      "Expected run schedule",
-      "Missed execution alerts"
+      t('cronjobHeartbeat'),
+      t('cronjobSchedule'),
+      t('cronjobMissed')
     ],
     icon: faClock,
     color: "orange"
   },
   {
-    title: "Smart Notifications",
-    description: (
-      <>
-        Get alerts where you actually check them.
-        <div className="mt-3 mb-1">
-          <p className="font-medium mb-2">Get alerts your way:</p>
-          <div className="flex flex-wrap gap-3 mb-2">
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faTelegram} className="text-blue-500 mr-1" />
-              <span>Telegram</span>
-            </div>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faEnvelope} className="text-gray-600 dark:text-gray-400 mr-1" />
-              <span>Email</span>
-            </div>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faSlack} className="text-purple-500 mr-1" />
-              <span>Slack</span>
-            </div>
-            <div className="flex items-center">
-              <FontAwesomeIcon icon={faGlobe} className="text-green-500 mr-1" />
-              <span>Webhooks</span>
-            </div>
-          </div>
-        </div>
-      </>
-    ),
+    title: t('smartNotificationsTitle'),
+    description: t('smartNotificationsDesc'),
     bullets: [
-      "Multiple notification channels",
-      "Customizable alert thresholds",
-      "Notification scheduling"
+      t('alertChannels'),
+      t('alertThresholds'),
+      t('alertScheduling')
     ],
     icon: faBell,
     color: "red"
   },
   {
-    title: "Status Page",
-    description: "Share your uptime with your team or customers. Our clean status pages give transparency and build trust with your users.",
+    title: t('statusPageTitle'),
+    description: t('statusPageDesc'),
     bullets: [
-      "Public or private status pages",
-      "Customizable branding",
-      "Historical uptime reports"
+      t('statusPagePublic'),
+      t('statusPageBranding'),
+      t('statusPageReports')
     ],
     icon: faChartLine,
     color: "indigo"
@@ -188,11 +163,10 @@ const Features: React.FC = () => {
             {t('whatWeOffer')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-            Complete Monitoring Solution Features
+            {t('featuresSectionTitle')}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-            Professional website monitoring, server monitoring, and infrastructure monitoring tools designed for businesses of all sizes. 
-            Monitor your digital assets with comprehensive alerting and reporting capabilities.
+            {t('featuresSectionSubtitle')}
           </p>
         </header>
         
@@ -244,7 +218,7 @@ const Features: React.FC = () => {
                 icon={faPlus} 
                 className="mr-2 group-hover:rotate-90 transition-transform duration-300" 
               />
-              <span>Ontdek meer functies</span>
+              <span>{t('showMoreFeatures')}</span>
             </button>
           </div>
         )}
