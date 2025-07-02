@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlay, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faTelegram, faSlack } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from '../../hooks/useTranslation';
 
 const partners = [
   {
@@ -25,6 +26,7 @@ const partners = [
 
 const Hero: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const { t } = useTranslation();
 
   const playVideo = () => {
     setIsVideoPlaying(true);
@@ -56,36 +58,33 @@ const Hero: React.FC = () => {
             {/* Simplified badge with subtle glow */}
             <div className="inline-flex items-center mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20" role="status" aria-label="Current status: Beta version">
               <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse mr-2" aria-hidden="true"></div>
-              <span className="text-green-200 text-sm font-medium">WE'RE IN BETA</span>
+              <span className="text-green-200 text-sm font-medium">{t('heroBeta')}</span>
             </div>
             
             {/* Cleaner heading with better typography and SEO optimization */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              <span>Your digital</span> <br className="hidden md:block" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">pacemaker</span>
+              <span dangerouslySetInnerHTML={{ __html: t('heroTitle').replace('pacemaker', '<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">pacemaker</span>') }} />
             </h1>
             
             {/* Enhanced description with LSI keywords */}
             <p className="text-blue-100 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
-              Professional website uptime monitoring, server health tracking, and SSL certificate monitoring with real-time alerts. 
-              Get instant notifications via Email, Telegram, and Slack when your websites or servers need attention. 
-              <strong className="text-white"> 99.9% uptime guarantee</strong> with 5-minute setup.
+              {t('heroSubtitle')}
             </p>
             
             {/* Cleaner CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="#features" className="btn-primary">
-                <span className="font-semibold">See what it can do</span>
+                <span className="font-semibold">{t('heroCtaPrimary')}</span>
                 <FontAwesomeIcon icon={faChevronRight} className="ml-2 text-sm group-hover:translate-x-1 transition-transform" />
               </a>
               <Link to="https://app.pulseguard.nl/register" className="btn-secondary">
-                <span className="font-semibold">Try it free</span>
+                <span className="font-semibold">{t('heroCtaSecondary')}</span>
               </Link>
             </div>
             
             {/* Simplified integration badges */}
             <div className="mt-12 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
-              <p className="text-sm text-blue-200 mb-3 font-medium">Get alerts your way:</p>
+              <p className="text-sm text-blue-200 mb-3 font-medium">{t('heroAlerts')}</p>
               <div className="flex flex-wrap gap-2">
                 <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
                   <FontAwesomeIcon icon={faTelegram} className="text-blue-300 mr-2" />
@@ -108,7 +107,7 @@ const Hero: React.FC = () => {
 
             {/* Partners section */}
             <div className="mt-12 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
-              <p className="text-sm text-blue-200 mb-4 font-medium text-center lg:text-left">Trusted by:</p>
+              <p className="text-sm text-blue-200 mb-4 font-medium text-center lg:text-left">{t('heroTrustedBy')}</p>
               <div className="mx-auto grid max-w-lg grid-cols-3 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 {partners.map((partner) => (
                   <a

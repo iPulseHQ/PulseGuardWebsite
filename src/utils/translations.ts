@@ -134,6 +134,200 @@ export const translations: Translations = {
     nl: 'Certificaatdetails overzicht'
   },
   
+  // Hero component
+  heroBeta: {
+    en: "WE'RE IN BETA",
+    nl: 'WE ZIJN IN BETA'
+  },
+  heroTitle: {
+    en: 'Your digital pacemaker',
+    nl: 'Jouw digitale pacemaker'
+  },
+  heroSubtitle: {
+    en: 'Professional website uptime monitoring, server health tracking, and SSL certificate monitoring with real-time alerts. Get instant notifications via Email, Telegram, and Slack when your websites or servers need attention. 99.9% uptime guarantee with 5-minute setup.',
+    nl: 'Professionele website uptime monitoring, server status tracking en SSL-certificaat monitoring met real-time meldingen. Ontvang direct notificaties via E-mail, Telegram en Slack wanneer je websites of servers aandacht nodig hebben. 99,9% uptime garantie met 5 minuten installatie.'
+  },
+  heroCtaPrimary: {
+    en: 'See what it can do',
+    nl: 'Bekijk de mogelijkheden'
+  },
+  heroCtaSecondary: {
+    en: 'Try it free',
+    nl: 'Probeer gratis'
+  },
+  heroAlerts: {
+    en: 'Get alerts your way:',
+    nl: 'Ontvang meldingen op jouw manier:'
+  },
+  heroTrustedBy: {
+    en: 'Trusted by:',
+    nl: 'Vertrouwd door:'
+  },
+  
+  // Features page
+  featuresSectionTitle: {
+    en: 'Complete Monitoring Solution Features',
+    nl: 'Volledige Monitoring Oplossing Functies'
+  },
+  featuresSectionSubtitle: {
+    en: 'Professional website monitoring, server monitoring, and infrastructure monitoring tools designed for businesses of all sizes. Monitor your digital assets with comprehensive alerting and reporting capabilities.',
+    nl: 'Professionele tools voor website-, server- en infrastructuurmonitoring, ontworpen voor bedrijven van elke omvang. Bewaak uw digitale middelen met uitgebreide waarschuwings- en rapportagemogelijkheden.'
+  },
+  serverMonitoringTitle: {
+    en: 'Server Monitoring',
+    nl: 'Server Monitoring'
+  },
+  serverMonitoringDesc: {
+    en: "Keep an eye on your server resources. Our lightweight agent gives you insights without bogging down your system.",
+    nl: 'Houd uw serverbronnen in de gaten. Onze lichtgewicht agent geeft u inzichten zonder uw systeem te vertragen.'
+  },
+  serverCpu: {
+    en: 'CPU, memory, and disk usage',
+    nl: 'CPU-, geheugen- en schijfgebruik'
+  },
+  serverNetwork: {
+    en: 'Network traffic monitoring',
+    nl: 'Netwerkverkeer monitoring'
+  },
+  serverProcess: {
+    en: 'Process monitoring',
+    nl: 'Procesmonitoring'
+  },
+  cronjobMonitoringTitle: {
+    en: 'Cronjob Monitoring',
+    nl: 'Cronjob Monitoring'
+  },
+  cronjobMonitoringDesc: {
+    en: "Those background tasks that silently fail? We'll make sure they don't go unnoticed. Set expected run times and get alerted when things don't go as planned.",
+    nl: 'Die achtergrondtaken die stilzwijgend mislukken? Wij zorgen ervoor dat ze niet onopgemerkt blijven. Stel verwachte draaitijden in en word gewaarschuwd als het misgaat.'
+  },
+  cronjobHeartbeat: {
+    en: 'Heartbeat monitoring',
+    nl: 'Hartslagmonitoring'
+  },
+  cronjobSchedule: {
+    en: 'Expected run schedule',
+    nl: 'Verwacht draaischema'
+  },
+  cronjobMissed: {
+    en: 'Missed execution alerts',
+    nl: 'Gemiste uitvoeringswaarschuwingen'
+  },
+  smartNotificationsTitle: {
+    en: 'Smart Notifications',
+    nl: 'Slimme Notificaties'
+  },
+  smartNotificationsDesc: {
+    en: 'Get alerts where you actually check them.',
+    nl: 'Krijg meldingen waar je ze daadwerkelijk controleert.'
+  },
+  alertChannels: {
+    en: 'Multiple notification channels',
+    nl: 'Meerdere notificatiekanalen'
+  },
+  alertThresholds: {
+    en: 'Customizable alert thresholds',
+    nl: 'Aanpasbare waarschuwingsdrempels'
+  },
+  alertScheduling: {
+    en: 'Notification scheduling',
+    nl: 'Notificatieplanning'
+  },
+  statusPageTitle: {
+    en: 'Status Page',
+    nl: 'Statuspagina'
+  },
+  statusPageDesc: {
+    en: "Share your uptime with your team or customers. Our clean status pages give transparency and build trust with your users.",
+    nl: 'Deel uw uptime met uw team of klanten. Onze overzichtelijke statuspaginas bieden transparantie en bouwen vertrouwen op bij uw gebruikers.'
+  },
+  statusPagePublic: {
+    en: 'Public or private status pages',
+    nl: 'Openbare of privé-statuspaginas'
+  },
+  statusPageBranding: {
+    en: 'Customizable branding',
+    nl: 'Aanpasbare branding'
+  },
+  statusPageReports: {
+    en: 'Historical uptime reports',
+    nl: 'Historische uptime-rapporten'
+  },
+  showMoreFeatures: {
+    en: 'Discover more features',
+    nl: 'Ontdek meer functies'
+  },
+
+  // Footer
+  footerRateUs: {
+    en: 'Rate us on Product Hunt',
+    nl: 'Beoordeel ons op Product Hunt'
+  },
+  footerJoinBeta: {
+    en: 'Join Our Beta',
+    nl: 'Doe mee met onze Bèta'
+  },
+  footerGetStarted: {
+    en: 'Get Started',
+    nl: 'Begin nu'
+  },
+  footerDescription: {
+    en: 'Complete monitoring solution for websites, servers, and devices.',
+    nl: 'Complete monitoringoplossing voor websites, servers en apparaten.'
+  },
+  footerLinks: {
+    en: 'Links',
+    nl: 'Links'
+  },
+  footerHome: {
+    en: 'Home',
+    nl: 'Home'
+  },
+  footerAppPreview: {
+    en: 'App Preview',
+    nl: 'App Voorbeeld'
+  },
+  footerOurTeam: {
+    en: 'Our Team',
+    nl: 'Ons Team'
+  },
+  footerPlatform: {
+    en: 'Platform',
+    nl: 'Platform'
+  },
+  footerDomains: {
+    en: 'Domains',
+    nl: 'Domeinen'
+  },
+  footerDevices: {
+    en: 'Devices',
+    nl: 'Apparaten'
+  },
+  footerSubscriptions: {
+    en: 'Subscriptions',
+    nl: 'Abonnementen'
+  },
+  footerSupport: {
+    en: 'Support',
+    nl: 'Ondersteuning'
+  },
+  footerHelpCenter: {
+    en: 'Help Center',
+    nl: 'Helpcentrum'
+  },
+  footerPrivacyPolicy: {
+    en: 'Privacy Policy',
+    nl: 'Privacybeleid'
+  },
+  footerTerms: {
+    en: 'Terms & Conditions',
+    nl: 'Algemene Voorwaarden'
+  },
+  footerCopyright: {
+    en: 'All rights reserved.',
+    nl: 'Alle rechten voorbehouden.'
+  },
+
   // Pricing component
   pricingTitle: {
     en: 'Transparent pricing',
@@ -214,6 +408,233 @@ export const translations: Translations = {
   contactUs: {
     en: 'Contact Us',
     nl: 'Neem contact op'
+  },
+
+  // Pricing Page
+  pricingPageTitle: {
+    en: 'Choose Your Monitoring Plan',
+    nl: 'Kies Je Monitoringplan'
+  },
+  pricingPageSubtitle: {
+    en: 'Start free and upgrade as you grow. All plans include our core monitoring features.',
+    nl: 'Begin gratis en upgrade naarmate je groeit. Alle plannen bevatten onze kernfuncties voor monitoring.'
+  },
+  compareAll: {
+    en: 'Compare All',
+    nl: 'Vergelijk Alles'
+  },
+  // Free Plan
+  freePlanTitle: {
+    en: 'Free',
+    nl: 'Gratis'
+  },
+  freePlanDesc: {
+    en: 'For personal use',
+    nl: 'Voor persoonlijk gebruik'
+  },
+  freeDomains: {
+    en: '2 domains (without page resources)',
+    nl: '2 domeinen (zonder paginabronnen)'
+  },
+  freeDevice: {
+    en: '1 device (monitoring only)',
+    nl: '1 apparaat (alleen monitoring)'
+  },
+  freeService: {
+    en: '1 Service (full)',
+    nl: '1 Service (volledig)'
+  },
+  pulseAI: {
+    en: 'PulseAI',
+    nl: 'PulseAI'
+  },
+  toolbox: {
+    en: 'Toolbox',
+    nl: 'Toolbox'
+  },
+  freeReports: {
+    en: 'Reports (without email notifications)',
+    nl: 'Rapportages (zonder e-mailnotificaties)'
+  },
+  statusPage: {
+    en: 'Status Page',
+    nl: 'Statuspagina'
+  },
+  integrations: {
+    en: 'Integrations',
+    nl: 'Integraties'
+  },
+  apiAccess: {
+    en: 'API Access',
+    nl: 'API Toegang'
+  },
+  accessibility: {
+    en: 'Accessibility (WCAG & SEO)',
+    nl: 'Toegankelijkheid (WCAG & SEO)'
+  },
+  // Standard Plan
+  standardPlanTitle: {
+    en: 'Standard',
+    nl: 'Standaard'
+  },
+  standardPlanDesc: {
+    en: 'For small businesses',
+    nl: 'Voor kleine bedrijven'
+  },
+  standardPriceSub: {
+    en: 'for the first 6 months, then €7,50/month',
+    nl: 'voor de eerste 6 maanden, daarna €7,50/maand'
+  },
+  standardDomains: {
+    en: '5 domains (full)',
+    nl: '5 domeinen (volledig)'
+  },
+  standardDevices: {
+    en: '2 devices (full)',
+    nl: '2 apparaten (volledig)'
+  },
+  standardServices: {
+    en: '3 Services (full)',
+    nl: '3 Services (volledig)'
+  },
+  standardReports: {
+    en: 'Reports (with email notifications)',
+    nl: 'Rapportages (met e-mailnotificaties)'
+  },
+  oneStatusPage: {
+    en: '1 Status Page',
+    nl: '1 Statuspagina'
+  },
+  toolboxDns: {
+    en: 'Toolbox (DNS only)',
+    nl: 'Toolbox (alleen DNS)'
+  },
+  emailNotifications: {
+    en: 'Email Notifications',
+    nl: 'E-mail Notificaties'
+  },
+  telegram: {
+    en: 'Telegram',
+    nl: 'Telegram'
+  },
+  // Pro Plan
+  proPlanTitle: {
+    en: 'Pro',
+    nl: 'Pro'
+  },
+  proPlanDesc: {
+    en: 'For professionals',
+    nl: 'Voor professionals'
+  },
+  proPriceSub: {
+    en: 'for the first 6 months, then €15/month',
+    nl: 'voor de eerste 6 maanden, daarna €15/maand'
+  },
+  proDomains: {
+    en: '10 domains (full)',
+    nl: '10 domeinen (volledig)'
+  },
+  proDevices: {
+    en: '7 devices (full)',
+    nl: '7 apparaten (volledig)'
+  },
+  proServices: {
+    en: '5 Services (full)',
+    nl: '5 Services (volledig)'
+  },
+  reports: {
+    en: 'Reports',
+    nl: 'Rapportages'
+  },
+  mfa: {
+    en: 'MFA',
+    nl: 'MFA'
+  },
+  proToolbox: {
+    en: 'Toolbox (DNS, IP, Speedtest)',
+    nl: 'Toolbox (DNS, IP, Speedtest)'
+  },
+  proToolboxDesc: {
+    en: 'Toolbox (DNS, IP, Speedtest)',
+    nl: 'Toolbox (DNS, IP, Speedtest)'
+  },
+  // Enterprise Plan
+  enterprisePlanTitle: {
+    en: 'Enterprise',
+    nl: 'Zakelijk'
+  },
+  enterprisePrice: {
+    en: 'Custom',
+    nl: 'Aangepast'
+  },
+  enterpriseDesc: {
+    en: 'Customize your plan',
+    nl: 'Stel uw plan op maat samen'
+  },
+  enterpriseDomainsLabel: {
+    en: 'Domains',
+    nl: 'Domeinen'
+  },
+  enterpriseDevicesLabel: {
+    en: 'Devices',
+    nl: 'Apparaten'
+  },
+  enterpriseServicesLabel: {
+    en: 'Services',
+    nl: 'Diensten'
+  },
+  enterpriseDomains: {
+    en: '{count}+ Domains',
+    nl: '{count}+ Domeinen'
+  },
+  enterpriseDevices: {
+    en: '{count}+ devices',
+    nl: '{count}+ apparaten'
+  },
+  enterpriseServices: {
+    en: '{count}+ Services',
+    nl: '{count}+ Diensten'
+  },
+  organizationRoles: {
+    en: 'Organization & Team Roles',
+    nl: 'Organisatie & Teamrollen'
+  },
+  fullToolbox: {
+    en: 'Full Toolbox',
+    nl: 'Volledige Toolbox'
+  },
+  telegramEmailNotif: {
+    en: 'Telegram & Email Notifications',
+    nl: 'Telegram & E-mail Notificaties'
+  },
+  // Table
+  feature: {
+    en: 'Feature',
+    nl: 'Functie'
+  },
+  popular: {
+    en: 'Popular',
+    nl: 'Populair'
+  },
+  save16: {
+    en: 'Save 16.7%',
+    nl: 'Bespaar 16,7%'
+  },
+  save20: {
+    en: 'Save 20%',
+    nl: 'Bespaar 20%'
+  },
+  daysTrial: {
+    en: '7-day trial',
+    nl: '7 dagen proef'
+  },
+  trialAndPromo: {
+    en: '7-day trial & 6 months discount',
+    nl: '7 dagen proef & 6 maanden korting'
+  },
+  reportsWithoutEmail: {
+    en: 'Reports (without email notifications)',
+    nl: 'Rapportages (zonder e-mailnotificaties)'
   }
 };
 

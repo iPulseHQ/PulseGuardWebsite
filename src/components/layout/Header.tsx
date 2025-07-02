@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group transition-all duration-300 transform hover:scale-105">
-              <img src="/images/logofinal.png" alt="PulseGuard Logo" className="h-10" />
+              <img src={isDarkMode ? "/images/logofinal.png" : "/images/logodark.png"} alt="PulseGuard Logo" className="h-10" />
             </Link>
           </div>
           

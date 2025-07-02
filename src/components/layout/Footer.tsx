@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
             {/* ProductHunt Badge */}
             <div className="flex flex-col items-center">
-              <h3 className="text-lg font-semibold mb-4">Rate us on Product Hunt</h3>
+              <h3 className="text-lg font-semibold mb-4">{t('footerRateUs')}</h3>
               <a href="https://www.producthunt.com/products/pulseguard-2/reviews?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-pulseguard&#0045;2" target="_blank" rel="noopener noreferrer">
                 <img 
                   src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark" 
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
 
               {/* Beta Signup */}
               <div className="flex flex-col items-center">
-                <h4 className="text-sm font-medium text-gray-400 mb-3">Join Our Beta</h4>
+                <h4 className="text-sm font-medium text-gray-400 mb-3">{t('footerJoinBeta')}</h4>
                 <button 
                   className="flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105"
                   onClick={() => document.getElementById('beta-signup-modal')?.classList.remove('hidden')}
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
 
               {/* Register Link */}
               <div className="flex flex-col items-center">
-                <h4 className="text-sm font-medium text-gray-400 mb-3">Get Started</h4>
+                <h4 className="text-sm font-medium text-gray-400 mb-3">{t('footerGetStarted')}</h4>
                 <a 
                   href="https://app.pulseguard.nl/register" 
                   className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               </svg>
               <span className="text-xl font-bold" itemProp="name">PulseGuard</span>
             </div>
-            <p className="text-gray-400 mb-6" itemProp="description">Complete monitoring solution for websites, servers, and devices.</p>
+            <p className="text-gray-400 mb-6" itemProp="description">{t('footerDescription')}</p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/pulseguardnl" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform duration-200" itemProp="sameAs" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faLinkedin} className="text-lg" aria-hidden="true" />
@@ -135,68 +135,68 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Links</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footerLinks')}</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Home
+                  {t('footerHome')}
                 </Link>
               </li>
               <li>
                 <Link to="/#features" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Features
+                  {t('features')}
                 </Link>
               </li>
               <li>
                 <Link to="/#mockups" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  App Preview
+                  {t('footerAppPreview')}
                 </Link>
               </li>
               <li>
                 <Link to="/#pricing" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Pricing
+                  {t('pricing')}
                 </Link>
               </li>
               <li>
                 <Link to="/team" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Our Team
+                  {t('footerOurTeam')}
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Platform</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footerPlatform')}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="https://app.pulseguard.nl" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Dashboard
+                  {t('dashboard')}
                 </a>
               </li>
               <li>
                 <a href="https://app.pulseguard.nl/domains" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Domains
+                  {t('footerDomains')}
                 </a>
               </li>
               <li>
                 <a href="https://app.pulseguard.nl/device-monitoring" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Devices
+                  {t('footerDevices')}
                 </a>
               </li>
               <li>
                 <a href="https://app.pulseguard.nl/subscriptions" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Subscriptions
+                  {t('footerSubscriptions')}
                 </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-6">Support</h4>
+            <h4 className="text-lg font-semibold mb-6">{t('footerSupport')}</h4>
             <ul className="space-y-3">
               <li>
                 <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Help Center
+                  {t('footerHelpCenter')}
                 </a>
               </li>
               <li>
@@ -206,12 +206,12 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="https://app.pulseguard.nl/privacy" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Privacy Policy
+                  {t('footerPrivacyPolicy')}
                 </a>
               </li>
               <li>
                 <a href="https://app.pulseguard.nl/terms" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
-                  Terms & Conditions
+                  {t('footerTerms')}
                 </a>
               </li>
             </ul>
@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard</span> - All rights reserved. <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
+          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard</span> - {t('footerCopyright')} <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
         </div>
       </div>
     </footer>
