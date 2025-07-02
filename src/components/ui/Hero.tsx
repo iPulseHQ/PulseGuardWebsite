@@ -115,7 +115,7 @@ const Hero: React.FC = () => {
                     href={partner.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="col-span-1 flex justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                    className="col-span-1 flex justify-center opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-300"
                   >
                     <img
                       className="max-h-8 w-full object-contain"
