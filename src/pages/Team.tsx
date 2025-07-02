@@ -46,6 +46,7 @@ const teamMembers: TeamMember[] = [
     bio: "",
     image: "/images/team/noah.jpeg",
     linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
+    instagram: "https://www.instagram.com/noahvandenbroek_/",
     email: "noah@pulseguard.nl"
   },
   {
