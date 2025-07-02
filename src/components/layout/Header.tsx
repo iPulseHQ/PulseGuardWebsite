@@ -77,12 +77,25 @@ const Header: React.FC = () => {
           {/* Action Buttons - Right Side */}
           <div className="hidden md:flex items-center space-x-3">
             {/* Dark Mode Toggle */}
-            <button 
+            <button
               onClick={toggleDarkMode}
-              className="flex items-center justify-center p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors bg-gray-100 dark:bg-gray-800 rounded-full"
+              className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900 ${
+                isDarkMode ? 'bg-gray-700' : 'bg-blue-500'
+              }`}
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className="text-blue-500" />
+              <span
+                className={`absolute inset-y-0 left-1 my-auto h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center ${
+                  isDarkMode ? 'translate-x-6' : 'translate-x-0'
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={isDarkMode ? faMoon : faSun}
+                  className={`h-4 w-4 transition-colors duration-300 ${
+                    isDarkMode ? 'text-yellow-400' : 'text-yellow-500'
+                  }`}
+                />
+              </span>
             </button>
             
             <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
@@ -94,12 +107,25 @@ const Header: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <div className="flex items-center md:hidden">
             {/* Dark Mode Toggle for Mobile */}
-            <button 
+            <button
               onClick={toggleDarkMode}
-              className="flex items-center justify-center p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors bg-gray-100 dark:bg-gray-800 rounded-full mr-2"
+              className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 mr-2 ${
+                isDarkMode ? 'bg-gray-700' : 'bg-blue-500'
+              }`}
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} className="text-blue-500" />
+              <span
+                className={`absolute inset-y-0 left-1 my-auto h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center ${
+                  isDarkMode ? 'translate-x-6' : 'translate-x-0'
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={isDarkMode ? faMoon : faSun}
+                  className={`h-4 w-4 transition-colors duration-300 ${
+                    isDarkMode ? 'text-yellow-400' : 'text-yellow-500'
+                  }`}
+                />
+              </span>
             </button>
           
             <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 mr-2">

@@ -1,13 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faTimes, faTag, faArrowRight, faCreditCard, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes, faTag, faArrowRight, faCreditCard, faStar, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const Pricing: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'card' | 'table'>('card');
   const tabIndicatorRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
+
+  const [enterpriseConfig, setEnterpriseConfig] = useState({
+    domains: 10,
+    devices: 7,
+    services: 5,
+  });
+  const [enterprisePrice, setEnterprisePrice] = useState(15);
 
   useEffect(() => {
     // Update tab indicator position
@@ -19,6 +26,25 @@ const Pricing: React.FC = () => {
       }
     }
   }, [activeTab]);
+
+  useEffect(() => {
+    const basePrice = 15; // Starting from Pro's price
+    const domainCost = (enterpriseConfig.domains - 10) * 0.50;
+    const deviceCost = (enterpriseConfig.devices - 7) * 2.00; 
+    const serviceCost = (enterpriseConfig.services - 5) * 3.00;
+
+    let calculatedPrice = basePrice;
+    if (enterpriseConfig.domains > 10) calculatedPrice += domainCost;
+    if (enterpriseConfig.devices > 7) calculatedPrice += deviceCost;
+    if (enterpriseConfig.services > 5) calculatedPrice += serviceCost;
+
+    setEnterprisePrice(calculatedPrice);
+  }, [enterpriseConfig]);
+
+  const handleSliderChange = (type: 'domains' | 'devices' | 'services', value: string) => {
+    setEnterpriseConfig(prev => ({ ...prev, [type]: parseInt(value, 10) }));
+  };
+
 
   return (
     <section id="pricing" className="py-24 bg-white dark:bg-gray-900">
@@ -80,13 +106,16 @@ const Pricing: React.FC = () => {
                 <p className="text-gray-600 dark:text-gray-400 mb-6">Voor persoonlijk gebruik</p>
               </div>
               <div className="pricing-features space-y-4">
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 domein</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>2 domeinen (zonder page resources)</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 apparaat (alleen monitoring)</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 Service Monitor</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen DNS beheer</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen acties</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen geavanceerde functies</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen Status Pagina's</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 Service (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>PulseAI</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Toolbox</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Rapportages (zonder notificaties)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Status Pagina</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Integraties</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>API Toegang</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Toegankelijkheid (WCAG & SEO)</span></div>
               </div>
             </div>
             
@@ -99,39 +128,8 @@ const Pricing: React.FC = () => {
               <div className="pricing-header mt-6">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Standaard</h3>
                 <div className="mb-2">
-                  <span className="text-lg line-through text-gray-500 dark:text-gray-400 mr-2">€4.29</span>
-                  <span className="text-3xl font-bold text-gray-900 dark:text-white">€3.99</span>
-                  <span className="text-lg font-normal text-gray-600 dark:text-gray-400">/maand</span>
-                </div>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                    Bespaar 7%
-                  </span>
-                  <span className="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
-                    7-dagen proefperiode
-                  </span>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">voor de eerste 6 maanden, daarna €4,99/maand</p>
-              </div>
-                             <div className="pricing-features space-y-4">
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>5 Domeinen (compleet)</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>2 apparaten (compleet)</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>DNS Toolbox</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>E-mail Notificaties</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 Status Pagina</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>3 Service Monitors</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen API toegang</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /> <span>Geen Telegram notificaties</span></div>
-              </div>
-            </div>
-            
-            {/* Pro Plan */}
-            <div className="pricing-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 relative overflow-hidden">
-              <div className="pricing-header">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Pro</h3>
-                <div className="mb-2">
-                  <span className="text-lg line-through text-gray-500 dark:text-gray-400 mr-2">€16.24</span>
-                  <span className="text-3xl font-bold text-gray-900 dark:text-white">€12.99</span>
+                  <span className="text-lg line-through text-gray-500 dark:text-gray-400 mr-2">€7.50</span>
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">€5.99</span>
                   <span className="text-lg font-normal text-gray-600 dark:text-gray-400">/maand</span>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -142,16 +140,52 @@ const Pricing: React.FC = () => {
                     7-dagen proefperiode
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">voor de eerste 6 maanden, daarna €13.99/maand</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">voor de eerste 6 maanden, daarna €7,50/maand</p>
               </div>
                              <div className="pricing-features space-y-4">
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>15 Domeinen (compleet)</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>10 apparaten (compleet)</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Volledige Toolbox</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>5 domeinen (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>2 apparaten (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>3 Services (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>PulseAI</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Rapportages (met notificaties)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>1 Status Pagina</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Toolbox (alleen DNS)</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>E-mail Notificaties</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Telegram notificaties</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>2 Status Pagina's</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>5 Service Monitors</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>API Toegang</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Telegram</span></div>
+              </div>
+            </div>
+            
+            {/* Pro Plan */}
+            <div className="pricing-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 relative overflow-hidden">
+              <div className="pricing-header">
+                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Pro</h3>
+                <div className="mb-2">
+                  <span className="text-lg line-through text-gray-500 dark:text-gray-400 mr-2">€15</span>
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">€12.50</span>
+                  <span className="text-lg font-normal text-gray-600 dark:text-gray-400">/maand</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                    Bespaar 16.7%
+                  </span>
+                  <span className="inline-flex items-center bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-purple-900 dark:text-purple-300">
+                    7-dagen proefperiode
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">voor de eerste 6 maanden, daarna €15/maand</p>
+              </div>
+                             <div className="pricing-features space-y-4">
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>10 domeinen (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>7 apparaten (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>5 Services (volledig)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Rapportages</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>API Toegang</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>PulseAI</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faShieldAlt} className="text-green-500 mr-3" /> <span>MFA</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Toolbox (DNS, IP, Speedtest)</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>E-mail Notificaties</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Telegram</span></div>
               </div>
             </div>
             
@@ -159,17 +193,36 @@ const Pricing: React.FC = () => {
             <div className="pricing-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 relative overflow-hidden">
               <div className="pricing-header">
                 <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Enterprise</h3>
-                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Aangepaste Prijzen</p>
+                <p className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                  ~€{enterprisePrice.toFixed(2)}
+                  <span className="text-lg font-normal text-gray-600 dark:text-gray-400">/maand</span>
+                </p>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">Configureer uw plan op maat</p>
+              </div>
+              <div className="enterprise-config space-y-4 mb-6">
+                <div>
+                  <label htmlFor="domains-slider" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Domeinen: {enterpriseConfig.domains}</label>
+                  <input id="domains-slider" type="range" min="10" max="100" value={enterpriseConfig.domains} onChange={(e) => handleSliderChange('domains', e.target.value)} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                </div>
+                <div>
+                  <label htmlFor="devices-slider" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apparaten: {enterpriseConfig.devices}</label>
+                  <input id="devices-slider" type="range" min="7" max="100" value={enterpriseConfig.devices} onChange={(e) => handleSliderChange('devices', e.target.value)} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                </div>
+                <div>
+                  <label htmlFor="services-slider" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Services: {enterpriseConfig.services}</label>
+                  <input id="services-slider" type="range" min="5" max="100" value={enterpriseConfig.services} onChange={(e) => handleSliderChange('services', e.target.value)} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+                </div>
               </div>
                              <div className="pricing-features space-y-4">
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>25+ Domeinen</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>25+ apparaten</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{enterpriseConfig.domains}+ Domeinen</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{enterpriseConfig.devices}+ apparaten</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{enterpriseConfig.services}+ Services</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Organisatie & Team Rollen</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Rapportages</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>API Toegang</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>PulseAI</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Volledige Toolbox</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Geavanceerde Notificaties</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Prioritaire Ondersteuning</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Organisatie & Team</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>3 Status Pagina's</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Unlimited Service Monitors</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>Telegram & E-mail Notificaties</span></div>
               </div>
             </div>
           </div>
@@ -203,41 +256,41 @@ const Pricing: React.FC = () => {
                   <td className="py-5 px-6 text-center text-gray-800 dark:text-gray-200">€0/maand</td>
                   <td className="py-5 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-800 dark:text-gray-200">
                     <div className="flex flex-col items-center">
-                      <span className="text-sm line-through text-gray-500 dark:text-gray-400">€4.29</span>
-                      <span className="font-bold">€3.99/maand</span>
-                      <div className="flex gap-1 mt-1">
-                        <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-1.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">-7%</span>
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">7-dagen proef</div>
-                    </div>
-                  </td>
-                  <td className="py-5 px-6 text-center text-gray-800 dark:text-gray-200">
-                    <div className="flex flex-col items-center">
-                      <span className="text-sm line-through text-gray-500 dark:text-gray-400">€16.24</span>
-                      <span className="font-bold">€12.99/maand</span>
+                      <span className="text-sm line-through text-gray-500 dark:text-gray-400">€7.50</span>
+                      <span className="font-bold">€5.99/maand</span>
                       <div className="flex gap-1 mt-1">
                         <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-1.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">-20%</span>
                       </div>
                       <div className="text-xs text-gray-500 mt-1">7-dagen proef</div>
                     </div>
                   </td>
-                  <td className="py-5 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Aangepaste prijzen</td>
+                  <td className="py-5 px-6 text-center text-gray-800 dark:text-gray-200">
+                    <div className="flex flex-col items-center">
+                      <span className="text-sm line-through text-gray-500 dark:text-gray-400">€15</span>
+                      <span className="font-bold">€12.50/maand</span>
+                      <div className="flex gap-1 mt-1">
+                        <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-1.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">-16.7%</span>
+                      </div>
+                      <div className="text-xs text-gray-500 mt-1">7-dagen proef</div>
+                    </div>
+                  </td>
+                  <td className="py-5 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Neem contact op</td>
                 </tr>
                 
                 {/* Domains Row */}
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
                   <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Domeinen</td>
                   <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">1</span>
+                    <span className="font-medium">2 (zonder page resources)</span>
                   </td>
                   <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">5 (compleet)</span>
+                    <span className="font-medium">5 (volledig)</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">15 (compleet)</span>
+                    <span className="font-medium">10 (volledig)</span>
                   </td>
                   <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">25+</span>
+                    <span className="font-medium">10+</span>
                   </td>
                 </tr>
                 
@@ -248,21 +301,55 @@ const Pricing: React.FC = () => {
                     <span className="font-medium">1 (alleen monitoring)</span>
                   </td>
                   <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">2 (compleet)</span>
+                    <span className="font-medium">2 (volledig)</span>
                   </td>
                   <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">10 (compleet)</span>
+                    <span className="font-medium">7 (volledig)</span>
                   </td>
                   <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">25+</span>
+                    <span className="font-medium">7+</span>
                   </td>
                 </tr>
                 
-                {/* DNS Management Row */}
+                {/* Service Monitors Row */}
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
-                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">DNS Beheer</td>
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Service Monitors</td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">1</span>
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">3</span>
+                  </td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">5</span>
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">5+</span>
+                  </td>
+                </tr>
+
+                {/* PulseAI row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">PulseAI</td>
                   <td className="py-4 px-6 text-center">
-                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                </tr>
+
+                {/* Reports Row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Rapportages</td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">Zonder notificaties</span>
                   </td>
                   <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
                     <FontAwesomeIcon icon={faCheck} className="text-green-500" />
@@ -274,7 +361,41 @@ const Pricing: React.FC = () => {
                     <FontAwesomeIcon icon={faCheck} className="text-green-500" />
                   </td>
                 </tr>
-                
+
+                {/* Status Pages Row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Status Pagina's</td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">1</span>
+                  </td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">N.v.t.</span>
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">N.v.t.</span>
+                  </td>
+                </tr>
+
+                {/* Toolbox row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Toolbox</td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">Alleen DNS</span>
+                  </td>
+                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
+                    <span className="font-medium">DNS, IP & Speedtest</span>
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                </tr>
+
                 {/* Email Notifications Row */}
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
                   <td className="py-4 px-6 text-gray-700 dark:text-gray-300">E-mail Notificaties</td>
@@ -299,7 +420,7 @@ const Pricing: React.FC = () => {
                     <FontAwesomeIcon icon={faTimes} className="text-red-500" />
                   </td>
                   <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
-                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
                   </td>
                   <td className="py-4 px-6 text-center">
                     <FontAwesomeIcon icon={faCheck} className="text-green-500" />
@@ -308,44 +429,27 @@ const Pricing: React.FC = () => {
                     <FontAwesomeIcon icon={faCheck} className="text-green-500" />
                   </td>
                 </tr>
-                
-                {/* Status Pages Row */}
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
-                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Status Pagina's</td>
-                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
-                  </td>
-                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">1</span>
-                  </td>
-                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">2</span>
-                  </td>
-                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">3</span>
-                  </td>
-                </tr>
-                
-                {/* Service Monitors Row */}
-                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
-                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Service Monitors</td>
-                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">1</span>
-                  </td>
-                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">3</span>
-                  </td>
-                  <td className="py-4 px-6 text-center text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">5</span>
-                  </td>
-                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                    <span className="font-medium">Unlimited</span>
-                  </td>
-                </tr>
-                
+
                 {/* API Access Row */}
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
                   <td className="py-4 px-6 text-gray-700 dark:text-gray-300">API Toegang</td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                </tr>
+
+                {/* MFA row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">MFA</td>
                   <td className="py-4 px-6 text-center">
                     <FontAwesomeIcon icon={faTimes} className="text-red-500" />
                   </td>
@@ -359,7 +463,41 @@ const Pricing: React.FC = () => {
                     <FontAwesomeIcon icon={faCheck} className="text-green-500" />
                   </td>
                 </tr>
-                
+
+                {/* Integrations row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Integraties</td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
+                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                </tr>
+
+                {/* Accessibility row */}
+                <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
+                  <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Toegankelijkheid (WCAG & SEO)</td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
+                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center">
+                    <FontAwesomeIcon icon={faTimes} className="text-red-500" />
+                  </td>
+                  <td className="py-4 px-6 text-center bg-gray-50 dark:bg-gray-700">
+                    <FontAwesomeIcon icon={faCheck} className="text-green-500" />
+                  </td>
+                </tr>
+
                 {/* Team Features Row */}
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
                   <td className="py-4 px-6 text-gray-700 dark:text-gray-300">Organisatie & Team</td>
