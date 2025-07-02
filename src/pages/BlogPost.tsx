@@ -39,6 +39,9 @@ const BlogPost: React.FC = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <article className="prose lg:prose-xl dark:prose-invert mx-auto pt-8">
+          <Link to="/blog" className="inline-block mb-8 text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 no-underline">
+            &larr; Back to Blog
+          </Link>
           <h1>{post.title}</h1>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               By {post.author} on {new Date(post.date).toLocaleDateString()}
