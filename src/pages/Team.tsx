@@ -52,7 +52,7 @@ const teamMembers: TeamMember[] = [
   {
     id: 4,
     name: "Juda Zwemer",
-    role: "Marketing & content manager",
+    role: "Marketing & Content Manager",
     bio: "",
     image: "/images/team/juda.jpg",
     linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
