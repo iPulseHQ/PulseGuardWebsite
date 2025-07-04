@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../context/DarkModeContext';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface TeamMember {
   id: number;
@@ -63,6 +64,7 @@ const teamMembers: TeamMember[] = [
 
 const Team: React.FC = () => {
   const { isDarkMode } = useDarkMode();
+  const { t } = useTranslation();
   
   // Animatie voor teammember cards
   useEffect(() => {
@@ -110,23 +112,34 @@ const Team: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Meet Our Team - PulseGuard Monitoring Experts | About Us"
-        description="Meet the talented PulseGuard team. Experienced developers and designers building the best website and server monitoring solution. Learn about our mission and expertise."
-        keywords="PulseGuard team, monitoring experts, development team, about us, company team, monitoring developers, infrastructure experts"
+        title={t('teamSeoTitle')}
+        description={t('teamSeoDescription')}
+        keywords={t('teamSeoKeywords')}
         canonicalUrl="https://pulseguard.nl/team"
         structuredData={teamStructuredData}
       />
       <Layout>
         <section className="pt-32 pb-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800">
           <div className="container mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-block bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 text-blue-600 dark:text-blue-400 font-medium text-sm mb-4">
-                Our Team
+            <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto mb-16 gap-8">
+              <div className="text-center md:text-left md:w-1/2">
+                <div className="inline-block bg-blue-100 dark:bg-blue-900/30 rounded-full px-4 py-2 text-blue-600 dark:text-blue-400 font-medium text-sm mb-4">
+                  {t('ourTeam')}
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">{t('meetTheTeam')}</h1>
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                  {t('teamDescription')}
+                </p>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Meet The Team Behind PulseGuard</h1>
-              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                The passionate individuals behind PulseGuard, dedicated to providing you with the best monitoring solutions.
-              </p>
+              <div className="md:w-1/2">
+                <div className="rounded-lg overflow-hidden shadow-xl">
+                  <img 
+                    src="/images/pulseguardbrain.jpg" 
+                    alt="PulseGuard team meeting" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 opacity-0 animate-fadeIn">
@@ -210,18 +223,17 @@ const Team: React.FC = () => {
             
             <div className="text-center mt-24 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg dark:shadow-gray-900/10 max-w-4xl mx-auto transform hover:-translate-y-1 transition-transform duration-300">
               <div className="inline-block bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 text-purple-600 dark:text-purple-400 font-medium text-sm mb-4">
-                Join Us
+                {t('joinUs')}
               </div>
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">We're Growing Our Team</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">{t('growingTeam')}</h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 text-lg">
-                We're always looking for talented individuals who are passionate about creating great software. 
-                If you think you'd be a good fit for our team, we'd love to hear from you!
+                {t('joinUsDescription')}
               </p>
               <a 
                 href="mailto:info@pulseguard.nl" 
                 className="btn-primary inline-flex items-center group"
               >
-                <span>Get in touch</span>
+                <span>{t('getInTouch')}</span>
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
             </div>

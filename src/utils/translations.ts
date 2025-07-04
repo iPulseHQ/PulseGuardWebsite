@@ -635,6 +635,48 @@ export const translations: Translations = {
   reportsWithoutEmail: {
     en: 'Reports (without email notifications)',
     nl: 'Rapportages (zonder e-mailnotificaties)'
+  },
+
+  // Team page
+  teamSeoTitle: {
+    en: 'Meet Our Team - PulseGuard Monitoring Experts | About Us',
+    nl: 'Ontmoet Ons Team - PulseGuard Monitoring Experts | Over Ons'
+  },
+  teamSeoDescription: {
+    en: 'Meet the talented PulseGuard team. Experienced developers and designers building the best website and server monitoring solution. Learn about our mission and expertise.',
+    nl: 'Maak kennis met het getalenteerde PulseGuard team. Ervaren ontwikkelaars en ontwerpers die de beste website- en servermonitoringoplossing bouwen. Leer meer over onze missie en expertise.'
+  },
+  teamSeoKeywords: {
+    en: 'PulseGuard team, monitoring experts, development team, about us, company team, monitoring developers, infrastructure experts',
+    nl: 'PulseGuard team, monitoring experts, ontwikkelingsteam, over ons, bedrijfsteam, monitoring ontwikkelaars, infrastructuur experts'
+  },
+  ourTeam: {
+    en: 'Our Team',
+    nl: 'Ons Team'
+  },
+  meetTheTeam: {
+    en: 'Meet The Team Behind PulseGuard',
+    nl: 'Ontmoet Het Team Achter PulseGuard'
+  },
+  teamDescription: {
+    en: 'The individuals behind PulseGuard, dedicated to providing you with the best monitoring solutions.',
+    nl: 'De individuen achter PulseGuard, gemotiveerd om jou de beste monitoringoplossingen te bieden.'
+  },
+  joinUs: {
+    en: 'Join Us',
+    nl: 'Doe Mee'
+  },
+  growingTeam: {
+    en: "We're Growing Our Team",
+    nl: 'We Breiden Ons Team Uit'
+  },
+  joinUsDescription: {
+    en: "We're always looking for talented individuals who are passionate about creating great software. If you think you'd be a good fit for our team, we'd love to hear from you!",
+    nl: 'We zijn altijd op zoek naar getalenteerde mensen die gepassioneerd zijn over het maken van geweldige software. Als je denkt dat je goed bij ons team zou passen, horen we graag van je!'
+  },
+  getInTouch: {
+    en: 'Get in touch',
+    nl: 'Neem contact op'
   }
 };
 
