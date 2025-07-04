@@ -67,6 +67,14 @@ export const translations: Translations = {
     en: 'Dutch',
     nl: 'Nederlands'
   },
+  darkMode: {
+    en: 'Dark Mode',
+    nl: 'Donkere Modus'
+  },
+  lightMode: {
+    en: 'Light Mode',
+    nl: 'Lichte Modus'
+  },
   joinBetaProgram: {
     en: 'Join Beta Program',
     nl: 'Doe Mee met Beta'

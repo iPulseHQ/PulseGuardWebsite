@@ -140,9 +140,11 @@ const Hero: React.FC = () => {
                   <span></span>
                   <span></span>
                 </div>
-                <div className="browser-address-bar">
-                  <i className="fas fa-lock text-green-400 text-xs mr-2"></i>
-                  app.pulseguard.nl
+                <div className="flex-1 flex justify-center">
+                  <div className="browser-address-bar w-64 flex items-center justify-center">
+                    <i className="fas fa-lock text-green-400 text-xs mr-1"></i>
+                    app.pulseguard.nl
+                  </div>
                 </div>
               </div>
               

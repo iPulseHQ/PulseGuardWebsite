@@ -121,7 +121,7 @@ html.dark {
   @apply bg-green-500;
 }
 .browser-address-bar {
-  @apply bg-gray-700 rounded-full text-xs text-gray-300 px-3 py-1 ml-4 flex-1 max-w-xs mx-auto text-center;
+  @apply bg-gray-700 rounded-full text-xs text-gray-300 px-3 py-1 text-center flex items-center justify-center;
 }
 
 /* Background patterns */

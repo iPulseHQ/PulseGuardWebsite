@@ -201,7 +201,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="mailto:info@pulseguard.nl" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block flex items-center">
-                  <FontAwesomeIcon icon={faEnvelope} className="mr-2" />info@pulseguard.nl
+                  Email
                 </a>
               </li>
               <li>
@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard</span> - {t('footerCopyright')} <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
+          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard is onderdeel van <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300" itemProp="email">imdigital.com</a></span> - {t('footerCopyright')} <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
         </div>
       </div>
     </footer>

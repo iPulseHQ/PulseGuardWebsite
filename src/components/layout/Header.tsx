@@ -54,20 +54,12 @@ const Header: React.FC = () => {
                 <span className="font-medium">{t('features')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
-              <Link to="/app" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
-                <span className="font-medium">{t('app')}</span>
-                <span className="nav-link-indicator"></span>
-              </Link>
               <Link to="/pricing" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('pricing')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
               <Link to="/team" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('team')}</span>
-                <span className="nav-link-indicator"></span>
-              </Link>
-              <Link to="/status" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
-                <span className="font-medium">{t('status')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
               <Link to="/blog" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
@@ -128,33 +120,6 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faGlobe} className="h-4 w-4 mr-1.5 text-gray-600 dark:text-gray-400" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase">{currentLang}</span>
             </button>
-
-            {/* Dark Mode Toggle for Mobile */}
-            <button
-              onClick={toggleDarkMode}
-              className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 mr-2 ${
-                isDarkMode ? 'bg-gray-700' : 'bg-blue-500'
-              }`}
-              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            >
-              <span
-                className={`absolute inset-y-0 left-1 my-auto h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center ${
-                  isDarkMode ? 'translate-x-6' : 'translate-x-0'
-                }`}
-              >
-                <FontAwesomeIcon
-                  icon={isDarkMode ? faMoon : faSun}
-                  className={`h-4 w-4 transition-colors duration-300 ${
-                    isDarkMode ? 'text-yellow-400' : 'text-yellow-500'
-                  }`}
-                />
-              </span>
-            </button>
-          
-            <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 mr-2">
-              <span className="relative">{t('dashboard')}</span>
-              <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1.5 group-hover:translate-x-1 transition-transform" />
-            </Link>
             
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -183,13 +148,6 @@ const Header: React.FC = () => {
             <span className="font-medium">{t('features')}</span>
           </Link>
           
-          <Link to="/app" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
-            <div className="h-8 w-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3">
-              <FontAwesomeIcon icon={faDesktop} className="text-purple-500" />
-            </div>
-            <span className="font-medium">{t('app')}</span>
-          </Link>
-          
           <Link to="/pricing" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faTag} className="text-green-500" />
@@ -204,13 +162,6 @@ const Header: React.FC = () => {
             <span className="font-medium">{t('team')}</span>
           </Link>
           
-          <Link to="/status" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
-            <div className="h-8 w-8 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center mr-3">
-              <FontAwesomeIcon icon={faChartLine} className="text-teal-500" />
-            </div>
-            <span className="font-medium">{t('status')}</span>
-          </Link>
-          
           <Link to="/blog" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-gray-100 dark:bg-gray-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faNewspaper} className="text-gray-500" />
@@ -223,6 +174,49 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faUserPlus} className="text-sky-500" />
             </div>
             <span className="font-medium">{t('register')}</span>
+          </Link>
+          
+          {/* Dark Mode Toggle in Mobile Menu */}
+          <div className="mobile-nav-link flex items-center justify-between py-3 px-4 rounded-xl group">
+            <div className="flex items-center">
+              <div className="h-8 w-8 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg flex items-center justify-center mr-3">
+                <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} className="text-yellow-500" />
+              </div>
+              <span className="font-medium">{isDarkMode ? t('lightMode') || 'Light Mode' : t('darkMode') || 'Dark Mode'}</span>
+            </div>
+            <button
+              onClick={toggleDarkMode}
+              className={`relative inline-flex items-center h-8 w-14 rounded-full transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 ${
+                isDarkMode ? 'bg-gray-700' : 'bg-blue-500'
+              }`}
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              <span
+                className={`absolute inset-y-0 left-1 my-auto h-6 w-6 rounded-full bg-white shadow-md transition-transform duration-300 ease-in-out flex items-center justify-center ${
+                  isDarkMode ? 'translate-x-6' : 'translate-x-0'
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={isDarkMode ? faMoon : faSun}
+                  className={`h-4 w-4 transition-colors duration-300 ${
+                    isDarkMode ? 'text-yellow-400' : 'text-yellow-500'
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
+          
+          {/* App Link in Mobile Menu */}
+          <Link to="https://app.pulseguard.nl" className="mobile-nav-link flex items-center justify-between py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+            <div className="flex items-center">
+              <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
+                <FontAwesomeIcon icon={faArrowRight} className="text-blue-500" />
+              </div>
+              <span className="font-medium">{t('dashboard')}</span>
+            </div>
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-medium px-2.5 py-1 rounded-full">
+              {t('goToDashboard')}
+            </div>
           </Link>
         </div>
       </div>

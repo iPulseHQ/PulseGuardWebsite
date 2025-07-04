@@ -84,7 +84,6 @@
 }
 
 .browser-address-bar {
-  flex-grow: 1;
   background-color: #e2e8f0;
   color: #64748b;
   font-size: 0.875rem;
@@ -92,6 +91,9 @@
   border-radius: 0.25rem;
   font-family: monospace;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dark .browser-address-bar {
