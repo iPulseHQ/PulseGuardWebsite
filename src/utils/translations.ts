@@ -96,7 +96,7 @@ export const translations: Translations = {
     nl: 'Website Monitoring'
   },
   webMonitoringDesc: {
-    en: 'We\'ll ping your websites regularly and let you know right away if they go down. No more finding out from an angry customer email.',
+    en: 'We regularly check your websites and notify you immediately if they go offline. No more angry customer emails.',
     nl: 'We controleren je websites regelmatig en laten je meteen weten als ze offline zijn. Geen boze klant-emails meer.'
   },
   httpMonitoring: {
@@ -166,11 +166,11 @@ export const translations: Translations = {
   
   // Features page
   featuresSectionTitle: {
-    en: 'Complete Monitoring Solution Features',
-    nl: 'Volledige Monitoring Oplossing Functies'
+    en: 'Complete Monitoring Solution',
+    nl: 'Volledige Monitoring Oplossing'
   },
   featuresSectionSubtitle: {
-    en: 'Professional website monitoring, server monitoring, and infrastructure monitoring tools designed for businesses of all sizes. Monitor your digital assets with comprehensive alerting and reporting capabilities.',
+    en: 'Professional tools for website, server, and infrastructure monitoring, designed for businesses of any size. Monitor your digital assets with comprehensive alerting and reporting capabilities.',
     nl: 'Professionele tools voor website-, server- en infrastructuurmonitoring, ontworpen voor bedrijven van elke omvang. Bewaak uw digitale middelen met uitgebreide waarschuwings- en rapportagemogelijkheden.'
   },
   serverMonitoringTitle: {
@@ -178,7 +178,7 @@ export const translations: Translations = {
     nl: 'Server Monitoring'
   },
   serverMonitoringDesc: {
-    en: "Keep an eye on your server resources. Our lightweight agent gives you insights without bogging down your system.",
+    en: 'Keep track of your server resources. Our lightweight agent provides insights without slowing down your system.',
     nl: 'Houd uw serverbronnen in de gaten. Onze lichtgewicht agent geeft u inzichten zonder uw systeem te vertragen.'
   },
   serverCpu: {

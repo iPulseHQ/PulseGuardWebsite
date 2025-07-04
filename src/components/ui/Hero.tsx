@@ -115,13 +115,15 @@ const Hero: React.FC = () => {
                     href={partner.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="col-span-1 flex justify-center opacity-70 hover:opacity-100 hover:scale-105 transition-all duration-300"
+                    className="col-span-1 flex justify-center opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300"
                   >
-                    <img
-                      className="max-h-8 w-full object-contain"
-                      src={partner.logo}
-                      alt={partner.name}
-                    />
+                    <div className="bg-white p-2 rounded-lg shadow-md flex items-center justify-center w-full h-12 dark:bg-gray-100">
+                      <img
+                        className="max-h-8 w-auto object-contain"
+                        src={partner.logo}
+                        alt={partner.name}
+                      />
+                    </div>
                   </a>
                 ))}
               </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const { t } = useTranslation();
+  const { t, currentLang, changeLanguage } = useTranslation();
 
   // Handle scroll effect for header
   useEffect(() => {
@@ -27,6 +27,10 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const toggleLanguage = () => {
+    changeLanguage(currentLang === 'nl' ? 'en' : 'nl');
+  };
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm ${scrolled ? 'shadow-md' : ''}`}>
@@ -75,6 +79,16 @@ const Header: React.FC = () => {
           
           {/* Action Buttons - Right Side */}
           <div className="hidden md:flex items-center space-x-3">
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="relative inline-flex items-center h-8 px-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900"
+              aria-label={currentLang === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+            >
+              <FontAwesomeIcon icon={faGlobe} className="h-4 w-4 mr-1.5 text-gray-600 dark:text-gray-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase">{currentLang}</span>
+            </button>
+
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
@@ -105,6 +119,16 @@ const Header: React.FC = () => {
           
           {/* Mobile Menu Toggle */}
           <div className="flex items-center md:hidden">
+            {/* Language Toggle for Mobile */}
+            <button
+              onClick={toggleLanguage}
+              className="relative inline-flex items-center h-8 px-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900 mr-2"
+              aria-label={currentLang === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+            >
+              <FontAwesomeIcon icon={faGlobe} className="h-4 w-4 mr-1.5 text-gray-600 dark:text-gray-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 uppercase">{currentLang}</span>
+            </button>
+
             {/* Dark Mode Toggle for Mobile */}
             <button
               onClick={toggleDarkMode}

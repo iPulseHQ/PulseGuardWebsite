@@ -1,34 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Features from './pages/Features';
+import DetailedFeatures from './pages/DetailedFeatures';
+import Pricing from './pages/Pricing';
 import Team from './pages/Team';
 import Status from './pages/Status';
-import Features from './pages/Features';
-import AppPage from './pages/App';
-import Pricing from './pages/Pricing';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import App from './pages/App';
 import { DarkModeProvider } from './context/DarkModeContext';
-import PreloadResources from './components/layout/PreloadResources';
+import './App.css';
 
-const App: React.FC = () => {
+const AppRouter: React.FC = () => {
   return (
     <DarkModeProvider>
-      <PreloadResources />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/features/detailed" element={<DetailedFeatures />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/team" element={<Team />} />
           <Route path="/status" element={<Status />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/app" element={<AppPage />} />
-          <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/app" element={<App />} />
         </Routes>
       </Router>
     </DarkModeProvider>
   );
 };
 
-export default App;
+export default AppRouter;
