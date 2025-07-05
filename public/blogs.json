@@ -3,7 +3,7 @@
     "id": 1,
     "slug": "welcome-to-our-blog",
     "title": "Welcome to Our Blog!",
-    "author": "PulseGuard Team",
+    "author": "Arjan den Hartog",
     "date": "2024-01-01",
     "excerpt": "This is the first post on our brand new blog. We are excited to share updates and insights with you.",
     "content": "<h1>Welcome to the PulseGuard Blog</h1><p>We are thrilled to launch our new blog. Here we will be sharing news about PulseGuard, updates on our services, and articles about web performance, monitoring, and security.</p><p>Stay tuned for more content!</p>"
@@ -12,7 +12,7 @@
     "id": 2,
     "slug": "veiligheid-en-websiteprestaties",
     "title": "Veiligheid en websiteprestaties: een win-win",
-    "author": "PulseGuard Team",
+    "author": "Noah van de Broek",
     "date": "2024-07-02",
     "excerpt": "Veiligheid is niet alleen bescherming tegen hackers. Het zorgt ook voor betere prestaties, vertrouwen en voorkomt hoge kosten achteraf.",
     "image": "/images/logodark.png",
