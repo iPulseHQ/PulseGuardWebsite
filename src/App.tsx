@@ -9,6 +9,8 @@ import Status from './pages/Status';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import App from './pages/App';
+import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/layout/ErrorBoundary';
 import { DarkModeProvider } from './context/DarkModeContext';
 import './App.css';
 
@@ -16,17 +18,20 @@ const AppRouter: React.FC = () => {
   return (
     <DarkModeProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/features/detailed" element={<DetailedFeatures />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/status" element={<Status />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/app" element={<App />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/features/detailed" element={<DetailedFeatures />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/status" element={<Status />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/app" element={<App />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
       </Router>
     </DarkModeProvider>
   );
