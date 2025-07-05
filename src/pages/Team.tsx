@@ -60,6 +60,16 @@ const teamMembers: TeamMember[] = [
     instagram: "https://www.instagram.com/judazwemer/",
     email: "juda@pulseguard.nl"
   },
+  {
+    id: 5,
+    name: "Wietse Bos",
+    role: "Marketing",
+    bio: "",
+    image: "/images/team/wietse.jpeg",
+    linkedin: "https://www.linkedin.com/in/wietse-bos-2699a714b/",
+    instagram: "https://www.instagram.com/wietsebos/",
+    email: "marketing@pulseguard.nl"
+  }
 ];
 
 const Team: React.FC = () => {
