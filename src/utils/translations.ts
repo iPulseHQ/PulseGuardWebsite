@@ -149,7 +149,7 @@ export const translations: Translations = {
   },
   heroTitle: {
     en: 'Your digital peacemaker',
-    nl: 'Jouw digitale peacemaker'
+    nl: 'Your digital peacemaker'
   },
   heroSubtitle: {
     en: 'Professional website uptime monitoring, server health tracking, and SSL certificate monitoring with real-time alerts. Get instant notifications via Email, Telegram, and Slack when your websites or servers need attention. 99.9% uptime guarantee with 5-minute setup.',
