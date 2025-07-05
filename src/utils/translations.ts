@@ -148,7 +148,7 @@ export const translations: Translations = {
     nl: 'WE ZIJN IN BETA'
   },
   heroTitle: {
-    en: 'Your digital pacemaker',
+    en: 'Your digital peacemaker',
     nl: 'Jouw digitale peacemaker'
   },
   heroSubtitle: {
@@ -280,8 +280,8 @@ export const translations: Translations = {
     nl: 'Begin nu'
   },
   footerDescription: {
-    en: 'Complete monitoring solution for websites, servers, and devices.',
-    nl: 'Complete monitoringoplossing voor websites, servers en apparaten.'
+    en: 'Your digital peacemaker.',
+    nl: 'Jouw digitale peacemaker.'
   },
   footerLinks: {
     en: 'Links',
@@ -399,11 +399,27 @@ export const translations: Translations = {
   },
   contactSales: {
     en: 'Contact Sales',
-    nl: 'Contact Verkoop'
+    nl: 'Contact opnemen'
+  },
+  getStarted: {
+    en: 'Get Started',
+    nl: 'Begin nu'
+  },
+  freeStart: {
+    en: 'Start for Free',
+    nl: 'Begin gratis'
+  },
+  chooseStandard: {
+    en: 'Choose Standard',
+    nl: 'Kies Standard'
+  },
+  choosePro: {
+    en: 'Choose Pro',
+    nl: 'Kies Pro'
   },
   mostPopular: {
-    en: 'Most popular',
-    nl: 'Meest populair'
+    en: 'Most Popular',
+    nl: 'Meest Populair'
   },
   save: {
     en: 'Save',

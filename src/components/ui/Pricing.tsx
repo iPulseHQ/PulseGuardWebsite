@@ -111,6 +111,12 @@ const Pricing: React.FC = () => {
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('freeService')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('pulseAI')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('reportsWithoutEmail')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('oneStatusPage')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('toolboxDns')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('emailNotifications')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('telegram')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('apiAccess')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('organizationRoles')}</span></div>
               </div>
             </div>
             
@@ -146,6 +152,9 @@ const Pricing: React.FC = () => {
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('oneStatusPage')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('toolboxDns')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('emailNotifications')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('telegram')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('apiAccess')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('organizationRoles')}</span></div>
               </div>
             </div>
             
@@ -172,13 +181,14 @@ const Pricing: React.FC = () => {
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('proDomains')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('proDevices')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('proServices')}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('reports')}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('apiAccess')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('pulseAI')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('reports')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('oneStatusPage')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('proToolboxDesc')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('emailNotifications')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('telegram')}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('oneStatusPage')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('apiAccess')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faTimes} className="text-red-500 mr-3" /><span className="line-through text-gray-500 dark:text-gray-400">{t('organizationRoles')}</span></div>
               </div>
             </div>
             
@@ -210,12 +220,13 @@ const Pricing: React.FC = () => {
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('enterpriseDomains').replace('{count}', enterpriseConfig.domains.toString())}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('enterpriseDevices').replace('{count}', enterpriseConfig.devices.toString())}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('enterpriseServices').replace('{count}', enterpriseConfig.services.toString())}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('organizationRoles')}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('reports')}</span></div>
-                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('apiAccess')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('pulseAI')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('reports')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('statusPages')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('fullToolbox')}</span></div>
                 <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('telegramEmailNotif')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('apiAccess')}</span></div>
+                <div className="flex items-center"><FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" /> <span>{t('organizationRoles')}</span></div>
               </div>
             </div>
           </div>

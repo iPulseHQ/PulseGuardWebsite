@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             
             {/* Cleaner heading with better typography and SEO optimization */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              <span dangerouslySetInnerHTML={{ __html: t('heroTitle').replace('pacemaker', '<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">pacemaker</span>') }} />
+              <span dangerouslySetInnerHTML={{ __html: t('heroTitle').replace('peacemaker', '<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-purple-300">peacemaker</span>') }} />
             </h1>
             
             {/* Enhanced description with LSI keywords */}
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             
             {/* Cleaner CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#features" className="btn-primary">
+              <a href="https://pulseguard.nl/features/detailed" className="btn-primary">
                 <span className="font-semibold">{t('heroCtaPrimary')}</span>
                 <FontAwesomeIcon icon={faChevronRight} className="ml-2 text-sm group-hover:translate-x-1 transition-transform" />
               </a>

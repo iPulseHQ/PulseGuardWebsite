@@ -79,7 +79,7 @@ const Mockups: React.FC = () => {
             {/* Dashboard Demo */}
             <div className="mockup-container">
               <div className="browser-mockup shadow-xl hover:shadow-2xl relative group">
-                <div className="browser-header">
+                <div className="browser-header justify-center">
                   <div className="browser-buttons">
                     <span></span>
                     <span></span>
@@ -89,7 +89,7 @@ const Mockups: React.FC = () => {
                     href="https://app.pulseguard.nl/dashboard" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                    className="browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors justify-center"
                   >
                     app.pulseguard.nl/dashboard
                   </a>
@@ -244,7 +244,7 @@ const Mockups: React.FC = () => {
             {/* Domains Demo */}
             <div className="mockup-container">
               <div className="browser-mockup shadow-xl hover:shadow-2xl relative group">
-                <div className="browser-header">
+                <div className="browser-header justify-center">
                   <div className="browser-buttons">
                     <span></span>
                     <span></span>
