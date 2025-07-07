@@ -7,8 +7,12 @@ import Features from '../components/ui/Features';
 import Mockups from '../components/ui/Mockups';
 import Pricing from '../components/ui/Pricing';
 import InternalLinks from '../components/ui/InternalLinks';
+import FAQ from '../components/ui/FAQ';
+import { useTranslation } from '../hooks/useTranslation';
 
 const Home: React.FC = () => {
+  const { currentLang } = useTranslation();
+  
   const homeStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -157,6 +161,46 @@ const Home: React.FC = () => {
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "Wat is PulseGuard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PulseGuard is een gebruiksvriendelijk platform dat uw websites, servers en SSL-certificaten monitort, met realtime meldingen via e-mail, Telegram of Slack."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Waarom zou u voor PulseGuard kiezen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Met PulseGuard houdt u uw websites en servers continu in de gaten, signaleert u problemen snel en ontvangt u direct meldingen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat zijn de prijzen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De prijzen kunt u vinden op onze website. Een van onze opties is het Pro-plan, dat veel extra functionaliteiten omvat en de eerste 6 maanden €12,50 per maand kost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe gebruikt u PulseGuard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "U maakt een account aan op pulseguard.nl, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe is PulseGuard onstaan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PulseGuard is ontstaan omdat het bestaande aanbod niet voldeed aan onze wensen. Daarom hebben wij PulseGuard ontwikkeld om betrouwbare monitoring voor iedereen toegankelijk te maken."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "How does website monitoring work?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -219,6 +263,30 @@ const Home: React.FC = () => {
     ]
   };
 
+  // Define FAQ items for the visual component
+  const faqItems = [
+    {
+      questionKey: "faqWhatIs",
+      answerKey: "faqWhatIsAnswer"
+    },
+    {
+      questionKey: "faqWhyChoose",
+      answerKey: "faqWhyChooseAnswer"
+    },
+    {
+      questionKey: "faqPricing",
+      answerKey: "faqPricingAnswer"
+    },
+    {
+      questionKey: "faqHowToUse",
+      answerKey: "faqHowToUseAnswer"
+    },
+    {
+      questionKey: "faqOrigin",
+      answerKey: "faqOriginAnswer"
+    }
+  ];
+
   return (
     <>
       <SEOHead
@@ -237,6 +305,7 @@ const Home: React.FC = () => {
         <Features />
         <Mockups />
         <Pricing />
+        <FAQ items={faqItems} language={currentLang} />
         <InternalLinks currentPage="home" />
       </Layout>
     </>

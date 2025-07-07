@@ -701,6 +701,66 @@ export const translations: Translations = {
   getInTouch: {
     en: 'Get in touch',
     nl: 'Neem contact op'
+  },
+
+  // FAQ Section
+  faqTitle: {
+    en: 'Frequently Asked Questions',
+    nl: 'Veelgestelde Vragen'
+  },
+  faqSubtitle: {
+    en: 'Find answers to common questions about our monitoring service',
+    nl: 'Vind antwoorden op veelgestelde vragen over onze monitoringservice'
+  },
+  faqContactText: {
+    en: "Couldn't find what you're looking for?",
+    nl: 'Kon je niet vinden wat je zocht?'
+  },
+  faqContactLink: {
+    en: 'Contact our support team',
+    nl: 'Neem contact op met ons supportteam'
+  },
+
+  // FAQ Questions and Answers
+  faqWhatIs: {
+    en: 'What is PulseGuard?',
+    nl: 'Wat is PulseGuard?'
+  },
+  faqWhatIsAnswer: {
+    en: 'PulseGuard is a user-friendly platform that monitors your websites, servers and SSL certificates, with real-time notifications via email, Telegram or Slack.',
+    nl: 'PulseGuard is een gebruiksvriendelijk platform dat uw websites, servers en SSL-certificaten monitort, met realtime meldingen via e-mail, Telegram of Slack.'
+  },
+  faqWhyChoose: {
+    en: 'Why should you choose PulseGuard?',
+    nl: 'Waarom zou u voor PulseGuard kiezen?'
+  },
+  faqWhyChooseAnswer: {
+    en: 'With PulseGuard you continuously monitor your websites and servers, quickly detect problems and receive instant notifications.',
+    nl: 'Met PulseGuard houdt u uw websites en servers continu in de gaten, signaleert u problemen snel en ontvangt u direct meldingen.'
+  },
+  faqPricing: {
+    en: 'What are the prices?',
+    nl: 'Wat zijn de prijzen?'
+  },
+  faqPricingAnswer: {
+    en: 'You can find the prices on our website. One of our options is the Pro plan, which includes many additional features and costs €12.50 per month for the first 6 months.',
+    nl: 'De prijzen kunt u vinden op onze website. Een van onze opties is het Pro-plan, dat veel extra functionaliteiten omvat en de eerste 6 maanden €12,50 per maand kost.'
+  },
+  faqHowToUse: {
+    en: 'How do you use PulseGuard?',
+    nl: 'Hoe gebruikt u PulseGuard?'
+  },
+  faqHowToUseAnswer: {
+    en: 'You create an account on pulseguard.nl, log in, add a monitor and get immediate insight into your domains.',
+    nl: 'U maakt een account aan op pulseguard.nl, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen.'
+  },
+  faqOrigin: {
+    en: 'How did PulseGuard come about?',
+    nl: 'Hoe is PulseGuard onstaan?'
+  },
+  faqOriginAnswer: {
+    en: 'PulseGuard was created because the existing offerings did not meet our needs. That\'s why we developed PulseGuard to make reliable monitoring accessible to everyone.',
+    nl: 'PulseGuard is ontstaan omdat het bestaande aanbod niet voldeed aan onze wensen. Daarom hebben wij PulseGuard ontwikkeld om betrouwbare monitoring voor iedereen toegankelijk te maken.'
   }
 };
 
