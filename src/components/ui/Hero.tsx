@@ -8,7 +8,7 @@ import { useTranslation } from '../../hooks/useTranslation';
 const partners = [
   {
       name: 'IM Digital',
-      logo: 'https://imdigital.info/img/logo(los).png',
+      logo: 'https://imdigital.info/logo(gray-google).png',
       url: 'https://imdigital.info',
       },
     {
