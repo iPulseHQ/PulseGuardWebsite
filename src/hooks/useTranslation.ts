@@ -1,22 +1,45 @@
 import { useState, useEffect } from 'react';
 import { Language, translations } from '../utils/translations';
+import { detectUserLanguage } from '../utils/locationDetection';
 
 export const useTranslation = () => {
-  const [currentLang, setCurrentLang] = useState<Language>(() => {
-    // Check browser language or stored preference
-    const storedLang = localStorage.getItem('language') as Language;
-    if (storedLang === 'nl' || storedLang === 'en') {
-      return storedLang;
-    }
-    return navigator.language.startsWith('nl') ? 'nl' : 'en';
-  });
+  const [currentLang, setCurrentLang] = useState<Language>('en'); // Start with default
+  const [isLanguageDetected, setIsLanguageDetected] = useState(false);
+
+  // Initialize language detection
+  useEffect(() => {
+    const initializeLanguage = async () => {
+      // Check stored preference first
+      const storedLang = localStorage.getItem('language') as Language;
+      if (storedLang) {
+        setCurrentLang(storedLang);
+        setIsLanguageDetected(true);
+        return;
+      }
+
+      // Detect language based on location and browser
+      try {
+        const detectedLang = await detectUserLanguage();
+        setCurrentLang(detectedLang);
+        // Don't save auto-detected language to localStorage
+        // Only save when user explicitly chooses
+      } catch (error) {
+        console.error('Language detection failed:', error);
+        setCurrentLang('en'); // Fallback
+      } finally {
+        setIsLanguageDetected(true);
+      }
+    };
+
+    initializeLanguage();
+  }, []);
 
   // Listen for language changes in localStorage
   useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
       if (event.key === 'language') {
         const lang = event.newValue as Language;
-        if (lang && (lang === 'en' || lang === 'nl')) {
+        if (lang) {
           setCurrentLang(lang);
         }
       }
@@ -25,7 +48,7 @@ export const useTranslation = () => {
     // Also listen for custom event for when components change the language
     const handleCustomEvent = (event: CustomEvent) => {
       const lang = event.detail as Language;
-      if (lang && (lang === 'en' || lang === 'nl')) {
+      if (lang) {
         setCurrentLang(lang);
       }
     };
@@ -54,5 +77,5 @@ export const useTranslation = () => {
     return translations[key]?.[currentLang] || key;
   };
 
-  return { t, currentLang, changeLanguage };
+  return { t, currentLang, changeLanguage, isLanguageDetected };
 }; 
