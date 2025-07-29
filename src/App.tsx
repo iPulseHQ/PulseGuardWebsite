@@ -9,6 +9,7 @@ import Status from './pages/Status';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import App from './pages/App';
+import PulseFiles from './pages/PulseFiles';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/layout/ErrorBoundary';
 import { DarkModeProvider } from './context/DarkModeContext';
@@ -29,6 +30,7 @@ const AppRouter: React.FC = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/app" element={<App />} />
+            <Route path="/pulsefiles" element={<PulseFiles />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </ErrorBoundary>

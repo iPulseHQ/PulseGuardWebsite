@@ -1,24 +1,24 @@
 import { Language } from './translations';
 
-// Country to language mapping
+// Country to language mapping - each country mapped to its primary/official language
 const countryToLanguageMap: Record<string, Language> = {
   // English-speaking countries
-  'US': 'en', 'GB': 'en', 'AU': 'en', 'CA': 'en', 'IE': 'en', 'NZ': 'en', 'ZA': 'en',
+  'US': 'en', 'GB': 'en', 'AU': 'en', 'IE': 'en', 'NZ': 'en',
   
   // Dutch
-  'NL': 'nl', 'BE': 'nl', 'SR': 'nl',
+  'NL': 'nl', 'SR': 'nl',
   
   // German
-  'DE': 'de', 'AT': 'de', 'CH': 'de', 'LI': 'de', 'LU': 'de',
+  'DE': 'de', 'AT': 'de', 'LI': 'de',
   
   // French
-  'FR': 'fr', 'MC': 'fr', 'CH': 'fr', 'BE': 'fr', 'LU': 'fr', 'CA': 'fr',
+  'FR': 'fr', 'MC': 'fr',
   
   // Spanish
   'ES': 'es', 'MX': 'es', 'AR': 'es', 'CO': 'es', 'PE': 'es', 'VE': 'es', 'CL': 'es', 'EC': 'es', 'UY': 'es', 'PY': 'es', 'BO': 'es', 'CR': 'es', 'PA': 'es', 'GT': 'es', 'HN': 'es', 'SV': 'es', 'NI': 'es', 'DO': 'es', 'CU': 'es', 'PR': 'es',
   
   // Italian
-  'IT': 'it', 'SM': 'it', 'VA': 'it', 'CH': 'it',
+  'IT': 'it', 'SM': 'it', 'VA': 'it',
   
   // Portuguese
   'PT': 'pt', 'BR': 'pt', 'AO': 'pt', 'MZ': 'pt', 'CV': 'pt', 'GW': 'pt', 'ST': 'pt', 'TL': 'pt',
@@ -143,8 +143,12 @@ const countryToLanguageMap: Record<string, Language> = {
   // Swahili
   'KE': 'sw', 'TZ': 'sw', 'UG': 'sw',
   
-  // South African languages
-  'ZA': 'af', // Will use Afrikaans as default for South Africa
+  // Multi-language countries - using most appropriate defaults
+  'CH': 'de', // Switzerland - German (most spoken)
+  'BE': 'nl', // Belgium - Dutch (Flemish is majority)
+  'LU': 'fr', // Luxembourg - French (administrative language)
+  'CA': 'en', // Canada - English (majority)
+  'ZA': 'en', // South Africa - English (lingua franca)
 };
 
 // Browser language to our language mapping

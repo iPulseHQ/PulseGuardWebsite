@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe, faFile } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -56,6 +56,11 @@ const Header: React.FC = () => {
               </Link>
               <Link to="/pricing" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('pricing')}</span>
+                <span className="nav-link-indicator"></span>
+              </Link>
+              <Link to="/pulsefiles" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full relative">
+                <span className="font-medium">PulseFiles</span>
+                <span className="absolute -top-1 -right-1 bg-green-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-pulse">NEW</span>
                 <span className="nav-link-indicator"></span>
               </Link>
               <Link to="/team" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
@@ -153,6 +158,18 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faTag} className="text-green-500" />
             </div>
             <span className="font-medium">{t('pricing')}</span>
+          </Link>
+          
+          <Link to="/pulsefiles" className="mobile-nav-link flex items-center justify-between py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+            <div className="flex items-center">
+              <div className="h-8 w-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3">
+                <FontAwesomeIcon icon={faFile} className="text-purple-500" />
+              </div>
+              <span className="font-medium">PulseFiles</span>
+            </div>
+            <div className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+              NEW
+            </div>
           </Link>
           
           <Link to="/team" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>

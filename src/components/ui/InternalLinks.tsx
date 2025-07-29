@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faGlobe, faServer, faShieldAlt, faClock } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faGlobe, faServer, faShieldAlt, faClock, faFile } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface InternalLinksProps {
@@ -41,11 +41,11 @@ const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', cla
         external: false
       },
       {
-        title: "Server Monitoring Solutions", 
-        href: "/features#server-monitoring",
-        description: "Monitor server resources, CPU, RAM, and disk usage",
-        icon: faServer,
-        keywords: "server monitoring, resource tracking, system health",
+        title: "PulseFiles - Veilige Bestandsdeling",
+        href: "/pulsefiles",
+        description: "Veilige en tijdelijke bestandsdeling met end-to-end encryptie",
+        icon: faFile,
+        keywords: "bestandsdeling, file sharing, veilig, encryptie, tijdelijk",
         external: false
       },
       {
