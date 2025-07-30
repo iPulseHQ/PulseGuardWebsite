@@ -799,8 +799,8 @@ export const translations: Translations = {
     nl: 'Kon je niet vinden wat je zocht?'
   },
   faqContactLink: {
-    en: 'Contact our support team',
-    nl: 'Neem contact op met ons supportteam'
+    en: 'Contact our team',
+    nl: 'Neem contact op met ons team'
   },
 
   // FAQ Questions and Answers
