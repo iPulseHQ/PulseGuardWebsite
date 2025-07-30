@@ -82,29 +82,7 @@ const Hero: React.FC = () => {
               </Link>
             </div>
             
-            {/* Simplified integration badges */}
-            <div className="mt-12 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
-              <p className="text-sm text-blue-200 mb-3 font-medium">{t('heroAlerts')}</p>
-              <div className="flex flex-wrap gap-2">
-                <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <FontAwesomeIcon icon={faTelegram} className="text-blue-300 mr-2" />
-                  <span className="text-sm text-white">Telegram</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <FontAwesomeIcon icon={faEnvelope} className="text-blue-300 mr-2" />
-                  <span className="text-sm text-white">Email</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <FontAwesomeIcon icon={faSlack} className="text-blue-300 mr-2" />
-                  <span className="text-sm text-white">Slack</span>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center transition-all hover:bg-white/15">
-                  <FontAwesomeIcon icon={faGlobe} className="text-blue-300 mr-2" />
-                  <span className="text-sm text-white">Webhooks</span>
-                </div>
-              </div>
-            </div>
-
+          
             {/* Partners section */}
             <div className="mt-12 pt-6 border-t border-white/10 max-w-xl mx-auto lg:mx-0">
               <p className="text-sm text-blue-200 mb-4 font-medium text-center lg:text-left">{t('heroTrustedBy')}</p>

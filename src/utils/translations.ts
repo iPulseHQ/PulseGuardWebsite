@@ -103,6 +103,10 @@ export const translations: Translations = {
     en: 'Blog',
     nl: 'Blog'
   },
+  docs: {
+    en: 'Docs',
+    nl: 'Docs'
+  },
   joinBeta: {
     en: 'Join Beta',
     nl: 'Beta Testen'
@@ -216,8 +220,8 @@ export const translations: Translations = {
     nl: 'Your digital peacemaker'
   },
   heroSubtitle: {
-    en: 'Professional website uptime monitoring, server health tracking, and SSL certificate monitoring with real-time alerts. Get instant notifications via Email, Telegram, and Slack when your websites or servers need attention. 99.9% uptime guarantee with 5-minute setup.',
-    nl: 'Professionele website uptime monitoring, server status tracking en SSL-certificaat monitoring met real-time meldingen. Ontvang direct notificaties via E-mail, Telegram en Slack wanneer je websites of servers aandacht nodig hebben. 99,9% uptime garantie met 5 minuten installatie.'
+    en: 'Professional uptime monitoring, health tracking, and SSL certificate monitoring with real-time alerts.',
+    nl: 'Professionele uptime monitoring, status tracking en veiligheid checks van zowel services als domeinen.'
   },
   heroCtaPrimary: {
     en: 'See what it can do',
@@ -234,6 +238,20 @@ export const translations: Translations = {
   heroTrustedBy: {
     en: 'Trusted by:',
     nl: 'Vertrouwd door:'
+  },
+  
+  // Demo section
+  liveDemo: {
+    en: 'Live Demo',
+    nl: 'Live Demo'
+  },
+  tryOurLiveDemo: {
+    en: 'Try Our',
+    nl: 'Probeer Onze'
+  },
+  liveDemoDescription: {
+    en: 'Experience PulseGuard firsthand with our interactive demo. See how easy it is to monitor your websites and servers in real-time.',
+    nl: 'Ervaar PulseGuard uit eerste hand met onze interactieve demo. Zie hoe gemakkelijk het is om je websites en servers in real-time te monitoren.'
   },
   
   // Features page

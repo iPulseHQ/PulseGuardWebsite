@@ -3,7 +3,6 @@ import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import Hero from '../components/ui/Hero';
 import Demo from '../components/ui/Demo';
-import Features from '../components/ui/Features';
 import Mockups from '../components/ui/Mockups';
 import Pricing from '../components/ui/Pricing';
 import InternalLinks from '../components/ui/InternalLinks';
@@ -302,7 +301,6 @@ const Home: React.FC = () => {
       <Layout showBreadcrumb={false}>
         <Hero />
         <Demo />
-        <Features />
         <Mockups />
         <Pricing />
         <FAQ items={faqItems} language={currentLang} />

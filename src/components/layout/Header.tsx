@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe, faFile } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe, faFile, faBook } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { useTranslation } from '../../hooks/useTranslation';
 
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm ${scrolled ? 'shadow-md' : ''}`}>
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-16 md:h-20 px-4 md:px-0">
+        <div className="flex items-center justify-between h-16 xl:h-20 px-4 xl:px-0">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group transition-all duration-300 transform hover:scale-105">
@@ -44,7 +44,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden xl:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
             <div className="bg-gray-100/80 dark:bg-gray-800/80 rounded-full px-1.5 py-1.5 flex items-center space-x-1 backdrop-blur-sm">
               <Link to="/" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('navigation')}</span>
@@ -71,11 +71,34 @@ const Header: React.FC = () => {
                 <span className="font-medium">{t('blog')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
+              <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+                <span className="font-medium">{t('docs')}</span>
+                <span className="nav-link-indicator"></span>
+              </a>
             </div>
           </nav>
           
+          {/* Tablet Navigation - Simplified */}
+          <nav className="hidden lg:flex xl:hidden items-center space-x-2">
+            <Link to="/" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+              <span className="font-medium">{t('navigation')}</span>
+            </Link>
+            <Link to="/features" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+              <span className="font-medium">{t('features')}</span>
+            </Link>
+            <Link to="/pricing" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+              <span className="font-medium">{t('pricing')}</span>
+            </Link>
+            <Link to="/blog" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+              <span className="font-medium">{t('blog')}</span>
+            </Link>
+            <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+              <span className="font-medium">{t('docs')}</span>
+            </a>
+          </nav>
+
           {/* Action Buttons - Right Side */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden xl:flex items-center space-x-3">
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
@@ -114,8 +137,25 @@ const Header: React.FC = () => {
             </Link>
           </div>
           
+          {/* Tablet Action Buttons */}
+          <div className="hidden lg:flex xl:hidden items-center space-x-2">
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="relative inline-flex items-center h-8 px-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-900"
+              aria-label={currentLang === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+            >
+              <FontAwesomeIcon icon={faGlobe} className="h-3 w-3 mr-1 text-gray-600 dark:text-gray-400" />
+              <span className="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">{currentLang}</span>
+            </button>
+            <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+              <span className="relative">{t('dashboard')}</span>
+              <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             {/* Language Toggle for Mobile */}
             <button
               onClick={toggleLanguage}
@@ -137,7 +177,7 @@ const Header: React.FC = () => {
       </div>
       
       {/* Mobile Menu */}
-      <div className={`${mobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-white dark:bg-gray-800 shadow-2xl absolute top-full left-0 right-0 border-t border-gray-200 dark:border-gray-700 rounded-b-2xl overflow-hidden`}>
+      <div className={`${mobileMenuOpen ? 'block' : 'hidden'} lg:hidden bg-white dark:bg-gray-800 shadow-2xl absolute top-full left-0 right-0 border-t border-gray-200 dark:border-gray-700 rounded-b-2xl overflow-hidden`}>
         <div className="py-3 px-4 space-y-2 max-h-[80vh] overflow-y-auto">
           <Link to="/" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
@@ -185,6 +225,13 @@ const Header: React.FC = () => {
             </div>
             <span className="font-medium">{t('blog')}</span>
           </Link>
+          
+          <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+            <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
+              <FontAwesomeIcon icon={faBook} className="text-blue-500" />
+            </div>
+            <span className="font-medium">{t('docs')}</span>
+          </a>
           
           <Link to="https://app.pulseguard.nl/register" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center mr-3">
