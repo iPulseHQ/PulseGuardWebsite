@@ -1,13 +1,18 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileText, faUpload, faEnvelope, faLock, faCog, faChevronDown, faPlus, faShield, faMapMarkerAlt, faClock, faTrash, faCode, faEyeSlash, faServer, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from '../hooks/useTranslation';
 
 const PulseFiles: React.FC = () => {
+  const { t } = useTranslation();
+
   const pulseFilesStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "PulseFiles - Veilige en tijdelijke bestandsdeling",
-    "description": "Veilige en tijdelijke bestandsdeling met end-to-end encryptie. Nederlandse datacenter, automatisch verwijderd na 7 dagen.",
+    "name": `${t('pulseFilesTitle')} - ${t('pulseFilesHeroDescription')}`,
+    "description": t('pulseFilesHeroDescription'),
     "url": "https://pulseguard.nl/pulsefiles"
   };
 
@@ -24,7 +29,7 @@ const PulseFiles: React.FC = () => {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "PulseFiles",
+        "name": t('pulseFilesTitle'),
         "item": "https://pulseguard.nl/pulsefiles"
       }
     ]
@@ -33,129 +38,313 @@ const PulseFiles: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="PulseFiles - Veilige en tijdelijke bestandsdeling | PulseGuard"
-        description="Veilige en tijdelijke bestandsdeling met end-to-end encryptie. Nederlandse datacenter, automatisch verwijderd na 7 dagen, geen permanente opslag."
+        title={`${t('pulseFilesTitle')} - ${t('pulseFilesHeroDescription')} | PulseGuard`}
+        description={t('pulseFilesHeroDescription')}
         keywords="bestandsdeling, file sharing, veilig, encryptie, tijdelijk, nederland, privacy, gdpr"
         canonicalUrl="https://pulseguard.nl/pulsefiles"
         structuredData={pulseFilesStructuredData}
         breadcrumbData={breadcrumbData}
       />
       <Layout>
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gray-800 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-              <div className="text-center">
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  PulseFiles
-                </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Veilige en tijdelijke bestandsdeling met end-to-end encryptie
-                </p>
-                <a
-                  href="https://files.pulseguard.nl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
-                >
-                  Begin met uploaden
-                </a>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+          {/* Hero Section with Mockup */}
+          <div className="relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+            
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left side - Content */}
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 text-sm font-medium mb-6">
+                    <span className="mr-2">🔒</span>
+{t('pulseFilesNewFeature')}
+                  </div>
+                  
+                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+{t('pulseFilesHeroTitle')}
+                    </span>
+                  </h1>
+                  
+                  <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                    {t('pulseFilesHeroDescription')}
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href="https://files.pulseguard.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
+                    >
+                      <FontAwesomeIcon icon={faUpload} className="mr-3" />
+{t('pulseFilesHeroButtonPrimary')}
+                    </a>
+                    
+                    <button className="inline-flex items-center px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      <FontAwesomeIcon icon={faFileText} className="mr-3" />
+{t('pulseFilesHeroButtonSecondary')}
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Right side - Mockup */}
+                <div className="flex justify-center lg:justify-end">
+                  <div className="relative">
+                    {/* Decorative elements */}
+                    <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-blue-200 to-purple-200 rounded-3xl transform rotate-6 opacity-20"></div>
+                    <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-br from-purple-200 to-pink-200 rounded-3xl transform -rotate-6 opacity-20"></div>
+                    
+                    {/* Main card mockup */}
+                    <div className="relative bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl w-full max-w-lg mx-auto transform hover:scale-105 transition-all duration-300">
+                      {/* Card Header */}
+                      <div className="flex flex-col space-y-1.5 p-6 text-center">
+                        <div className="mx-auto mb-4 h-12 w-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                          <img alt="Pulsefile" className="h-8 w-8" src="/android-chrome-512x512.png" />
+                        </div>
+                        <h3 className="font-semibold tracking-tight text-2xl text-gray-900 dark:text-white">{t('pulseFilesTitle')}</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t('pulseFilesSubtitle')}</p>
+                      </div>
+                      
+                      {/* Card Content */}
+                      <div className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+                        {/* File Upload Section */}
+                        <div className="space-y-2">
+                          <label className="font-medium text-gray-700 dark:text-gray-300 flex items-center gap-2 text-sm sm:text-base">
+                            <FontAwesomeIcon icon={faFileText} className="h-4 w-4" />
+                            <span className="hidden sm:inline">{t('pulseFilesSelectFileLabel')}</span>
+                            <span className="sm:hidden">{t('pulseFilesSelectFileLabelShort')}</span>
+                          </label>
+                          <div className="space-y-2">
+                            <div className="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 px-3 py-2 text-sm text-gray-500 dark:text-gray-400 items-center cursor-not-allowed">
+{t('pulseFilesNoFileSelected')}
+                            </div>
+                            <div className="flex gap-2 flex-col sm:flex-row">
+                              <button className="text-xs px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded flex-1 sm:flex-none text-gray-500 dark:text-gray-500 cursor-not-allowed" disabled>
+{t('pulseFilesChooseFile')}
+                              </button>
+                              <button className="text-xs px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded flex-1 sm:flex-none text-gray-500 dark:text-gray-500 cursor-not-allowed" disabled>
+                                {t('pulseFilesChooseFolder')}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Share Method Section */}
+                        <div className="space-y-3">
+                          <label className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('pulseFilesShareMethod')}</label>
+                          <div className="flex gap-2 sm:gap-4 flex-col sm:flex-row">
+                            <div className="flex items-center space-x-2">
+                              <input 
+                                id="email-mode" 
+                                type="radio" 
+                                value="email" 
+                                checked
+                                name="shareMode"
+                                className="text-blue-600"
+                                disabled
+                              />
+                              <label className="font-medium flex items-center gap-1 text-sm text-gray-700 dark:text-gray-300">
+                                <FontAwesomeIcon icon={faEnvelope} className="h-3 w-3" />
+                                <span className="hidden sm:inline">{t('pulseFilesSendViaEmail')}</span>
+                                <span className="sm:hidden">{t('pulseFilesEmail')}</span>
+                              </label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <input 
+                                id="link-mode" 
+                                type="radio" 
+                                value="link" 
+                                name="shareMode"
+                                className="text-blue-600"
+                                disabled
+                              />
+                              <label className="font-medium flex items-center gap-1 text-sm text-gray-500 dark:text-gray-500">
+                                <FontAwesomeIcon icon={faLock} className="h-3 w-3" />
+                                <span className="hidden sm:inline">{t('pulseFilesGenerateLinkOnly')}</span>
+                                <span className="sm:hidden">{t('pulseFilesLinkOnly')}</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Recipients Section */}
+                        <div className="space-y-2">
+                          <label className="font-medium flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
+                            <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+                            <span className="hidden sm:inline">{t('pulseFilesRecipients')}</span>
+                            <span className="sm:hidden">{t('pulseFilesRecipientsShort')}</span>
+                          </label>
+                          <div className="space-y-2">
+                            <div className="flex gap-2">
+                              <input 
+                                className="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 px-3 py-2 text-sm text-gray-500 dark:text-gray-400 flex-1 cursor-not-allowed" 
+                                placeholder="Email 1" 
+                                type="email" 
+                                value=""
+                                disabled
+                              />
+                            </div>
+                            <button 
+                              className="inline-flex items-center justify-center font-medium border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 h-9 rounded-md px-3 text-xs text-gray-500 dark:text-gray-500 cursor-not-allowed" 
+                              type="button"
+                              disabled
+                            >
+                              <FontAwesomeIcon icon={faPlus} className="mr-1" /> {t('pulseFilesAddRecipient')}
+                            </button>
+                          </div>
+                        </div>
+                        
+                        {/* Advanced Settings */}
+                        <div className="space-y-2">
+                          <button 
+                            className="font-medium h-9 rounded-md px-3 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-500 w-full justify-center sm:justify-start cursor-not-allowed" 
+                            type="button"
+                            disabled
+                          >
+                            <FontAwesomeIcon icon={faCog} className="h-4 w-4" />
+                            <span className="hidden sm:inline">{t('pulseFilesAdvancedSettings')}</span>
+                            <span className="sm:hidden">{t('pulseFilesAdvanced')}</span>
+                            <FontAwesomeIcon icon={faChevronDown} className="h-4 w-4" />
+                          </button>
+                        </div>
+                        
+                        {/* Upload Button */}
+                        <div className="flex gap-2">
+                          <button className="inline-flex items-center justify-center text-sm font-medium bg-gray-400 text-gray-200 h-11 rounded-md px-8 flex-1 cursor-not-allowed" disabled>
+                            <FontAwesomeIcon icon={faUpload} className="mr-2 h-4 w-4" />
+                            <span className="hidden sm:inline">{t('pulseFilesUploadAndEmail')}</span>
+                            <span className="sm:hidden">{t('pulseFilesUpload')}</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Feature 1 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Volledig Geëncrypt
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Alle bestanden worden geëncrypt met AES-256-CBC encryptie. Zelfs wij kunnen uw bestanden niet bekijken.
+          {/* Features Section */}
+          <div className="relative py-20 bg-white dark:bg-gray-900">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 dark:from-gray-800/50 dark:to-gray-900/50"></div>
+            
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                  Waarom kiezen voor <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">PulseFiles</span>?
+                </h2>
+                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                  De meest veilige en gebruiksvriendelijke manier om bestanden te delen
                 </p>
               </div>
-
-              {/* Feature 2 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Feature 1 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faShield} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Volledig Geëncrypt
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Alle bestanden worden geëncrypt met <strong>AES-256-CBC</strong> encryptie. Zelfs wij kunnen uw bestanden niet bekijken.
+                  </p>
+                  <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 font-medium">
+                    <span className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mr-2"></span>
+                    End-to-end beveiliging
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Nederlandse Datacenter
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Uw data wordt opgeslagen in beveiligde datacenters in Nederland, conform GDPR-wetgeving.
-                </p>
-              </div>
 
-              {/* Feature 3 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                {/* Feature 2 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Nederlandse Datacenter
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Uw data wordt opgeslagen in beveiligde datacenters in <strong>Nederland</strong>, conform GDPR-wetgeving.
+                  </p>
+                  <div className="mt-4 flex items-center text-green-600 dark:text-green-400 font-medium">
+                    <span className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mr-2"></span>
+                    100% GDPR compliant
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Automatisch Verwijderd
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Bestanden worden automatisch verwijderd na 7 dagen (of eerder indien door u ingesteld).
-                </p>
-              </div>
 
-              {/* Feature 4 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                  </svg>
+                {/* Feature 3 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faClock} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Automatisch Verwijderd
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Bestanden worden automatisch verwijderd na <strong>7 dagen</strong> (of eerder indien door u ingesteld).
+                  </p>
+                  <div className="mt-4 flex items-center text-red-600 dark:text-red-400 font-medium">
+                    <span className="w-2 h-2 bg-red-600 dark:bg-red-400 rounded-full mr-2"></span>
+                    Geen permanente opslag
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Geen Permanente Opslag
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  We bewaren geen bestanden permanent. Alles wordt tijdelijk opgeslagen voor veilige overdracht.
-                </p>
-              </div>
 
-              {/* Feature 5 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
+                {/* Feature 4 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faTrash} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Zero Knowledge
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    We bewaren geen bestanden permanent. Alles wordt <strong>tijdelijk</strong> opgeslagen voor veilige overdracht.
+                  </p>
+                  <div className="mt-4 flex items-center text-purple-600 dark:text-purple-400 font-medium">
+                    <span className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full mr-2"></span>
+                    Maximale privacy
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Open Source
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Volledige transparantie - alle code is open source en publiek beschikbaar voor controle.
-                </p>
-              </div>
 
-              {/* Feature 6 */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-                <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
-                  </svg>
+                {/* Feature 5 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faCode} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Open Source
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Volledige <strong>transparantie</strong> - alle code is open source en publiek beschikbaar voor controle.
+                  </p>
+                  <div className="mt-4 flex items-center text-orange-600 dark:text-orange-400 font-medium">
+                    <span className="w-2 h-2 bg-orange-600 dark:bg-orange-400 rounded-full mr-2"></span>
+                    100% transparant
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  Geen Tracking
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  We volgen u niet en verkopen geen data. Uw privacy staat centraal in alles wat we doen.
-                </p>
+
+                {/* Feature 6 */}
+                <div className="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <FontAwesomeIcon icon={faEyeSlash} className="text-2xl text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Geen Tracking
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    We volgen u <strong>niet</strong> en verkopen geen data. Uw privacy staat centraal in alles wat we doen.
+                  </p>
+                  <div className="mt-4 flex items-center text-indigo-600 dark:text-indigo-400 font-medium">
+                    <span className="w-2 h-2 bg-indigo-600 dark:bg-indigo-400 rounded-full mr-2"></span>
+                    Privacy first
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -277,23 +466,58 @@ const PulseFiles: React.FC = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-blue-600 dark:bg-blue-700">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay filter blur-xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay filter blur-xl animate-pulse delay-1000"></div>
+            
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
               <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Klaar om veilig bestanden te delen?
+                <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                  Klaar om <span className="text-yellow-300">veilig</span> bestanden te delen?
                 </h2>
-                <p className="text-xl text-blue-100 mb-8">
-                  Begin direct met het uploaden van uw bestanden
+                <p className="text-xl sm:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                  Begin direct met het uploaden van uw bestanden met <strong>end-to-end encryptie</strong> en automatische verwijdering
                 </p>
-                <a
-                  href="https://files.pulseguard.nl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 transition-colors duration-200"
-                >
-                  Begin met uploaden
-                </a>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                  <a
+                    href="https://files.pulseguard.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center px-8 py-4 text-lg font-bold text-blue-600 bg-white rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+                  >
+                    <FontAwesomeIcon icon={faUpload} className="mr-3 text-xl group-hover:animate-bounce" />
+                    Begin nu gratis
+                    <span className="ml-2 text-sm font-normal bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                      100% Gratis
+                    </span>
+                  </a>
+                  
+                  <div className="flex items-center text-blue-100">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center">
+                        <FontAwesomeIcon icon={faShield} className="mr-2" />
+                        <span className="text-sm">Volledig geëncrypt</span>
+                      </div>
+                      <div className="flex items-center">
+                        <FontAwesomeIcon icon={faGlobe} className="mr-2" />
+                        <span className="text-sm">Nederlandse servers</span>
+                      </div>
+                      <div className="flex items-center">
+                        <FontAwesomeIcon icon={faClock} className="mr-2" />
+                        <span className="text-sm">Auto-delete na 7 dagen</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mt-12 text-center">
+                  <p className="text-blue-200 text-sm">
+                    Geen registratie vereist • Geen tracking • Open source
+                  </p>
+                </div>
               </div>
             </div>
           </div>

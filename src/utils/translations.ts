@@ -825,6 +825,230 @@ export const translations: Translations = {
   faqOriginAnswer: {
     en: 'PulseGuard was created because the existing offerings did not meet our needs. That\'s why we developed PulseGuard to make reliable monitoring accessible to everyone.',
     nl: 'PulseGuard is ontstaan omdat het bestaande aanbod niet voldeed aan onze wensen. Daarom hebben wij PulseGuard ontwikkeld om betrouwbare monitoring voor iedereen toegankelijk te maken.'
+  },
+  // PulseFiles page translations
+  pulseFilesTitle: {
+    en: 'PulseFiles',
+    nl: 'PulseFiles'
+  },
+  pulseFilesSubtitle: {
+    en: 'Part of PulseGuard',
+    nl: 'Onderdeel van PulseGuard'
+  },
+  pulseFilesHeroTitle: {
+    en: 'PulseFiles',
+    nl: 'PulseFiles'
+  },
+  pulseFilesHeroDescription: {
+    en: 'Share files securely and temporarily with end-to-end encryption. Dutch datacenter, automatically deleted after 7 days.',
+    nl: 'Deel bestanden veilig en tijdelijk met end-to-end encryptie. Nederlands datacenter, automatisch verwijderd na 7 dagen.'
+  },
+  pulseFilesHeroButtonPrimary: {
+    en: 'Start now for free',
+    nl: 'Begin nu gratis'
+  },
+  pulseFilesHeroButtonSecondary: {
+    en: 'More information',
+    nl: 'Meer informatie'
+  },
+  pulseFilesNewFeature: {
+    en: 'New: End-to-end encrypted file sharing',
+    nl: 'Nieuw: End-to-end geëncrypte bestandsdeling'
+  },
+  pulseFilesSecureText: {
+    en: 'secure',
+    nl: 'veilig'
+  },
+  pulseFilesTemporaryText: {
+    en: 'temporary',
+    nl: 'tijdelijk'
+  },
+  // Features section
+  pulseFilesFeaturesTitle: {
+    en: 'Why choose PulseFiles?',
+    nl: 'Waarom kiezen voor PulseFiles?'
+  },
+  pulseFilesFeaturesSubtitle: {
+    en: 'The most secure and user-friendly way to share files',
+    nl: 'De meest veilige en gebruiksvriendelijke manier om bestanden te delen'
+  },
+  pulseFilesFeatureEncryptedTitle: {
+    en: 'Fully Encrypted',
+    nl: 'Volledig Geëncrypt'
+  },
+  pulseFilesFeatureEncryptedDesc: {
+    en: 'All files are encrypted with AES-256-CBC encryption. Even we cannot view your files.',
+    nl: 'Alle bestanden worden geëncrypt met AES-256-CBC encryptie. Zelfs wij kunnen uw bestanden niet bekijken.'
+  },
+  pulseFilesFeatureEncryptedBadge: {
+    en: 'End-to-end security',
+    nl: 'End-to-end beveiliging'
+  },
+  pulseFilesFeatureDatacenterTitle: {
+    en: 'Dutch Datacenter',
+    nl: 'Nederlandse Datacenter'
+  },
+  pulseFilesFeatureDatacenterDesc: {
+    en: 'Your data is stored in secure datacenters in the Netherlands, GDPR compliant.',
+    nl: 'Uw data wordt opgeslagen in beveiligde datacenters in Nederland, conform GDPR-wetgeving.'
+  },
+  pulseFilesFeatureDatacenterBadge: {
+    en: '100% GDPR compliant',
+    nl: '100% GDPR compliant'
+  },
+  pulseFilesFeatureAutoDeleteTitle: {
+    en: 'Automatically Deleted',
+    nl: 'Automatisch Verwijderd'
+  },
+  pulseFilesFeatureAutoDeleteDesc: {
+    en: 'Files are automatically deleted after 7 days (or earlier if set by you).',
+    nl: 'Bestanden worden automatisch verwijderd na 7 dagen (of eerder indien door u ingesteld).'
+  },
+  pulseFilesFeatureAutoDeleteBadge: {
+    en: 'No permanent storage',
+    nl: 'Geen permanente opslag'
+  },
+  pulseFilesFeatureZeroKnowledgeTitle: {
+    en: 'Zero Knowledge',
+    nl: 'Zero Knowledge'
+  },
+  pulseFilesFeatureZeroKnowledgeDesc: {
+    en: 'We do not store files permanently. Everything is temporarily stored for secure transfer.',
+    nl: 'We bewaren geen bestanden permanent. Alles wordt tijdelijk opgeslagen voor veilige overdracht.'
+  },
+  pulseFilesFeatureZeroKnowledgeBadge: {
+    en: 'Maximum privacy',
+    nl: 'Maximale privacy'
+  },
+  pulseFilesFeatureOpenSourceTitle: {
+    en: 'Open Source',
+    nl: 'Open Source'
+  },
+  pulseFilesFeatureOpenSourceDesc: {
+    en: 'Full transparency - all code is open source and publicly available for review.',
+    nl: 'Volledige transparantie - alle code is open source en publiek beschikbaar voor controle.'
+  },
+  pulseFilesFeatureOpenSourceBadge: {
+    en: '100% transparent',
+    nl: '100% transparant'
+  },
+  pulseFilesFeatureNoTrackingTitle: {
+    en: 'No Tracking',
+    nl: 'Geen Tracking'
+  },
+  pulseFilesFeatureNoTrackingDesc: {
+    en: 'We do not track you and do not sell data. Your privacy is central to everything we do.',
+    nl: 'We volgen u niet en verkopen geen data. Uw privacy staat centraal in alles wat we doen.'
+  },
+  pulseFilesFeatureNoTrackingBadge: {
+    en: 'Privacy first',
+    nl: 'Privacy first'
+  },
+  // Mockup form translations
+  pulseFilesSelectFileLabel: {
+    en: 'Select File or Folder',
+    nl: 'Selecteer Bestand of Map'
+  },
+  pulseFilesSelectFileLabelShort: {
+    en: 'Select File/Folder',
+    nl: 'Selecteer Bestand/Map'
+  },
+  pulseFilesNoFileSelected: {
+    en: 'No file selected',
+    nl: 'Geen bestand gekozen'
+  },
+  pulseFilesChooseFile: {
+    en: 'Choose File',
+    nl: 'Kies Bestand'
+  },
+  pulseFilesChooseFolder: {
+    en: 'Choose Folder',
+    nl: 'Kies Map'
+  },
+  pulseFilesShareMethod: {
+    en: 'Share Method',
+    nl: 'Deelmethode'
+  },
+  pulseFilesSendViaEmail: {
+    en: 'Send via Email',
+    nl: 'Verstuur via E-mail'
+  },
+  pulseFilesEmail: {
+    en: 'Email',
+    nl: 'E-mail'
+  },
+  pulseFilesGenerateLinkOnly: {
+    en: 'Generate Link Only',
+    nl: 'Genereer Alleen Link'
+  },
+  pulseFilesLinkOnly: {
+    en: 'Link Only',
+    nl: 'Alleen Link'
+  },
+  pulseFilesRecipients: {
+    en: 'Recipients (max 3)',
+    nl: 'Ontvangers (max 3)'
+  },
+  pulseFilesRecipientsShort: {
+    en: 'Recipients',
+    nl: 'Ontvangers'
+  },
+  pulseFilesAddRecipient: {
+    en: 'Add Recipient',
+    nl: 'Ontvanger Toevoegen'
+  },
+  pulseFilesAdvancedSettings: {
+    en: 'Advanced Settings',
+    nl: 'Geavanceerde Instellingen'
+  },
+  pulseFilesAdvanced: {
+    en: 'Advanced',
+    nl: 'Geavanceerd'
+  },
+  pulseFilesUploadAndEmail: {
+    en: 'Upload & Email',
+    nl: 'Upload & E-mail'
+  },
+  pulseFilesUpload: {
+    en: 'Upload',
+    nl: 'Upload'
+  },
+  // CTA section
+  pulseFilesCtaTitle: {
+    en: 'Ready to share files securely?',
+    nl: 'Klaar om veilig bestanden te delen?'
+  },
+  pulseFilesCtaSecure: {
+    en: 'secure',
+    nl: 'veilig'
+  },
+  pulseFilesCtaDescription: {
+    en: 'Start uploading your files immediately with end-to-end encryption and automatic deletion',
+    nl: 'Begin direct met het uploaden van uw bestanden met end-to-end encryptie en automatische verwijdering'
+  },
+  pulseFilesCtaButtonPrimary: {
+    en: 'Start now for free',
+    nl: 'Begin nu gratis'
+  },
+  pulseFilesCtaFree: {
+    en: '100% Free',
+    nl: '100% Gratis'
+  },
+  pulseFilesCtaFullyEncrypted: {
+    en: 'Fully encrypted',
+    nl: 'Volledig geëncrypt'
+  },
+  pulseFilesCtaDutchServers: {
+    en: 'Dutch servers',
+    nl: 'Nederlandse servers'
+  },
+  pulseFilesCtaAutoDelete: {
+    en: 'Auto-delete after 7 days',
+    nl: 'Auto-delete na 7 dagen'
+  },
+  pulseFilesCtaFooter: {
+    en: 'No registration required • No tracking • Open source',
+    nl: 'Geen registratie vereist • Geen tracking • Open source'
   }
 };
 
