@@ -220,8 +220,8 @@ export const translations: Translations = {
     nl: 'Your digital peacemaker'
   },
   heroSubtitle: {
-    en: 'Professional uptime monitoring, health tracking, and SSL certificate monitoring with real-time alerts.',
-    nl: 'Professionele uptime monitoring, status tracking en veiligheid checks van zowel services als domeinen.'
+    en: 'Professional uptime monitoring, health tracking, and security checks of both services and domains.',
+    nl: 'Professionele uptime monitoring, status tracking en security checks van zowel services als domeinen.'
   },
   heroCtaPrimary: {
     en: 'See what it can do',
