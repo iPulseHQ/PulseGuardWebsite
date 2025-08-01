@@ -45,23 +45,23 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ customItems }) => {
   const breadcrumbs = customItems || getDefaultBreadcrumbs();
   const shouldShowBreadcrumbs = !(location.pathname === '/' && !customItems);
 
-  // Generate structured data for breadcrumbs
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((item, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": item.name,
-      "item": `https://pulseguard.nl${item.href === '/' ? '' : item.href}`
-    }))
-  };
-
   React.useEffect(() => {
     // Only add structured data if breadcrumbs should be shown
     if (!shouldShowBreadcrumbs) {
       return;
     }
+
+    // Generate structured data for breadcrumbs
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbs.map((item, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": item.name,
+        "item": `https://pulseguard.nl${item.href === '/' ? '' : item.href}`
+      }))
+    };
 
     // Add structured data to head
     const existingScript = document.querySelector('script[data-type="breadcrumb-data"]');
@@ -81,7 +81,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ customItems }) => {
         scriptToRemove.remove();
       }
     };
-  }, [breadcrumbs, shouldShowBreadcrumbs, structuredData]);
+  }, [breadcrumbs, shouldShowBreadcrumbs]);
 
   // Don't show breadcrumbs on home page
   if (!shouldShowBreadcrumbs) {

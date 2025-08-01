@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileText, faUpload, faEnvelope, faLock, faCog, faChevronDown, faPlus, faShield, faMapMarkerAlt, faClock, faTrash, faCode, faEyeSlash, faServer, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faFileText, faUpload, faEnvelope, faLock, faCog, faChevronDown, faPlus, faShield, faMapMarkerAlt, faClock, faTrash, faCode, faEyeSlash, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '../hooks/useTranslation';
 
 const PulseFiles: React.FC = () => {

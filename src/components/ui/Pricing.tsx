@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faTimes, faTag, faArrowRight, faCreditCard, faStar, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes, faCreditCard, faStar } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const Pricing: React.FC = () => {

@@ -40,6 +40,20 @@ import {
 
 Sentry.init({
   dsn: "https://340ea9c936fbd7b10e480f96e7be0b68@o4509704891072512.ingest.de.sentry.io/4509769130246225",
+  integrations: [
+    Sentry.browserTracingIntegration(),
+    Sentry.replayIntegration(),
+    Sentry.browserProfilingIntegration(),
+    Sentry.feedbackIntegration({
+      colorScheme: "system",
+    }),
+  ],
+  tracesSampleRate: 1.0,
+  profilesSampleRate: 0.1,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+  environment: process.env.NODE_ENV,
+  tracePropagationTargets: ["localhost", /^https:\/\/pulseguard\.nl/, /^https:\/\/app\.pulseguard\.nl/, /^https:\/\/demo\.pulseguard\.nl/],
   sendDefaultPii: true
 });
 

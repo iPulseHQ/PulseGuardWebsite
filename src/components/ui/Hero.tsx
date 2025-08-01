@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faPlay, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faTelegram, faSlack } from '@fortawesome/free-brands-svg-icons';
+import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const partners = [

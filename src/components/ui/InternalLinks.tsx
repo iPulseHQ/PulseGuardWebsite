@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faGlobe, faServer, faShieldAlt, faClock, faFile } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faServer, faShieldAlt, faClock, faFile } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 interface InternalLinksProps {
@@ -111,7 +109,6 @@ const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', cla
     ]
   };
 
-  const currentLinks = linkSets[currentPage] || linkSets.home;
 
   return null;
 };

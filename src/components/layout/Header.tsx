@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faStar, faDesktop, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faChartLine, faNewspaper, faGlobe, faFile, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faStar, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faNewspaper, faGlobe, faFile, faBook } from '@fortawesome/free-solid-svg-icons';
 import { useDarkMode } from '../../context/DarkModeContext';
 import { useTranslation } from '../../hooks/useTranslation';
 

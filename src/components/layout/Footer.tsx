@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faHome, faChevronRight, faGlobe, faChevronDown, faFlask, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faChevronDown, faFlask, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from '../../hooks/useTranslation';
 import { Language } from '../../utils/translations';

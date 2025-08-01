@@ -6,22 +6,12 @@ import {
   faGlobe, 
   faShieldAlt, 
   faServer, 
-  faClock, 
-  faBell, 
-  faChartLine,
   faRobot,
   faCode,
   faPlug,
   faUniversalAccess,
-  faToolbox,
-  faTerminal,
   faList
 } from '@fortawesome/free-solid-svg-icons';
-import { 
-  faSlack, 
-  faDiscord, 
-  faTelegram 
-} from '@fortawesome/free-brands-svg-icons';
 import Layout from '../components/layout/Layout';
 import { useTranslation } from '../hooks/useTranslation';
 
