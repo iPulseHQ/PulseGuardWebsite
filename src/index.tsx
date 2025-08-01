@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-// FontAwesome configuration
+import * as Sentry from "@sentry/react";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCheck,
@@ -38,6 +37,11 @@ import {
   faInstagram,
   faTelegram
 } from '@fortawesome/free-brands-svg-icons';
+
+Sentry.init({
+  dsn: "https://340ea9c936fbd7b10e480f96e7be0b68@o4509704891072512.ingest.de.sentry.io/4509769130246225",
+  sendDefaultPii: true
+});
 
 // Add icons to the library
 library.add(
