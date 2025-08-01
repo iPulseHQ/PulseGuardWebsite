@@ -40,16 +40,17 @@ export function reportWebVitals(options?: { debug?: boolean }) {
 
 // Performance optimizations for Core Web Vitals
 export const optimizeForCoreWebVitals = () => {
-  // Preload critical resources
+  // Preload critical resources that are actually used immediately
   const preloadCritical = () => {
-    const criticalImages = ['/images/dashboard-preview.svg'];
-    criticalImages.forEach(src => {
+    // Only preload resources that are visible above the fold
+    const heroImage = document.querySelector('img[src*="dashboard-preview.svg"]');
+    if (heroImage) {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
-      link.href = src;
+      link.href = '/images/dashboard-preview.svg';
       document.head.appendChild(link);
-    });
+    }
   };
 
   // Reduce layout shifts

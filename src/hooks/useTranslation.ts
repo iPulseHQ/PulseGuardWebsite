@@ -17,14 +17,13 @@ export const useTranslation = () => {
         return;
       }
 
-      // Detect language based on location and browser
+      // Use browser language preference instead of location-based detection
       try {
-        const detectedLang = await detectUserLanguage();
+        const browserLang = navigator.language.split('-')[0] as Language;
+        const supportedLangs = ['en', 'nl']; // Add your supported languages
+        const detectedLang = supportedLangs.includes(browserLang) ? browserLang : 'en';
         setCurrentLang(detectedLang);
-        // Don't save auto-detected language to localStorage
-        // Only save when user explicitly chooses
       } catch (error) {
-        console.error('Language detection failed:', error);
         setCurrentLang('en'); // Fallback
       } finally {
         setIsLanguageDetected(true);

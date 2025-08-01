@@ -44,9 +44,9 @@ Sentry.init({
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration(),
     Sentry.browserProfilingIntegration(),
-    Sentry.feedbackIntegration({
-      colorScheme: "system",
-    }),
+    // Sentry.feedbackIntegration({
+    //   colorScheme: "system",
+    // }),
   ],
   tracesSampleRate: 1.0,
   profilesSampleRate: 0.1,
