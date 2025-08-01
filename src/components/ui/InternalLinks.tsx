@@ -28,6 +28,7 @@ interface ExternalLinkItem {
 type LinkItem = InternalLinkItem | ExternalLinkItem;
 
 const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', className = '' }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const linkSets: Record<string, LinkItem[]> = {
     home: [
       {

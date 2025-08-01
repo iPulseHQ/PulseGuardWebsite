@@ -120,11 +120,70 @@
       "sameAs": [
         "https://github.com/pulseguard",
         "https://twitter.com/pulseguard"
+      ],
+      "potentialAction": [
+        {
+          "@type": "SearchAction",
+          "target": "https://pulseguard.nl/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       ]
     }
     </script>
     
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms https://cdn.supademo.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://api.producthunt.com https://*.ytimg.com https://*.youtube.com https://www.che.nl https://imdigital.info https://arjandenhartog.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.supademo.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://*.ingest.de.sentry.io https://ipapi.co https://api.country.is https://ipinfo.io; frame-src 'self' https://demo.pulseguard.nl https://app.pulseguard.nl https://app.supademo.com https://www.youtube.com https://*.youtube.com">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PulseGuard",
+      "url": "https://pulseguard.nl",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pulseguard.nl/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "PulseGuard Monitoring",
+        "applicationCategory": "BusinessApplication"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pulseguard.nl"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Features",
+          "item": "https://pulseguard.nl/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3, 
+          "name": "Pricing",
+          "item": "https://pulseguard.nl/pricing"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Status",
+          "item": "https://pulseguard.nl/status"
+        }
+      ]
+    }
+    </script>
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms https://cdn.supademo.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://api.producthunt.com https://*.ytimg.com https://*.youtube.com https://www.che.nl https://imdigital.info https://arjandenhartog.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.supademo.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://*.ingest.de.sentry.io https://o4509704891072512.ingest.de.sentry.io https://ipapi.co https://api.country.is https://ipinfo.io; frame-src 'self' https://demo.pulseguard.nl https://app.pulseguard.nl https://app.supademo.com https://www.youtube.com https://*.youtube.com">
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">

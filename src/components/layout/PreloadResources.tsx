@@ -28,9 +28,8 @@ const PreloadResources: React.FC = () => {
       document.head.appendChild(link);
     };
 
-    // Preload critical images
-    preloadResource('/images/dashboard.png', 'image', 'image/png');
-    preloadResource('/images/logo.png', 'image', 'image/png');
+    // Preload critical images that are visible above the fold
+    preloadResource('/images/dashboard-preview.svg', 'image', 'image/svg+xml');
     
     // Preload critical fonts (already in index.html but ensure they're prioritized)
     preloadResource('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap', 'style');

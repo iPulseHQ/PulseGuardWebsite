@@ -54,11 +54,6 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <header className="lg:w-1/2 text-center lg:text-left">
-            {/* Simplified badge with subtle glow */}
-            <div className="inline-flex items-center mb-6 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20" role="status" aria-label="Current status: Beta version">
-              <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse mr-2" aria-hidden="true"></div>
-              <span className="text-green-200 text-sm font-medium">{t('heroBeta')}</span>
-            </div>
             
             {/* Cleaner heading with better typography and SEO optimization */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
@@ -72,11 +67,19 @@ const Hero: React.FC = () => {
             
             {/* Cleaner CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="https://pulseguard.nl/features/detailed" className="btn-primary">
+              <a 
+                href="https://pulseguard.nl/features/detailed" 
+                className="btn-primary"
+                aria-label={t('heroCtaPrimary') + " - Learn about PulseGuard monitoring features"}
+              >
                 <span className="font-semibold">{t('heroCtaPrimary')}</span>
-                <FontAwesomeIcon icon={faChevronRight} className="ml-2 text-sm group-hover:translate-x-1 transition-transform" />
+                <FontAwesomeIcon icon={faChevronRight} className="ml-2 text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
-              <Link to="https://app.pulseguard.nl/register" className="btn-secondary">
+              <Link 
+                to="https://app.pulseguard.nl/register" 
+                className="btn-secondary"
+                aria-label={t('heroCtaSecondary') + " - Start your free PulseGuard trial"}
+              >
                 <span className="font-semibold">{t('heroCtaSecondary')}</span>
               </Link>
             </div>
@@ -98,7 +101,10 @@ const Hero: React.FC = () => {
                       <img
                         className="max-h-8 w-auto object-contain"
                         src={partner.logo}
-                        alt={partner.name}
+                        alt={`${partner.name} - Trusted PulseGuard partner`}
+                        loading="lazy"
+                        width="120"
+                        height="32"
                       />
                     </div>
                   </a>

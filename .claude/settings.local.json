@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(grep:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(rg:*)",
+      "Bash(lighthouse:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }

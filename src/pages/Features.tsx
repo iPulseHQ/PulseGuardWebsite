@@ -7,6 +7,7 @@ import {
   faShieldAlt, 
   faServer, 
   faRobot,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   faCode,
   faPlug,
   faUniversalAccess,

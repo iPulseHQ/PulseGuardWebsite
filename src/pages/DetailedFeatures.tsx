@@ -11,6 +11,7 @@ import {
   faChartBar
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout/Layout';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useTranslation } from '../hooks/useTranslation';
 
 const DetailedFeatures: React.FC = () => {
