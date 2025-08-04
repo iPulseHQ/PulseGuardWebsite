@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { translate, Language } from '../../utils/translations';
@@ -90,7 +90,7 @@ const FAQ: React.FC<FAQProps> = ({
           <p className="text-gray-600 dark:text-gray-300">
             {translate('faqContactText', language)}{' '}
             <a 
-              href="mailto:support@pulseguard.nl"
+              href="mailto:support@pulseguard.pro"
               className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
             >
               {translate('faqContactLink', language)}

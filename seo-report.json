@@ -1,9 +1,9 @@
-{
+﻿{
   "lighthouseVersion": "12.8.0",
-  "requestedUrl": "https://pulseguard.nl/",
-  "mainDocumentUrl": "https://pulseguard.nl/",
-  "finalDisplayedUrl": "https://pulseguard.nl/",
-  "finalUrl": "https://pulseguard.nl/",
+  "requestedUrl": "https://pulseguard.pro/",
+  "mainDocumentUrl": "https://pulseguard.pro/",
+  "finalDisplayedUrl": "https://pulseguard.pro/",
+  "finalUrl": "https://pulseguard.pro/",
   "fetchTime": "2025-08-01T16:02:37.835Z",
   "gatherMode": "navigation",
   "runWarnings": [],
@@ -255,7 +255,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -271,7 +271,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -287,7 +287,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -303,7 +303,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -319,7 +319,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -335,7 +335,7 @@
             "description": "Fetch API cannot load https://api.country.is/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -351,7 +351,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -367,7 +367,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -383,7 +383,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -399,7 +399,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -415,7 +415,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -431,7 +431,7 @@
             "description": "Fetch API cannot load https://ipapi.co/country_code/. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -447,7 +447,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -463,7 +463,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -479,7 +479,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -495,7 +495,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -511,7 +511,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -527,7 +527,7 @@
             "description": "Fetch API cannot load https://ipinfo.io/country. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -543,7 +543,7 @@
             "description": "Fetch API cannot load https://o4509704891072512.ingest.de.sentry.io/api/4509769130246225/envelope/?sentry_version=7&sentry_key=340ea9c936fbd7b10e480f96e7be0b68&sentry_client=sentry.javascript.react%2F10.0.0. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 607433,
@@ -559,7 +559,7 @@
             "description": "Fetch API cannot load https://o4509704891072512.ingest.de.sentry.io/api/4509769130246225/envelope/?sentry_version=7&sentry_key=340ea9c936fbd7b10e480f96e7be0b68&sentry_client=sentry.javascript.react%2F10.0.0. Refused to connect because it violates the document's Content Security Policy.",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 607433,
@@ -575,7 +575,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -591,7 +591,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -607,7 +607,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -623,7 +623,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -639,7 +639,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -655,7 +655,7 @@
             "description": "Refused to connect to 'https://api.country.is/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -671,7 +671,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -687,7 +687,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -703,7 +703,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -719,7 +719,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -735,7 +735,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -751,7 +751,7 @@
             "description": "Refused to connect to 'https://ipapi.co/country_code/' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -767,7 +767,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -783,7 +783,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -799,7 +799,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -815,7 +815,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -831,7 +831,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -847,7 +847,7 @@
             "description": "Refused to connect to 'https://ipinfo.io/country' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 587232,
@@ -863,7 +863,7 @@
             "description": "Refused to connect to 'https://o4509704891072512.ingest.de.sentry.io/api/4509769130246225/envelope/?sentry_version=7&sentry_key=340ea9c936fbd7b10e480f96e7be0b68&sentry_client=sentry.javascript.react%2F10.0.0' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 607433,
@@ -879,7 +879,7 @@
             "description": "Refused to connect to 'https://o4509704891072512.ingest.de.sentry.io/api/4509769130246225/envelope/?sentry_version=7&sentry_key=340ea9c936fbd7b10e480f96e7be0b68&sentry_client=sentry.javascript.react%2F10.0.0' because it violates the following Content Security Policy directive: \"connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 607433,
@@ -892,10 +892,10 @@
           },
           {
             "source": "security",
-            "description": "Refused to create a worker from 'blob:https://pulseguard.nl/033cf6c0-2b8b-4e01-9c45-da1168303397' because it violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms https://cdn.supademo.com\". Note that 'worker-src' was not explicitly set, so 'script-src' is used as a fallback.\n",
+            "description": "Refused to create a worker from 'blob:https://pulseguard.pro/033cf6c0-2b8b-4e01-9c45-da1168303397' because it violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms https://cdn.supademo.com\". Note that 'worker-src' was not explicitly set, so 'script-src' is used as a fallback.\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 740020,
@@ -908,10 +908,10 @@
           },
           {
             "source": "security",
-            "description": "Refused to create a worker from 'blob:https://pulseguard.nl/033cf6c0-2b8b-4e01-9c45-da1168303397' because it violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms\". Note that 'worker-src' was not explicitly set, so 'script-src' is used as a fallback.\n",
+            "description": "Refused to create a worker from 'blob:https://pulseguard.pro/033cf6c0-2b8b-4e01-9c45-da1168303397' because it violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.youtube.com https://*.ytimg.com https://www.clarity.ms\". Note that 'worker-src' was not explicitly set, so 'script-src' is used as a fallback.\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "urlProvider": "network",
               "line": 3,
               "column": 740020,
@@ -924,10 +924,10 @@
           },
           {
             "source": "security",
-            "description": "Refused to fetch content from 'https://accounts.pulseguard.nl/sign-up?redirect_url=http%3A%2F%2Fapp.pulseguard.nl%2Fauth' because it violates the following Content Security Policy directive: \"default-src 'self'\".\n",
+            "description": "Refused to fetch content from 'https://accounts.pulseguard.pro/sign-up?redirect_url=http%3A%2F%2Fapp.pulseguard.pro%2Fauth' because it violates the following Content Security Policy directive: \"default-src 'self'\".\n",
             "sourceLocation": {
               "type": "source-location",
-              "url": "https://pulseguard.nl/",
+              "url": "https://pulseguard.pro/",
               "urlProvider": "network",
               "line": 0,
               "column": 0
@@ -965,7 +965,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/",
+            "url": "https://pulseguard.pro/",
             "responseTime": 33.218999999999994
           }
         ],
@@ -1038,7 +1038,7 @@
         "chains": {
           "4DD49D702B2F773EA8B7A5F3F4366EF9": {
             "request": {
-              "url": "https://pulseguard.nl/",
+              "url": "https://pulseguard.pro/",
               "startTime": 641525.753311,
               "endTime": 641525.852655,
               "responseReceivedTime": 641525.852127,
@@ -1067,7 +1067,7 @@
               },
               "52740.4": {
                 "request": {
-                  "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+                  "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
                   "startTime": 641525.980106,
                   "endTime": 641526.037554,
                   "responseReceivedTime": 641526.0086,
@@ -1340,13 +1340,13 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/",
+            "url": "https://pulseguard.pro/",
             "total": 2340.5160000000174,
             "scripting": 7.968,
             "scriptParseCompile": 1.924
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "total": 1324.8439999999898,
             "scripting": 830.5639999999897,
             "scriptParseCompile": 56.328
@@ -1516,7 +1516,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/",
+            "url": "https://pulseguard.pro/",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 0,
@@ -1530,7 +1530,7 @@
             "resourceType": "Document",
             "priority": "VeryHigh",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
             "url": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap",
@@ -1550,7 +1550,7 @@
             "entity": "Google Fonts"
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 227.0680000782013,
@@ -1564,10 +1564,10 @@
             "resourceType": "Script",
             "priority": "Low",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 227.2189999818802,
@@ -1581,7 +1581,7 @@
             "resourceType": "Stylesheet",
             "priority": "VeryHigh",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
             "url": "https://app.supademo.com/embed/cmc0ndkcliukcsn1rky5p2dix?embed_v=2&autoplay=true",
@@ -1633,7 +1633,7 @@
             "entity": "Google Fonts"
           },
           {
-            "url": "https://pulseguard.nl/images/logofinal.png",
+            "url": "https://pulseguard.pro/images/logofinal.png",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2270.4000000953674,
@@ -1647,7 +1647,7 @@
             "resourceType": "Image",
             "priority": "Low",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
             "url": "https://imdigital.info/logo(gray-google).png",
@@ -1701,7 +1701,7 @@
             "entity": "arjandenhartog.com"
           },
           {
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2270.9240000247955,
@@ -1715,7 +1715,7 @@
             "resourceType": "Image",
             "priority": "High",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
             "url": "https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark",
@@ -1735,7 +1735,7 @@
             "entity": "producthunt.com"
           },
           {
-            "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.nl",
+            "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.pro",
             "sessionTargetType": "iframe",
             "protocol": "h2",
             "rendererStartTime": 2282.014000058174,
@@ -1785,7 +1785,7 @@
             "entity": "Clarity"
           },
           {
-            "url": "https://pulseguard.nl/images/logo.png",
+            "url": "https://pulseguard.pro/images/logo.png",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2289.1600000858307,
@@ -1800,10 +1800,10 @@
             "priority": "Low",
             "isLinkPreload": true,
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/features",
+            "url": "https://pulseguard.pro/features",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2289.7979999780655,
@@ -1817,10 +1817,10 @@
             "resourceType": "Other",
             "priority": "VeryLow",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/pricing",
+            "url": "https://pulseguard.pro/pricing",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2290.309000015259,
@@ -1834,10 +1834,10 @@
             "resourceType": "Other",
             "priority": "VeryLow",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/team",
+            "url": "https://pulseguard.pro/team",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2290.707999944687,
@@ -1851,10 +1851,10 @@
             "resourceType": "Other",
             "priority": "VeryLow",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://app.pulseguard.nl/register",
+            "url": "https://app.pulseguard.pro/register",
             "sessionTargetType": "page",
             "protocol": "",
             "rendererStartTime": 2291.139000058174,
@@ -1868,10 +1868,10 @@
             "resourceType": "Other",
             "priority": "VeryLow",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/site.webmanifest",
+            "url": "https://pulseguard.pro/site.webmanifest",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2365.9660000801086,
@@ -1885,10 +1885,10 @@
             "resourceType": "Manifest",
             "priority": "Medium",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/favicon.ico",
+            "url": "https://pulseguard.pro/favicon.ico",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2387.569000005722,
@@ -1902,10 +1902,10 @@
             "resourceType": "Other",
             "priority": "High",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
-            "url": "https://pulseguard.nl/apple-touch-icon.png",
+            "url": "https://pulseguard.pro/apple-touch-icon.png",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2532.482999920845,
@@ -1919,7 +1919,7 @@
             "resourceType": "Other",
             "priority": "High",
             "experimentalFromMainFrame": true,
-            "entity": "pulseguard.nl"
+            "entity": "pulseguard.pro"
           },
           {
             "url": "https://www.youtube.com/s/player/461f4c95/www-player.css",
@@ -2857,7 +2857,7 @@
             "entity": "YouTube"
           },
           {
-            "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.nl%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
+            "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.pro%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 2718.28200006485,
@@ -3565,7 +3565,7 @@
             "rtt": 29.004000000000005
           },
           {
-            "origin": "https://pulseguard.nl",
+            "origin": "https://pulseguard.pro",
             "rtt": 16.636
           },
           {
@@ -3676,7 +3676,7 @@
             "serverResponseTime": 27.208
           },
           {
-            "origin": "https://pulseguard.nl",
+            "origin": "https://pulseguard.pro",
             "serverResponseTime": 21.579999999999995
           },
           {
@@ -4523,7 +4523,7 @@
                   "tbtImpact": 0
                 },
                 {
-                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.nl",
+                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.pro",
                   "mainThreadTime": 19.992,
                   "blockingTime": 0,
                   "transferSize": 53155,
@@ -4787,7 +4787,7 @@
               "type": "subitems",
               "items": [
                 {
-                  "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.nl%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
+                  "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.pro%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
                   "mainThreadTime": 0,
                   "blockingTime": 0,
                   "transferSize": 556,
@@ -4895,7 +4895,7 @@
                   "tbtImpact": 0
                 },
                 {
-                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.nl",
+                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.pro",
                   "mainThreadTime": 19.992,
                   "blockingTime": 0,
                   "transferSize": 53155,
@@ -5142,7 +5142,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "duration": 318,
             "startTime": 14612.710000000003
           },
@@ -5152,7 +5152,7 @@
             "startTime": 17204.781000000003
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "duration": 176,
             "startTime": 14930.710000000003
           },
@@ -5167,12 +5167,12 @@
             "startTime": 19916.056000000004
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "duration": 132,
             "startTime": 14480.710000000003
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "duration": 93,
             "startTime": 15179.710000000003
           },
@@ -5182,12 +5182,12 @@
             "startTime": 19827.056000000004
           },
           {
-            "url": "https://pulseguard.nl/",
+            "url": "https://pulseguard.pro/",
             "duration": 88,
             "startTime": 914.314
           },
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "duration": 73,
             "startTime": 15106.710000000003
           },
@@ -5206,10 +5206,10 @@
         "debugData": {
           "type": "debugdata",
           "urls": [
-            "https://pulseguard.nl/static/js/main.94eac998.js",
+            "https://pulseguard.pro/static/js/main.94eac998.js",
             "https://www.clarity.ms/s/0.8.21/clarity.js",
             "https://www.googletagmanager.com/gtag/js?id=G-0N3XMX901W",
-            "https://pulseguard.nl/"
+            "https://pulseguard.pro/"
           ],
           "tasks": [
             {
@@ -5448,8 +5448,8 @@
                 "width": 224,
                 "height": 24
               },
-              "snippet": "<a href=\"https://app.pulseguard.nl/domains\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
-              "nodeLabel": "app.pulseguard.nl/domains"
+              "snippet": "<a href=\"https://app.pulseguard.pro/domains\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
+              "nodeLabel": "app.pulseguard.pro/domains"
             },
             "subItems": {
               "type": "subitems",
@@ -5506,8 +5506,8 @@
                 "width": 240,
                 "height": 24
               },
-              "snippet": "<a href=\"https://app.pulseguard.nl/dashboard\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
-              "nodeLabel": "app.pulseguard.nl/dashboard"
+              "snippet": "<a href=\"https://app.pulseguard.pro/dashboard\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
+              "nodeLabel": "app.pulseguard.pro/dashboard"
             },
             "subItems": {
               "type": "subitems",
@@ -5592,7 +5592,7 @@
                 "height": 258
               },
               "snippet": "<div class=\"browser-mockup\">",
-              "nodeLabel": "app.pulseguard.nl\nWatch the demo"
+              "nodeLabel": "app.pulseguard.pro\nWatch the demo"
             },
             "subItems": {
               "type": "subitems",
@@ -5677,7 +5677,7 @@
                 "height": 449
               },
               "snippet": "<div class=\"browser-mockup shadow-xl hover:shadow-2xl relative group\">",
-              "nodeLabel": "app.pulseguard.nl/dashboard\nOverview\nDomains\nAlerts\n\nTotal Monitors\n\n24\n\nOnline…"
+              "nodeLabel": "app.pulseguard.pro/dashboard\nOverview\nDomains\nAlerts\n\nTotal Monitors\n\n24\n\nOnline…"
             },
             "subItems": {
               "type": "subitems",
@@ -5860,7 +5860,7 @@
                 "height": 449
               },
               "snippet": "<div class=\"browser-mockup shadow-xl hover:shadow-2xl relative group\">",
-              "nodeLabel": "app.pulseguard.nl/domains\nDomain Monitor\n4 Domains\n3 Online\n1 Offline\nAdd\nDOMAI…"
+              "nodeLabel": "app.pulseguard.pro/domains\nDomain Monitor\n4 Domains\n3 Online\n1 Offline\nAdd\nDOMAI…"
             },
             "subItems": {
               "type": "subitems",
@@ -6158,7 +6158,7 @@
                 "height": 0
               },
               "snippet": "<div id=\"faq-answer-3\" class=\"transition-all duration-200 ease-in-out max-h-0 opacity-0 overflow-hidden\">",
-              "nodeLabel": "U maakt een account aan op pulseguard.nl, logt in, voegt een monitor toe en kri…"
+              "nodeLabel": "U maakt een account aan op pulseguard.pro, logt in, voegt een monitor toe en kri…"
             },
             "subItems": {
               "type": "subitems",
@@ -6709,7 +6709,7 @@
             }
           },
           {
-            "url": "https://pulseguard.nl/images/logofinal.png",
+            "url": "https://pulseguard.pro/images/logofinal.png",
             "node": {
               "type": "node",
               "lhId": "1-85-IMG",
@@ -6794,8 +6794,8 @@
         ],
         "items": [
           {
-            "scriptUrl": "https://pulseguard.nl/static/js/main.94eac998.js",
-            "sourceMapUrl": "https://pulseguard.nl/static/js/main.94eac998.js.map",
+            "scriptUrl": "https://pulseguard.pro/static/js/main.94eac998.js",
+            "sourceMapUrl": "https://pulseguard.pro/static/js/main.94eac998.js.map",
             "subItems": {
               "type": "subitems",
               "items": []
@@ -6853,7 +6853,7 @@
               "snippet": "<img alt=\"PulseGuard Dashboard Preview\" class=\"absolute inset-0 w-full h-full object-cover opacity-80\" src=\"/images/dashboard.png\">",
               "nodeLabel": "PulseGuard Dashboard Preview"
             },
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "wastedMs": 0
           }
         ],
@@ -6865,15 +6865,15 @@
           "type": "debugdata",
           "initiatorPath": [
             {
-              "url": "https://pulseguard.nl/images/dashboard.png",
+              "url": "https://pulseguard.pro/images/dashboard.png",
               "initiatorType": "script"
             },
             {
-              "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+              "url": "https://pulseguard.pro/static/js/main.94eac998.js",
               "initiatorType": "parser"
             },
             {
-              "url": "https://pulseguard.nl/",
+              "url": "https://pulseguard.pro/",
               "initiatorType": "other"
             }
           ],
@@ -7087,7 +7087,7 @@
         "type": "treemap-data",
         "nodes": [
           {
-            "name": "https://pulseguard.nl/",
+            "name": "https://pulseguard.pro/",
             "resourceBytes": 286,
             "encodedBytes": 0,
             "unusedBytes": 82,
@@ -7100,7 +7100,7 @@
             ]
           },
           {
-            "name": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "name": "https://pulseguard.pro/static/js/main.94eac998.js",
             "resourceBytes": 845148,
             "encodedBytes": 845616,
             "unusedBytes": 323082,
@@ -9420,7 +9420,7 @@
                 "height": 24
               },
               "snippet": "<div class=\"browser-address-bar w-64 flex items-center justify-center\">",
-              "nodeLabel": "app.pulseguard.nl",
+              "nodeLabel": "app.pulseguard.pro",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.03 (foreground color: #94a3b8, background color: #334155, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
             }
           },
@@ -9438,8 +9438,8 @@
                 "width": 240,
                 "height": 24
               },
-              "snippet": "<a href=\"https://app.pulseguard.nl/dashboard\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
-              "nodeLabel": "app.pulseguard.nl/dashboard",
+              "snippet": "<a href=\"https://app.pulseguard.pro/dashboard\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
+              "nodeLabel": "app.pulseguard.pro/dashboard",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.03 (foreground color: #94a3b8, background color: #334155, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
             }
           },
@@ -9457,8 +9457,8 @@
                 "width": 224,
                 "height": 24
               },
-              "snippet": "<a href=\"https://app.pulseguard.nl/domains\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
-              "nodeLabel": "app.pulseguard.nl/domains",
+              "snippet": "<a href=\"https://app.pulseguard.pro/domains\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-60…\">",
+              "nodeLabel": "app.pulseguard.pro/domains",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.03 (foreground color: #94a3b8, background color: #334155, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
             }
           },
@@ -10168,21 +10168,21 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "cacheLifetimeMs": 0,
             "cacheHitProbability": 0,
             "totalBytes": 845681,
             "wastedBytes": 845681
           },
           {
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "cacheLifetimeMs": 0,
             "cacheHitProbability": 0,
             "totalBytes": 561019,
             "wastedBytes": 561019
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "cacheLifetimeMs": 0,
             "cacheHitProbability": 0,
             "totalBytes": 89934,
@@ -10203,14 +10203,14 @@
             "wastedBytes": 15537
           },
           {
-            "url": "https://pulseguard.nl/images/logo.png",
+            "url": "https://pulseguard.pro/images/logo.png",
             "cacheLifetimeMs": 0,
             "cacheHitProbability": 0,
             "totalBytes": 8516,
             "wastedBytes": 8516
           },
           {
-            "url": "https://pulseguard.nl/images/logofinal.png",
+            "url": "https://pulseguard.pro/images/logofinal.png",
             "cacheLifetimeMs": 0,
             "cacheHitProbability": 0,
             "totalBytes": 5162,
@@ -10443,7 +10443,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "totalBytes": 845681
           },
           {
@@ -10451,7 +10451,7 @@
             "totalBytes": 677887
           },
           {
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "totalBytes": 561019
           },
           {
@@ -10561,7 +10561,7 @@
             "wastedMs": 800
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "totalBytes": 89934,
             "wastedMs": 999
           }
@@ -10669,7 +10669,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "wastedBytes": 56995,
             "wastedPercent": 63.453980694937705,
             "totalBytes": 89821
@@ -10734,7 +10734,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "totalBytes": 845148,
             "wastedBytes": 323082,
             "wastedPercent": 38.227860682389355,
@@ -10859,7 +10859,7 @@
               "snippet": "<img alt=\"PulseGuard Dashboard Preview\" class=\"absolute inset-0 w-full h-full object-cover opacity-80\" src=\"/images/dashboard.png\">",
               "nodeLabel": "PulseGuard Dashboard Preview"
             },
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 560652,
@@ -10973,17 +10973,17 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "totalBytes": 845148,
             "wastedBytes": 601918
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "totalBytes": 89821,
             "wastedBytes": 75266
           },
           {
-            "url": "https://pulseguard.nl/",
+            "url": "https://pulseguard.pro/",
             "totalBytes": 7145,
             "wastedBytes": 5001
           }
@@ -11058,7 +11058,7 @@
               "snippet": "<img alt=\"PulseGuard Dashboard Preview\" class=\"absolute inset-0 w-full h-full object-cover opacity-80\" src=\"/images/dashboard.png\">",
               "nodeLabel": "PulseGuard Dashboard Preview"
             },
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "totalBytes": 560652,
             "wastedBytes": 538740,
             "wastedPercent": 96.09161174128063
@@ -11207,7 +11207,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "wastedBytes": 35222,
             "subItems": {
               "type": "subitems",
@@ -11216,7 +11216,7 @@
                   "signal": "@babel/plugin-transform-spread",
                   "location": {
                     "type": "source-location",
-                    "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                    "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                     "urlProvider": "network",
                     "line": 3,
                     "column": 284252,
@@ -11231,7 +11231,7 @@
                   "signal": "Array.from",
                   "location": {
                     "type": "source-location",
-                    "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                    "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                     "urlProvider": "network",
                     "line": 3,
                     "column": 706244,
@@ -11435,7 +11435,7 @@
                   "url": "https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark"
                 },
                 {
-                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.nl"
+                  "url": "https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.pro"
                 }
               ]
             }
@@ -11458,7 +11458,7 @@
                   "url": "https://ipinfo.io/country"
                 },
                 {
-                  "url": "https://app.pulseguard.nl/register"
+                  "url": "https://app.pulseguard.pro/register"
                 },
                 {
                   "url": "https://o4509704891072512.ingest.de.sentry.io/api/4509769130246225/envelope/?sentry_version=7&sentry_key=340ea9c936fbd7b10e480f96e7be0b68&sentry_client=sentry.javascript.react%2F10.0.0"
@@ -11824,19 +11824,19 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "cacheLifetimeMs": 0,
             "totalBytes": 845681,
             "wastedBytes": 845681
           },
           {
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "cacheLifetimeMs": 0,
             "totalBytes": 561019,
             "wastedBytes": 561019
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "cacheLifetimeMs": 0,
             "totalBytes": 89934,
             "wastedBytes": 89934
@@ -11860,13 +11860,13 @@
             "wastedBytes": 12817.2
           },
           {
-            "url": "https://pulseguard.nl/images/logo.png",
+            "url": "https://pulseguard.pro/images/logo.png",
             "cacheLifetimeMs": 0,
             "totalBytes": 8516,
             "wastedBytes": 8516
           },
           {
-            "url": "https://pulseguard.nl/images/logofinal.png",
+            "url": "https://pulseguard.pro/images/logofinal.png",
             "cacheLifetimeMs": 0,
             "totalBytes": 5162,
             "wastedBytes": 5162
@@ -12228,7 +12228,7 @@
               {
                 "source": {
                   "type": "source-location",
-                  "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                  "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                   "urlProvider": "network",
                   "line": 4,
                   "column": 685429
@@ -12256,7 +12256,7 @@
               {
                 "source": {
                   "type": "source-location",
-                  "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                  "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                   "urlProvider": "network",
                   "line": 3,
                   "column": 672535
@@ -12266,7 +12266,7 @@
               {
                 "source": {
                   "type": "source-location",
-                  "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                  "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                   "urlProvider": "network",
                   "line": 3,
                   "column": 660315
@@ -12346,7 +12346,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/images/dashboard.png",
+            "url": "https://pulseguard.pro/images/dashboard.png",
             "totalBytes": 560652,
             "wastedBytes": 542768,
             "subItems": {
@@ -12580,7 +12580,7 @@
         ],
         "items": [
           {
-            "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+            "url": "https://pulseguard.pro/static/js/main.94eac998.js",
             "wastedBytes": 35222,
             "subItems": {
               "type": "subitems",
@@ -12589,7 +12589,7 @@
                   "signal": "@babel/plugin-transform-spread",
                   "location": {
                     "type": "source-location",
-                    "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                    "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                     "urlProvider": "network",
                     "line": 3,
                     "column": 284252,
@@ -12604,7 +12604,7 @@
                   "signal": "Array.from",
                   "location": {
                     "type": "source-location",
-                    "url": "https://pulseguard.nl/static/js/main.94eac998.js",
+                    "url": "https://pulseguard.pro/static/js/main.94eac998.js",
                     "urlProvider": "network",
                     "line": 3,
                     "column": 706244,
@@ -12668,7 +12668,7 @@
               "type": "network-tree",
               "chains": {
                 "4DD49D702B2F773EA8B7A5F3F4366EF9": {
-                  "url": "https://pulseguard.nl/",
+                  "url": "https://pulseguard.pro/",
                   "navStartToEndTime": 135,
                   "transferSize": 8088,
                   "isLongest": true,
@@ -12689,7 +12689,7 @@
                       }
                     },
                     "52740.4": {
-                      "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+                      "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
                       "navStartToEndTime": 288,
                       "transferSize": 89934,
                       "children": {}
@@ -12902,7 +12902,7 @@
             "wastedMs": 800
           },
           {
-            "url": "https://pulseguard.nl/static/css/main.b6edf53f.css",
+            "url": "https://pulseguard.pro/static/css/main.b6edf53f.css",
             "totalBytes": 89934,
             "wastedMs": 999
           }
@@ -13099,7 +13099,7 @@
               "type": "subitems",
               "items": [
                 {
-                  "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.nl%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
+                  "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-0N3XMX901W&gtm=45je57u1v9222935103za200zd9222935103&_p=1754064160313&gcd=13l3l3l2l1l1&npa=1&dma_cps=syphamo&dma=1&tag_exp=101509157~103116026~103200004~103233427~104684208~104684211~104948813~105087538~105087540~105103161~105103163~105113531&cid=888729726.1754064161&ul=nl-nl&sr=412x823&uaa=&uab=64&uafvl=Not)A%253BBrand%3B8.0.0.0%7CChromium%3B138.0.7204.184%7CGoogle%2520Chrome%3B138.0.7204.184&uamb=1&uam=moto%20g%20power%20(2022)&uap=Android&uapv=11.0&uaw=0&are=1&frm=0&pscdl=noapi&_s=1&sid=1754064160&sct=1&seg=0&dl=https%3A%2F%2Fpulseguard.pro%2F&dt=PulseGuard%20-%20Advanced%20Website%20%26%20Server%20Monitoring%20Solution%20%7C%2099.9%25%20Uptime%20Monitoring&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=2719",
                   "mainThreadTime": 0,
                   "transferSize": 556
                 }
@@ -13290,10 +13290,10 @@
   "stackPacks": [],
   "entities": [
     {
-      "name": "pulseguard.nl",
+      "name": "pulseguard.pro",
       "origins": [
-        "https://pulseguard.nl",
-        "https://app.pulseguard.nl"
+        "https://pulseguard.pro",
+        "https://app.pulseguard.pro"
       ],
       "isFirstParty": true,
       "isUnrecognized": true

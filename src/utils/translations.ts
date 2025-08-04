@@ -1,4 +1,4 @@
-// Type for supported languages
+﻿// Type for supported languages
 export type Language = 'en' | 'nl' | 'de' | 'fr' | 'es' | 'it' | 'pt' | 'ru' | 'ja' | 'ko' | 'zh' | 'ar' | 'hi' | 'bn' | 'ur' | 'id' | 'ms' | 'th' | 'vi' | 'tr' | 'pl' | 'cs' | 'sk' | 'hu' | 'ro' | 'bg' | 'hr' | 'sr' | 'sl' | 'et' | 'lv' | 'lt' | 'fi' | 'sv' | 'no' | 'da' | 'is' | 'el' | 'he' | 'fa' | 'ta' | 'te' | 'ml' | 'kn' | 'gu' | 'pa' | 'or' | 'as' | 'mr' | 'ne' | 'si' | 'my' | 'km' | 'lo' | 'ka' | 'am' | 'sw' | 'zu' | 'af' | 'xh' | 'st' | 'tn' | 'ss' | 've' | 'ts' | 'nr';
 
 // Interface for translations
@@ -833,8 +833,8 @@ export const translations: Translations = {
     nl: 'Hoe gebruikt u PulseGuard?'
   },
   faqHowToUseAnswer: {
-    en: 'You create an account on pulseguard.nl, log in, add a monitor and get immediate insight into your domains.',
-    nl: 'U maakt een account aan op pulseguard.nl, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen.'
+    en: 'You create an account on pulseguard.pro, log in, add a monitor and get immediate insight into your domains.',
+    nl: 'U maakt een account aan op pulseguard.pro, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen.'
   },
   faqOrigin: {
     en: 'How did PulseGuard come about?',

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -59,7 +59,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ customItems }) => {
         "@type": "ListItem",
         "position": index + 1,
         "name": item.name,
-        "item": `https://pulseguard.nl${item.href === '/' ? '' : item.href}`
+        "item": `https://pulseguard.pro${item.href === '/' ? '' : item.href}`
       }))
     };
 

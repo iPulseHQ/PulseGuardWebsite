@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -401,7 +401,7 @@ const DetailedFeatures: React.FC = () => {
                         <div>
                           <strong>API Documentation</strong>
                           <p className="text-gray-600 dark:text-gray-400">
-                            Complete API documentatie met voorbeelden en gebruikshandleiding. <a href="https://docs.pulseguard.nl" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">docs.pulseguard.nl</a>
+                            Complete API documentatie met voorbeelden en gebruikshandleiding. <a href="https://docs.pulseguard.pro" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600">docs.pulseguard.pro</a>
                           </p>
                         </div>
                       </li>
@@ -455,14 +455,14 @@ const DetailedFeatures: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="https://app.pulseguard.nl/register" 
+                to="https://app.pulseguard.pro/register" 
                 className="inline-flex items-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300"
               >
                 <span>Start Gratis Trial</span>
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </Link>
               <a 
-                href="mailto:info@pulseguard.nl"
+                href="mailto:info@pulseguard.pro"
                 className="inline-flex items-center px-8 py-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg transition-all duration-300"
               >
                 <span>Neem Contact Op</span>

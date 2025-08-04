@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -192,7 +192,7 @@ const Features: React.FC = () => {
                 <pre className="text-green-400 overflow-x-auto">
                   <code>
                     # Voorbeeld API aanroep voor status check
-                    curl -X GET "https://api.pulseguard.nl/v1/status/domain/example.com" \\
+                    curl -X GET "https://api.pulseguard.pro/v1/status/domain/example.com" \\
                       -H "Authorization: Bearer YOUR_API_KEY"
                   </code>
                 </pre>
@@ -237,7 +237,7 @@ const Features: React.FC = () => {
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </Link>
               <Link 
-                to="https://app.pulseguard.nl/register" 
+                to="https://app.pulseguard.pro/register" 
                 className="inline-flex items-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-xl transition-all duration-300"
               >
                 <span className="text-lg">Start met alle features</span>

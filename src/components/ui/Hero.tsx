@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons';
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
             {/* Cleaner CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a 
-                href="https://pulseguard.nl/features/detailed" 
+                href="https://pulseguard.pro/features/detailed" 
                 className="btn-primary"
                 aria-label={t('heroCtaPrimary') + " - Learn about PulseGuard monitoring features"}
               >
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
                 <FontAwesomeIcon icon={faChevronRight} className="ml-2 text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <Link 
-                to="https://app.pulseguard.nl/register" 
+                to="https://app.pulseguard.pro/register" 
                 className="btn-secondary"
                 aria-label={t('heroCtaSecondary') + " - Start your free PulseGuard trial"}
               >
@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
                 <div className="flex-1 flex justify-center">
                   <div className="browser-address-bar w-64 flex items-center justify-center">
                     <i className="fas fa-lock text-green-400 text-xs mr-1"></i>
-                    app.pulseguard.nl
+                    app.pulseguard.pro
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
                 {/* YouTube iframe */}
                 <iframe 
                   id="dashboard-video" 
-                  src="https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.nl" 
+                  src="https://www.youtube.com/embed/Vb84FkDt6Hk?rel=0&modestbranding=1&autoplay=0&enablejsapi=1&origin=https://pulseguard.pro" 
                   title="PulseGuard Dashboard Video" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

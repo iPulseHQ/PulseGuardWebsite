@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faCreditCard, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -523,22 +523,22 @@ const Pricing: React.FC = () => {
                 <tr className="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors duration-150">
                   <td className="py-5 px-6 text-gray-800 dark:text-gray-200 font-medium">{t('getStarted')}</td>
                   <td className="py-5 px-6 text-center">
-                    <Link to="https://app.pulseguard.nl/register" className="inline-block px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium rounded-md text-center transition-colors">
+                    <Link to="https://app.pulseguard.pro/register" className="inline-block px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium rounded-md text-center transition-colors">
                       {t('freeStart')}
                     </Link>
                   </td>
                   <td className="py-5 px-6 text-center bg-blue-50 dark:bg-blue-900/30">
-                    <Link to="https://app.pulseguard.nl/register" className="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md text-center transition-colors shadow-md">
+                    <Link to="https://app.pulseguard.pro/register" className="inline-block px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md text-center transition-colors shadow-md">
                       {t('chooseStandard')}
                     </Link>
                   </td>
                   <td className="py-5 px-6 text-center">
-                    <Link to="https://app.pulseguard.nl/register" className="inline-block px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-md text-center transition-colors shadow-md">
+                    <Link to="https://app.pulseguard.pro/register" className="inline-block px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-md text-center transition-colors shadow-md">
                       {t('choosePro')}
                     </Link>
                   </td>
                   <td className="py-5 px-6 text-center bg-gray-50 dark:bg-gray-700">
-                    <a href="mailto:info@pulseguard.nl" className="inline-block px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white font-medium rounded-md text-center transition-colors shadow-md">
+                    <a href="mailto:info@pulseguard.pro" className="inline-block px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white font-medium rounded-md text-center transition-colors shadow-md">
                       {t('contactSales')}
                     </a>
                   </td>

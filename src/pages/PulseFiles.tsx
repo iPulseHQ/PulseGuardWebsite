@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,7 @@ const PulseFiles: React.FC = () => {
     "@type": "WebPage",
     "name": `${t('pulseFilesTitle')} - ${t('pulseFilesHeroDescription')}`,
     "description": t('pulseFilesHeroDescription'),
-    "url": "https://pulseguard.nl/pulsefiles"
+    "url": "https://pulseguard.pro/pulsefiles"
   };
 
   const breadcrumbData = {
@@ -24,13 +24,13 @@ const PulseFiles: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://pulseguard.nl/"
+        "item": "https://pulseguard.pro/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": t('pulseFilesTitle'),
-        "item": "https://pulseguard.nl/pulsefiles"
+        "item": "https://pulseguard.pro/pulsefiles"
       }
     ]
   };
@@ -41,7 +41,7 @@ const PulseFiles: React.FC = () => {
         title={`${t('pulseFilesTitle')} - ${t('pulseFilesHeroDescription')} | PulseGuard`}
         description={t('pulseFilesHeroDescription')}
         keywords="bestandsdeling, file sharing, veilig, encryptie, tijdelijk, nederland, privacy, gdpr"
-        canonicalUrl="https://pulseguard.nl/pulsefiles"
+        canonicalUrl="https://pulseguard.pro/pulsefiles"
         structuredData={pulseFilesStructuredData}
         breadcrumbData={breadcrumbData}
       />
@@ -75,7 +75,7 @@ const PulseFiles: React.FC = () => {
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
-                      href="https://files.pulseguard.nl"
+                      href="https://files.pulseguard.pro"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
@@ -483,7 +483,7 @@ const PulseFiles: React.FC = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <a
-                    href="https://files.pulseguard.nl"
+                    href="https://files.pulseguard.pro"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center px-8 py-4 text-lg font-bold text-blue-600 bg-white rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg"

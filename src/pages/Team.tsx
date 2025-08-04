@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -28,7 +28,7 @@ const teamMembers: TeamMember[] = [
     image: "/images/team/michan.jpeg",
     linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
     github: "https://github.com/IAMichan",
-    email: "michan@pulseguard.nl"
+    email: "michan@pulseguard.pro"
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
     image: "/images/team/arjan.jpeg",
     linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
     github: "https://github.com/ArjanDenHartog",
-    email: "arjan@pulseguard.nl"
+    email: "arjan@pulseguard.pro"
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const teamMembers: TeamMember[] = [
     image: "/images/team/noah.jpeg",
     linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
     instagram: "https://www.instagram.com/noahvandenbroek_/",
-    email: "noah@pulseguard.nl"
+    email: "noah@pulseguard.pro"
   },
   {
     id: 4,
@@ -58,7 +58,7 @@ const teamMembers: TeamMember[] = [
     image: "/images/team/juda.jpg",
     linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
     instagram: "https://www.instagram.com/judazwemer/",
-    email: "juda@pulseguard.nl"
+    email: "juda@pulseguard.pro"
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const teamMembers: TeamMember[] = [
     image: "/images/team/wietse.jpeg",
     linkedin: "https://www.linkedin.com/in/wietse-bos-2699a714b/",
     instagram: "https://www.instagram.com/wietsebos/",
-    email: "marketing@pulseguard.nl"
+    email: "marketing@pulseguard.pro"
   }
 ];
 
@@ -104,16 +104,16 @@ const Team: React.FC = () => {
     "@type": "AboutPage", 
     "name": "PulseGuard Team - Meet Our Monitoring Experts",
     "description": "Meet the talented team behind PulseGuard. Experienced developers and designers dedicated to building the best monitoring solution for your infrastructure.",
-    "url": "https://pulseguard.nl/team",
+    "url": "https://pulseguard.pro/team",
     "mainEntity": {
       "@type": "Organization",
       "name": "PulseGuard",
-      "url": "https://pulseguard.nl",
+      "url": "https://pulseguard.pro",
       "employee": teamMembers.map(member => ({
         "@type": "Person",
         "name": member.name,
         "jobTitle": member.role,
-        "image": `https://pulseguard.nl${member.image}`,
+        "image": `https://pulseguard.pro${member.image}`,
         "sameAs": [member.linkedin, member.github].filter(Boolean)
       }))
     }
@@ -125,7 +125,7 @@ const Team: React.FC = () => {
         title={t('teamSeoTitle')}
         description={t('teamSeoDescription')}
         keywords={t('teamSeoKeywords')}
-        canonicalUrl="https://pulseguard.nl/team"
+        canonicalUrl="https://pulseguard.pro/team"
         structuredData={teamStructuredData}
       />
       <Layout>
@@ -240,7 +240,7 @@ const Team: React.FC = () => {
                 {t('joinUsDescription')}
               </p>
               <a 
-                href="mailto:info@pulseguard.nl" 
+                href="mailto:info@pulseguard.pro" 
                 className="btn-primary inline-flex items-center group"
               >
                 <span>{t('getInTouch')}</span>

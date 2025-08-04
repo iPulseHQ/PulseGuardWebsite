@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import Hero from '../components/ui/Hero';
@@ -17,37 +17,37 @@ const Home: React.FC = () => {
     "@type": "WebSite",
     "name": "PulseGuard",
     "alternateName": ["PulseGuard Monitoring", "PulseGuard Uptime Monitor", "PulseGuard Server Monitor"],
-    "url": "https://pulseguard.nl",
+    "url": "https://pulseguard.pro",
     "description": "Professional monitoring solution for websites, servers, SSL certificates, and cronjobs with instant notifications via Telegram, Email, and Slack.",
     "publisher": {
       "@type": "Organization",
-      "@id": "https://pulseguard.nl#organization"
+      "@id": "https://pulseguard.pro#organization"
     },
     "potentialAction": [
       {
         "@type": "SearchAction",
-        "target": "https://pulseguard.nl/search?q={search_term_string}",
+        "target": "https://pulseguard.pro/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
       {
         "@type": "RegisterAction",
-        "target": "https://app.pulseguard.nl/register",
+        "target": "https://app.pulseguard.pro/register",
         "name": "Start Free Monitoring"
       }
     ],
     "mainEntity": {
       "@type": "SoftwareApplication",
-      "@id": "https://pulseguard.nl#software",
+      "@id": "https://pulseguard.pro#software",
       "name": "PulseGuard",
       "applicationCategory": ["BusinessApplication", "DeveloperApplication", "SystemMonitoringApplication"],
       "operatingSystem": ["Web-based", "Cloud", "SaaS"],
-      "downloadUrl": "https://app.pulseguard.nl",
+      "downloadUrl": "https://app.pulseguard.pro",
       "softwareVersion": "2.0",
       "releaseNotes": "Enhanced monitoring capabilities with improved alerting system",
       "screenshot": [
-        "https://pulseguard.nl/images/dashboard-preview.svg",
-        "https://pulseguard.nl/images/dashboard.png",
-        "https://pulseguard.nl/images/devices.png"
+        "https://pulseguard.pro/images/dashboard-preview.svg",
+        "https://pulseguard.pro/images/dashboard.png",
+        "https://pulseguard.pro/images/devices.png"
       ],
       "featureList": [
         "HTTP/HTTPS website uptime monitoring",
@@ -114,13 +114,13 @@ const Home: React.FC = () => {
   const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://pulseguard.nl#organization",
+    "@id": "https://pulseguard.pro#organization",
     "name": "PulseGuard",
     "legalName": "PulseGuard Monitoring Solutions",
-    "url": "https://pulseguard.nl",
+    "url": "https://pulseguard.pro",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://pulseguard.nl/images/logo.png",
+      "url": "https://pulseguard.pro/images/logo.png",
       "width": "200",
       "height": "200"
     },
@@ -130,14 +130,14 @@ const Home: React.FC = () => {
       {
         "@type": "ContactPoint",
         "contactType": "Customer Support",
-        "email": "support@pulseguard.nl",
+        "email": "support@pulseguard.pro",
         "availableLanguage": ["English", "Dutch"],
         "serviceArea": "Worldwide"
       },
       {
         "@type": "ContactPoint",
         "contactType": "Sales",
-        "email": "sales@pulseguard.nl",
+        "email": "sales@pulseguard.pro",
         "availableLanguage": ["English", "Dutch"]
       }
     ],
@@ -187,7 +187,7 @@ const Home: React.FC = () => {
         "name": "Hoe gebruikt u PulseGuard?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "U maakt een account aan op pulseguard.nl, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen."
+          "text": "U maakt een account aan op pulseguard.pro, logt in, voegt een monitor toe en krijgt direct inzicht in uw domeinen."
         }
       },
       {
@@ -257,7 +257,7 @@ const Home: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://pulseguard.nl/"
+        "item": "https://pulseguard.pro/"
       }
     ]
   };
@@ -292,8 +292,8 @@ const Home: React.FC = () => {
         title="PulseGuard - Advanced Website & Server Monitoring Solution | 99.9% Uptime Monitoring"
         description="Professional website monitoring, server monitoring, SSL certificate tracking, and cronjob monitoring with instant alerts via Telegram, Email, Slack. 5-minute setup, 99.9% uptime guarantee. Monitor HTTP/HTTPS endpoints, server resources, SSL expiration dates, and automated tasks from one dashboard."
         keywords="website monitoring, server monitoring, uptime monitoring, SSL monitoring, cronjob monitoring, status page, website downtime alerts, server health monitoring, application monitoring, infrastructure monitoring, real-time alerts, system monitoring, uptime checker, website availability, server status, SSL certificate expiration, heartbeat monitoring, ping monitoring, HTTP monitoring, HTTPS monitoring, web monitoring service, network monitoring, performance monitoring, site reliability, IT monitoring, devops monitoring, production monitoring, incident management, monitoring dashboard, alert notifications, uptime tracking, downtime detection, service monitoring, application performance monitoring, synthetic monitoring, website speed monitoring, server performance monitoring, cloud monitoring"
-        canonicalUrl="https://pulseguard.nl/"
-        ogImage="https://pulseguard.nl/images/dashboard-preview.svg"
+        canonicalUrl="https://pulseguard.pro/"
+        ogImage="https://pulseguard.pro/images/dashboard-preview.svg"
         structuredData={[homeStructuredData, organizationData]}
         faqData={faqData}
         breadcrumbData={breadcrumbData}

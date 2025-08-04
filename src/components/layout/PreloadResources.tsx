@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const PreloadResources: React.FC = () => {
   React.useEffect(() => {
@@ -40,7 +40,7 @@ const PreloadResources: React.FC = () => {
     prefetchResource('/team');
     
     // Prefetch app signup page (high-intent action)
-    prefetchResource('https://app.pulseguard.nl/register');
+    prefetchResource('https://app.pulseguard.pro/register');
 
     // Preload critical JavaScript chunks (if using code splitting)
     // This would be more specific based on your build setup

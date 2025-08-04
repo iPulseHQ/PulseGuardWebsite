@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 interface SEOHeadProps {
   title?: string;
@@ -20,7 +20,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   description = "Professional website monitoring, server monitoring, SSL certificate tracking, and cronjob monitoring with instant alerts via Telegram, Email, Slack. 5-minute setup, 99.9% uptime guarantee. Monitor HTTP/HTTPS endpoints, server resources, SSL expiration dates, and automated tasks from one dashboard.",
   keywords = "website monitoring, server monitoring, uptime monitoring, SSL monitoring, cronjob monitoring, status page, website downtime alerts, server health monitoring, application monitoring, infrastructure monitoring, real-time alerts, system monitoring, uptime checker, website availability, server status, SSL certificate expiration, heartbeat monitoring, ping monitoring, HTTP monitoring, HTTPS monitoring, web monitoring service, network monitoring, performance monitoring, site reliability, IT monitoring, devops monitoring, production monitoring, incident management",
   canonicalUrl,
-  ogImage = "https://pulseguard.nl/images/dashboard-preview.svg",
+  ogImage = "https://pulseguard.pro/images/dashboard-preview.svg",
   ogImageAlt = "PulseGuard Dashboard Interface - Professional monitoring solution for websites, servers, SSL certificates with real-time alerts and status pages",
   structuredData,
   noindex = false,
@@ -29,7 +29,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   faqData,
   articleData
 }) => {
-  const currentUrl = canonicalUrl || `https://pulseguard.nl${window.location.pathname}`;
+  const currentUrl = canonicalUrl || `https://pulseguard.pro${window.location.pathname}`;
   const robotsContent = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`;
 
   React.useEffect(() => {

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
 import PricingComponent from '../components/ui/Pricing';
@@ -9,7 +9,7 @@ const Pricing: React.FC = () => {
     "@type": "WebPage",
     "name": "PulseGuard Pricing - Affordable Monitoring Plans",
     "description": "Transparent pricing for professional website monitoring, server monitoring, and infrastructure monitoring. Free plan available with paid upgrades for advanced features.",
-    "url": "https://pulseguard.nl/pricing",
+    "url": "https://pulseguard.pro/pricing",
     "mainEntity": {
       "@type": "SoftwareApplication",
       "name": "PulseGuard",
@@ -114,13 +114,13 @@ const Pricing: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://pulseguard.nl/"
+        "item": "https://pulseguard.pro/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Pricing",
-        "item": "https://pulseguard.nl/pricing"
+        "item": "https://pulseguard.pro/pricing"
       }
     ]
   };
@@ -178,7 +178,7 @@ const Pricing: React.FC = () => {
         title="Affordable Website Monitoring Pricing - Server Monitoring Plans | PulseGuard Cost"
         description="Transparent pricing for professional website monitoring and server monitoring. Free plan for 5 monitors, paid plans from €9/month. Compare features and costs for uptime monitoring, SSL tracking, and infrastructure monitoring solutions."
         keywords="monitoring pricing, website monitoring cost, server monitoring plans, uptime monitoring price, monitoring service pricing, infrastructure monitoring cost, affordable monitoring solution, website monitoring subscription, monitoring plans comparison, monitoring software pricing, uptime monitoring cost, SSL monitoring pricing, server monitoring cost, cheap website monitoring, budget monitoring solution, monitoring service fees"
-        canonicalUrl="https://pulseguard.nl/pricing"
+        canonicalUrl="https://pulseguard.pro/pricing"
         structuredData={pricingStructuredData}
         breadcrumbData={breadcrumbData}
         faqData={faqData}

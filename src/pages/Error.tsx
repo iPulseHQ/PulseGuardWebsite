@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
@@ -9,7 +9,7 @@ const ErrorPage: React.FC = () => {
       <SEOHead
         title="500 Internal Server Error - PulseGuard"
         description="Something went wrong on our end."
-        canonicalUrl="https://pulseguard.nl/500"
+        canonicalUrl="https://pulseguard.pro/500"
       />
       <Layout>
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { faGlobe, faServer, faShieldAlt, faClock, faFile } from '@fortawesome/free-solid-svg-icons';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -101,7 +101,7 @@ const InternalLinks: React.FC<InternalLinksProps> = ({ currentPage = 'home', cla
       },
       {
         title: "Start Free Monitoring",
-        href: "https://app.pulseguard.nl/register",
+        href: "https://app.pulseguard.pro/register",
         description: "Begin monitoring your websites and servers today",
         icon: faShieldAlt,
         keywords: "free trial, start monitoring, sign up",

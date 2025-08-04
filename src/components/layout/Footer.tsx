@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faChevronDown, faFlask, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
               <div className="flex flex-col items-center">
                 <h4 className="text-sm font-medium text-gray-400 mb-3">{t('footerGetStarted')}</h4>
                 <a 
-                  href="https://app.pulseguard.nl/register" 
+                  href="https://app.pulseguard.pro/register" 
                   className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105"
                 >
                   {t('register')}
@@ -169,22 +169,22 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-6">{t('footerPlatform')}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://app.pulseguard.nl" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('dashboard')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.nl/domains" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro/domains" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('footerDomains')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.nl/device-monitoring" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro/device-monitoring" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('footerDevices')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.nl/subscriptions" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro/subscriptions" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('footerSubscriptions')}
                 </a>
               </li>
@@ -200,17 +200,17 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@pulseguard.nl" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block flex items-center">
+                <a href="mailto:info@pulseguard.pro" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block flex items-center">
                   Email
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.nl/privacy" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro/privacy" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('footerPrivacyPolicy')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.nl/terms" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
+                <a href="https://app.pulseguard.pro/terms" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform inline-block">
                   {t('footerTerms')}
                 </a>
               </li>
@@ -219,7 +219,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-500 text-sm">
-          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard is onderdeel van <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300" itemProp="email">imdigital.com</a></span> - {t('footerCopyright')} <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.nl</a></p>
+          <p>&copy; <span itemProp="copyrightYear">{new Date().getFullYear()}</span> <span itemProp="copyrightHolder">PulseGuard is onderdeel van <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300" itemProp="email">imdigital.com</a></span> - {t('footerCopyright')} <a href="mailto:info@pulseguard.pro" className="text-blue-400 hover:text-blue-300" itemProp="email">info@pulseguard.pro</a></p>
         </div>
       </div>
     </footer>

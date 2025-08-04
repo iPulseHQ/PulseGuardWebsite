@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import SEOHead from '../components/layout/SEOHead';
@@ -10,7 +10,7 @@ const NotFound: React.FC = () => {
       <SEOHead
         title="404 Not Found - PulseGuard"
         description="The page you are looking for does not exist."
-        canonicalUrl="https://pulseguard.nl/404"
+        canonicalUrl="https://pulseguard.pro/404"
       />
       <Layout>
         <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">

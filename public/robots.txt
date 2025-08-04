@@ -1,4 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+﻿# https://www.robotstxt.org/robotstxt.html
 
 User-agent: *
 Allow: /
@@ -53,4 +53,4 @@ Crawl-delay: 3
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://pulseguard.nl/sitemap.xml
+Sitemap: https://pulseguard.pro/sitemap.xml

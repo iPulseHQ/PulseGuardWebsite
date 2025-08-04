@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faStar, faTag, faUsers, faUserPlus, faArrowRight, faBars, faTimes, faSun, faMoon, faNewspaper, faGlobe, faFile, faBook } from '@fortawesome/free-solid-svg-icons';
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
                 <span className="font-medium">{t('blog')}</span>
                 <span className="nav-link-indicator"></span>
               </Link>
-              <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
+              <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="nav-link group px-4 py-2 hover:bg-white dark:hover:bg-gray-700 rounded-full">
                 <span className="font-medium">{t('docs')}</span>
                 <span className="nav-link-indicator"></span>
               </a>
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
             <Link to="/blog" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
               <span className="font-medium">{t('blog')}</span>
             </Link>
-            <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
+            <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="nav-link group px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg text-sm">
               <span className="font-medium">{t('docs')}</span>
             </a>
           </nav>
@@ -131,7 +131,7 @@ const Header: React.FC = () => {
               </span>
             </button>
             
-            <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+            <Link to="https://app.pulseguard.pro" className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
               <span className="relative">{t('dashboard')}</span>
               <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1.5 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
               <FontAwesomeIcon icon={faGlobe} className="h-3 w-3 mr-1 text-gray-600 dark:text-gray-400" />
               <span className="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase">{currentLang}</span>
             </button>
-            <Link to="https://app.pulseguard.nl" className="relative inline-flex items-center px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
+            <Link to="https://app.pulseguard.pro" className="relative inline-flex items-center px-3 py-2 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg group hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
               <span className="relative">{t('dashboard')}</span>
               <FontAwesomeIcon icon={faArrowRight} className="text-xs ml-1 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -226,14 +226,14 @@ const Header: React.FC = () => {
             <span className="font-medium">{t('blog')}</span>
           </Link>
           
-          <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faBook} className="text-blue-500" />
             </div>
             <span className="font-medium">{t('docs')}</span>
           </a>
           
-          <Link to="https://app.pulseguard.nl/register" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="https://app.pulseguard.pro/register" className="mobile-nav-link flex items-center py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="h-8 w-8 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center mr-3">
               <FontAwesomeIcon icon={faUserPlus} className="text-sky-500" />
             </div>
@@ -271,7 +271,7 @@ const Header: React.FC = () => {
           </div>
           
           {/* App Link in Mobile Menu */}
-          <Link to="https://app.pulseguard.nl" className="mobile-nav-link flex items-center justify-between py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
+          <Link to="https://app.pulseguard.pro" className="mobile-nav-link flex items-center justify-between py-3 px-4 rounded-xl group" onClick={() => setMobileMenuOpen(false)}>
             <div className="flex items-center">
               <div className="h-8 w-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3">
                 <FontAwesomeIcon icon={faArrowRight} className="text-blue-500" />

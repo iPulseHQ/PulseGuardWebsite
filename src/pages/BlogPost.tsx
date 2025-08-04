@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 
@@ -44,7 +44,7 @@ const BlogPost: React.FC = () => {
           </Link>
           <h1>{post.title}</h1>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-              By <a href="https://pulseguard.nl/team" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 no-underline">{post.author}</a> on {new Date(post.date).toLocaleDateString()}
+              By <a href="https://pulseguard.pro/team" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 no-underline">{post.author}</a> on {new Date(post.date).toLocaleDateString()}
           </p>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
           <Link to="/blog" className="inline-block mt-8 text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 no-underline">

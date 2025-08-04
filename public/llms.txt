@@ -1,4 +1,4 @@
-# PulseGuard - Website Monitoring Platform
+﻿# PulseGuard - Website Monitoring Platform
 
 PulseGuard is a comprehensive website and server monitoring platform designed to help you keep an eye on your online world. Currently in beta, PulseGuard offers various monitoring solutions:
 
@@ -16,4 +16,4 @@ PulseGuard is a comprehensive website and server monitoring platform designed to
 - Quick 5-minute setup time
 - Comprehensive dashboard for all your monitoring needs
 
-Visit our website at https://pulseguard.nl or try the platform at https://app.pulseguard.nl/register 
+Visit our website at https://pulseguard.pro or try the platform at https://app.pulseguard.pro/register 

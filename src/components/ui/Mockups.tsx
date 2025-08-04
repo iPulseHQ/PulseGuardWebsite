@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faServer, faShieldAlt, faExclamationTriangle, faCheckCircle, faTimesCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -86,12 +86,12 @@ const Mockups: React.FC = () => {
                     <span></span>
                   </div>
                   <a 
-                    href="https://app.pulseguard.nl/dashboard" 
+                    href="https://app.pulseguard.pro/dashboard" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors justify-center"
                   >
-                    app.pulseguard.nl/dashboard
+                    app.pulseguard.pro/dashboard
                   </a>
                 </div>
                 <div className="browser-content relative bg-white dark:bg-gray-900 p-4 rounded-b-lg">
@@ -251,12 +251,12 @@ const Mockups: React.FC = () => {
                     <span></span>
                   </div>
                   <a 
-                    href="https://app.pulseguard.nl/domains" 
+                    href="https://app.pulseguard.pro/domains" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="browser-address-bar cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
                   >
-                    app.pulseguard.nl/domains
+                    app.pulseguard.pro/domains
                   </a>
                 </div>
                 <div className="browser-content relative bg-white dark:bg-gray-900 p-4 rounded-b-lg">

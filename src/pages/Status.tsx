@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Layout from '../components/layout/Layout';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +27,7 @@ const Status: React.FC = () => {
             {/* Status Widget */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl">
               <iframe 
-                src="https://app.pulseguard.nl/status/pulseguard-1/widget" 
+                src="https://app.pulseguard.pro/status/pulseguard-1/widget" 
                 width="100%" 
                 height="400" 
                 frameBorder="0" 
@@ -41,8 +41,8 @@ const Status: React.FC = () => {
             <div className="mt-8 text-center">
               <p className="text-blue-200">
                 Need to report an issue? Contact us at 
-                <a href="mailto:info@pulseguard.nl" className="text-blue-300 hover:text-blue-200 underline ml-1">
-                  info@pulseguard.nl
+                <a href="mailto:info@pulseguard.pro" className="text-blue-300 hover:text-blue-200 underline ml-1">
+                  info@pulseguard.pro
                 </a>
               </p>
             </div>
@@ -50,7 +50,7 @@ const Status: React.FC = () => {
             {/* Return to dashboard button */}
             <div className="flex justify-center mt-10">
               <Link 
-                to="https://app.pulseguard.nl" 
+                to="https://app.pulseguard.pro" 
                 className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 border border-white/20 inline-flex items-center"
               >
                 <span>Go to Dashboard</span>
