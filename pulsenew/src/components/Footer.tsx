@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Github, Instagram } from "lucide-react";
 
 export default function Footer() {
@@ -10,13 +11,13 @@ export default function Footer() {
         <div className="text-center mb-12 pb-8 border-b border-gray-200">
           <h3 className="text-lg font-semibold mb-4 text-gray-800">Rate us on Product Hunt</h3>
           <a href="https://www.producthunt.com/products/pulseguard-2/reviews" target="_blank" rel="noopener noreferrer">
-            <img 
+            <Image 
               src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=light" 
               alt="PulseGuard - Complete monitoring solution for websites, devices & services | Product Hunt" 
-              style={{ width: '250px', height: '54px' }} 
-              width="250" 
-              height="54" 
+              width={250} 
+              height={54} 
               className="hover:scale-105 transition-transform duration-300 mx-auto"
+              unoptimized
             />
           </a>
         </div>
@@ -25,7 +26,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-            <img
+            <Image
             src="/assets/logodark.png"
             alt="PulseGuard Logo"
             width={150}
@@ -83,30 +84,30 @@ export default function Footer() {
           
           {/* Platform */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Platform</h4>
+            <h4 className="text-lg font-semibold mb-6 text-gray-800">Platform</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://app.pulseguard.pro" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro" className="text-gray-600 hover:text-black transition-colors">
                   Dashboard
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/domains" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro/domains" className="text-gray-600 hover:text-black transition-colors">
                   Domains
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/device-monitoring" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro/device-monitoring" className="text-gray-600 hover:text-black transition-colors">
                   Devices
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/subscriptions" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro/subscriptions" className="text-gray-600 hover:text-black transition-colors">
                   Subscriptions
                 </a>
               </li>
               <li>
-                <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors">
                   Documentation
                 </a>
               </li>
@@ -115,25 +116,25 @@ export default function Footer() {
           
           {/* Support */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Support</h4>
+            <h4 className="text-lg font-semibold mb-6 text-gray-800">Support</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-600 hover:text-black transition-colors">
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="mailto:info@pulseguard.pro" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:info@pulseguard.pro" className="text-gray-600 hover:text-black transition-colors">
                   Email Support
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/privacy" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro/privacy" className="text-gray-600 hover:text-black transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/terms" className="text-gray-400 hover:text-white transition-colors">
+                <a href="https://app.pulseguard.pro/terms" className="text-gray-600 hover:text-black transition-colors">
                   Terms of Service
                 </a>
               </li>
@@ -141,7 +142,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-gray-200 pt-8 text-center text-gray-500 text-sm">
           <p>
             &copy; {new Date().getFullYear()} PulseGuard is onderdeel van{" "}
             <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300">

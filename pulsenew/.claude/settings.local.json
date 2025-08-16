@@ -6,7 +6,10 @@
       "Bash(cp:*)",
       "Bash(xcopy:*)",
       "Bash(copy:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

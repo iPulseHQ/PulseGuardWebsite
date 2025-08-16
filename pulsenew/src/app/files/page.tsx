@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Shield, Clock, Eye, Server, Github } from "lucide-react";
 
 export default function PulseFiles() {
@@ -14,9 +13,13 @@ export default function PulseFiles() {
           GDPR compliant, and completely secure.
         </p>
         
-        <div className="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-8">
-          <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-          Coming Soon - Beta Version
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a href="https://files.pulseguard.pro/signup" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">
+            Get Started
+          </a>
+          <a href="https://files.pulseguard.pro/login" className="text-black font-medium hover:text-gray-600 transition-colors">
+            Sign In →
+          </a>
         </div>
       </section>
 
@@ -90,7 +93,7 @@ export default function PulseFiles() {
             </div>
             <h3 className="text-xl font-bold text-black mb-4">No Tracking</h3>
             <p className="text-gray-600 leading-relaxed">
-              We don't track who uploads what. Complete anonymity and privacy 
+              We don&apos;t track who uploads what. Complete anonymity and privacy 
               protection.
             </p>
           </div>
@@ -141,22 +144,18 @@ export default function PulseFiles() {
         </div>
       </section>
 
-      {/* Coming Soon CTA */}
+      {/* Get Started CTA */}
       <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold text-black mb-6">Coming Soon</h2>
+        <h2 className="text-3xl font-bold text-black mb-6">Start sharing files securely</h2>
         <p className="text-xl text-gray-600 mb-8">
-          PulseFiles is currently in development. Sign up to be notified when we launch 
-          and get early access to the beta version.
+          Join users who trust PulseFiles for secure, encrypted file sharing 
+          with automatic deletion and European data protection.
         </p>
-        <div className="max-w-md mx-auto flex gap-4">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">
-            Notify Me
-          </button>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://files.pulseguard.pro" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors"> 
+            Visit PulseFiles →
+          </a>
         </div>
       </section>
     </div>

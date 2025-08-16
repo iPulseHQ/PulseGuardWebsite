@@ -13,9 +13,10 @@ export default function PulseCRM() {
           projects, and business processes in one integrated platform.
         </p>
         
-        <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-8">
-          <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-          Coming Soon - In Development
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+          <a href="https://crm.pulseguard.pro" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">
+            Get Started
+          </a>
         </div>
       </section>
 
@@ -151,31 +152,28 @@ export default function PulseCRM() {
         </div>
       </section>
 
-      {/* Coming Soon CTA */}
+      {/* Get Started CTA */}
       <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold text-black mb-6">Be the first to know</h2>
+        <h2 className="text-3xl font-bold text-black mb-6">Start managing your business better</h2>
         <p className="text-xl text-gray-600 mb-8">
-          PulseCRM is currently in development. Sign up to be notified when we launch 
-          and get exclusive early access to our beta program.
+          Join small businesses who use PulseCRM to manage customers, projects, 
+          and business processes more efficiently.
         </p>
-        <div className="max-w-md mx-auto flex gap-4">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-          <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">
-            Notify Me
-          </button>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <a href="https://crm.pulseguard.pro/sign-up" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">
+            Start Free Trial
+          </a>
+          <a href="https://crm.pulseguard.pro" className="text-black font-medium hover:text-gray-600 transition-colors">
+            Visit PulseCRM →
+          </a>
         </div>
         
-        <div className="mt-8">
-          <p className="text-gray-500 text-sm">
-            Questions? Contact us at{" "}
-            <a href="mailto:info@pulseguard.pro" className="text-blue-600 hover:text-blue-800">
-              info@pulseguard.pro
-            </a>
-          </p>
+        <div className="text-gray-500 text-sm">
+          Questions? Contact us at{" "}
+          <a href="mailto:info@pulseguard.pro" className="text-blue-600 hover:text-blue-800">
+            info@pulseguard.pro
+          </a>
         </div>
       </section>
     </div>

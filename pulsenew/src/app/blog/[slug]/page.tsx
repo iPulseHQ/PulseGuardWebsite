@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { getTeamMemberByName } from "@/data/team";
 
 interface BlogPost {
   slug: string;
@@ -16,7 +17,7 @@ const blogPosts: Record<string, BlogPost> = {
     slug: "welcome-to-our-blog",
     title: "Welcome to Our Blog!",
     content: `
-      <p>We're excited to launch the PulseGuard blog! This is your go-to resource for insights, updates, and best practices about website monitoring, server management, and digital infrastructure.</p>
+      <p>We&apos;re excited to launch the PulseGuard blog! This is your go-to resource for insights, updates, and best practices about website monitoring, server management, and digital infrastructure.</p>
       
       <h2>What you can expect</h2>
       <p>Our blog will cover a wide range of topics including:</p>
@@ -31,7 +32,7 @@ const blogPosts: Record<string, BlogPost> = {
       <h2>Our mission</h2>
       <p>At PulseGuard, we believe that reliable monitoring is the foundation of any successful digital business. Through this blog, we aim to share our knowledge and help you build more resilient systems.</p>
       
-      <p>Stay tuned for regular updates, and don't hesitate to reach out if you have specific topics you'd like us to cover!</p>
+      <p>Stay tuned for regular updates, and don&apos;t hesitate to reach out if you have specific topics you&apos;d like us to cover!</p>
     `,
     author: "Arjan den Hartog",
     date: "2024-01-15",
@@ -56,7 +57,7 @@ const blogPosts: Record<string, BlogPost> = {
       <p>Snelle websites leveren betere resultaten op:</p>
       <ul>
         <li>Lagere bounce rates</li>
-        <li>Hogere conversieratio's</li>
+        <li>Hogere conversieratio&apos;s</li>
         <li>Betere gebruikerservaring</li>
         <li>Hogere SEO-rankings</li>
       </ul>
@@ -72,9 +73,9 @@ const blogPosts: Record<string, BlogPost> = {
       
       <p>Investeren in monitoring is investeren in uw digitale succes!</p>
     `,
-    author: "Noah van de Broek",
+    author: "Noah van den Broek",
     date: "2024-01-10",
-    image: "/assets/shield.png"
+    image: "/assets/bigstock-Cyber-Security-Concept-Login-464450397.webp"
   }
 };
 
@@ -124,7 +125,21 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </h1>
           
           <div className="flex items-center text-gray-600">
-            <div className="w-10 h-10 bg-gray-300 rounded-full mr-4"></div>
+            {(() => {
+              const teamMember = getTeamMemberByName(post.author);
+              return teamMember ? (
+                <div className="relative w-10 h-10 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src={teamMember.image}
+                    alt={teamMember.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-10 h-10 bg-gray-300 rounded-full mr-4"></div>
+              );
+            })()}
             <div>
               <div className="font-medium text-black">{post.author}</div>
               <div className="text-sm">
@@ -140,7 +155,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
 
         {/* Article Content */}
         <div 
-          className="prose prose-lg max-w-none prose-headings:text-black prose-p:text-gray-700 prose-li:text-gray-700"
+          className="prose prose-xl max-w-none dark:prose-invert prose-headings:text-black prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-ul:list-disc prose-ol:list-decimal prose-strong:text-black prose-a:text-blue-600 hover:prose-a:text-blue-800"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Shield, Globe, Server, Zap, Bell, BarChart3 } from "lucide-react";
 
 export default function Guard() {

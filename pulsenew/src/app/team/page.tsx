@@ -1,50 +1,8 @@
 import Image from "next/image";
 import { Linkedin, Github, Mail, Instagram } from "lucide-react";
+import { teamMembers } from "@/data/team";
 
 export default function Team() {
-  const teamMembers = [
-    {
-      name: "Michan van der Hoek",
-      role: "Developer & CEO",
-      image: "/assets/team/michan.jpeg",
-      linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
-      github: "https://github.com/IAMichan",
-      email: "michan@pulseguard.pro"
-    },
-    {
-      name: "Arjan den Hartog",
-      role: "Developer & CTO",
-      image: "/assets/team/arjan.jpeg",
-      linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
-      github: "https://github.com/ArjanDenHartog",
-      email: "arjan@pulseguard.pro"
-    },
-    {
-      name: "Noah van den Broek",
-      role: "Marketing & CMO",
-      image: "/assets/team/noah.jpeg",
-      linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
-      instagram: "https://www.instagram.com/noahvandenbroek_/",
-      email: "noah@pulseguard.pro"
-    },
-    {
-      name: "Juda Zwemer",
-      role: "Marketing & Content Manager",
-      image: "/assets/team/juda.jpg",
-      linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
-      instagram: "https://www.instagram.com/judazwemer/",
-      email: "juda@pulseguard.pro"
-    },
-    {
-      name: "Wietse Bos",
-      role: "Marketing",
-      image: "/assets/team/wietse.jpeg",
-      linkedin: "https://www.linkedin.com/in/wietse-bos-2699a714b/",
-      instagram: "https://www.instagram.com/wietsebos/",
-      email: "marketing@pulseguard.pro"
-    }
-  ];
-
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
@@ -53,7 +11,7 @@ export default function Team() {
           Meet our team
         </h1>
         <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-          We're a passionate team of developers and marketers dedicated to building 
+          We&apos;re a passionate team of developers and marketers dedicated to building 
           the best monitoring platform for businesses of all sizes.
         </p>
       </section>
@@ -126,7 +84,7 @@ export default function Team() {
           <h2 className="text-3xl font-bold text-black mb-6">About PulseGuard</h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
             PulseGuard is part of IM Digital, a Netherlands-based technology company focused on 
-            creating innovative monitoring and management solutions. We're committed to helping 
+            creating innovative monitoring and management solutions. We&apos;re committed to helping 
             businesses maintain reliable digital infrastructure with cutting-edge technology 
             and exceptional support.
           </p>
@@ -152,8 +110,8 @@ export default function Team() {
       <section className="max-w-4xl mx-auto px-4 py-20 text-center">
         <h2 className="text-3xl font-bold text-black mb-6">Join our team</h2>
         <p className="text-xl text-gray-600 mb-8">
-          We're always looking for talented individuals to join our growing team. 
-          If you're passionate about technology and want to make an impact, we'd love to hear from you.
+          We&apos;re always looking for talented individuals to join our growing team. 
+          If you&apos;re passionate about technology and want to make an impact, we&apos;d love to hear from you.
         </p>
         <a 
           href="mailto:info@pulseguard.pro"

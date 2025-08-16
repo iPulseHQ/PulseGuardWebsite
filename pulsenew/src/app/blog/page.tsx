@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTeamMemberByName } from "@/data/team";
 
 export default function Blog() {
   const blogPosts = [
     {
       slug: "welcome-to-our-blog",
       title: "Welcome to Our Blog!",
-      excerpt: "We're excited to share insights, updates, and best practices about website monitoring, server management, and digital infrastructure.",
+      excerpt: "We&apos;re excited to share insights, updates, and best practices about website monitoring, server management, and digital infrastructure.",
       author: "Arjan den Hartog",
       date: "2024-01-15",
       image: "/assets/dashboard.png"
@@ -15,9 +16,9 @@ export default function Blog() {
       slug: "website-security-performance",
       title: "Veiligheid en websiteprestaties: een win-win",
       excerpt: "Ontdek hoe goede beveiliging en prestaties hand in hand gaan voor een betere gebruikerservaring en SEO-rankings.",
-      author: "Noah van de Broek",
+      author: "Noah van den Broek",
       date: "2024-01-10",
-      image: "/assets/shield.png"
+      image: "/assets/bigstock-Cyber-Security-Concept-Login-464450397.webp"
     }
   ];
 
@@ -67,7 +68,21 @@ export default function Blog() {
                   </p>
                   
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-gray-300 rounded-full mr-3"></div>
+                    {(() => {
+                      const teamMember = getTeamMemberByName(post.author);
+                      return teamMember ? (
+                        <div className="relative w-8 h-8 rounded-full overflow-hidden mr-3">
+                          <Image
+                            src={teamMember.image}
+                            alt={teamMember.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-8 h-8 bg-gray-300 rounded-full mr-3"></div>
+                      );
+                    })()}
                     <div>
                       <div className="text-sm font-medium text-black">{post.author}</div>
                     </div>

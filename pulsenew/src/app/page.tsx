@@ -39,24 +39,33 @@ export default function Home() {
         <p className="text-center text-black font-medium mb-8">Trusted by</p>
         <div className="flex justify-center items-center gap-12 flex-wrap">
           <div className="flex items-center justify-center h-16">
-            <img 
+            <Image 
               src="https://imdigital.info/logo(gray-google).png" 
               alt="IM Digital" 
+              width={120}
+              height={48}
               className="h-12 opacity-60 hover:opacity-100 transition-opacity"
+              unoptimized
             />
           </div>
           <div className="flex items-center justify-center h-16">
-            <img 
+            <Image 
               src="https://www.che.nl/themes/custom/che/images/logos/logo.svg" 
               alt="CHE" 
+              width={120}
+              height={48}
               className="h-12 opacity-60 hover:opacity-100 transition-opacity"
+              unoptimized
             />
           </div>
           <div className="flex items-center justify-center h-16">
-            <img 
+            <Image 
               src="https://arjandenhartog.com/favicon.ico" 
               alt="Arjan den Hartog" 
+              width={48}
+              height={48}
               className="h-12 opacity-60 hover:opacity-100 transition-opacity"
+              unoptimized
             />
           </div>
         </div>
@@ -154,10 +163,82 @@ export default function Home() {
               <Image
                 src="/assets/pulsedashboard.png"
                 alt="Dashboard Preview"
+                width={3801}
+                height={1914}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      {/* Domain Information Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-[#F6F5F4] rounded-xl p-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/assets/security-icon.svg"
+                alt="Domain info icon"
+                width={26}
+                height={26}
+              />
+            </div>
+            <h2 className="text-[18px] font-bold text-black tracking-[-0.13px] mb-4">
+              All domain information in one place
+            </h2>
+            <p className="text-base text-[#121212] tracking-[0.008px] leading-[23px] max-w-[508px]">
+              View DNS, SSL, registrar details, name servers and historical changes for each domain.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="w-full max-w-[956px] aspect-[956/493] bg-white rounded-xl border border-black/10 shadow-sm overflow-hidden">
+              <Image
+                src="/assets/website-monitoring.png"
+                alt="Website monitoring preview"
                 width={956}
                 height={493}
                 className="w-full h-full object-cover"
-                priority
+              />
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      {/* PulseAI Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-[#F6F5F4] rounded-xl p-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/assets/security-icon.svg"
+                alt="AI icon"
+                width={26}
+                height={26}
+              />
+            </div>
+            <h2 className="text-[18px] font-bold text-black tracking-[-0.13px] mb-4">
+              PulseAI assistant
+            </h2>
+            <p className="text-base text-[#121212] tracking-[0.008px] leading-[23px] max-w-[508px]">
+              Ask AI to analyse domains, suggest actions and generate insights from your monitoring data.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="w-full max-w-[956px] aspect-[956/493] bg-white rounded-xl border border-black/10 shadow-sm overflow-hidden">
+              <Image
+                src="/assets/pulseai.png"
+                alt="PulseAI preview"
+                width={956}
+                height={493}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

@@ -20,8 +20,8 @@ export default function Header() {
 
   const getSignupLink = () => {
     if (pathname === '/guard') return 'https://app.pulseguard.pro/register';
-    if (pathname === '/files') return 'https://files.pulseguard.pro/signup';
-    if (pathname === '/crm') return 'https://crm.pulseguard.pro/signup';
+    if (pathname === '/files') return 'https://files.pulseguard.pro';
+    if (pathname === '/crm') return 'https://crm.pulseguard.pro/sign-up';
     return 'https://app.pulseguard.pro/register';
   };
 
