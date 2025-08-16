@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma-dev-mode-mcp-server__get_image",
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "Bash(cp:*)",
+      "Bash(xcopy:*)",
+      "Bash(copy:*)",
+      "Bash(powershell:*)"
+    ],
+    "deny": []
+  }
+}

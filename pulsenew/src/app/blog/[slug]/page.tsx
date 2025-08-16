@@ -1,0 +1,168 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  content: string;
+  author: string;
+  date: string;
+  image: string;
+}
+
+const blogPosts: Record<string, BlogPost> = {
+  "welcome-to-our-blog": {
+    slug: "welcome-to-our-blog",
+    title: "Welcome to Our Blog!",
+    content: `
+      <p>We're excited to launch the PulseGuard blog! This is your go-to resource for insights, updates, and best practices about website monitoring, server management, and digital infrastructure.</p>
+      
+      <h2>What you can expect</h2>
+      <p>Our blog will cover a wide range of topics including:</p>
+      <ul>
+        <li>Website monitoring best practices</li>
+        <li>Server performance optimization</li>
+        <li>Security monitoring and alerts</li>
+        <li>Platform updates and new features</li>
+        <li>Case studies and success stories</li>
+      </ul>
+      
+      <h2>Our mission</h2>
+      <p>At PulseGuard, we believe that reliable monitoring is the foundation of any successful digital business. Through this blog, we aim to share our knowledge and help you build more resilient systems.</p>
+      
+      <p>Stay tuned for regular updates, and don't hesitate to reach out if you have specific topics you'd like us to cover!</p>
+    `,
+    author: "Arjan den Hartog",
+    date: "2024-01-15",
+    image: "/assets/dashboard.png"
+  },
+  "website-security-performance": {
+    slug: "website-security-performance",
+    title: "Veiligheid en websiteprestaties: een win-win",
+    content: `
+      <p>In de digitale wereld van vandaag zijn veiligheid en prestaties niet alleen belangrijke factoren voor de gebruikerservaring, maar ook voor SEO-rankings en bedrijfssucces.</p>
+      
+      <h2>Waarom veiligheid belangrijk is</h2>
+      <p>Website beveiliging beschermt niet alleen uw gegevens, maar beïnvloedt ook:</p>
+      <ul>
+        <li>Gebruikersvertrouwen en conversies</li>
+        <li>SEO-rankings (Google beloont veilige sites)</li>
+        <li>Bedrijfsreputatie en merkwaarde</li>
+        <li>Compliance met regelgeving</li>
+      </ul>
+      
+      <h2>Prestaties die ertoe doen</h2>
+      <p>Snelle websites leveren betere resultaten op:</p>
+      <ul>
+        <li>Lagere bounce rates</li>
+        <li>Hogere conversieratio's</li>
+        <li>Betere gebruikerservaring</li>
+        <li>Hogere SEO-rankings</li>
+      </ul>
+      
+      <h2>De PulseGuard aanpak</h2>
+      <p>Met PulseGuard monitort u beide aspecten in één platform. Onze tools helpen u:</p>
+      <ul>
+        <li>SSL-certificaten te monitoren</li>
+        <li>Website prestaties te meten</li>
+        <li>Uptime te bewaken</li>
+        <li>Problemen proactief te detecteren</li>
+      </ul>
+      
+      <p>Investeren in monitoring is investeren in uw digitale succes!</p>
+    `,
+    author: "Noah van de Broek",
+    date: "2024-01-10",
+    image: "/assets/shield.png"
+  }
+};
+
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const post = blogPosts[params.slug];
+
+  if (!post) {
+    return (
+      <div className="bg-white min-h-screen">
+        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-3xl font-bold text-black mb-6">Post not found</h1>
+          <Link href="/blog" className="text-blue-600 hover:text-blue-800">
+            ← Back to blog
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-white min-h-screen">
+      {/* Back to Blog */}
+      <div className="max-w-4xl mx-auto px-4 pt-8">
+        <Link 
+          href="/blog" 
+          className="inline-flex items-center text-gray-600 hover:text-black transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to blog
+        </Link>
+      </div>
+
+      {/* Article Header */}
+      <article className="max-w-4xl mx-auto px-4 py-12">
+        <header className="mb-12">
+          <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-8">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6">
+            {post.title}
+          </h1>
+          
+          <div className="flex items-center text-gray-600">
+            <div className="w-10 h-10 bg-gray-300 rounded-full mr-4"></div>
+            <div>
+              <div className="font-medium text-black">{post.author}</div>
+              <div className="text-sm">
+                {new Date(post.date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Article Content */}
+        <div 
+          className="prose prose-lg max-w-none prose-headings:text-black prose-p:text-gray-700 prose-li:text-gray-700"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      </article>
+
+      {/* Related Posts */}
+      <section className="bg-[#F6F5F4] py-20">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-black mb-8">More from our blog</h2>
+          <Link 
+            href="/blog"
+            className="inline-flex items-center bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors"
+          >
+            View all posts
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export async function generateStaticParams() {
+  return Object.keys(blogPosts).map((slug) => ({
+    slug,
+  }));
+}
