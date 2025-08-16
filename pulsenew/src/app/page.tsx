@@ -19,27 +19,35 @@ export default function Home() {
         
         {/* Action buttons */}
         <div className="flex items-center justify-center gap-4 mb-12">
-          <a href="mailto:info@pulseguard.nl" className="text-[#0a85d1] text-base hover:underline">{t('requestDemo')}</a>
-          <span className="text-[#0a85d1] text-base">→</span>
+          <a 
+            href="mailto:info@pulseguard.nl" 
+            className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 flex items-center gap-2"
+          >
+            {t('requestDemo')}
+            <span className="text-lg">→</span>
+          </a>
         </div>
 
         {/* Heartbeat graphic */}
-        <div className="flex justify-center mb-20">
-          <Image
-            src="/assets/heartbeat.svg"
-            alt="Heartbeat monitor"
-            width={1000}
-            height={120}
-            className="max-w-full h-auto dark:invert dark:brightness-0"
-          />
+        <div className="flex justify-center mb-12">
+          <div className="animate-pulse-continuous">
+            <Image
+              src="/assets/heartbeat.svg"
+              alt="Heartbeat monitor"
+              width={1000}
+              height={120}
+              className="max-w-full h-auto dark:invert dark:brightness-0"
+            />
+          </div>
         </div>
       </section>
 
       {/* Trusted by section */}
       <section className="max-w-7xl mx-auto px-4 mb-20">
+        <div className="border-t border-gray-200 dark:border-gray-700 mb-8"></div>
         <p className="text-center text-black dark:text-foreground font-medium mb-8">{t('heroTrustedBy')}</p>
         <div className="flex justify-center items-center gap-12 flex-wrap">
-          <div className="flex items-center justify-center h-16">
+          <div className="flex items-center justify-center h-16" title="IM Digital">
             <Image 
               src="https://imdigital.info/logo(gray-google).png" 
               alt="IM Digital" 
@@ -49,7 +57,7 @@ export default function Home() {
               unoptimized
             />
           </div>
-          <div className="flex items-center justify-center h-16">
+          <div className="flex items-center justify-center h-16" title="CHE">
             <Image 
               src="https://www.che.nl/themes/custom/che/images/logos/logo.svg" 
               alt="CHE" 
@@ -59,7 +67,7 @@ export default function Home() {
               unoptimized
             />
           </div>
-          <div className="flex items-center justify-center h-16">
+          <div className="flex items-center justify-center h-16" title="Arjan den Hartog">
             <Image 
               src="https://arjandenhartog.com/favicon.ico" 
               alt="Arjan den Hartog" 
@@ -70,11 +78,12 @@ export default function Home() {
             />
           </div>
         </div>
+        <div className="border-t border-gray-200 dark:border-gray-700 mt-8"></div>
       </section>
 
       {/* Services Section */}
       <section className="max-w-7xl mx-auto px-4 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {/* PulseGuard */}
           <Link href="/guard" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
             <div className="mb-6">
@@ -138,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* Dashboard Preview Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4">
         <div className="bg-[#F6F5F4] dark:bg-secondary rounded-xl p-8">
           <div className="mb-12">
@@ -176,7 +185,7 @@ export default function Home() {
       </section>
 
       {/* Domain Information Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4">
         <div className="bg-[#F6F5F4] dark:bg-secondary rounded-xl p-8">
           <div className="mb-12">
@@ -212,7 +221,7 @@ export default function Home() {
       </section>
 
       {/* PulseAI Section */}
-      <section className="py-20">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4">
         <div className="bg-[#F6F5F4] dark:bg-secondary rounded-xl p-8">
           <div className="mb-12">
