@@ -96,28 +96,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="bg-[#F6F5F4] py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-black mb-6">
-            {t('blogStayUpdated')}
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            {t('blogNewsletterSubtitle')}
-          </p>
-          
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder={t('blogEmailPlaceholder')}
-              className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
-            />
-            <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">
-              {t('blogSubscribe')}
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
