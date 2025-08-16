@@ -1,5 +1,5 @@
 "use client";
-import { Users, Calendar, FileText, BarChart3, Mail, Phone } from "lucide-react";
+import { Users, Calendar, FileText, BarChart3, Mail, Phone, Zap, Headphones } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function PulseCRM() {
@@ -87,32 +87,32 @@ export default function PulseCRM() {
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 €
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">{t('affordablePricingTitle')}</h3>
-              <p className="text-gray-600">{t('affordablePricingDesc')}</p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('affordablePricingTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('affordablePricingDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 🇳🇱
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">{t('dutchDataStorageTitle')}</h3>
-              <p className="text-gray-600">{t('dutchDataStorageDesc')}</p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('dutchDataStorageTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('dutchDataStorageDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                ⚡
+                <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">{t('easySetupTitle')}</h3>
-              <p className="text-gray-600">{t('easySetupDesc')}</p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('easySetupTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('easySetupDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                📞
+                <Headphones className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">{t('localSupportTitle')}</h3>
-              <p className="text-gray-600">{t('localSupportDesc')}</p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('localSupportTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('localSupportDesc')}</p>
             </div>
           </div>
         </div>

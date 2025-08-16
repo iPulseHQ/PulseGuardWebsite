@@ -210,6 +210,12 @@ export const translations: Translations = {
   backToBlog: { en: 'Back to blog', nl: 'Terug naar blog' },
   moreFromBlog: { en: 'More from our blog', nl: 'Meer van onze blog' },
   viewAllPosts: { en: 'View all posts', nl: 'Bekijk alle berichten' },
+  
+  // PulseCRM (pulsecrm page) extras
+  comingSoonBadge: { en: 'Coming Soon - In Development', nl: 'Binnenkort beschikbaar - In ontwikkeling' },
+  beFirstToKnowTitle: { en: 'Be the first to know', nl: 'Wees als eerste op de hoogte' },
+  crmInDevDesc: { en: 'PulseCRM is currently in development. Sign up to be notified when we launch and get exclusive early access to our beta program.', nl: 'PulseCRM is momenteel in ontwikkeling. Meld je aan om een bericht te krijgen bij lancering en ontvang exclusieve vroege toegang tot ons betaprogramma.' },
+  notifyMe: { en: 'Notify Me', nl: 'Houd me op de hoogte' },
 };
 
 // Translation function

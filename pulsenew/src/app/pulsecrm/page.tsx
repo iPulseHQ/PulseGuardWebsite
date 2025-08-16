@@ -1,21 +1,20 @@
-import { Users, Calendar, FileText, BarChart3, Mail, Phone } from "lucide-react";
+import { Users, Calendar, FileText, BarChart3, Mail, Phone, Zap, Headphones } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function PulseCRM() {
+  const { t } = useTranslation();
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-background min-h-screen">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-[48px] font-bold text-black leading-[52px] tracking-[-1.5px] mb-6">
+        <h1 className="text-[48px] font-bold text-black dark:text-foreground leading-[52px] tracking-[-1.5px] mb-6">
           PulseCRM
         </h1>
-        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-          ERP and CRM solution designed for small companies. Manage your customers, 
-          projects, and business processes in one integrated platform.
-        </p>
+        <p className="text-xl text-gray-600 dark:text-muted-foreground mb-12 max-w-3xl mx-auto">{t('crmHeroSubtitle')}</p>
         
-        <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-8">
+        <div className="inline-flex items-center bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-8">
           <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-          Coming Soon - In Development
+          {t('comingSoonBadge')}
         </div>
       </section>
 
@@ -23,129 +22,97 @@ export default function PulseCRM() {
       <section className="max-w-7xl mx-auto px-4 mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Customer Management */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
               <Users className="w-6 h-6 text-blue-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Customer Management</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Keep track of all your customers, their contact information, 
-              purchase history, and communication preferences.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('customerManagementTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('customerManagementDesc')}</p>
           </div>
 
           {/* Project Planning */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
               <Calendar className="w-6 h-6 text-green-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Project Planning</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Plan and track projects with deadlines, milestones, and resource 
-              allocation. Keep your team aligned and productive.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('projectPlanningTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('projectPlanningDesc')}</p>
           </div>
 
           {/* Invoice Management */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
               <FileText className="w-6 h-6 text-purple-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Invoice Management</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Create professional invoices, track payments, and manage your 
-              financial workflow with automated reminders.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('invoiceManagementTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('invoiceManagementDesc')}</p>
           </div>
 
           {/* Business Analytics */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
               <BarChart3 className="w-6 h-6 text-orange-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Business Analytics</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Get insights into your business performance with detailed reports 
-              and analytics on sales, customers, and projects.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('businessAnalyticsTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('businessAnalyticsDesc')}</p>
           </div>
 
           {/* Communication Tools */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
               <Mail className="w-6 h-6 text-red-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Communication Tools</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Integrated email and SMS communication tools to stay in touch 
-              with customers and team members.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('communicationToolsTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('communicationToolsDesc')}</p>
           </div>
 
           {/* Integration Ready */}
-          <div className="bg-[#f6f5f4] rounded-xl p-8">
+          <div className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-8">
             <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
               <Phone className="w-6 h-6 text-indigo-600" />
             </div>
-            <h3 className="text-xl font-bold text-black mb-4">Integration Ready</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Connect with your existing tools and services through our API 
-              and pre-built integrations.
-            </p>
+            <h3 className="text-xl font-bold text-black dark:text-foreground mb-4">{t('integrationReadyTitle')}</h3>
+            <p className="text-gray-600 dark:text-muted-foreground leading-relaxed">{t('integrationReadyDesc')}</p>
           </div>
         </div>
       </section>
 
       {/* Key Benefits */}
-      <section className="bg-[#F6F5F4] py-20">
+      <section className="bg-[#F6F5F4] dark:bg-secondary py-20">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-black text-center mb-12">
-            Why Choose PulseCRM?
-          </h2>
+          <h2 className="text-3xl font-bold text-black dark:text-foreground text-center mb-12">{t('whyChooseCrmTitle')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 €
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">Affordable Pricing</h3>
-              <p className="text-gray-600">
-                Designed specifically for small businesses with transparent, 
-                affordable pricing that scales with your growth.
-              </p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('affordablePricingTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('affordablePricingDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 🇳🇱
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">Dutch Data Storage</h3>
-              <p className="text-gray-600">
-                All your data is stored securely in Netherlands datacenters, 
-                ensuring GDPR compliance and data protection.
-              </p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('dutchDataStorageTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('dutchDataStorageDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                ⚡
+                <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">Easy Setup</h3>
-              <p className="text-gray-600">
-                Get up and running in minutes with our intuitive setup process 
-                and migration tools from other CRM systems.
-              </p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('easySetupTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('easySetupDesc')}</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                📞
+                <Headphones className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-black mb-3">Local Support</h3>
-              <p className="text-gray-600">
-                Get help when you need it with our Dutch-speaking support team 
-                who understands local business needs.
-              </p>
+              <h3 className="text-xl font-semibold text-black dark:text-foreground mb-3">{t('localSupportTitle')}</h3>
+              <p className="text-gray-600 dark:text-muted-foreground">{t('localSupportDesc')}</p>
             </div>
           </div>
         </div>
@@ -153,24 +120,19 @@ export default function PulseCRM() {
 
       {/* Coming Soon CTA */}
       <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold text-black mb-6">Be the first to know</h2>
-        <p className="text-xl text-gray-600 mb-8">
-          PulseCRM is currently in development. Sign up to be notified when we launch 
-          and get exclusive early access to our beta program.
-        </p>
+        <h2 className="text-3xl font-bold text-black dark:text-foreground mb-6">{t('beFirstToKnowTitle')}</h2>
+        <p className="text-xl text-gray-600 dark:text-muted-foreground mb-8">{t('crmInDevDesc')}</p>
         <div className="max-w-md mx-auto flex gap-4">
           <input
             type="email"
             placeholder="Enter your email"
-            className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
+            className="flex-1 px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 dark:bg-background dark:text-foreground focus:outline-none focus:ring-2 focus:ring-black"
           />
-          <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">
-            Notify Me
-          </button>
+          <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('notifyMe')}</button>
         </div>
         
         <div className="mt-8">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-muted-foreground text-sm">
             Questions? Contact us at{" "}
             <a href="mailto:info@pulseguard.pro" className="text-blue-600 hover:text-blue-800">
               info@pulseguard.pro
