@@ -10,6 +10,8 @@ import { useTheme } from "next-themes";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
   const { t } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
@@ -54,15 +56,47 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/guard" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-            Guard
-          </Link>
-          <Link href="/files" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-            Files
-          </Link>
-          <Link href="/crm" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-            CRM
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => setSolutionsOpen(!solutionsOpen)}
+              className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex items-center gap-1"
+            >
+              Solutions
+              <svg className={`w-4 h-4 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {solutionsOpen && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-card rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50">
+                <div className="py-2">
+                  <Link href="/guard" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-[#fff6d6] rounded flex items-center justify-center">
+                        <Image src="/assets/pulseguard-logo.svg" alt="" width={16} height={16} />
+                      </div>
+                      PulseGuard
+                    </div>
+                  </Link>
+                  <Link href="/files" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-[#fce9e8] rounded flex items-center justify-center">
+                        <Image src="/assets/files-icon.svg" alt="" width={16} height={16} />
+                      </div>
+                      PulseFiles
+                    </div>
+                  </Link>
+                  <Link href="/crm" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-[#e2ecf3] rounded flex items-center justify-center">
+                        <Image src="/assets/crm-icon.svg" alt="" width={16} height={16} />
+                      </div>
+                      PulseCRM
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
           <Link href="/pricing" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('pricing')}
           </Link>
@@ -118,27 +152,51 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-secondary border-t border-gray-200 dark:border-border absolute top-full left-0 right-0 z-50 shadow-lg">
           <div className="py-4 px-4 space-y-2">
-            <Link 
-              href="/guard" 
-              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Guard
-            </Link>
-            <Link 
-              href="/files" 
-              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Files
-            </Link>
-            <Link 
-              href="/crm" 
-              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              CRM
-            </Link>
+            <div className="space-y-1">
+              <button 
+                onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                className="flex items-center justify-between w-full py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+              >
+                Solutions
+                <svg className={`w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileSolutionsOpen && (
+                <div className="pl-4 space-y-1">
+                  <Link 
+                    href="/guard" 
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+                    onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
+                  >
+                    <div className="w-6 h-6 bg-[#fff6d6] rounded flex items-center justify-center">
+                      <Image src="/assets/pulseguard-logo.svg" alt="" width={16} height={16} />
+                    </div>
+                    PulseGuard
+                  </Link>
+                  <Link 
+                    href="/files" 
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+                    onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
+                  >
+                    <div className="w-6 h-6 bg-[#fce9e8] rounded flex items-center justify-center">
+                      <Image src="/assets/files-icon.svg" alt="" width={16} height={16} />
+                    </div>
+                    PulseFiles
+                  </Link>
+                  <Link 
+                    href="/crm" 
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+                    onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
+                  >
+                    <div className="w-6 h-6 bg-[#e2ecf3] rounded flex items-center justify-center">
+                      <Image src="/assets/crm-icon.svg" alt="" width={16} height={16} />
+                    </div>
+                    PulseCRM
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link 
               href="/pricing" 
               className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
