@@ -1,3 +1,4 @@
+"use client";
 import { Users, Calendar, FileText, BarChart3, Mail, Phone, Zap, Headphones } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
