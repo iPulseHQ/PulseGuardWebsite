@@ -3,12 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
+  const { resolvedTheme, setTheme } = useTheme();
 
   // Dynamic login/signup links based on current page
   const getLoginLink = () => {
@@ -26,132 +30,160 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white h-[62px] border-b border-black/10 relative">
+    <header className="bg-white dark:bg-secondary h-[62px] border-b border-black/10 dark:border-border relative">
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <Image
-            src="/assets/logodark.png"
-            alt="PulseGuard Logo"
-            width={150}
-            height={150}
-          />
+          <span className="relative inline-block">
+            <Image
+              src="/assets/logodark.png"
+              alt="PulseGuard Logo"
+              width={150}
+              height={150}
+              className="block dark:hidden"
+            />
+            <Image
+              src="/assets/logofinal.png"
+              alt="PulseGuard Logo"
+              width={150}
+              height={150}
+              className="hidden dark:block"
+            />
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/guard" className="text-black font-medium hover:text-gray-600 transition-colors">
+          <Link href="/guard" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             Guard
           </Link>
-          <Link href="/files" className="text-black font-medium hover:text-gray-600 transition-colors">
+          <Link href="/files" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             Files
           </Link>
-          <Link href="/crm" className="text-black font-medium hover:text-gray-600 transition-colors">
+          <Link href="/crm" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             CRM
           </Link>
-          <Link href="/pricing" className="text-black font-medium hover:text-gray-600 transition-colors">
-            Pricing
+          <Link href="/pricing" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            {t('pricing')}
           </Link>
-          <Link href="/team" className="text-black font-medium hover:text-gray-600 transition-colors">
-            About us
+          <Link href="/team" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            {t('team')}
           </Link>
-          <Link href="/blog" className="text-black font-medium hover:text-gray-600 transition-colors">
-            Blog
+          <Link href="/blog" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            {t('blog')}
           </Link>
-          <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-black font-medium hover:text-gray-600 transition-colors">
-            Docs
+          <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            {t('docs')}
           </a>
         </nav>
 
         {/* Desktop Right side buttons */}
         <div className="hidden md:flex items-center gap-4">
-          <a href={getLoginLink()} className="text-black font-medium hover:text-gray-600 transition-colors">
-            Log in
+          <button
+            aria-label="Toggle theme"
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-transparent hover:bg-gray-100 dark:hover:bg-input/50 transition-colors"
+          >
+            <Sun size={18} className="text-white hidden dark:block" />
+            <Moon size={18} className="text-black dark:text-foreground block dark:hidden" />
+          </button>
+          <a href={getLoginLink()} className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+            {t('login')}
           </a>
-          <a href={getSignupLink()} className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors">
-            Sign up →
+          <a href={getSignupLink()} className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">
+            {t('register')} →
           </a>
         </div>
 
-        {/* Mobile menu button */}
-        <button 
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex items-center justify-center h-10 w-10 text-black hover:bg-gray-100 rounded-lg focus:outline-none"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile buttons */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            aria-label="Toggle theme"
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="flex items-center justify-center h-10 w-10 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg focus:outline-none"
+          >
+            <Sun size={20} className="text-white hidden dark:block" />
+            <Moon size={20} className="text-black dark:text-foreground block dark:hidden" />
+          </button>
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex items-center justify-center h-10 w-10 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg focus:outline-none"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 absolute top-full left-0 right-0 z-50 shadow-lg">
+        <div className="md:hidden bg-white dark:bg-secondary border-t border-gray-200 dark:border-border absolute top-full left-0 right-0 z-50 shadow-lg">
           <div className="py-4 px-4 space-y-2">
             <Link 
               href="/guard" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Guard
             </Link>
             <Link 
               href="/files" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Files
             </Link>
             <Link 
               href="/crm" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               CRM
             </Link>
             <Link 
               href="/pricing" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Pricing
+              {t('pricing')}
             </Link>
             <Link 
               href="/team" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About us
+              {t('team')}
             </Link>
             <Link 
               href="/blog" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Blog
+              {t('blog')}
             </Link>
             <a 
               href="https://docs.pulseguard.pro/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Docs
+              {t('docs')}
             </a>
             
             <div className="pt-4 border-t border-gray-200 mt-4">
               <a 
                 href={getLoginLink()} 
-                className="block py-3 px-4 text-black font-medium hover:bg-gray-100 rounded-lg"
+                className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Log in
+                {t('login')}
               </a>
               <a 
                 href={getSignupLink()} 
-                className="block py-3 px-4 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors mt-2"
+                className="block py-3 px-4 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors mt-2 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Sign up →
+                {t('register')} →
               </a>
             </div>
           </div>

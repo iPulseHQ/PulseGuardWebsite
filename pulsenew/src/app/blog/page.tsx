@@ -1,8 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { getTeamMemberByName } from "@/data/team";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Blog() {
+  const { t, currentLang } = useTranslation();
   const blogPosts = [
     {
       slug: "welcome-to-our-blog",
@@ -23,15 +26,14 @@ export default function Blog() {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-background min-h-screen">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-[48px] font-bold text-black leading-[52px] tracking-[-1.5px] mb-6">
-          PulseGuard Blog
+        <h1 className="text-[48px] font-bold text-black dark:text-foreground leading-[52px] tracking-[-1.5px] mb-6">
+          {t('blogHeroTitle')}
         </h1>
-        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-          Stay updated with the latest insights on website monitoring, server management, 
-          and digital infrastructure best practices.
+        <p className="text-xl text-gray-600 dark:text-muted-foreground mb-12 max-w-3xl mx-auto">
+          {t('blogHeroSubtitle')}
         </p>
       </section>
 
@@ -40,7 +42,7 @@ export default function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <article className="bg-[#f6f5f4] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group">
+              <article className="bg-[#f6f5f4] dark:bg-secondary rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group">
                 <div className="relative h-48 bg-gray-200">
                   <Image
                     src={post.image}
@@ -51,19 +53,19 @@ export default function Blog() {
                 </div>
                 
                 <div className="p-6">
-                  <div className="text-sm text-gray-500 mb-2">
-                    {new Date(post.date).toLocaleDateString('en-US', {
+                  <div className="text-sm text-gray-500 dark:text-muted-foreground mb-2">
+                    {new Date(post.date).toLocaleDateString(currentLang === 'nl' ? 'nl-NL' : 'en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
                     })}
                   </div>
                   
-                  <h2 className="text-xl font-bold text-black mb-3 group-hover:text-blue-600 transition-colors">
+                  <h2 className="text-xl font-bold text-black dark:text-foreground mb-3 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h2>
                   
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-gray-600 dark:text-muted-foreground mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   
@@ -84,7 +86,7 @@ export default function Blog() {
                       );
                     })()}
                     <div>
-                      <div className="text-sm font-medium text-black">{post.author}</div>
+                      <div className="text-sm font-medium text-black dark:text-foreground">{post.author}</div>
                     </div>
                   </div>
                 </div>
@@ -98,21 +100,20 @@ export default function Blog() {
       <section className="bg-[#F6F5F4] py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-black mb-6">
-            Stay updated
+            {t('blogStayUpdated')}
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Subscribe to our newsletter to get the latest updates, tips, and insights 
-            delivered directly to your inbox.
+            {t('blogNewsletterSubtitle')}
           </p>
           
           <div className="max-w-md mx-auto flex gap-4">
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder={t('blogEmailPlaceholder')}
               className="flex-1 px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black"
             />
             <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors">
-              Subscribe
+              {t('blogSubscribe')}
             </button>
           </div>
         </div>

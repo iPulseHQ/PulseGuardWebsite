@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getTeamMemberByName } from "@/data/team";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface BlogPost {
   slug: string;
@@ -79,17 +81,18 @@ const blogPosts: Record<string, BlogPost> = {
   }
 };
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const { t, currentLang } = useTranslation();
+  const { slug } = params;
   const post = blogPosts[slug];
 
   if (!post) {
     return (
-      <div className="bg-white min-h-screen">
+      <div className="bg-white dark:bg-background min-h-screen">
         <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-          <h1 className="text-3xl font-bold text-black mb-6">Post not found</h1>
+          <h1 className="text-3xl font-bold text-black dark:text-foreground mb-6">{t('postNotFound')}</h1>
           <Link href="/blog" className="text-blue-600 hover:text-blue-800">
-            ← Back to blog
+            ← {t('backToBlog')}
           </Link>
         </div>
       </div>
@@ -97,15 +100,15 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   }
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-background min-h-screen">
       {/* Back to Blog */}
       <div className="max-w-4xl mx-auto px-4 pt-8">
         <Link 
           href="/blog" 
-          className="inline-flex items-center text-gray-600 hover:text-black transition-colors"
+          className="inline-flex items-center text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to blog
+          {t('backToBlog')}
         </Link>
       </div>
 
@@ -121,11 +124,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-foreground leading-tight mb-6">
             {post.title}
           </h1>
           
-          <div className="flex items-center text-gray-600">
+          <div className="flex items-center text-gray-600 dark:text-muted-foreground">
             {(() => {
               const teamMember = getTeamMemberByName(post.author);
               return teamMember ? (
@@ -142,9 +145,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               );
             })()}
             <div>
-              <div className="font-medium text-black">{post.author}</div>
+              <div className="font-medium text-black dark:text-foreground">{post.author}</div>
               <div className="text-sm">
-                {new Date(post.date).toLocaleDateString('en-US', {
+                {new Date(post.date).toLocaleDateString(currentLang === 'nl' ? 'nl-NL' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
@@ -156,20 +159,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         {/* Article Content */}
         <div 
-          className="prose prose-xl max-w-none dark:prose-invert prose-headings:text-black prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-gray-700 prose-p:leading-relaxed prose-li:text-gray-700 prose-ul:list-disc prose-ol:list-decimal prose-strong:text-black prose-a:text-blue-600 hover:prose-a:text-blue-800"
+          className="prose prose-xl max-w-none dark:prose-invert prose-headings:text-black dark:prose-headings:text-foreground prose-headings:font-bold prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-gray-700 dark:prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-gray-700 dark:prose-li:text-muted-foreground prose-ul:list-disc prose-ol:list-decimal prose-strong:text-black dark:prose-strong:text-foreground prose-a:text-blue-600 hover:prose-a:text-blue-800"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
 
       {/* Related Posts */}
-      <section className="bg-[#F6F5F4] py-20">
+      <section className="bg-[#F6F5F4] dark:bg-secondary py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-black mb-8">More from our blog</h2>
+          <h2 className="text-3xl font-bold text-black dark:text-foreground mb-8">{t('moreFromBlog')}</h2>
           <Link 
             href="/blog"
             className="inline-flex items-center bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors"
           >
-            View all posts
+            {t('viewAllPosts')}
           </Link>
         </div>
       </section>
