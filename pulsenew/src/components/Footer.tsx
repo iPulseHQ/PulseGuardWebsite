@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { Language } from "@/utils/translations";
 
@@ -66,6 +66,9 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/pulseguardnl" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://x.com/pulseguard_hq" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
+                <Twitter className="w-5 h-5" />
               </a>
               <a href="https://www.instagram.com/pulseguard_/" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-5 h-5" />

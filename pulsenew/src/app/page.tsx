@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Home() {
@@ -10,34 +11,113 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-[61px] font-bold text-black dark:text-foreground leading-[65px] tracking-[-1.921px] mb-6">
-          {t('heroTitle')}
-        </h1>
-        <p className="text-2xl font-medium text-black dark:text-muted-foreground tracking-[-0.42px] mb-8">
-          {t('homeHeroSubtitle')}
-        </p>
-        
-        {/* Action buttons */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <a 
-            href="mailto:info@pulseguard.nl" 
-            className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:transform hover:scale-105 flex items-center gap-2"
-          >
-            {t('requestDemo')}
-            <span className="text-lg">→</span>
-          </a>
-        </div>
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-[61px] font-bold text-black dark:text-foreground leading-[65px] tracking-[-1.921px] mb-6">
+            {t('heroTitle')}
+          </h1>
+          <p className="text-2xl font-medium text-black dark:text-muted-foreground tracking-[-0.42px] mb-12">
+            {t('homeHeroSubtitle')}
+          </p>
+          
+          {/* Action buttons */}
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <a 
+              href="mailto:info@pulseguard.nl" 
+              className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
+            >
+              {t('requestDemo')}
+              <span className="text-xl">→</span>
+            </a>
+          </div>
 
-        {/* Heartbeat graphic */}
-        <div className="flex justify-center mb-12">
-          <div className="animate-pulse-continuous">
-            <Image
-              src="/assets/heartbeat.svg"
-              alt="Heartbeat monitor"
-              width={1000}
-              height={120}
-              className="max-w-full h-auto dark:invert dark:brightness-0"
-            />
+          {/* Feature List */}
+          <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 mb-12 backdrop-blur-sm">
+            {/* Mobile Layout */}
+            <div className="md:hidden space-y-3">
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5 monitors for <strong>free</strong></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5+ integrations</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-red-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Real-time alerts</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Public status pages</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">AI insights</span>
+              </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full">
+                  <Check className="w-6 h-6 text-green-600 dark:text-green-400" />
+                </div>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5 monitors for <strong>free</strong></span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
+                  <Check className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5+ integrations</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-full">
+                  <Check className="w-6 h-6 text-red-600 dark:text-red-400" />
+                </div>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Real-time alerts</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full">
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                </div>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Public status pages</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="bg-orange-100 dark:bg-orange-900/30 p-3 rounded-full">
+                  <Check className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+                </div>
+                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">AI insights</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Heartbeat graphic */}
+          <div className="flex justify-center mb-16">
+            <div className="animate-pulse-continuous">
+              <Image
+                src="/assets/heartbeat.svg"
+                alt="Heartbeat monitor"
+                width={1000}
+                height={120}
+                className="max-w-full h-auto dark:invert dark:brightness-0"
+              />
+            </div>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex justify-center space-x-8">
+            <a href="https://www.linkedin.com/company/pulseguardnl" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="https://x.com/pulseguard_hq" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+              <Twitter className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com/pulseguard_/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900/30 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a href="https://github.com/pulseguardhq" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+              <Github className="w-6 h-6" />
+            </a>
           </div>
         </div>
       </section>
