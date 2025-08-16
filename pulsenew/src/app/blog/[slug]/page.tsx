@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getTeamMemberByName } from "@/data/team";
-import { useTranslation } from "@/hooks/useTranslation";
+import { translate, Language } from "@/utils/translations";
 
 interface BlogPost {
   slug: string;
@@ -80,9 +80,10 @@ const blogPosts: Record<string, BlogPost> = {
   }
 };
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const { t, currentLang } = useTranslation();
-  const { slug } = params;
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const currentLang: Language = 'en';
+  const t = (key: string) => translate(key, currentLang);
   const post = blogPosts[slug];
 
   if (!post) {
@@ -146,7 +147,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             <div>
               <div className="font-medium text-black dark:text-foreground">{post.author}</div>
               <div className="text-sm">
-                {new Date(post.date).toLocaleDateString(currentLang === 'nl' ? 'nl-NL' : 'en-US', {
+                {new Date(post.date).toLocaleDateString((currentLang as string) === 'nl' ? 'nl-NL' : 'en-US', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
