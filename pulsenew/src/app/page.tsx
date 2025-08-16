@@ -30,7 +30,7 @@ export default function Home() {
             alt="Heartbeat monitor"
             width={1000}
             height={120}
-            className="max-w-full h-auto"
+            className="max-w-full h-auto dark:invert dark:brightness-0"
           />
         </div>
       </section>

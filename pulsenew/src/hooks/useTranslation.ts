@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from 'react';
 import { Language, translations } from '@/utils/translations';
 
@@ -43,11 +44,11 @@ export const useTranslation = () => {
     };
 
     window.addEventListener('storage', handleStorageChange);
-    window.addEventListener('languageChange' as any, handleCustomEvent);
+    window.addEventListener('languageChange', handleCustomEvent as EventListener);
 
     return () => {
       window.removeEventListener('storage', handleStorageChange);
-      window.removeEventListener('languageChange' as any, handleCustomEvent);
+      window.removeEventListener('languageChange', handleCustomEvent as EventListener);
     };
   }, []);
 
