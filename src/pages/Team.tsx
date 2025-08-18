@@ -240,7 +240,7 @@ const Team: React.FC = () => {
                 {t('joinUsDescription')}
               </p>
               <a 
-                href="mailto:info@pulseguard.pro" 
+                href="mailto:info@pulseguard.nl" 
                 className="btn-primary inline-flex items-center group"
               >
                 <span>{t('getInTouch')}</span>

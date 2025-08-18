@@ -11,10 +11,13 @@ export default function PulseCRM() {
         <h1 className="text-[48px] font-bold text-black dark:text-foreground leading-[52px] tracking-[-1.5px] mb-6">
           PulseCRM
         </h1>
+        <div className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-medium mb-4">
+          {t('comingSoonBadge')}
+        </div>
         <p className="text-xl text-gray-600 dark:text-muted-foreground mb-12 max-w-3xl mx-auto">{t('crmHeroSubtitle')}</p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="https://crm.pulseguard.pro" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('getStartedCta2')}</a>
+          <a href="mailto:info@pulseguard.nl?subject=PulseCRM%20beta" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('notifyMe')}</a>
         </div>
       </section>
 
@@ -118,20 +121,19 @@ export default function PulseCRM() {
         </div>
       </section>
 
-      {/* Get Started CTA */}
+      {/* Beta CTA */}
       <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h2 className="text-3xl font-bold text-black dark:text-foreground mb-6">{t('crmCtaTitle')}</h2>
-        <p className="text-xl text-gray-600 dark:text-muted-foreground mb-8">{t('crmCtaDesc')}</p>
-        
+        <h2 className="text-3xl font-bold text-black dark:text-foreground mb-6">{t('beFirstToKnowTitle')}</h2>
+        <p className="text-xl text-gray-600 dark:text-muted-foreground mb-8">{t('crmInDevDesc')}</p>
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a href="https://crm.pulseguard.pro/sign-up" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('ctaStartTrial')}</a>
-          <a href="https://crm.pulseguard.pro" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{t('visitPulseCRM')}</a>
+          <a href="mailto:info@pulseguard.nl?subject=PulseCRM%20beta" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('notifyMe')}</a>
         </div>
-        
+
         <div className="text-gray-500 dark:text-muted-foreground text-sm">
           {t('questionsContact')}{" "}
-          <a href="mailto:info@pulseguard.pro" className="text-blue-600 hover:text-blue-800">
-            info@pulseguard.pro
+          <a href="mailto:info@pulseguard.nl" className="text-blue-600 hover:text-blue-800">
+            info@pulseguard.nl
           </a>
         </div>
       </section>

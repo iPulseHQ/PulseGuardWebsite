@@ -172,7 +172,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@pulseguard.pro" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="mailto:info@pulseguard.nl" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerEmailSupport')}
                 </a>
               </li>
@@ -197,8 +197,8 @@ export default function Footer() {
               IM Digital
             </a>
             {" "}- {t('footerCopyright')} - {t('footerContact')}: {" "}
-            <a href="mailto:info@pulseguard.pro" className="text-blue-400 hover:text-blue-300">
-              info@pulseguard.pro
+            <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300">
+              info@pulseguard.nl
             </a>
           </p>
         </div>

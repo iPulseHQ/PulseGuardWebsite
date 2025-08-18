@@ -462,7 +462,7 @@ const DetailedFeatures: React.FC = () => {
                 <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
               </Link>
               <a 
-                href="mailto:info@pulseguard.pro"
+                href="mailto:info@pulseguard.nl"
                 className="inline-flex items-center px-8 py-4 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg transition-all duration-300"
               >
                 <span>Neem Contact Op</span>

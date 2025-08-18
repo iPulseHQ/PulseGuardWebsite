@@ -538,7 +538,7 @@ const Pricing: React.FC = () => {
                     </Link>
                   </td>
                   <td className="py-5 px-6 text-center bg-gray-50 dark:bg-gray-700">
-                    <a href="mailto:info@pulseguard.pro" className="inline-block px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white font-medium rounded-md text-center transition-colors shadow-md">
+                    <a href="mailto:info@pulseguard.nl" className="inline-block px-4 py-2 bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white font-medium rounded-md text-center transition-colors shadow-md">
                       {t('contactSales')}
                     </a>
                   </td>

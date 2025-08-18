@@ -15,6 +15,7 @@ export default function Header() {
   const pathname = usePathname();
   const { t } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
+  const isCrmPage = pathname === '/crm';
 
   // Dynamic login/signup links based on current page
   const getLoginLink = () => {
@@ -106,7 +107,7 @@ export default function Header() {
           <Link href="/blog" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('blog')}
           </Link>
-          <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+          <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('docs')}
           </a>
         </nav>
@@ -121,12 +122,20 @@ export default function Header() {
             <Sun size={18} className="text-white hidden dark:block" />
             <Moon size={18} className="text-black dark:text-foreground block dark:hidden" />
           </button>
-          <a href={getLoginLink()} className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-            {t('login')}
-          </a>
-          <a href={getSignupLink()} className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">
-            {t('register')} →
-          </a>
+          {isCrmPage ? (
+            <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-medium">
+              {t('comingSoonBadge')}
+            </span>
+          ) : (
+            <>
+              <a href={getLoginLink()} className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                {t('login')}
+              </a>
+              <a href={getSignupLink()} className="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90">
+                {t('register')} →
+              </a>
+            </>
+          )}
         </div>
 
         {/* Mobile buttons */}
@@ -229,20 +238,30 @@ export default function Header() {
             </a>
             
             <div className="pt-4 border-t border-gray-200 mt-4">
-              <a 
-                href={getLoginLink()} 
-                className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('login')}
-              </a>
-              <a 
-                href={getSignupLink()} 
-                className="block py-3 px-4 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors mt-2 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {t('register')} →
-              </a>
+              {isCrmPage ? (
+                <div className="py-3 px-4">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-medium">
+                    {t('comingSoonBadge')}
+                  </span>
+                </div>
+              ) : (
+                <>
+                  <a 
+                    href={getLoginLink()} 
+                    className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t('login')}
+                  </a>
+                  <a 
+                    href={getSignupLink()} 
+                    className="block py-3 px-4 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors mt-2 dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/90"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {t('register')} →
+                  </a>
+                </>
+              )}
             </div>
           </div>
         </div>

@@ -41,8 +41,8 @@ const Status: React.FC = () => {
             <div className="mt-8 text-center">
               <p className="text-blue-200">
                 Need to report an issue? Contact us at 
-                <a href="mailto:info@pulseguard.pro" className="text-blue-300 hover:text-blue-200 underline ml-1">
-                  info@pulseguard.pro
+                <a href="mailto:info@pulseguard.nl" className="text-blue-300 hover:text-blue-200 underline ml-1">
+                  info@pulseguard.nl
                 </a>
               </p>
             </div>
