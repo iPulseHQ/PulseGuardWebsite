@@ -1,22 +1,29 @@
-RewriteEngine On
 
-# Redirect all traffic to pulseguard.pro
-RewriteCond %{HTTP_HOST} !^pulseguard\.pro$ [NC]
-RewriteCond %{HTTP_HOST} !^www\.pulseguard\.pro$ [NC]
-RewriteRule ^(.*)$ https://pulseguard.pro/$1 [R=301,L]
 
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://pulseguard.pro/$1 [R=301,L]
+1/2
 
-# Redirect www to non-www
-RewriteCond %{HTTP_HOST} ^www\.pulseguard\.pro$ [NC]
-RewriteRule ^(.*)$ https://pulseguard.pro/$1 [R=301,L]
+Next.js 15.4.5 (stale)
+Turbopack
+Console Error
 
-# Handle existing files and directories
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
 
-# Redirect everything else to pulseguard.pro
-RewriteRule ^(.*)$ https://pulseguard.pro/$1 [R=301,L]
+API Request Failed: "Could not find the 'currency' column of 'sales_orders' in the schema cache"
+
+src/lib/api-client.ts (91:17) @ ApiClient.request
+
+
+  89 |       if (error instanceof Error) {
+  90 |         // Log minimal error info for debugging, avoid exposing sensitive data
+> 91 |         console.error('API Request Failed:', error.message);
+     |                 ^
+  92 |       }
+  93 |       throw error;
+  94 |     }
+Call Stack
+6
+
+Show 4 ignore-listed frame(s)
+ApiClient.request
+src/lib/api-client.ts (91:17)
+async onSubmit
+src/components/order-form.tsx (190:9)
