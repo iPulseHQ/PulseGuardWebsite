@@ -1,29 +1,41 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { GridBackground } from "@/components/GridBackground";
 
 export default function Home() {
   const { t } = useTranslation();
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <div className="bg-white dark:bg-background min-h-screen">
-
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-[61px] font-bold text-black dark:text-foreground leading-[65px] tracking-[-1.921px] mb-6">
+      <section className="relative w-full px-4 py-20 text-center overflow-hidden bg-white dark:bg-black min-h-screen flex items-center">
+        <GridBackground onHoverChange={setIsHovered} />
+        {/* Radial gradient for the container to give a faded look */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+        <div className="relative z-20 max-w-4xl mx-auto w-full">
+          <h1
+            className={`text-[61px] font-bold leading-[65px] tracking-[-1.921px] mb-6 transition-all duration-300 ${
+              isHovered
+                ? "bg-gradient-to-b from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                : "text-black dark:text-white"
+            }`}
+          >
             {t('heroTitle')}
           </h1>
-          <p className="text-2xl font-medium text-black dark:text-muted-foreground tracking-[-0.42px] mb-12">
+          <p className="text-2xl font-medium text-gray-600 dark:text-gray-300 tracking-[-0.42px] mb-12">
             {t('homeHeroSubtitle')}
           </p>
-          
+
           {/* Action buttons */}
           <div className="flex items-center justify-center gap-4 mb-12">
             <a 
               href="mailto:info@pulseguard.nl" 
-              className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
+              className="bg-black dark:bg-white text-gray-800 dark:text-gray-200 dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
             >
               {t('requestDemo')}
               <span className="text-xl">→</span>
@@ -92,7 +104,7 @@ export default function Home() {
           </div>
 
           {/* Heartbeat graphic */}
-          <div className="flex justify-center mb-16">
+          <div className="relative z-10 flex justify-center mb-16">
             <div className="animate-pulse-continuous">
               <Image
                 src="/assets/heartbeat.svg"
