@@ -33,9 +33,9 @@ export default function Home() {
 
           {/* Action buttons */}
           <div className="flex items-center justify-center gap-4 mb-12">
-            <a 
-              href="mailto:info@pulseguard.nl" 
-              className="bg-black dark:bg-white text-gray-800 dark:text-gray-200 dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
+            <a
+              href="mailto:info@pulseguard.nl"
+              className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
             >
               {t('requestDemo')}
               <span className="text-xl">→</span>
