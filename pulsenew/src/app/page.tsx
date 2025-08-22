@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { GridBackground } from "@/components/GridBackground";
 
 export default function Home() {
   const { t } = useTranslation();
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="bg-white dark:bg-background min-h-screen">
