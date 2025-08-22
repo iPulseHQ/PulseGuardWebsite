@@ -21,7 +21,7 @@ export default function Home() {
           <h1
             className={`text-[61px] font-bold leading-[65px] tracking-[-1.921px] mb-6 transition-all duration-300 ${
               isHovered
-                ? "bg-gradient-to-b from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                ? "text-blue-600 dark:text-blue-400"
                 : "text-black dark:text-white"
             }`}
           >
