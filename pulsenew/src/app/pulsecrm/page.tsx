@@ -135,8 +135,8 @@ export default function PulseCRM() {
         <div className="mt-8">
           <p className="text-gray-500 dark:text-muted-foreground text-sm">
             Questions? Contact us at{" "}
-            <a href="mailto:info@pulseguard.pro" className="text-blue-600 hover:text-blue-800">
-              info@pulseguard.pro
+            <a href="mailto:info@pulseguard.nl" className="text-blue-600 hover:text-blue-800">
+              info@pulseguard.nl
             </a>
           </p>
         </div>
