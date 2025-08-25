@@ -1,0 +1,31 @@
+# humanstxt.org
+
+/* TEAM */
+Developer: PulseGuard Development Team
+Contact: info@pulseguard.nl
+Location: Netherlands, Europe
+
+/* THANKS */
+Thanks to the open-source community, Next.js team, and all the amazing tools and libraries that make PulseGuard possible.
+
+/* SITE */
+Last update: 2025-08-25
+Standards: HTML5, CSS3, JavaScript ES6+, TypeScript
+Components: React, Next.js, Tailwind CSS
+Tools: TypeScript, ESLint, Prettier
+IDE: Visual Studio Code
+Version Control: Git
+
+/* HOSTING */
+Platform: Modern web hosting with global CDN
+Location: Netherlands and global edge locations
+Security: HTTPS, Security Headers, CSP
+
+/* META */
+Human-readable: Yes
+Machine-readable: Yes
+Standards-compliant: Yes
+Accessible: WCAG 2.1 AA compliant
+Mobile-friendly: Responsive design
+SEO-optimized: Structured data, meta tags, sitemaps
+Performance-optimized: Image optimization, caching, compression

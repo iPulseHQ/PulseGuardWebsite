@@ -1,0 +1,108 @@
+# Robots.txt for PulseGuard - Website & Device Monitoring Platform
+# https://pulseguard.pro
+# Generated on: 2025-08-25
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Major search engines optimization
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Block malicious bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: SiteAuditBot
+Disallow: /
+
+# Security - Block access to sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /_next/static/
+Disallow: /node_modules/
+Disallow: /.env*
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /yarn.lock
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vscode/
+Disallow: /.idea/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /config/
+Disallow: /backup/
+Disallow: /test/
+Disallow: /tests/
+Disallow: /.DS_Store
+Disallow: /thumbs.db
+
+# Block common attack vectors
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /phpmyadmin/
+Disallow: /admin.php
+Disallow: /login.php
+Disallow: /administrator/
+Disallow: /xmlrpc.php
+
+# Allow important SEO files
+Allow: /sitemap.xml
+Allow: /sitemap*.xml
+Allow: /robots.txt
+Allow: /ai.txt
+Allow: /llms.txt
+Allow: /humans.txt
+Allow: /favicon.ico
+Allow: /manifest.json
+Allow: /site.webmanifest
+Allow: /.well-known/
+
+# Sitemaps
+Sitemap: https://pulseguard.pro/sitemap.xml
+Sitemap: https://pulseguard.pro/sitemap-index.xml

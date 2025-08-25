@@ -1,0 +1,26 @@
+# Redirects for PulseGuard
+# This file is for hosting providers that support _redirects files (like Netlify)
+
+# SEO Redirects
+/home         /           301
+/index        /           301
+/index.html   /           301
+
+# Old blog URLs (if any)
+/blog/index   /blog/      301
+
+# Ensure trailing slashes for consistency
+/blog         /blog/      301
+/features     /features/  301
+/pricing      /pricing/   301
+/team         /team/      301
+/guard        /guard/     301
+/files        /files/     301
+/crm          /crm/       301
+
+# Handle common typos
+/puls         /           301
+/pulseguard   /           301
+
+# Fallback for SPA routing
+/*            /index.html 200

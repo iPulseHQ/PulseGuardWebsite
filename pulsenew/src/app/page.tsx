@@ -4,14 +4,44 @@ import Link from "next/link";
 import { useState } from "react";
 import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import Head from "next/head";
 import { GridBackground } from "@/components/GridBackground";
 
 export default function Home() {
   const { t } = useTranslation();
   const [isHovered, setIsHovered] = useState(false);
 
+  // Structured data for homepage
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PulseGuard",
+    "description": "Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with PulseGuard.",
+    "url": "https://pulseguard.pro",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://pulseguard.pro/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PulseGuard B.V.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://pulseguard.pro/assets/pulseguard-logo.png"
+      }
+    }
+  };
+
   return (
-    <div className="bg-white dark:bg-background min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      <div className="bg-white dark:bg-background min-h-screen">
       {/* Hero Section */}
       <section className="relative w-full px-4 py-20 text-center overflow-hidden bg-white dark:bg-black min-h-screen flex items-center">
         <GridBackground onHoverChange={setIsHovered} />
@@ -348,6 +378,7 @@ export default function Home() {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 }
