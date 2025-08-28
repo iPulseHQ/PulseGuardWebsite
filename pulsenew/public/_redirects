@@ -1,5 +1,11 @@
-# Redirects for PulseGuard
+# Redirects for PulseGuard / iPulse
 # This file is for hosting providers that support _redirects files (like Netlify)
+
+# Domain redirect: force pulseguard.pro -> ipulse.one (canonical)
+https://pulseguard.pro/*    https://ipulse.one/:splat 301!
+http://pulseguard.pro/*     https://ipulse.one/:splat 301!
+https://www.pulseguard.pro/* https://ipulse.one/:splat 301!
+http://www.pulseguard.pro/*  https://ipulse.one/:splat 301!
 
 # SEO Redirects
 /home         /           301
@@ -16,7 +22,11 @@
 /team         /team/      301
 /guard        /guard/     301
 /files        /files/     301
-/crm          /crm/       301
+
+# CRM has been renamed to Flow
+/crm          /flow       301
+/crm/         /flow/      301
+/crm/*        /flow/:splat 301
 
 # Handle common typos
 /puls         /           301

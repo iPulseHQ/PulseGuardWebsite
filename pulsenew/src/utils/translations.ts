@@ -58,7 +58,7 @@ export const translations: Translations = {
 
   homeGuardDesc: { en: 'Monitor your domains, uptime and security', nl: 'Monitor je domeinen, uptime en security' },
   homeFilesDesc: { en: 'Share files safe and temporarily with encryption, Europe data saving', nl: 'Deel bestanden veilig en tijdelijk met encryptie, data-opslag in Europa' },
-  homeCrmDesc: { en: 'ERP and CRM for small companies', nl: 'ERP en CRM voor kleine bedrijven' },
+  homeCrmDesc: { en: 'ERP and CRM for small companies (PulseFlow)', nl: 'ERP en CRM voor kleine bedrijven (PulseFlow)' },
 
   homeSection1Title: { en: 'Monitor, visualize your domains', nl: 'Monitor en visualiseer je domeinen' },
   homeSection1Desc: { en: 'See how PulseGuard helps you gain insight into the status of your digital infrastructure.', nl: 'Zie hoe PulseGuard je helpt inzicht te krijgen in de status van je digitale infrastructuur.' },
@@ -140,7 +140,7 @@ export const translations: Translations = {
   communicationToolsDesc: { en: 'Integrated email and SMS communication tools to stay in touch with customers and team members.', nl: 'Geïntegreerde e-mail- en sms-tools om in contact te blijven met klanten en teamleden.' },
   integrationReadyTitle: { en: 'Integration Ready', nl: 'Klaar voor integratie' },
   integrationReadyDesc: { en: 'Connect with your existing tools and services through our API and pre-built integrations.', nl: 'Koppel je bestaande tools en diensten via onze API en kant-en-klare integraties.' },
-  whyChooseCrmTitle: { en: 'Why Choose PulseCRM?', nl: 'Waarom kiezen voor PulseCRM?' },
+  whyChooseCrmTitle: { en: 'Why Choose PulseFlow?', nl: 'Waarom kiezen voor PulseFlow?' },
   affordablePricingTitle: { en: 'Affordable Pricing', nl: 'Betaalbare prijzen' },
   affordablePricingDesc: { en: 'Designed specifically for small businesses with transparent, affordable pricing that scales with your growth.', nl: 'Ontworpen voor kleine bedrijven met transparante, betaalbare prijzen die met je groei meegroeien.' },
   dutchDataStorageTitle: { en: 'Dutch Data Storage', nl: 'Nederlandse dataopslag' },
@@ -150,8 +150,8 @@ export const translations: Translations = {
   localSupportTitle: { en: 'Local Support', nl: 'Lokale support' },
   localSupportDesc: { en: 'Get help when you need it with our Dutch-speaking support team who understands local business needs.', nl: 'Krijg hulp wanneer je het nodig hebt van ons Nederlandstalige supportteam dat lokale behoeften begrijpt.' },
   crmCtaTitle: { en: 'Start managing your business better', nl: 'Begin je bedrijf beter te beheren' },
-  crmCtaDesc: { en: 'Join small businesses who use PulseCRM to manage customers, and business processes more efficiently.', nl: 'Sluit je aan bij kleine bedrijven die PulseCRM gebruiken om klanten en bedrijfsprocessen efficiënter te beheren.' },
-  visitPulseCRM: { en: 'Visit PulseCRM →', nl: 'Bezoek PulseCRM →' },
+  crmCtaDesc: { en: 'Join small businesses who use PulseFlow to manage customers, and business processes more efficiently.', nl: 'Sluit je aan bij kleine bedrijven die PulseFlow gebruiken om klanten en bedrijfsprocessen efficiënter te beheren.' },
+  visitPulseCRM: { en: 'Visit PulseFlow →', nl: 'Bezoek PulseFlow →' },
   questionsContact: { en: 'Questions? Contact us at', nl: 'Vragen? Neem contact op via' },
 
   // Pricing page
@@ -211,10 +211,10 @@ export const translations: Translations = {
   moreFromBlog: { en: 'More from our blog', nl: 'Meer van onze blog' },
   viewAllPosts: { en: 'View all posts', nl: 'Bekijk alle berichten' },
   
-  // PulseCRM (pulsecrm page) extras
+  // PulseFlow (flow page) extras
   comingSoonBadge: { en: 'Coming Soon - In Development', nl: 'Binnenkort beschikbaar - In ontwikkeling' },
   beFirstToKnowTitle: { en: 'Be the first to know', nl: 'Wees als eerste op de hoogte' },
-  crmInDevDesc: { en: 'PulseCRM is currently in development. Sign up to be notified when we launch and get exclusive early access to our beta program.', nl: 'PulseCRM is momenteel in ontwikkeling. Meld je aan om een bericht te krijgen bij lancering en ontvang exclusieve vroege toegang tot ons betaprogramma.' },
+  crmInDevDesc: { en: 'PulseFlow is currently in development. Sign up to be notified when we launch and get exclusive early access to our beta program.', nl: 'PulseFlow is momenteel in ontwikkeling. Meld je aan om een bericht te krijgen bij lancering en ontvang exclusieve vroege toegang tot ons betaprogramma.' },
   notifyMe: { en: 'Notify Me', nl: 'Houd me op de hoogte' },
 };
 

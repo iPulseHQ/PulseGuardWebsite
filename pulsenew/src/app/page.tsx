@@ -15,12 +15,12 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "PulseGuard",
-    "description": "Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with PulseGuard.",
-    "url": "https://pulseguard.pro",
+    "name": "iPulse",
+    "description": "Unified platform: PulseGuard, PulseFiles en PulseFlow. Monitor, delen en managen op ipulse.one.",
+    "url": "https://ipulse.one",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://pulseguard.pro/search?q={search_term_string}",
+      "target": "https://ipulse.one/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     },
     "publisher": {
@@ -28,7 +28,7 @@ export default function Home() {
       "name": "PulseGuard B.V.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://pulseguard.pro/assets/pulseguard-logo.png"
+        "url": "https://ipulse.one/assets/pulseguard-logo.png"
       }
     }
   };
@@ -246,19 +246,19 @@ export default function Home() {
             </p>
           </Link>
 
-          {/* PulseCRM */}
-          <Link href="/crm" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
+          {/* PulseFlow */}
+          <Link href="/flow" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
             <div className="mb-6">
               <div className="w-8 h-8 bg-[#e2ecf3] rounded-md flex items-center justify-center mb-4">
                 <Image
                   src="/assets/crm-icon.svg"
-                  alt="PulseCRM"
+                  alt="PulseFlow"
                   width={20}
                   height={20}
                 />
               </div>
               <h3 className="text-[19.688px] font-bold text-black dark:text-foreground tracking-[-0.236px] group-hover:text-blue-600 transition-colors">
-                PulseCRM
+                PulseFlow
               </h3>
             </div>
             <p className="text-[13.5px] text-black dark:text-muted-foreground leading-[19px] tracking-[0.101px]">

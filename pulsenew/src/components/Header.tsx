@@ -15,20 +15,21 @@ export default function Header() {
   const pathname = usePathname();
   const { t } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
-  const isCrmPage = pathname === '/crm';
+  const isCrmPage = false; // legacy
+  const isFlowPage = pathname === '/flow';
 
   // Dynamic login/signup links based on current page
   const getLoginLink = () => {
     if (pathname === '/guard') return 'https://app.pulseguard.pro/login';
     if (pathname === '/files') return 'https://files.pulseguard.pro/login';
-    if (pathname === '/crm') return 'https://crm.pulseguard.pro/login';
+    if (pathname === '/flow') return 'https://crm.pulseguard.pro/login';
     return 'https://app.pulseguard.pro/login';
   };
 
   const getSignupLink = () => {
     if (pathname === '/guard') return 'https://app.pulseguard.pro/register';
     if (pathname === '/files') return 'https://files.pulseguard.pro';
-    if (pathname === '/crm') return 'https://crm.pulseguard.pro/sign-up';
+    if (pathname === '/flow') return 'https://crm.pulseguard.pro/sign-up';
     return 'https://app.pulseguard.pro/register';
   };
 
@@ -86,12 +87,12 @@ export default function Header() {
                       PulseFiles
                     </div>
                   </Link>
-                  <Link href="/crm" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
+                  <Link href="/flow" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
                     <div className="flex items-center gap-3">
                       <div className="w-6 h-6 bg-[#e2ecf3] rounded flex items-center justify-center">
                         <Image src="/assets/crm-icon.svg" alt="" width={16} height={16} />
                       </div>
-                      PulseCRM
+                      PulseFlow
                     </div>
                   </Link>
                 </div>
@@ -122,7 +123,7 @@ export default function Header() {
             <Sun size={18} className="text-white hidden dark:block" />
             <Moon size={18} className="text-black dark:text-foreground block dark:hidden" />
           </button>
-          {isCrmPage ? (
+          {isFlowPage ? (
             <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-medium">
               {t('comingSoonBadge')}
             </span>
@@ -194,14 +195,14 @@ export default function Header() {
                     PulseFiles
                   </Link>
                   <Link 
-                    href="/crm" 
+                    href="/flow" 
                     className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
                     <div className="w-6 h-6 bg-[#e2ecf3] rounded flex items-center justify-center">
                       <Image src="/assets/crm-icon.svg" alt="" width={16} height={16} />
                     </div>
-                    PulseCRM
+                    PulseFlow
                   </Link>
                 </div>
               )}
@@ -238,7 +239,7 @@ export default function Header() {
             </a>
             
             <div className="pt-4 border-t border-gray-200 mt-4">
-              {isCrmPage ? (
+              {isFlowPage ? (
                 <div className="py-3 px-4">
                   <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-3 py-1 text-sm font-medium">
                     {t('comingSoonBadge')}

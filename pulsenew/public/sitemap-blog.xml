@@ -7,7 +7,7 @@
   
   <!-- Blog Homepage -->
   <url>
-    <loc>https://pulseguard.pro/blog/</loc>
+    <loc>https://ipulse.one/blog/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -15,21 +15,21 @@
 
   <!-- Featured Blog Posts - High Priority -->
   <url>
-    <loc>https://pulseguard.pro/blog/complete-website-monitoring-guide-2025/</loc>
+    <loc>https://ipulse.one/blog/complete-website-monitoring-guide-2025/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/downtime-costs-dutch-ecommerce-study/</loc>
+    <loc>https://ipulse.one/blog/downtime-costs-dutch-ecommerce-study/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/website-performance-optimization-core-web-vitals/</loc>
+    <loc>https://ipulse.one/blog/website-performance-optimization-core-web-vitals/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -37,21 +37,21 @@
 
   <!-- Security & Compliance Posts -->
   <url>
-    <loc>https://pulseguard.pro/blog/website-security-monitoring-cyber-threats-2025/</loc>
+    <loc>https://ipulse.one/blog/website-security-monitoring-cyber-threats-2025/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/gdpr-compliant-monitoring-solutions/</loc>
+    <loc>https://ipulse.one/blog/gdpr-compliant-monitoring-solutions/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/ssl-certificate-monitoring-expiration-prevention/</loc>
+    <loc>https://ipulse.one/blog/ssl-certificate-monitoring-expiration-prevention/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -59,14 +59,14 @@
 
   <!-- Technical & DevOps Posts -->
   <url>
-    <loc>https://pulseguard.pro/blog/api-monitoring-microservices-architecture/</loc>
+    <loc>https://ipulse.one/blog/api-monitoring-microservices-architecture/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/monitoring-alerting-strategies-devops-teams/</loc>
+    <loc>https://ipulse.one/blog/monitoring-alerting-strategies-devops-teams/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -74,7 +74,7 @@
 
   <!-- Dutch Market Specific -->
   <url>
-    <loc>https://pulseguard.pro/blog/server-monitoring-best-practices-netherlands/</loc>
+    <loc>https://ipulse.one/blog/server-monitoring-best-practices-netherlands/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -82,14 +82,14 @@
 
   <!-- Business & SMB Posts -->
   <url>
-    <loc>https://pulseguard.pro/blog/uptime-monitoring-sla-agreements-guide/</loc>
+    <loc>https://ipulse.one/blog/uptime-monitoring-sla-agreements-guide/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/website-monitoring-small-business-guide/</loc>
+    <loc>https://ipulse.one/blog/website-monitoring-small-business-guide/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -97,14 +97,14 @@
 
   <!-- Original Posts -->
   <url>
-    <loc>https://pulseguard.pro/blog/welcome-to-our-blog/</loc>
+    <loc>https://ipulse.one/blog/welcome-to-our-blog/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://pulseguard.pro/blog/website-security-performance/</loc>
+    <loc>https://ipulse.one/blog/website-security-performance/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -112,42 +112,42 @@
 
   <!-- Blog Categories -->
   <url>
-    <loc>https://pulseguard.pro/blog/category/tutorial/</loc>
+    <loc>https://ipulse.one/blog/category/tutorial/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/category/security/</loc>
+    <loc>https://ipulse.one/blog/category/security/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/category/performance/</loc>
+    <loc>https://ipulse.one/blog/category/performance/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/category/devops/</loc>
+    <loc>https://ipulse.one/blog/category/devops/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/category/compliance/</loc>
+    <loc>https://ipulse.one/blog/category/compliance/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/category/small-business/</loc>
+    <loc>https://ipulse.one/blog/category/small-business/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -155,35 +155,35 @@
 
   <!-- Popular Tags -->
   <url>
-    <loc>https://pulseguard.pro/blog/tag/monitoring/</loc>
+    <loc>https://ipulse.one/blog/tag/monitoring/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/tag/security/</loc>
+    <loc>https://ipulse.one/blog/tag/security/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/tag/netherlands/</loc>
+    <loc>https://ipulse.one/blog/tag/netherlands/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/tag/gdpr/</loc>
+    <loc>https://ipulse.one/blog/tag/gdpr/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pulseguard.pro/blog/tag/devops/</loc>
+    <loc>https://ipulse.one/blog/tag/devops/</loc>
     <lastmod>2025-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

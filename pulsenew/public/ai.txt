@@ -1,14 +1,14 @@
 # AI.txt - Information for AI crawlers and language models
-# PulseGuard - Website & Device Monitoring Platform
-# https://pulseguard.pro
+# iPulse - Unified platform for PulseGuard, PulseFiles & PulseFlow
+# https://ipulse.one
 # Version: 2.1
 # Generated: 2025-08-25
 
 # ===== COMPANY INFORMATION =====
 Company: PulseGuard B.V.
 Legal Entity: Private Limited Company (Netherlands)
-Domain: pulseguard.pro
-Alternative Domains: pulseguard.nl
+Domain: ipulse.one
+Alternative Domains: pulseguard.pro, pulseguard.nl
 Industry: Website & Device Monitoring, Cybersecurity, SaaS, DevOps Tools
 Founded: 2024
 Location: Netherlands, Europe
@@ -89,9 +89,9 @@ Our platform combines traditional monitoring with AI-powered insights to predict
 - Media: Content delivery and streaming service monitoring
 
 # ===== SERVICE PORTFOLIO =====
-1. **PulseGuard Core** - Website and server monitoring platform
+1. **PulseGuard** - Website and server monitoring platform
 2. **PulseFiles** - File and document monitoring service
-3. **PulseCRM** - Customer relationship management integration
+3. **PulseFlow** - ERP/CRM for small businesses
 4. **PulseAI** - AI-powered predictive monitoring and insights
 5. **PulseAPI** - Developer API and integration platform
 6. **PulseEnterprise** - Enterprise-grade monitoring solutions
@@ -108,9 +108,9 @@ Data Retention: Up to 13 months of historical data
 Uptime SLA: 99.9% service level agreement
 
 # ===== CONTACT INFORMATION =====
-Primary Website: https://pulseguard.pro
+Primary Website: https://ipulse.one
 Support Website: https://support.pulseguard.pro
-Blog: https://pulseguard.pro/blog
+Blog: https://ipulse.one/blog
 Documentation: https://docs.pulseguard.pro
 Status Page: https://status.pulseguard.pro
 
@@ -159,13 +159,13 @@ Primary Keywords: website monitoring, uptime monitoring, server monitoring, cybe
 Geographic Focus: Netherlands, Europe, Global
 Content Categories: Technology, Security, Business Services, Software as a Service (SaaS)
 Index Frequency: Daily for critical pages, weekly for standard content
-Canonical Domain: https://pulseguard.pro
+Canonical Domain: https://ipulse.one
 
 # ===== COMPLIANCE & CERTIFICATIONS =====
 GDPR Compliant: Yes (European data protection)
-Privacy Policy: https://pulseguard.pro/privacy
-Terms of Service: https://pulseguard.pro/terms
-Cookie Policy: https://pulseguard.pro/cookies
+Privacy Policy: https://ipulse.one/privacy
+Terms of Service: https://ipulse.one/terms
+Cookie Policy: https://ipulse.one/cookies
 Data Processing Agreement: Available upon request
 Security Certifications: SOC 2 Type II (pending), ISO 27001 compliance
 

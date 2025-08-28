@@ -65,6 +65,8 @@ const nextConfig: NextConfig = {
     domains: [
       'pulseguard.pro',
       'www.pulseguard.pro',
+      'ipulse.one',
+      'www.ipulse.one',
       'imdigital.info',
       'www.che.nl',
       'arjandenhartog.com'
