@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import Head from "next/head";
 import { GridBackground } from "@/components/GridBackground";
 
 export default function Home() {

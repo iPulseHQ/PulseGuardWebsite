@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Home, Search, ArrowLeft, AlertCircle } from "lucide-react";
+import { Home, AlertCircle } from "lucide-react";
 
 export default function NotFound() {
   return (

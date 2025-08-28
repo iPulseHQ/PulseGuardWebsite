@@ -15,7 +15,6 @@ export default function Header() {
   const pathname = usePathname();
   const { t } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
-  const isCrmPage = false; // legacy
   const isFlowPage = pathname === '/flow';
 
   // Dynamic login/signup links based on current page
