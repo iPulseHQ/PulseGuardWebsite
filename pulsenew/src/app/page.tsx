@@ -47,11 +47,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
         <div className="relative z-20 max-w-4xl mx-auto w-full">
                       <h1
-            className={`text-[61px] font-bold leading-[65px] tracking-[-1.921px] mb-6 transition-all duration-300 ${
-              isHovered
-                ? "text-blue-600 dark:text-blue-400"
-                : "text-black dark:text-white"
-            }`}
+            className="text-[61px] font-bold leading-[65px] tracking-[-1.921px] mb-6 text-black dark:text-white"
           >
             {t('heroTitle')}
           </h1>
