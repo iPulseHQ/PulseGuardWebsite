@@ -140,36 +140,36 @@ export default function Home() {
         <div className="border-t border-gray-200 dark:border-gray-700 mb-8"></div>
         <p className="text-center text-black dark:text-foreground font-medium mb-8">{t('heroTrustedBy')}</p>
         <div className="flex justify-center items-center gap-12 flex-wrap">
-          <div className="flex items-center justify-center h-16" title="IM Digital">
-            <Image 
-              src="https://imdigital.info/logo(gray-google).png" 
-              alt="IM Digital" 
+          <a href="https://imdigital.info" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16" title="IM Digital">
+            <Image
+              src="https://imdigital.info/logo(gray-google).png"
+              alt="IM Digital"
               width={120}
               height={48}
               className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"
               unoptimized
             />
-          </div>
-          <div className="flex items-center justify-center h-16" title="CHE">
-            <Image 
-              src="https://www.che.nl/themes/custom/che/images/logos/logo.svg" 
-              alt="CHE" 
+          </a>
+          <a href="https://www.che.nl" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16" title="CHE">
+            <Image
+              src="https://www.che.nl/themes/custom/che/images/logos/logo.svg"
+              alt="CHE"
               width={120}
               height={48}
               className="h-12 opacity-60 hover:opacity-100 transition-opacity"
               unoptimized
             />
-          </div>
-          <div className="flex items-center justify-center h-16" title="Arjan den Hartog">
-            <Image 
-              src="https://arjandenhartog.com/favicon.ico" 
-              alt="Arjan den Hartog" 
+          </a>
+          <a href="https://arjandenhartog.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16" title="Arjan den Hartog">
+            <Image
+              src="https://arjandenhartog.com/favicon.ico"
+              alt="Arjan den Hartog"
               width={48}
               height={48}
               className="h-12 opacity-60 hover:opacity-100 transition-opacity"
               unoptimized
             />
-          </div>
+          </a>
         </div>
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8"></div>
       </section>

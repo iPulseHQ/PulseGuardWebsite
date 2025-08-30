@@ -74,8 +74,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'iPulse - Your Digital Peacemaker',
     description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance.',
-    site: '@ipulse_one',
-    creator: '@ipulse_one',
+    site: '@ipulsedev',
+    creator: '@ipulsedev',
     images: ['/assets/twitter-image.png'],
   },
   icons: {
@@ -174,10 +174,10 @@ export default function RootLayout({
                   "addressRegion": "Noord-Holland"
                 },
                 "sameAs": [
-                  "https://www.linkedin.com/company/ipulseone",
-                  "https://x.com/ipulse_one",
-                  "https://www.instagram.com/ipulse_one/",
-                  "https://github.com/ipulse-one"
+                  "https://www.linkedin.com/company/107398117/",
+                  "https://x.com/ipulsedev",
+                  "https://www.instagram.com/pulseguard_/",
+                  "https://github.com/iPulseHQ"
                 ]
               }
             })
@@ -214,10 +214,10 @@ export default function RootLayout({
                 "availableLanguage": ["English", "Dutch"]
               },
               "sameAs": [
-                "https://www.linkedin.com/company/ipulseone",
-                "https://x.com/ipulse_one",
-                "https://www.instagram.com/ipulse_one/",
-                "https://github.com/ipulse-one"
+                "https://www.linkedin.com/company/107398117/",
+                "https://x.com/ipulsedev",
+                "https://www.instagram.com/pulseguard_/",
+                "https://github.com/iPulseHQ"
               ]
             })
           }}
