@@ -15,8 +15,8 @@ export default function Guard() {
         <p className="text-xl text-gray-600 dark:text-muted-foreground mb-12 max-w-3xl mx-auto">{t('guardHeroSubtitle')}</p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="https://app.pulseguard.pro/register" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('ctaStartTrial')}</a>
-          <a href="https://app.pulseguard.pro/login" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{t('signInArrow')}</a>
+          <a href="https://guard.ipulse.one/register" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('ctaStartTrial')}</a>
+          <a href="https://guard.ipulse.one/login" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">{t('signInArrow')}</a>
         </div>
       </section>
 

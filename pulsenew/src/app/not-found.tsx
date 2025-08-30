@@ -20,11 +20,11 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* PulseGuard Logo */}
+        {/* iPulse Logo */}
         <div className="mb-6">
           <Image
-            src="/assets/pulseguard-logo.svg"
-            alt="PulseGuard"
+            src="/assets/ipulse-logo.svg"
+            alt="iPulse"
             width={140}
             height={46}
             className="mx-auto"
@@ -97,14 +97,14 @@ export default function NotFound() {
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center">
                   <Image
-                    src="/assets/pulseguard-logo.svg"
-                    alt="PulseGuard"
+                    src="/assets/ipulse-logo.svg"
+                    alt="iPulse"
                     width={16}
                     height={16}
                   />
                 </div>
                 <div className="text-left">
-                  <div className="font-medium text-gray-900 dark:text-white">PulseGuard</div>
+                  <div className="font-medium text-gray-900 dark:text-white">PulseGuard (Monitor)</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Website monitoring</div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function NotFound() {
 
         {/* Error ID for support */}
         <p className="mt-6 text-xs text-gray-500 dark:text-gray-500">
-          Error ID: 404-{Date.now().toString(36)} | Hulp nodig? help@pulseguard.nl
+          Error ID: 404-{Date.now().toString(36)} | Hulp nodig? help@ipulse.one
         </p>
       </div>
     </div>

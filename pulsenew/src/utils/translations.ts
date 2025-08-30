@@ -51,8 +51,8 @@ export const translations: Translations = {
   dutch: { en: 'Dutch', nl: 'Nederlands' },
 
   // Home (Next) copy
-  heroTitle: { en: 'Your digital peacemaker', nl: 'Your digital peacemaker' },
-  homeHeroSubtitle: { en: 'Digital solution to monitor your services', nl: 'Digitale oplossing om je services te monitoren' },
+  heroTitle: { en: 'Unified Business Platform', nl: 'Unified Business Platform' },
+  homeHeroSubtitle: { en: 'Monitor your digital infrastructure, share files securely, and manage your complete business processes - all in one place.', nl: 'Monitor je digitale infrastructuur, deel bestanden veilig, en beheer je complete bedrijfsproces - alles op één plek.' },
   requestDemo: { en: 'Request a demo', nl: 'Vraag een demo aan' },
   heroTrustedBy: { en: 'Trusted by', nl: 'Vertrouwd door' },
 
@@ -61,11 +61,17 @@ export const translations: Translations = {
   homeCrmDesc: { en: 'ERP and CRM for small companies (PulseFlow)', nl: 'ERP en CRM voor kleine bedrijven (PulseFlow)' },
 
   homeSection1Title: { en: 'Monitor, visualize your domains', nl: 'Monitor en visualiseer je domeinen' },
-  homeSection1Desc: { en: 'See how PulseGuard helps you gain insight into the status of your digital infrastructure.', nl: 'Zie hoe PulseGuard je helpt inzicht te krijgen in de status van je digitale infrastructuur.' },
+  homeSection1Desc: { en: 'See how iPulse helps you gain insight into the status of your digital infrastructure.', nl: 'Zie hoe iPulse je helpt inzicht te krijgen in de status van je digitale infrastructuur.' },
   homeSection2Title: { en: 'All domain information in one place', nl: 'Alle domeininformatie op één plek' },
   homeSection2Desc: { en: 'View DNS, SSL, registrar details, name servers and historical changes for each domain.', nl: 'Bekijk DNS, SSL, registrar-gegevens, nameservers en historische wijzigingen per domein.' },
   homeAiTitle: { en: 'PulseAI assistant', nl: 'PulseAI-assistent' },
   homeAiDesc: { en: 'Ask AI to analyse domains, suggest actions and generate insights from your monitoring data.', nl: 'Laat AI domeinen analyseren, acties voorstellen en inzichten genereren uit je monitoringdata.' },
+
+  // Platform Overview section
+  platformOverviewTitle: { en: 'Three powerful solutions for your business', nl: 'Drie krachtige oplossingen voor je bedrijf' },
+  pulseGuardOverviewDesc: { en: 'Monitor your websites, servers and digital services 24/7 with real-time alerts and AI insights.', nl: 'Monitor je websites, servers en digitale diensten 24/7 met real-time alerts en AI inzichten.' },
+  pulseFilesOverviewDesc: { en: 'Share files securely and temporarily with military-grade encryption and automatic deletion.', nl: 'Deel bestanden veilig en tijdelijk met militaire encryptie en automatische verwijdering.' },
+  pulseFlowOverviewDesc: { en: 'Complete ERP & CRM for small businesses with invoicing, inventory and project management.', nl: 'Complete ERP & CRM voor kleine bedrijven met facturatie, voorraad en projectbeheer.' },
 
   // Features page
   featuresPageTitle: { en: 'Complete monitoring solution', nl: 'Volledige monitoringoplossing' },
@@ -94,10 +100,10 @@ export const translations: Translations = {
   guardFeaturesTitle: { en: 'Everything you need to monitor your infrastructure', nl: 'Alles wat je nodig hebt om je infrastructuur te monitoren' },
   smartNotificationsTitle: { en: 'Smart Notifications', nl: 'Slimme notificaties' },
   reportsAnalyticsTitle: { en: 'Reports & Analytics', nl: 'Rapportages & Analytics' },
-  guardSeeInActionTitle: { en: 'See PulseGuard in action', nl: 'Bekijk PulseGuard in actie' },
+  guardSeeInActionTitle: { en: 'See PulseGuard (Monitor) in action', nl: 'Bekijk PulseGuard (Monitor) in actie' },
   guardSeeInActionDesc: { en: 'Our intuitive dashboard gives you complete visibility into your infrastructure with real-time monitoring and detailed insights.', nl: 'Ons intuïtieve dashboard geeft volledige zicht op je infrastructuur met realtime monitoring en uitgebreide inzichten.' },
   guardCtaTitle: { en: 'Ready to start monitoring?', nl: 'Klaar om te monitoren?' },
-  guardCtaDesc: { en: 'Join thousands of users who trust PulseGuard to keep their infrastructure running smoothly.', nl: 'Sluit je aan bij duizenden gebruikers die PulseGuard vertrouwen om hun infrastructuur soepel te laten draaien.' },
+  guardCtaDesc: { en: 'Join thousands of users who trust iPulse to keep their infrastructure running smoothly.', nl: 'Sluit je aan bij duizenden gebruikers die iPulse vertrouwen om hun infrastructuur soepel te laten draaien.' },
   viewPricing: { en: 'View Pricing →', nl: 'Bekijk prijzen →' },
 
   // Files page
@@ -188,8 +194,8 @@ export const translations: Translations = {
   // Team page
   teamHeroTitle: { en: 'Meet our team', nl: 'Maak kennis met ons team' },
   teamHeroSubtitle: { en: 'We’re a passionate team of developers and marketers dedicated to building the best monitoring platform for businesses of all sizes.', nl: 'Wij zijn een gepassioneerd team van developers en marketeers dat het beste monitoringplatform bouwt voor organisaties van elke omvang.' },
-  aboutPulseGuardTitle: { en: 'About PulseGuard', nl: 'Over PulseGuard' },
-  aboutPulseGuardDesc: { en: 'PulseGuard is part of IM Digital, a Netherlands-based technology company focused on creating innovative monitoring and management solutions. We’re committed to helping businesses maintain reliable digital infrastructure with cutting-edge technology and exceptional support.', nl: 'PulseGuard is onderdeel van IM Digital, een Nederlands technologiebedrijf gericht op innovatieve monitoring- en beheersoplossingen. Wij helpen organisaties met een betrouwbare digitale infrastructuur door toptechnologie en uitstekende support.' },
+  aboutIPulseTitle: { en: 'About iPulse', nl: 'Over iPulse' },
+  aboutIPulseDesc: { en: 'iPulse is a Netherlands-based technology company focused on creating innovative monitoring and management solutions. We’re committed to helping businesses maintain reliable digital infrastructure with cutting-edge technology and exceptional support.', nl: 'iPulse is een Nederlands technologiebedrijf gericht op innovatieve monitoring- en beheersoplossingen. Wij helpen organisaties met een betrouwbare digitale infrastructuur door toptechnologie en uitstekende support.' },
   teamMembersLabel: { en: 'Team Members', nl: 'Teamleden' },
   monitoredServicesLabel: { en: 'Monitored Services', nl: 'Gemonitorde diensten' },
   platformUptimeLabel: { en: 'Platform Uptime', nl: 'Platform-uptime' },
@@ -198,7 +204,7 @@ export const translations: Translations = {
   getInTouch: { en: 'Get in touch', nl: 'Neem contact op' },
 
   // Blog list page
-  blogHeroTitle: { en: 'PulseGuard Blog', nl: 'PulseGuard Blog' },
+  blogHeroTitle: { en: 'iPulse Blog', nl: 'iPulse Blog' },
   blogHeroSubtitle: { en: 'Stay updated with the latest insights on website monitoring, server management, and digital infrastructure best practices.', nl: 'Blijf op de hoogte van de nieuwste inzichten over website monitoring, serverbeheer en best practices voor digitale infrastructuur.' },
   blogStayUpdated: { en: 'Stay updated', nl: 'Blijf op de hoogte' },
   blogNewsletterSubtitle: { en: 'Subscribe to our newsletter to get the latest updates, tips, and insights delivered directly to your inbox.', nl: 'Abonneer je op onze nieuwsbrief voor de nieuwste updates, tips en inzichten rechtstreeks in je inbox.' },

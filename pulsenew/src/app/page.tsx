@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { Linkedin, Github, Instagram, Twitter, Check } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2 } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { GridBackground } from "@/components/GridBackground";
 
@@ -15,7 +14,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "iPulse",
-    "description": "Unified platform: PulseGuard, PulseFiles en PulseFlow. Monitor, delen en managen op ipulse.one.",
+    "description": "Unified Business Platform: PulseGuard voor monitoring, PulseFiles voor secure file sharing, PulseFlow voor ERP & CRM. Alles voor Nederlandse ondernemers.",
     "url": "https://ipulse.one",
     "potentialAction": {
       "@type": "SearchAction",
@@ -24,10 +23,10 @@ export default function Home() {
     },
     "publisher": {
       "@type": "Organization",
-      "name": "PulseGuard B.V.",
+      "name": "iPulse B.V.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://ipulse.one/assets/pulseguard-logo.png"
+        "url": "https://ipulse.one/assets/ipulse-logo.png"
       }
     }
   };
@@ -47,7 +46,7 @@ export default function Home() {
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
         <div className="relative z-20 max-w-4xl mx-auto w-full">
-          <h1
+                      <h1
             className={`text-[61px] font-bold leading-[65px] tracking-[-1.921px] mb-6 transition-all duration-300 ${
               isHovered
                 ? "text-blue-600 dark:text-blue-400"
@@ -57,80 +56,21 @@ export default function Home() {
             {t('heroTitle')}
           </h1>
           <p className="text-2xl font-medium text-gray-600 dark:text-gray-300 tracking-[-0.42px] mb-12">
-            {t('homeHeroSubtitle')}
+            {t('heroSubtitle')}
           </p>
 
           {/* Action buttons */}
           <div className="flex items-center justify-center gap-4 mb-12">
             <a
-              href="mailto:info@pulseguard.nl"
-              className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 flex items-center gap-3"
+              href="mailto:info@ipulse.one"
+              className="bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center gap-3"
             >
               {t('requestDemo')}
               <span className="text-xl">→</span>
             </a>
           </div>
 
-          {/* Feature List */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 mb-12 backdrop-blur-sm">
-            {/* Mobile Layout */}
-            <div className="md:hidden space-y-3">
-              <div className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5 monitors for <strong>free</strong></span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5+ integrations</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-red-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Real-time alerts</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Public status pages</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">AI insights</span>
-              </div>
-            </div>
 
-            {/* Desktop Layout */}
-            <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full">
-                  <Check className="w-6 h-6 text-green-600 dark:text-green-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5 monitors for <strong>free</strong></span>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full">
-                  <Check className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">5+ integrations</span>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="bg-red-100 dark:bg-red-900/30 p-3 rounded-full">
-                  <Check className="w-6 h-6 text-red-600 dark:text-red-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Real-time alerts</span>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-full">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">Public status pages</span>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-2">
-                <div className="bg-orange-100 dark:bg-orange-900/30 p-3 rounded-full">
-                  <Check className="w-6 h-6 text-orange-600 dark:text-orange-400" />
-                </div>
-                <span className="text-sm font-medium text-gray-800 dark:text-gray-200">AI insights</span>
-              </div>
-            </div>
-          </div>
 
           {/* Heartbeat graphic */}
           <div className="relative z-10 flex justify-center mb-16">
@@ -145,18 +85,54 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Platform Overview */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 mb-16 border border-gray-200 dark:border-gray-700">
+            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+              {t('platformOverviewTitle')}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Monitor className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">PulseGuard</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {t('pulseGuardOverviewDesc')}
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileText className="w-8 h-8 text-green-600 dark:text-green-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">PulseFiles</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {t('pulseFilesOverviewDesc')}
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building2 className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">PulseFlow</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  {t('pulseFlowOverviewDesc')}
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Social Media Links */}
           <div className="flex justify-center space-x-8">
-            <a href="https://www.linkedin.com/company/pulseguardnl" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/ipulseone" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="https://x.com/pulseguard_hq" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/ipulse_one" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-6 h-6" />
             </a>
-            <a href="https://www.instagram.com/pulseguard_/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900/30 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/ipulse_one/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900/30 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://github.com/pulseguardhq" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/ipulse-one" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Github className="w-6 h-6" />
             </a>
           </div>
@@ -202,71 +178,7 @@ export default function Home() {
         <div className="border-t border-gray-200 dark:border-gray-700 mt-8"></div>
       </section>
 
-      {/* Services Section */}
-      <section className="max-w-7xl mx-auto px-4 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          {/* PulseGuard */}
-          <Link href="/guard" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
-            <div className="mb-6">
-              <div className="w-8 h-8 bg-[#fff6d6] rounded-md flex items-center justify-center mb-4">
-                <Image
-                  src="/assets/pulseguard-logo.svg"
-                  alt="PulseGuard"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <h3 className="text-[19.688px] font-bold text-black dark:text-foreground tracking-[-0.236px] group-hover:text-blue-600 transition-colors">
-                PulseGuard
-              </h3>
-            </div>
-            <p className="text-[13.5px] text-black dark:text-muted-foreground leading-[19px] tracking-[0.101px]">
-              {t('homeGuardDesc')}
-            </p>
-          </Link>
-
-          {/* PulseFiles */}
-          <Link href="/files" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
-            <div className="mb-6">
-              <div className="w-8 h-8 bg-[#fce9e8] rounded-md flex items-center justify-center mb-4">
-                <Image
-                  src="/assets/files-icon.svg"
-                  alt="PulseFiles"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <h3 className="text-[19.375px] font-bold text-black dark:text-foreground tracking-[-0.236px] group-hover:text-blue-600 transition-colors">
-                PulseFiles
-              </h3>
-            </div>
-            <p className="text-[13.5px] text-black dark:text-muted-foreground leading-[19px] tracking-[0.101px]">
-              {t('homeFilesDesc')}
-            </p>
-          </Link>
-
-          {/* PulseFlow */}
-          <Link href="/flow" className="bg-[#f6f5f4] dark:bg-secondary rounded-xl p-6 h-[181px] hover:shadow-lg transition-all duration-300 group">
-            <div className="mb-6">
-              <div className="w-8 h-8 bg-[#e2ecf3] rounded-md flex items-center justify-center mb-4">
-                <Image
-                  src="/assets/crm-icon.svg"
-                  alt="PulseFlow"
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <h3 className="text-[19.688px] font-bold text-black dark:text-foreground tracking-[-0.236px] group-hover:text-blue-600 transition-colors">
-                PulseFlow
-              </h3>
-            </div>
-            <p className="text-[13.5px] text-black dark:text-muted-foreground leading-[19px] tracking-[0.101px]">
-              {t('homeCrmDesc')}
-            </p>
-          </Link>
-        </div>
-      </section>
-
+     
       {/* Dashboard Preview Section */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4">

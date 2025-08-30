@@ -1,5 +1,5 @@
-# Robots.txt for PulseGuard - Website & Device Monitoring Platform
-# https://pulseguard.pro
+# Robots.txt for iPulse - Unified Platform
+# https://ipulse.one
 # Generated on: 2025-08-25
 
 User-agent: *
@@ -104,5 +104,5 @@ Allow: /site.webmanifest
 Allow: /.well-known/
 
 # Sitemaps
-Sitemap: https://pulseguard.pro/sitemap.xml
-Sitemap: https://pulseguard.pro/sitemap-index.xml
+Sitemap: https://ipulse.one/sitemap.xml
+Sitemap: https://ipulse.one/sitemap-index.xml

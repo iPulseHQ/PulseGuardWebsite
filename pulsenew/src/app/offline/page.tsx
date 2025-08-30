@@ -19,11 +19,11 @@ export default function Offline() {
           </div>
         </div>
 
-        {/* PulseGuard Logo */}
+        {/* iPulse Logo */}
         <div className="mb-6">
           <Image
-            src="/assets/pulseguard-logo.svg"
-            alt="PulseGuard"
+            src="/assets/ipulse-logo.svg"
+            alt="iPulse"
             width={120}
             height={40}
             className="mx-auto"

@@ -108,11 +108,11 @@ export default function GlobalError({
               </p>
               <div className="space-y-2">
                 <a
-                  href="mailto:support@pulseguard.pro"
+                  href="mailto:support@ipulse.one"
                   className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 text-sm font-medium"
                 >
                   <Mail className="w-4 h-4" />
-                  support@pulseguard.pro
+                  support@ipulse.one
                 </a>
                 <p className="text-xs text-blue-700 dark:text-blue-300">
                   Vermeld error ID: {error.digest || 'Unknown'} | Tijd: {new Date().toISOString()}

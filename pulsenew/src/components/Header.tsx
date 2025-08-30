@@ -19,17 +19,17 @@ export default function Header() {
 
   // Dynamic login/signup links based on current page
   const getLoginLink = () => {
-    if (pathname === '/guard') return 'https://app.pulseguard.pro/login';
-    if (pathname === '/files') return 'https://files.pulseguard.pro/login';
-    if (pathname === '/flow') return 'https://crm.pulseguard.pro/login';
-    return 'https://app.pulseguard.pro/login';
+    if (pathname === '/guard') return 'https://guard.ipulse.one/login';
+    if (pathname === '/files') return 'https://files.ipulse.one/login';
+    if (pathname === '/flow') return 'https://flow.ipulse.one/login';
+    return 'https://guard.ipulse.one/login';
   };
 
   const getSignupLink = () => {
-    if (pathname === '/guard') return 'https://app.pulseguard.pro/register';
-    if (pathname === '/files') return 'https://files.pulseguard.pro';
-    if (pathname === '/flow') return 'https://crm.pulseguard.pro/sign-up';
-    return 'https://app.pulseguard.pro/register';
+    if (pathname === '/guard') return 'https://guard.ipulse.one/register';
+    if (pathname === '/files') return 'https://files.ipulse.one';
+    if (pathname === '/flow') return 'https://flow.ipulse.one/sign-up';
+    return 'https://guard.ipulse.one/register';
   };
 
   return (
@@ -40,14 +40,14 @@ export default function Header() {
           <span className="relative inline-block">
             <Image
               src="/assets/logodark.png"
-              alt="PulseGuard Logo"
+              alt="iPulse Logo"
               width={150}
               height={150}
               className="block dark:hidden"
             />
             <Image
               src="/assets/logowhite.png"
-              alt="PulseGuard Logo"
+              alt="iPulse Logo"
               width={150}
               height={150}
               className="hidden dark:block"
@@ -75,7 +75,7 @@ export default function Header() {
                       <div className="w-6 h-6 bg-[#fff6d6] rounded flex items-center justify-center">
                         <Image src="/assets/pulseguard-logo.svg" alt="" width={16} height={16} />
                       </div>
-                      PulseGuard
+                      PulseGuard (Monitor)
                     </div>
                   </Link>
                   <Link href="/files" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
@@ -107,7 +107,7 @@ export default function Header() {
           <Link href="/blog" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('blog')}
           </Link>
-          <a href="https://docs.pulseguard.nl/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+          <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('docs')}
           </a>
         </nav>
@@ -228,7 +228,7 @@ export default function Header() {
               {t('blog')}
             </Link>
             <a 
-              href="https://docs.pulseguard.pro/" 
+              href="https://docs.ipulse.one/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"

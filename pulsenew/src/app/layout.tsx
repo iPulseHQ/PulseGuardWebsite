@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PulseGuard - Your Digital Peacemaker | Website & Device Monitoring',
-    template: '%s | PulseGuard'
+    default: 'iPulse - Your Digital Peacemaker ',
+    template: '%s | iPulse'
   },
-  description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with PulseGuard. Trusted by businesses in Netherlands and worldwide.',
+  description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with iPulse. Trusted by businesses in Netherlands and worldwide.',
   keywords: [
     'website monitoring',
     'uptime monitoring', 
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
     'DevOps',
     'SaaS monitoring'
   ],
-  authors: [{ name: 'PulseGuard B.V.' }],
-  creator: 'PulseGuard B.V.',
-  publisher: 'PulseGuard B.V.',
+  authors: [{ name: 'iPulse B.V.' }],
+  creator: 'iPulse B.V.',
+  publisher: 'iPulse B.V.',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://pulseguard.pro'),
+  metadataBase: new URL('https://ipulse.one'),
   alternates: {
     canonical: '/',
     languages: {
@@ -57,25 +57,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pulseguard.pro',
-    title: 'PulseGuard - Your Digital Peacemaker | Website & Device Monitoring',
-    description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with PulseGuard.',
-    siteName: 'PulseGuard',
+    url: 'https://ipulse.one',
+    title: 'iPulse - Your Digital Peacemaker | Website & Device Monitoring',
+    description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance with iPulse.',
+    siteName: 'iPulse',
     images: [
       {
         url: '/assets/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'PulseGuard - Website & Device Monitoring Platform',
+        alt: 'iPulse - Website & Device Monitoring Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PulseGuard - Your Digital Peacemaker',
+    title: 'iPulse - Your Digital Peacemaker',
     description: 'Complete monitoring solution for websites, devices & services. Monitor uptime, security, and performance.',
-    site: '@pulseguard_hq',
-    creator: '@pulseguard_hq',
+    site: '@ipulse_one',
+    creator: '@ipulse_one',
     images: ['/assets/twitter-image.png'],
   },
   icons: {
@@ -146,9 +146,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "PulseGuard",
+              "name": "iPulse",
               "description": "Complete monitoring solution for websites, devices & services",
-              "url": "https://pulseguard.pro",
+              "url": "https://ipulse.one",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web Browser",
               "offers": {
@@ -159,9 +159,9 @@ export default function RootLayout({
               },
               "provider": {
                 "@type": "Organization",
-                "name": "PulseGuard B.V.",
-                "url": "https://pulseguard.pro",
-                "logo": "https://pulseguard.pro/assets/pulseguard-logo.png",
+                "name": "iPulse B.V.",
+                "url": "https://ipulse.one",
+                "logo": "https://ipulse.one/assets/ipulse-logo.png",
                 "contactPoint": {
                   "@type": "ContactPoint",
                   "telephone": "+31-20-123-4567",
@@ -174,10 +174,10 @@ export default function RootLayout({
                   "addressRegion": "Noord-Holland"
                 },
                 "sameAs": [
-                  "https://www.linkedin.com/company/pulseguardnl",
-                  "https://x.com/pulseguard_hq",
-                  "https://www.instagram.com/pulseguard_/",
-                  "https://github.com/pulseguardhq"
+                  "https://www.linkedin.com/company/ipulseone",
+                  "https://x.com/ipulse_one",
+                  "https://www.instagram.com/ipulse_one/",
+                  "https://github.com/ipulse-one"
                 ]
               }
             })
@@ -191,15 +191,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "PulseGuard B.V.",
-              "url": "https://pulseguard.pro",
-              "logo": "https://pulseguard.pro/assets/pulseguard-logo.png",
+              "name": "iPulse B.V.",
+              "url": "https://ipulse.one",
+              "logo": "https://ipulse.one/assets/ipulse-logo.png",
               "description": "Website and device monitoring platform for businesses",
               "foundingDate": "2024",
               "founders": [
                 {
                   "@type": "Person",
-                  "name": "PulseGuard Team"
+                  "name": "iPulse Team"
                 }
               ],
               "address": {
@@ -210,14 +210,14 @@ export default function RootLayout({
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer service",
-                "email": "support@pulseguard.pro",
+                "email": "support@ipulse.one",
                 "availableLanguage": ["English", "Dutch"]
               },
               "sameAs": [
-                "https://www.linkedin.com/company/pulseguardnl",
-                "https://x.com/pulseguard_hq",
-                "https://www.instagram.com/pulseguard_/",
-                "https://github.com/pulseguardhq"
+                "https://www.linkedin.com/company/ipulseone",
+                "https://x.com/ipulse_one",
+                "https://www.instagram.com/ipulse_one/",
+                "https://github.com/ipulse-one"
               ]
             })
           }}

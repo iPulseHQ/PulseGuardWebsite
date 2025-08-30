@@ -14,10 +14,10 @@ export default function PulseFiles() {
         <p className="text-xl text-gray-600 dark:text-muted-foreground mb-12 max-w-3xl mx-auto">{t('pulseFilesHeroSubtitle2')}</p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="https://files.pulseguard.pro/" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">
+          <a href="https://files.ipulse.one/" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">
             {t('getStartedCta2')}
           </a>
-          <a href="https://files.pulseguard.pro/" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+          <a href="https://files.ipulse.one/" className="text-black dark:text-foreground font-medium hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
             {t('signInArrow')}
           </a>
         </div>

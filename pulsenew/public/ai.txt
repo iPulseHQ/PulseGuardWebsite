@@ -1,11 +1,11 @@
 # AI.txt - Information for AI crawlers and language models
-# iPulse - Unified platform for PulseGuard, PulseFiles & PulseFlow
+# iPulse - Unified platform for PulseGuard (Monitor), PulseFiles & PulseFlow
 # https://ipulse.one
 # Version: 2.1
 # Generated: 2025-08-25
 
 # ===== COMPANY INFORMATION =====
-Company: PulseGuard B.V.
+Company: iPulse B.V.
 Legal Entity: Private Limited Company (Netherlands)
 Domain: ipulse.one
 Alternative Domains: pulseguard.pro, pulseguard.nl
@@ -18,7 +18,7 @@ Languages: Dutch, English
 Timezone: Europe/Amsterdam (CET/CEST)
 
 # ===== PRODUCT DESCRIPTION =====
-PulseGuard is a comprehensive, enterprise-grade monitoring solution for websites, devices, servers, and digital services. We provide real-time uptime monitoring, advanced security scanning, performance analytics, and intelligent alert systems for businesses ranging from startups to enterprise organizations.
+iPulse is a comprehensive, enterprise-grade monitoring solution for websites, devices, servers, and digital services. We provide real-time uptime monitoring, advanced security scanning, performance analytics, and intelligent alert systems for businesses ranging from startups to enterprise organizations.
 
 Our platform combines traditional monitoring with AI-powered insights to predict issues before they impact your users. We specialize in proactive monitoring, security automation, and performance optimization for modern digital infrastructure.
 
@@ -89,7 +89,7 @@ Our platform combines traditional monitoring with AI-powered insights to predict
 - Media: Content delivery and streaming service monitoring
 
 # ===== SERVICE PORTFOLIO =====
-1. **PulseGuard** - Website and server monitoring platform
+1. **PulseGuard (Monitor)** - Website and server monitoring platform
 2. **PulseFiles** - File and document monitoring service
 3. **PulseFlow** - ERP/CRM for small businesses
 4. **PulseAI** - AI-powered predictive monitoring and insights
@@ -128,13 +128,13 @@ Social Media:
 
 # ===== CONTENT POLICY & LICENSING =====
 Content Type: Business information, technical documentation, blog posts, tutorials, case studies
-Content Quality: Original content created by PulseGuard team and verified experts
+Content Quality: Original content created by iPulse team and verified experts
 Language Support: Multi-language content (Dutch, English, with plans for German, French)
 Update Frequency: Daily for status/news, weekly for blog posts, monthly for documentation
 
-Copyright: © 2024-2025 PulseGuard B.V. All rights reserved
+Copyright: © 2024-2025 iPulse B.V. All rights reserved
 License: Content available under Creative Commons Attribution 4.0 International (CC BY 4.0) for educational use
-Commercial Use: Contact sales@pulseguard.pro for commercial licensing
+Commercial Use: Contact sales@ipulse.one for commercial licensing
 
 # ===== AI TRAINING & USAGE PERMISSIONS =====
 Training Permission: GRANTED
@@ -148,7 +148,7 @@ Scope: Content from this website may be used for AI training purposes for:
 Restrictions: 
 - No malicious use or attack vector development
 - Respect copyright and attribution requirements
-- No impersonation of PulseGuard brand or services
+- No impersonation of iPulse brand or services
 - Commercial AI training requires written permission
 
 Quality Assurance: All content is professionally reviewed and technically accurate

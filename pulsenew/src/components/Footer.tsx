@@ -135,22 +135,22 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-gray-800 dark:text-foreground">{t('footerPlatform')}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://app.pulseguard.pro" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerDashboard')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/domains" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one/domains" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerDomains')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/device-monitoring" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one/device-monitoring" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerDevices')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/subscriptions" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one/subscriptions" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerSubscriptions')}
                 </a>
               </li>
@@ -172,17 +172,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@pulseguard.nl" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="mailto:info@ipulse.one" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerEmailSupport')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/privacy" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one/privacy" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerPrivacyPolicy')}
                 </a>
               </li>
               <li>
-                <a href="https://app.pulseguard.pro/terms" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
+                <a href="https://guard.ipulse.one/terms" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors">
                   {t('footerTerms')}
                 </a>
               </li>
@@ -192,13 +192,13 @@ export default function Footer() {
         
         <div className="border-t border-gray-200 dark:border-border pt-8 text-center text-gray-500 dark:text-muted-foreground text-sm">
           <p>
-            &copy; {new Date().getFullYear()} PulseGuard {t('footerIsPartOf')}{" "}
+            &copy; {new Date().getFullYear()} iPulse {t('footerIsPartOf')}{" "}
             <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300">
               IM Digital
             </a>
             {" "}- {t('footerCopyright')} - {t('footerContact')}: {" "}
-            <a href="mailto:info@pulseguard.nl" className="text-blue-400 hover:text-blue-300">
-              info@pulseguard.nl
+            <a href="mailto:info@ipulse.one" className="text-blue-400 hover:text-blue-300">
+              info@ipulse.one
             </a>
           </p>
         </div>
