@@ -46,7 +46,7 @@ export default function Header() {
               className="block dark:hidden"
             />
             <Image
-              src="/assets/logofinal.png"
+              src="/assets/logowhite.png"
               alt="PulseGuard Logo"
               width={150}
               height={150}
