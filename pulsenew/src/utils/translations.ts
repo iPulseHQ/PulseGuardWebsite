@@ -52,6 +52,7 @@ export const translations: Translations = {
 
   // Home (Next) copy
   heroTitle: { en: 'Unified Business Platform', nl: 'Unified Business Platform' },
+  heroSubtitle: { en: 'Monitor your digital infrastructure, share files securely, and manage your complete business processes - all in one place.', nl: 'Monitor je digitale infrastructuur, deel bestanden veilig, en beheer je complete bedrijfsproces - alles op één plek.' },
   homeHeroSubtitle: { en: 'Monitor your digital infrastructure, share files securely, and manage your complete business processes - all in one place.', nl: 'Monitor je digitale infrastructuur, deel bestanden veilig, en beheer je complete bedrijfsproces - alles op één plek.' },
   requestDemo: { en: 'Request a demo', nl: 'Vraag een demo aan' },
   heroTrustedBy: { en: 'Trusted by', nl: 'Vertrouwd door' },
