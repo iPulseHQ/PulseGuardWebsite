@@ -64,16 +64,16 @@ export default function Footer() {
               {t('homeSection1Desc')}
             </p>
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/company/pulseguardnl" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/107398117/" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://x.com/pulseguard_hq" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/ipulsedev" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Twitter className="w-5 h-5" />
               </a>
               <a href="https://www.instagram.com/pulseguard_/" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://github.com/pulseguardhq" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/iPulseHQ" className="text-gray-600 dark:text-muted-foreground hover:text-black dark:hover:text-gray-300 transition-colors" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5" />
               </a>
             </div>

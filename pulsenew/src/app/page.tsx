@@ -119,16 +119,16 @@ export default function Home() {
 
           {/* Social Media Links */}
           <div className="flex justify-center space-x-8">
-            <a href="https://www.linkedin.com/company/ipulseone" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/107398117/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="https://x.com/ipulse_one" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/ipulsedev" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-6 h-6" />
             </a>
-            <a href="https://www.instagram.com/ipulse_one/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900/30 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/pulseguard_/" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-pink-100 dark:hover:bg-pink-900/30 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href="https://github.com/ipulse-one" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/iPulseHQ" className="bg-gray-100 dark:bg-gray-800 p-3 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110" target="_blank" rel="noopener noreferrer">
               <Github className="w-6 h-6" />
             </a>
           </div>
