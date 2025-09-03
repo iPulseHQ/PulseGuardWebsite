@@ -143,7 +143,7 @@ export default function Home() {
           <a href="https://imdigital.info" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center h-16" title="IM Digital">
             <Image
               src="https://imdigital.info/logo(gray-google).png"
-              alt="IM Digital"
+              alt="IMDigital"
               width={120}
               height={48}
               className="h-12 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity"

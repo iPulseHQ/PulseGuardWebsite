@@ -44,20 +44,24 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-6">
               <span className="relative inline-block">
-                <Image
-                  src="/assets/logodark.png"
-                  alt="PulseGuard Logo"
-                  width={150}
-                  height={150}
-                  className="block dark:hidden"
-                />
-                <Image
-                  src="/assets/logofinal.png"
-                  alt="PulseGuard Logo"
-                  width={150}
-                  height={150}
-                  className="hidden dark:block"
-                />
+              <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <span className="relative inline-block">
+            <Image
+              src="/assets/logodark.png"
+              alt="iPulse Logo"
+              width={150}
+              height={150}
+              className="block dark:hidden"
+            />
+            <Image
+              src="/assets/logowhite.png"
+              alt="iPulse Logo"
+              width={150}
+              height={150}
+              className="hidden dark:block"
+            />
+          </span>
+        </Link>
               </span>
             </div>
             <p className="text-gray-600 dark:text-muted-foreground mb-6">
@@ -194,7 +198,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} iPulse {t('footerIsPartOf')}{" "}
             <a href="https://imdigital.info" className="text-blue-400 hover:text-blue-300">
-              IM Digital
+              IMDigital
             </a>
             {" "}- {t('footerCopyright')} - {t('footerContact')}: {" "}
             <a href="mailto:info@ipulse.one" className="text-blue-400 hover:text-blue-300">
