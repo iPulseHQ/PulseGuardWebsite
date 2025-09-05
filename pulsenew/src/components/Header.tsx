@@ -75,7 +75,7 @@ export default function Header() {
                       <div className="w-6 h-6 bg-[#fff6d6] rounded flex items-center justify-center">
                         <Image src="/assets/pulseguard-logo.svg" alt="" width={16} height={16} />
                       </div>
-                      PulseGuard (Monitor)
+                      PulseGuard
                     </div>
                   </Link>
                   <Link href="/files" className="block px-4 py-2 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onClick={() => setSolutionsOpen(false)}>
