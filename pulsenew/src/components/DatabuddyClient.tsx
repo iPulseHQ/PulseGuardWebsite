@@ -5,7 +5,7 @@ import { Databuddy } from '@databuddy/sdk';
 export default function DatabuddyClient() {
   return (
     <Databuddy
-      clientId="oV3hOzXVbw3jH01y0ObpL"
+      clientId="r7_mZ0-zidaAxUAp4TJN0"
       trackHashChanges={true}
       trackAttributes={true}
       trackOutgoingLinks={true}
