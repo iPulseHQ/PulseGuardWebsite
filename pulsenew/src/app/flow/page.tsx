@@ -10,12 +10,12 @@ export default function PulseFlow() {
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" />
         <div className="relative max-w-7xl mx-auto px-4 py-24">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-3 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Building2 className="w-4 h-4" />
               PulseFlow (ERP/CRM)
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-              Complete <span className="text-blue-600">ERP</span> & <span className="text-indigo-600">CRM</span><br />
+              Complete <span className="text-gray-600 dark:text-gray-300">ERP</span> & <span className="text-gray-700 dark:text-gray-200">CRM</span><br />
               voor Nederlandse bedrijven
         </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -23,11 +23,11 @@ export default function PulseFlow() {
               Ontworpen voor Nederlandse ondernemers door Nederlandse ontwikkelaars.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="https://flow.ipulse.one" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center gap-2">
+              <a href="https://flow.ipulse.one" className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center gap-2">
                 Start gratis proefperiode
                 <ArrowRight className="w-5 h-5" />
               </a>
-              <a href="https://flow.ipulse.one/demo" className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg">
+              <a href="https://flow.ipulse.one/demo" className="bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 hover:border-gray-500 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:shadow-lg">
                 Bekijk demo
               </a>
             </div>
@@ -47,13 +47,13 @@ export default function PulseFlow() {
               <div className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                   {/* Stats Cards Mockup */}
-                  <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 border border-blue-200 dark:border-blue-800">
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Klanten</span>
-                      <Users className="w-4 h-4 text-blue-600" />
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Klanten</span>
+                      <Users className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                     </div>
-                    <div className="text-2xl font-bold text-blue-900 dark:text-blue-100">1,247</div>
-                    <div className="text-xs text-blue-600 dark:text-blue-400">+12% deze maand</div>
+                    <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">1,247</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">+12% deze maand</div>
                   </div>
                   <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 border border-green-200 dark:border-green-800">
                     <div className="flex items-center justify-between mb-2">
@@ -89,8 +89,8 @@ export default function PulseFlow() {
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-                        <Users className="w-4 h-4 text-blue-600" />
+                      <div className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                        <Users className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                       </div>
                       <div className="flex-1">
                         <div className="text-sm font-medium text-gray-900 dark:text-white">Nieuwe klant toegevoegd</div>
@@ -138,8 +138,8 @@ export default function PulseFlow() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Klantenbeheer */}
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors">
-                <Users className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-500 transition-colors">
+                <Users className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Klantenbeheer</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
@@ -263,8 +263,8 @@ export default function PulseFlow() {
 
             {/* Rapportages */}
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group">
-              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-500 transition-colors">
-                <BarChart3 className="w-6 h-6 text-indigo-600 dark:text-indigo-400 group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gray-500 transition-colors">
+                <BarChart3 className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white transition-colors" />
           </div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Rapportages</h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
@@ -323,9 +323,9 @@ export default function PulseFlow() {
               {/* Sidebar */}
               <div className="bg-gray-50 dark:bg-gray-800 p-6 border-r border-gray-200 dark:border-gray-600">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                    <Layers className="w-5 h-5 text-blue-600" />
-                    <span className="font-medium text-blue-900 dark:text-blue-100">Dashboard</span>
+                  <div className="flex items-center gap-3 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                    <Layers className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                    <span className="font-medium text-gray-900 dark:text-gray-100">Dashboard</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
                     <Users className="w-5 h-5 text-gray-600 dark:text-gray-400" />
@@ -358,7 +358,7 @@ export default function PulseFlow() {
                   <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-gray-600">
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Totaal Klanten</span>
-                      <Users className="w-5 h-5 text-blue-600" />
+                      <Users className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                     </div>
                     <div className="text-3xl font-bold text-gray-900 dark:text-white">1,247</div>
                     <div className="flex items-center mt-2">
@@ -403,8 +403,8 @@ export default function PulseFlow() {
                   <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Recente Activiteit</h4>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Users className="w-4 h-4 text-blue-600" />
+                      <div className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Users className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-medium text-gray-900 dark:text-white">Nieuwe klant toegevoegd</div>
@@ -451,7 +451,7 @@ export default function PulseFlow() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 €
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Betaalbaar</h3>
@@ -508,8 +508,8 @@ export default function PulseFlow() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
             <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all duration-200">
               <div className="text-center">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-gray-600 dark:text-gray-400" />
                 </div>
                 <span className="text-sm font-medium text-gray-900 dark:text-white">Outlook</span>
               </div>
@@ -564,24 +564,24 @@ export default function PulseFlow() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-indigo-600">
+      <section className="py-24 bg-gradient-to-r from-gray-600 to-gray-700">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Klaar om je bedrijf te stroomlijnen?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-gray-100 mb-8">
             Start vandaag nog met PulseFlow en ontdek hoe eenvoudig bedrijfsbeheer kan zijn.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://flow.ipulse.one" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2">
+            <a href="https://flow.ipulse.one" className="bg-white text-gray-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-200 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2">
               Start gratis proefperiode
               <ArrowRight className="w-5 h-5" />
             </a>
-            <a href="mailto:info@ipulse.one" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-200">
+            <a href="mailto:info@ipulse.one" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-600 transition-all duration-200">
               Neem contact op
             </a>
           </div>
-          <p className="text-blue-200 text-sm mt-6">
+          <p className="text-gray-200 text-sm mt-6">
             Geen creditcard nodig • 14 dagen gratis • Annuleer wanneer je wilt
           </p>
         </div>
