@@ -9,7 +9,9 @@
       "Bash(powershell:*)",
       "Bash(rm:*)",
       "Bash(npm install:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Read(/C:\\Users\\Arjan\\Documents\\1. Projecten\\PulseGuardMain\\pulseguard-react\\pulsenew\\src\\app\\flow/**)",
+      "Read(/C:\\Users\\Arjan\\Documents\\1. Projecten\\PulseGuardMain\\pulseguard-react\\pulsenew\\src\\app/**)"
     ],
     "deny": []
   }
