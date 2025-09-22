@@ -225,6 +225,12 @@ export const translations: Translations = {
   beFirstToKnowTitle: { en: 'Be the first to know', nl: 'Wees als eerste op de hoogte' },
   crmInDevDesc: { en: 'PulseFlow is currently in development. Sign up to be notified when we launch and get exclusive early access to our beta program.', nl: 'PulseFlow is momenteel in ontwikkeling. Meld je aan om een bericht te krijgen bij lancering en ontvang exclusieve vroege toegang tot ons betaprogramma.' },
   notifyMe: { en: 'Notify Me', nl: 'Houd me op de hoogte' },
+
+  // Domain redirect popup
+  domainRedirectTitle: { en: 'We have a new website!', nl: 'We hebben een nieuwe website!' },
+  domainRedirectMessage: { en: 'PulseGuard has moved to our new unified platform at ipulse.one. You will be redirected to our new site where you can find all iPulse services.', nl: 'PulseGuard is verhuisd naar ons nieuwe uniforme platform op ipulse.one. Je wordt doorgestuurd naar onze nieuwe site waar je alle iPulse diensten kunt vinden.' },
+  domainRedirectButton: { en: 'Go to ipulse.one', nl: 'Ga naar ipulse.one' },
+  domainRedirectCancel: { en: 'Stay here', nl: 'Blijf hier' },
 };
 
 // Translation function

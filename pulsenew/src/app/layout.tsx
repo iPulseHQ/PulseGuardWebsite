@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import LangSetter from "@/components/LangSetter";
 import { ThemeProvider } from "@/components/theme-provider";
 import DatabuddyClient from "@/components/DatabuddyClient";
+import DomainRedirectPopup from "@/components/DomainRedirectPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -226,6 +227,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LangSetter />
+          <DomainRedirectPopup />
           <Header />
           <main>{children}</main>
           <Footer />
