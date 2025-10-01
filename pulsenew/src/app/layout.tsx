@@ -112,6 +112,7 @@ export const metadata: Metadata = {
     yandex: 'your-yandex-verification-code',
     other: {
       'msvalidate.01': 'your-bing-verification-code',
+      'google-adsense-account': 'ca-pub-5724591609111321',
     },
   },
 };
