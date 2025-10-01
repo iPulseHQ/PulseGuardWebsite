@@ -9,6 +9,7 @@ Crawl-delay: 1
 # Major search engines optimization
 User-agent: Googlebot
 Allow: /
+Allow: /ads.txt
 Crawl-delay: 0
 
 User-agent: Bingbot
