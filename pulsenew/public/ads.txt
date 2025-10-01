@@ -1,0 +1,3 @@
+google.com, pub-5724591609111321, DIRECT, f08c47fec0942fa0
+# Subdomain entry for files.ipulse.one
+google.com, pub-5724591609111321, DIRECT, f08c47fec0942fa0
