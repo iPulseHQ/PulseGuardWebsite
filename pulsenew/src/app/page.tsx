@@ -1,15 +1,10 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Star, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Code2, Gauge } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Star, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
-  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'guard' | 'files' | 'flow'>('guard');
 
   // Structured data for homepage
@@ -61,38 +56,6 @@ export default function Home() {
     }
   ];
 
-  const features = [
-    {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-level beveiliging met end-to-end encryptie"
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Optimale performance met lokale NL servers"
-    },
-    {
-      icon: Bell,
-      title: "Smart Alerts",
-      description: "Alleen relevante notificaties via je kanaal"
-    },
-    {
-      icon: BarChart3,
-      title: "Advanced Analytics",
-      description: "Data-driven beslissingen met custom dashboards"
-    },
-    {
-      icon: Users,
-      title: "Team Ready",
-      description: "Role-based permissions voor je hele team"
-    },
-    {
-      icon: Globe2,
-      title: "24/7 Monitoring",
-      description: "Altijd in de gaten vanuit meerdere locaties"
-    }
-  ];
 
   const stats = [
     { value: "99.9%", label: "Uptime Guarantee" },
@@ -316,7 +279,6 @@ export default function Home() {
 
             <div className="space-y-12 sm:space-y-14 md:space-y-16">
               {products.map((product, index) => {
-                const Icon = product.icon;
                 const isReversed = index % 2 === 1;
 
                 return (
@@ -695,7 +657,7 @@ export default function Home() {
                     </div>
                     <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Custom Status Pages</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Branded status pagina's voor transparante communicatie met klanten.
+                      Branded status pagina&apos;s voor transparante communicatie met klanten.
                     </p>
                     <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
                       <Globe2 className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -901,7 +863,7 @@ export default function Home() {
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
                 <Globe2 className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
                 <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Custom Status Pages</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Branded status pagina's</p>
+                <p className="text-[10px] sm:text-xs text-gray-400">Branded status pagina&apos;s</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
@@ -988,7 +950,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white">15+ Regio's</span>
+                <span className="text-xs sm:text-sm font-medium text-white">15+ Regio&apos;s</span>
               </div>
             </div>
         </section>
@@ -1037,7 +999,7 @@ export default function Home() {
 
                     {/* Quote */}
                     <p className="text-base text-gray-300 mb-6 leading-relaxed">
-                      "{testimonial.quote}"
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
 
                     {/* Author */}

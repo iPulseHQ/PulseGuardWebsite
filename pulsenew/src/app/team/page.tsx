@@ -1,6 +1,5 @@
 "use client";
-import Image from "next/image";
-import { Linkedin, Github, Mail, Instagram, Users, Award, TrendingUp } from "lucide-react";
+import { Mail, Users, Award, TrendingUp } from "lucide-react";
 import { teamMembers } from "@/data/team";
 import { useTranslation } from "@/hooks/useTranslation";
 import RollingGallery from "@/components/RollingGallery";

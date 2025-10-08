@@ -3,35 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, X, ArrowRight, Sparkles, Zap, Star, Crown, Rocket } from "lucide-react";
-import { useState, useEffect } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function Pricing() {
   const { t } = useTranslation();
-  const [enterpriseConfig, setEnterpriseConfig] = useState({
-    domains: 10,
-    devices: 7,
-    services: 5,
-  });
-  const [enterprisePrice, setEnterprisePrice] = useState(15);
-
-  useEffect(() => {
-    const basePrice = 15;
-    const domainCost = (enterpriseConfig.domains - 10) * 0.50;
-    const deviceCost = (enterpriseConfig.devices - 7) * 2.00;
-    const serviceCost = (enterpriseConfig.services - 5) * 3.00;
-
-    let calculatedPrice = basePrice;
-    if (enterpriseConfig.domains > 10) calculatedPrice += domainCost;
-    if (enterpriseConfig.devices > 7) calculatedPrice += deviceCost;
-    if (enterpriseConfig.services > 5) calculatedPrice += serviceCost;
-
-    setEnterprisePrice(calculatedPrice);
-  }, [enterpriseConfig]);
-
-  const handleSliderChange = (type: 'domains' | 'devices' | 'services', value: string) => {
-    setEnterpriseConfig(prev => ({ ...prev, [type]: parseInt(value, 10) }));
-  };
 
   const plans = [
     {

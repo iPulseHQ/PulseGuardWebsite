@@ -62,18 +62,18 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false, teamMembers = 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
 
-  const handleUpdate = (latest: any) => {
+  const handleUpdate = (latest: { rotateY?: number }) => {
     if (typeof latest.rotateY === 'number') {
       rotation.set(latest.rotateY);
     }
   };
 
-  const handleDrag = (_: any, info: any) => {
+  const handleDrag = (_: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number } }) => {
     controls.stop();
     rotation.set(rotation.get() + info.offset.x * dragFactor);
   };
 
-  const handleDragEnd = (_: any, info: any) => {
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: { velocity: { x: number } }) => {
     const finalAngle = rotation.get() + info.velocity.x * dragFactor;
     rotation.set(finalAngle);
 
