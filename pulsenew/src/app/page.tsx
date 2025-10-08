@@ -96,9 +96,9 @@ export default function Home() {
 
   const stats = [
     { value: "99.9%", label: "Uptime Guarantee" },
-    { value: "150+", label: "Happy Customers" },
+    { value: "15+", label: "Happy Customers" },
     { value: "<2s", label: "Avg Response" },
-    { value: "24/7", label: "Support" }
+    { value: "24/6", label: "Support" }
   ];
 
   const testimonials = [
@@ -139,7 +139,7 @@ export default function Home() {
               <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                 <Badge variant="secondary" className="mb-3 sm:mb-4 text-xs sm:text-sm">
                   <Sparkles className="w-3 h-3 mr-1.5 sm:mr-2" />
-                  Trusted by 150+ businesses
+                  Trusted by IMDigital
                 </Badge>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 sm:px-0">
@@ -265,7 +265,7 @@ export default function Home() {
                 </div>
 
                 {/* Floating Stat Badge - Hidden on small mobile */}
-                <div className="hidden sm:block absolute -bottom-3 -left-3 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-2 sm:p-3 border border-gray-200 dark:border-gray-700">
+                <div className="hidden sm:block absolute -bottom-3 -left-3 bg-white dark:bg-black rounded-lg shadow-xl p-2 sm:p-3 border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
                       <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
@@ -558,7 +558,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-4">
                 Alles wat je bedrijf nodig heeft,{" "}
                 <span className="bg-gradient-to-r from-gray-600 to-gray-400 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
-                  geïntegreerd in één platform
+                  onder één dak
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
@@ -1001,7 +1001,6 @@ export default function Home() {
           <div className="max-w-7xl mx-auto relative">
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 border-gray-300 dark:border-gray-700">
-                <Star className="w-3 h-3 mr-1 fill-yellow-400 text-yellow-400" />
                 Testimonials
               </Badge>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

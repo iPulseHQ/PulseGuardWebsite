@@ -13,7 +13,7 @@ export default function Team() {
       {/* Hero Section */}
       <section className="relative max-w-7xl mx-auto px-4 py-20 text-center">
         <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-          <span className="text-sm font-medium">👥 Meet the Team</span>
+          <span className="text-sm font-medium">Meet the Team</span>
         </div>
         <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
           {t('teamHeroTitle')}
