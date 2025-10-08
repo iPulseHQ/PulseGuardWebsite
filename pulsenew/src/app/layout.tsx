@@ -225,12 +225,27 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-black via-gray-900 to-black text-white`}>
+        {/* Background blur decorations */}
+        <div className="fixed inset-0 opacity-10 pointer-events-none z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-white rounded-full blur-3xl" />
+        </div>
+
+        {/* Grid pattern overlay */}
+        <div className="fixed inset-0 opacity-5 pointer-events-none z-0">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LangSetter />
           <DomainRedirectPopup />
           <Header />
-          <main>{children}</main>
+          <main className="pt-[110px] bg-transparent relative z-10">{children}</main>
           <Footer />
           <DatabuddyClient />
           <Script
