@@ -105,12 +105,12 @@ export default function Home() {
                   Trusted by IMDigital
                 </Badge>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 sm:px-0">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 sm:px-0 text-gray-900 dark:text-white">
                   Your digital{" "}
-                  <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">peacemaker</span>
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">peacemaker</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
+                <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
                   Monitor, beheer en optimaliseer je volledige digitale ecosysteem vanaf één platform.
                   Gebouwd voor moderne teams.
                 </p>
@@ -135,19 +135,19 @@ export default function Home() {
 
                 {/* Feature checkmarks */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm max-w-md mx-auto lg:mx-0">
-                  <div className="flex items-center gap-2 text-gray-400 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 justify-center lg:justify-start">
                     <CheckCircle2 className="w-4 h-4 text-gray-900 dark:text-gray-100 flex-shrink-0" />
                     <span>24/7 Monitoring</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 justify-center lg:justify-start">
                     <CheckCircle2 className="w-4 h-4 text-gray-900 dark:text-gray-100 flex-shrink-0" />
                     <span>Instant alerts</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 justify-center lg:justify-start">
                     <CheckCircle2 className="w-4 h-4 text-gray-900 dark:text-gray-100 flex-shrink-0" />
                     <span>Advanced analytics</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 justify-center lg:justify-start">
                     <CheckCircle2 className="w-4 h-4 text-gray-900 dark:text-gray-100 flex-shrink-0" />
                     <span>99.9% uptime SLA</span>
                   </div>
@@ -172,7 +172,7 @@ export default function Home() {
                   {/* Dashboard Content */}
                   <div className="bg-white dark:bg-black/20 backdrop-blur-sm p-3 sm:p-4">
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
-                      <h3 className="text-sm sm:text-base font-bold text-white">Monitoring Dashboard</h3>
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 dark:text-white">Monitoring Dashboard</h3>
                       <Badge variant="outline" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">
                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1 sm:mr-1.5"></div>
                         Live
@@ -250,10 +250,10 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-400">
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </div>
                 </div>
@@ -269,10 +269,10 @@ export default function Home() {
               <Badge variant="outline" className="mb-2 sm:mb-3 text-xs sm:text-sm">
                 Our Platform
               </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 px-4">
                 Everything you need
               </h2>
-              <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
                 Een compleet platform voor monitoring, files en business management
               </p>
             </div>
@@ -475,11 +475,11 @@ export default function Home() {
                         {product.tagline}
                       </Badge>
 
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                         {product.name}
                       </h2>
 
-                      <p className="text-base sm:text-lg text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                      <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
                         {product.description}
                       </p>
 
@@ -489,7 +489,7 @@ export default function Home() {
                             <div className="w-5 h-5 sm:w-6 sm:h-6 bg-black dark:bg-white rounded-lg flex items-center justify-center flex-shrink-0">
                               <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-white dark:text-black" />
                             </div>
-                            <span className="text-sm sm:text-base text-gray-300">{feature}</span>
+                            <span className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -517,13 +517,13 @@ export default function Home() {
               <Badge variant="outline" className="mb-3 sm:mb-4 border-gray-300 dark:border-gray-700 text-xs sm:text-sm">
                 Krachtige Features
               </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
                 Alles wat je bedrijf nodig heeft,{" "}
-                <span className="bg-gradient-to-r from-gray-600 to-gray-400 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
                   onder één dak
                 </span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto px-4">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
                 Ontdek de meest gebruikte features die teams helpen om efficiënter te werken
               </p>
             </div>
@@ -534,8 +534,8 @@ export default function Home() {
                 onClick={() => setActiveTab('guard')}
                 className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
                   activeTab === 'guard'
-                    ? 'bg-white text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
+                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
+                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
                 }`}
               >
                 <Monitor className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -546,8 +546,8 @@ export default function Home() {
                 onClick={() => setActiveTab('files')}
                 className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
                   activeTab === 'files'
-                    ? 'bg-white text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
+                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
+                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
                 }`}
               >
                 <FileText className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -558,8 +558,8 @@ export default function Home() {
                 onClick={() => setActiveTab('flow')}
                 className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
                   activeTab === 'flow'
-                    ? 'bg-white text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
+                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
+                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
                 }`}
               >
                 <Building2 className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -575,7 +575,7 @@ export default function Home() {
               {activeTab === 'guard' && (
                 <>
                   {/* Hero Feature - 24/7 Monitoring */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-black to-gray-900 dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <div className="relative z-10">
                       <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
                         <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
@@ -584,8 +584,8 @@ export default function Home() {
                       <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white dark:text-black mb-2 sm:mb-3">
                         24/7 Uptime Monitoring
                       </h3>
-                      <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Continue monitoring van al je websites en servers vanuit 15+ locaties wereldwijd. 
+                      <p className="text-gray-200 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
+                        Continue monitoring van al je websites en servers vanuit 15+ locaties wereldwijd.
                         Krijg direct alerts bij downtime en hou je uptime percentage altijd in de gaten.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -610,7 +610,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">SSL Certificate Check</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">SSL Certificate Check</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Automatische controle van SSL certificaten met waarschuwingen voordat ze verlopen.
                     </p>
@@ -625,7 +625,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Advanced Analytics</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Advanced Analytics</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Gedetailleerde analytics over response times, uptime en performance trends.
                     </p>
@@ -640,7 +640,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Multi-channel Alerts</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Multi-channel Alerts</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Ontvang notificaties via email, SMS, Slack, Discord, Teams of webhooks.
                     </p>
@@ -655,7 +655,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Globe2 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Custom Status Pages</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Custom Status Pages</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Branded status pagina&apos;s voor transparante communicatie met klanten.
                     </p>
@@ -670,13 +670,13 @@ export default function Home() {
               {activeTab === 'files' && (
                 <>
                   {/* Hero Feature - File Encryption */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-black to-gray-900 dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <div className="relative z-10">
                       <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
                         <Shield className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                         Maximum Security
                       </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white dark:text-black mb-2 sm:mb-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-black mb-2 sm:mb-3">
                         End-to-End Encryptie
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
@@ -705,7 +705,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Smart Sharing</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Smart Sharing</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Veilige deellinks met expiration dates en password protection.
                     </p>
@@ -720,7 +720,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Real-time Sync</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Real-time Sync</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Automatische sync tussen al je apparaten met instant updates.
                     </p>
@@ -735,7 +735,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Version History</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Version History</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Complete versiegeschiedenis met mogelijkheid tot restore.
                     </p>
@@ -750,7 +750,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">File Preview</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">File Preview</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       In-browser preview van 100+ bestandstypes.
                     </p>
@@ -765,13 +765,13 @@ export default function Home() {
               {activeTab === 'flow' && (
                 <>
                   {/* Hero Feature - CRM */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-black to-gray-900 dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <div className="relative z-10">
                       <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
                         <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                         Business Growth
                       </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white dark:text-black mb-2 sm:mb-3">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-black mb-2 sm:mb-3">
                         Complete CRM & ERP Suite
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
@@ -800,7 +800,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Sales Pipeline</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Sales Pipeline</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Visuele sales pipeline met drag-and-drop voor deal tracking.
                     </p>
@@ -815,7 +815,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Project Management</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Project Management</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Taken en deadlines managen met team collaboration tools.
                     </p>
@@ -830,7 +830,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Facturatie</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Facturatie</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Professionele facturen maken en automatisch versturen.
                     </p>
@@ -845,7 +845,7 @@ export default function Home() {
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                       <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
                     </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">Business Reports</h4>
+                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Business Reports</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Uitgebreide rapportages over sales en revenue.
                     </p>
@@ -861,74 +861,74 @@ export default function Home() {
             {/* Additional Features - Compact Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16">
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Globe2 className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Custom Status Pages</h5>
+                <Globe2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Custom Status Pages</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Branded status pagina&apos;s</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Team Collaboration</h5>
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Team Collaboration</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Real-time samenwerken</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">File Preview</h5>
+                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">File Preview</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">100+ bestandstypes</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Real-time Sync</h5>
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Real-time Sync</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Cross-device sync</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Version History</h5>
+                <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Version History</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Complete versie-tracking</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Access Control</h5>
+                <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Access Control</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Granulaire permissies</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Sales Pipeline</h5>
+                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Sales Pipeline</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Visual deal tracking</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Project Management</h5>
+                <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Project Management</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Task & deadline tracking</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Gauge className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Performance Metrics</h5>
+                <Gauge className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Performance Metrics</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Detailed load times</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Smart Sharing</h5>
+                <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Smart Sharing</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Veilige deellinks</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Contact Management</h5>
+                <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Contact Management</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Centraal klantoverzicht</p>
               </div>
 
               <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Invoicing</h5>
+                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
+                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Invoicing</h5>
                 <p className="text-[10px] sm:text-xs text-gray-400">Automatische facturatie</p>
               </div>
             </div>
@@ -937,20 +937,20 @@ export default function Home() {
             {/* Trust Badges */}
             <div className="mt-8 sm:mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 opacity-60 px-4">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white">ISO 27001</span>
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
+                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">ISO 27001</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white">GDPR Compliant</span>
+                <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
+                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">GDPR Compliant</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white">99.9% Uptime SLA</span>
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
+                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">99.9% Uptime SLA</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white">15+ Regio&apos;s</span>
+                <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
+                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">15+ Regio&apos;s</span>
               </div>
             </div>
         </section>
@@ -965,26 +965,26 @@ export default function Home() {
               <Badge variant="outline" className="mb-4 border-gray-300 dark:border-gray-700">
                 Testimonials
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                 Vertrouwd door{" "}
                 <span className="bg-gradient-to-r from-gray-600 to-gray-400 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
                   150+ teams
                 </span>
               </h2>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                 Ontdek waarom bedrijven kiezen voor iPulse
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-2xl p-8 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
                 >
                   {/* Quote icon decoration */}
                   <div className="absolute top-6 right-6 opacity-10 dark:opacity-5">
-                    <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-16 h-16 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
                   </div>
@@ -998,7 +998,7 @@ export default function Home() {
                     </div>
 
                     {/* Quote */}
-                    <p className="text-base text-gray-300 mb-6 leading-relaxed">
+                    <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
 
@@ -1008,7 +1008,7 @@ export default function Home() {
                         {testimonial.author.charAt(0)}
                       </div>
                       <div>
-                        <div className="text-base font-bold text-white">{testimonial.author}</div>
+                        <div className="text-base font-bold text-gray-900 dark:text-white">{testimonial.author}</div>
                         <div className="text-sm text-gray-400">{testimonial.role}</div>
                       </div>
                     </div>
@@ -1021,19 +1021,19 @@ export default function Home() {
             <div className="mt-16 pt-12 border-t-2 border-gray-200 dark:border-gray-800">
               <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">150+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">150+</div>
                   <div className="text-sm text-gray-400">Happy Customers</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">99.9%</div>
+                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">99.9%</div>
                   <div className="text-sm text-gray-400">Uptime SLA</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">24/7</div>
                   <div className="text-sm text-gray-400">Support</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-1">5.0</div>
+                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">5.0</div>
                   <div className="text-sm text-gray-400 flex items-center gap-1">
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     Average Rating
@@ -1048,13 +1048,13 @@ export default function Home() {
         <section className="relative py-24 px-4">
           <div className="relative max-w-5xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-gray-200 dark:border-gray-800">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 dark:bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6 border border-gray-200 dark:border-gray-800 text-gray-900 dark:text-white">
               <Sparkles className="w-4 h-4" />
               Start vandaag nog
             </div>
 
             {/* Heading */}
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900 dark:text-white">
               Klaar om te{" "}
               <span className="relative inline-block">
                 beginnen?
@@ -1064,7 +1064,7 @@ export default function Home() {
               </span>
             </h2>
 
-            <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl mb-10 text-gray-700 dark:text-white/90 max-w-3xl mx-auto leading-relaxed">
               Sluit je aan bij <span className="font-bold">150+ teams</span> die hun infrastructuur monitoren met iPulse.
               Start je <span className="font-bold">gratis trial</span> vandaag.
             </p>
@@ -1088,7 +1088,7 @@ export default function Home() {
             </div>
 
             {/* Benefits */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm mb-12 text-white/80">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm mb-12 text-gray-700 dark:text-white/80">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-800">
                 <CheckCircle2 className="w-4 h-4" />
                 <span className="font-medium">Geen creditcard nodig</span>
@@ -1106,20 +1106,20 @@ export default function Home() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 pt-12 border-t border-gray-200 dark:border-gray-800">
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2">99.9%</div>
-                <div className="text-sm text-white/70">Uptime SLA</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">99.9%</div>
+                <div className="text-sm text-gray-600 dark:text-white/70">Uptime SLA</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2">&lt;2s</div>
-                <div className="text-sm text-white/70">Response Time</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">&lt;2s</div>
+                <div className="text-sm text-gray-600 dark:text-white/70">Response Time</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2">150+</div>
-                <div className="text-sm text-white/70">Customers</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">150+</div>
+                <div className="text-sm text-gray-600 dark:text-white/70">Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2">24/7</div>
-                <div className="text-sm text-white/70">Support</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">24/7</div>
+                <div className="text-sm text-gray-600 dark:text-white/70">Support</div>
               </div>
             </div>
 
