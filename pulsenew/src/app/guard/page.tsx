@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge, Eye, Smartphone, Code, AlertTriangle, Settings, MessageSquare, Webhook, Cpu, HardDrive, Network, Search, FileSearch, EyeOff, Accessibility, Timer, Layers, UserCheck, Bot, Brain, Target, Calendar, Mail, Send, MessageCircle, Hash, Link, Key, CreditCard, Euro, Server as ServerIcon, Wifi, Globe, Scan, Bug } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, ArrowRight, Shield, Zap, BarChart3, CheckCircle2, Lock, Bell, TrendingUp, Globe2, Sparkles, Gauge, Eye, Smartphone, Code, AlertTriangle, Settings, MessageSquare, Webhook, Cpu, HardDrive, Network, Accessibility, Timer, Layers, Brain, Target, Calendar, Mail, Send, MessageCircle, Hash, Key, CreditCard, Server as ServerIcon, Globe, Scan, Bug } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function Guard() {
@@ -64,7 +64,7 @@ export default function Guard() {
         </h1>
 
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
-                  Monitor je volledige digitale infrastructuur 24/7. Van websites tot servers, devices tot API's -
+                  Monitor je volledige digitale infrastructuur 24/7. Van websites tot servers, devices tot API&apos;s -
                   alles onder één dak met AI-powered insights.
                 </p>
 
@@ -312,7 +312,7 @@ export default function Guard() {
                         24/7 Domain Monitoring
                       </h3>
                       <p className="text-gray-200 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Continue monitoring van al je websites, API's en services vanuit 15+ locaties wereldwijd.
+                        Continue monitoring van al je websites, API&apos;s en services vanuit 15+ locaties wereldwijd.
                         Ontvang instant alerts bij downtime, response time issues of SSL problemen.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -372,7 +372,7 @@ export default function Guard() {
                     <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Multi-location Monitoring</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
                       Monitor vanuit verschillende geografische locaties simultaan.
-                      Vergelijk performance tussen NL, DE, US en andere regio's.
+                      Vergelijk performance tussen NL, DE, US en andere regio&apos;s.
                     </p>
                     <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
                       <Globe2 className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -601,7 +601,7 @@ export default function Guard() {
                     </div>
                     <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Public Status Pages</h4>
                     <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Branded status pagina's voor transparante communicatie met klanten.
+                      Branded status pagina&apos;s voor transparante communicatie met klanten.
                       Incident management en maintenance windows.
                     </p>
                     <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
