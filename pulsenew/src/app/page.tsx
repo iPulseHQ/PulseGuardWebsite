@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Star, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -36,7 +36,8 @@ export default function Home() {
       tagline: "Monitoring & Uptime",
       description: "Monitor je volledige digitale infrastructuur 24/7. Ontvang directe notificaties bij downtime of performance issues.",
       gradient: "from-blue-500 to-blue-600",
-      features: ["Uptime Monitoring", "SSL Certificaat Check", "Performance Metrics", "Status Pages"]
+      features: ["Uptime Monitoring", "SSL Certificaat Check", "Performance Metrics", "Status Pages"],
+      urlSlug: "guard"
     },
     {
       icon: FileText,
@@ -44,7 +45,8 @@ export default function Home() {
       tagline: "Secure File Sharing",
       description: "Deel bestanden veilig met je team en klanten. End-to-end encrypted met geavanceerde access control.",
       gradient: "from-green-500 to-green-600",
-      features: ["E2E Encryption", "Access Control", "Version History", "Real-time Sync"]
+      features: ["E2E Encryption", "Access Control", "Version History", "Real-time Sync"],
+      urlSlug: "files"
     },
     {
       icon: Building2,
@@ -52,38 +54,18 @@ export default function Home() {
       tagline: "Business Management",
       description: "Beheer je hele bedrijf vanaf één platform. Van klanten tot facturatie, alles in één overzicht.",
       gradient: "from-purple-500 to-purple-600",
-      features: ["CRM System", "Invoicing", "Project Management", "Team Tools"]
+      features: ["CRM System", "Invoicing", "Project Management", "Team Tools"],
+      urlSlug: "flow"
     }
   ];
 
 
   const stats = [
     { value: "99.9%", label: "Uptime Guarantee" },
-    { value: "15+", label: "Happy Customers" },
     { value: "<2s", label: "Avg Response" },
     { value: "24/6", label: "Support" }
   ];
 
-  const testimonials = [
-    {
-      quote: "iPulse heeft onze uptime naar 99.9% gebracht. De monitoring is precies wat we nodig hadden.",
-      author: "Mark Jansen",
-      role: "CTO, TechStartup NL",
-      rating: 5
-    },
-    {
-      quote: "Super gebruiksvriendelijk. We weten direct wanneer er iets mis gaat. Echt een aanrader!",
-      author: "Sophie de Vries",
-      role: "Founder, E-commerce",
-      rating: 5
-    },
-    {
-      quote: "De combinatie van monitoring, files en CRM is perfect. Scheelt tijd en geld.",
-      author: "Thomas Bakker",
-      role: "IT Manager, FinTech",
-      rating: 5
-    }
-  ];
 
   return (
     <>
@@ -302,7 +284,7 @@ export default function Home() {
                               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
                             </div>
                             <div className="flex-1 text-center">
-                              <span className="text-gray-500 text-[10px] sm:text-sm font-medium">{product.name.toLowerCase()}.ipulse.one</span>
+                              <span className="text-gray-500 text-[10px] sm:text-sm font-medium">{product.urlSlug}.ipulse.one</span>
                             </div>
                           </div>
 
@@ -955,94 +937,6 @@ export default function Home() {
             </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-24 px-4  relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 dark:via-gray-900/20 to-transparent pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto relative">
-            <div className="text-center mb-16">
-              <Badge variant="outline" className="mb-4 border-gray-300 dark:border-gray-700">
-                Testimonials
-              </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                Vertrouwd door{" "}
-                <span className="bg-gradient-to-r from-gray-600 to-gray-400 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
-                  150+ teams
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Ontdek waarom bedrijven kiezen voor iPulse
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-2xl p-8 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
-                >
-                  {/* Quote icon decoration */}
-                  <div className="absolute top-6 right-6 opacity-10 dark:opacity-5">
-                    <svg className="w-16 h-16 text-gray-900 dark:text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-
-                  <div className="relative">
-                    {/* Star rating */}
-                    <div className="flex gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-
-                    {/* Quote */}
-                    <p className="text-base text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-
-                    {/* Author */}
-                    <div className="flex items-center gap-3 pt-4 border-t-2 border-gray-100 dark:border-gray-800">
-                      <div className="w-12 h-12 bg-gradient-to-br from-black to-gray-800 dark:from-white dark:to-gray-200 rounded-full flex items-center justify-center text-white dark:text-black text-lg font-bold shadow-md">
-                        {testimonial.author.charAt(0)}
-                      </div>
-                      <div>
-                        <div className="text-base font-bold text-gray-900 dark:text-white">{testimonial.author}</div>
-                        <div className="text-sm text-gray-400">{testimonial.role}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Trust indicators */}
-            <div className="mt-16 pt-12 border-t-2 border-gray-200 dark:border-gray-800">
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">150+</div>
-                  <div className="text-sm text-gray-400">Happy Customers</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">99.9%</div>
-                  <div className="text-sm text-gray-400">Uptime SLA</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">24/7</div>
-                  <div className="text-sm text-gray-400">Support</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">5.0</div>
-                  <div className="text-sm text-gray-400 flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    Average Rating
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Final CTA */}
         <section className="relative py-24 px-4">
@@ -1065,8 +959,7 @@ export default function Home() {
             </h2>
 
             <p className="text-xl md:text-2xl mb-10 text-gray-700 dark:text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Sluit je aan bij <span className="font-bold">150+ teams</span> die hun infrastructuur monitoren met iPulse.
-              Start je <span className="font-bold">gratis trial</span> vandaag.
+              Start je <span className="font-bold">gratis trial</span> vandaag en ontdek hoe iPulse je bedrijf kan helpen.
             </p>
 
             {/* CTA Buttons */}
@@ -1112,10 +1005,6 @@ export default function Home() {
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">&lt;2s</div>
                 <div className="text-sm text-gray-600 dark:text-white/70">Response Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">150+</div>
-                <div className="text-sm text-gray-600 dark:text-white/70">Customers</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">24/7</div>
