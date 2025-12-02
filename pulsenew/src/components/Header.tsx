@@ -13,7 +13,7 @@ export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
-  const { t } = useTranslation();
+  const { t, currentLang, changeLanguage } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
   const isFlowPage = pathname === '/flow';
 
@@ -69,62 +69,16 @@ export default function Header() {
               </svg>
             </button>
             {solutionsOpen && (
-              <div className="absolute top-full left-0 mt-3 w-80 bg-white/98 dark:bg-black/98 backdrop-blur-2xl rounded-2xl shadow-2xl border-2 border-gray-200 dark:border-gray-800 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                {/* Header */}
-                <div className="px-5 py-4 border-b-2 border-gray-100 dark:border-gray-900">
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wide">Our Solutions</h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Choose your perfect tool</p>
-                </div>
-                
-                {/* Menu Items */}
-                <div className="p-3 space-y-1">
-                  <Link href="/guard" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/uptime-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseGuard</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">24/7 monitoring & uptime tracking</div>
-                      </div>
-                    </div>
+              <div className="absolute top-full left-0 mt-3 w-48 bg-white dark:bg-black rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 z-50 overflow-hidden">
+                <div className="py-2">
+                  <Link href="/guard" className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm" onClick={() => setSolutionsOpen(false)}>
+                    PulseGuard
                   </Link>
-                  
-                  <Link href="/files" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/files-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseFiles</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">Secure file sharing & storage</div>
-                      </div>
-                    </div>
+                  <Link href="/files" className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm" onClick={() => setSolutionsOpen(false)}>
+                    PulseFiles
                   </Link>
-                  
-                  <Link href="/flow" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/crm-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseFlow</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">Business management & CRM</div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-
-                {/* Footer CTA */}
-                <div className="px-5 py-4 bg-white dark:bg-black border-t-2 border-gray-200 dark:border-gray-800">
-                  <Link href="/pricing" className="flex items-center justify-between group" onClick={() => setSolutionsOpen(false)}>
-                    <div>
-                      <div className="text-sm font-bold text-gray-900 dark:text-white">View all pricing</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Compare plans & features</div>
-                    </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                  <Link href="/flow" className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm" onClick={() => setSolutionsOpen(false)}>
+                    PulseFlow
                   </Link>
                 </div>
               </div>
@@ -139,13 +93,20 @@ export default function Header() {
           <Link href="/blog" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('blog')}
           </Link>
-          <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+          <a href="https://docs.ipulse.one" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('docs')}
           </a>
         </nav>
 
         {/* Desktop Right side buttons */}
         <div className="hidden lg:flex items-center gap-3">
+          <button
+            onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-black transition-all duration-200"
+            title={`Switch to ${currentLang === 'en' ? 'Dutch' : 'English'}`}
+          >
+            {currentLang === 'en' ? '🇬🇧' : '🇳🇱'}
+          </button>
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
@@ -277,6 +238,17 @@ export default function Header() {
             >
               {t('docs')}
             </a>
+            
+            {/* Language Switcher */}
+            <div className="flex justify-center py-3 px-4">
+              <button
+                onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
+                className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200"
+                title={`Switch to ${currentLang === 'en' ? 'Dutch' : 'English'}`}
+              >
+                {currentLang === 'en' ? '🇬🇧' : '🇳🇱'}
+              </button>
+            </div>
             
             <div className="pt-4 border-t border-gray-200 mt-4">
               {isFlowPage ? (

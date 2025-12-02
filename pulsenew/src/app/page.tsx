@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -47,15 +48,6 @@ export default function Home() {
       gradient: "from-green-500 to-green-600",
       features: ["E2E Encryption", "Access Control", "Version History", "Real-time Sync"],
       urlSlug: "files"
-    },
-    {
-      icon: Building2,
-      name: "PulseFlow",
-      tagline: "Business Management",
-      description: "Beheer je hele bedrijf vanaf één platform. Van klanten tot facturatie, alles in één overzicht.",
-      gradient: "from-purple-500 to-purple-600",
-      features: ["CRM System", "Invoicing", "Project Management", "Team Tools"],
-      urlSlug: "flow"
     }
   ];
 
@@ -99,20 +91,24 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 mb-4 sm:mb-6 px-4 sm:px-0 justify-center lg:justify-start">
-                  <Button
-                    size="lg"
-                    className="bg-white text-black hover:bg-gray-100 rounded-lg group w-full sm:w-auto"
-                  >
-                    Start gratis trial
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-lg border-2 w-full sm:w-auto"
-                  >
-                    Bekijk demo
-                  </Button>
+                  <Link href="/guard">
+                    <Button
+                      size="lg"
+                      className="bg-white text-black hover:bg-gray-100 rounded-lg group w-full sm:w-auto"
+                    >
+                      Start gratis trial
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link href="/features">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-lg border-2 w-full sm:w-auto"
+                    >
+                      Bekijk demo
+                    </Button>
+                  </Link>
                 </div>
 
                 {/* Feature checkmarks */}
@@ -228,14 +224,14 @@ export default function Home() {
 
         {/* Stats Bar */}
         <section className="py-8 sm:py-10 md:py-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="max-w-7xl mx-auto px-4 flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-16 max-w-4xl">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </div>
                 </div>
@@ -476,465 +472,21 @@ export default function Home() {
                         ))}
                       </div>
 
-                      <Button
-                        size="lg"
-                        className="bg-white text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg group w-full sm:w-auto"
-                      >
-                        Learn more about {product.name}
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link href={`/${product.urlSlug}`}>
+                        <Button
+                          size="lg"
+                          className="bg-white text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg group w-full sm:w-auto"
+                        >
+                          Learn more about {product.name}
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 );
               })}
             </div>
           </div>
-        </section>
-
-        {/* All Features Section - Comprehensive Overview */}
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 ">
-          <div className="max-w-7xl mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <Badge variant="outline" className="mb-3 sm:mb-4 border-gray-300 dark:border-gray-700 text-xs sm:text-sm">
-                Krachtige Features
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
-                Alles wat je bedrijf nodig heeft,{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-400 dark:to-gray-500 bg-clip-text text-transparent">
-                  onder één dak
-                </span>
-              </h2>
-              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
-                Ontdek de meest gebruikte features die teams helpen om efficiënter te werken
-              </p>
-            </div>
-
-            {/* Feature Categories - Tab Style */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 md:mb-12 px-2">
-              <button
-                onClick={() => setActiveTab('guard')}
-                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
-                  activeTab === 'guard'
-                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
-                }`}
-              >
-                <Monitor className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden xs:inline">PulseGuard</span>
-                <span className="xs:hidden">Guard</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('files')}
-                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
-                  activeTab === 'files'
-                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
-                }`}
-              >
-                <FileText className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden xs:inline">PulseFiles</span>
-                <span className="xs:hidden">Files</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('flow')}
-                className={`inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-medium text-xs sm:text-sm transition-all ${
-                  activeTab === 'flow'
-                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg scale-105'
-                    : 'bg-white dark:bg-black text-black dark:text-white border-2 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-white'
-                }`}
-              >
-                <Building2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="hidden xs:inline">PulseFlow</span>
-                <span className="xs:hidden">Flow</span>
-              </button>
-            </div>
-
-            </div>
-
-            {/* Highlighted Features Grid - Dynamic based on tab */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-12 sm:mb-14 md:mb-16">
-              {activeTab === 'guard' && (
-                <>
-                  {/* Hero Feature - 24/7 Monitoring */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
-                        <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                        Meest gebruikt
-                      </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white dark:text-black mb-2 sm:mb-3">
-                        24/7 Uptime Monitoring
-                      </h3>
-                      <p className="text-gray-200 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Continue monitoring van al je websites en servers vanuit 15+ locaties wereldwijd.
-                        Krijg direct alerts bij downtime en hou je uptime percentage altijd in de gaten.
-                      </p>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Multi-locatie checks
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ 30-sec intervals
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Instant alerts
-                        </span>
-                      </div>
-                    </div>
-                    <div className="absolute -right-8 -bottom-8 opacity-10 dark:opacity-5">
-                      <Activity className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48" />
-                    </div>
-                  </div>
-
-                  {/* SSL Certificate Monitoring */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">SSL Certificate Check</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Automatische controle van SSL certificaten met waarschuwingen voordat ze verlopen.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Auto-renewal reminders
-                    </div>
-                  </div>
-
-                  {/* Performance Analytics */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Advanced Analytics</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Gedetailleerde analytics over response times, uptime en performance trends.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Real-time insights
-                    </div>
-                  </div>
-
-                  {/* Smart Alerts */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Multi-channel Alerts</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Ontvang notificaties via email, SMS, Slack, Discord, Teams of webhooks.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Instant notifications
-                    </div>
-                  </div>
-
-                  {/* Status Pages */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Globe2 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Custom Status Pages</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Branded status pagina&apos;s voor transparante communicatie met klanten.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <Globe2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Public status pages
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {activeTab === 'files' && (
-                <>
-                  {/* Hero Feature - File Encryption */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
-                        <Shield className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                        Maximum Security
-                      </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-black mb-2 sm:mb-3">
-                        End-to-End Encryptie
-                      </h3>
-                      <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Militaire-grade 256-bit AES encryptie voor maximale beveiliging van al je bestanden. 
-                        Jouw data is altijd veilig, zowel tijdens upload als opslag.
-                      </p>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ 256-bit AES
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Zero-knowledge
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ GDPR compliant
-                        </span>
-                      </div>
-                    </div>
-                    <div className="absolute -right-8 -bottom-8 opacity-10 dark:opacity-5">
-                      <Shield className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48" />
-                    </div>
-                  </div>
-
-                  {/* Smart Sharing */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Smart Sharing</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Veilige deellinks met expiration dates en password protection.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <Lock className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Password protected
-                    </div>
-                  </div>
-
-                  {/* Real-time Sync */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Real-time Sync</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Automatische sync tussen al je apparaten met instant updates.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Cross-platform sync
-                    </div>
-                  </div>
-
-                  {/* Version History */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <Activity className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Version History</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Complete versiegeschiedenis met mogelijkheid tot restore.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <Activity className="w-3 h-3 sm:w-4 sm:h-4" />
-                      30-day history
-                    </div>
-                  </div>
-
-                  {/* File Preview */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">File Preview</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      In-browser preview van 100+ bestandstypes.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <FileText className="w-3 h-3 sm:w-4 sm:h-4" />
-                      100+ file types
-                    </div>
-                  </div>
-                </>
-              )}
-
-              {activeTab === 'flow' && (
-                <>
-                  {/* Hero Feature - CRM */}
-                  <div className="lg:col-span-2 group relative bg-gradient-to-br from-gray-900 to-black dark:from-white dark:to-gray-100 rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="relative z-10">
-                      <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-full text-[10px] sm:text-xs font-medium text-white dark:text-black mb-3 sm:mb-4">
-                        <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                        Business Growth
-                      </div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-black mb-2 sm:mb-3">
-                        Complete CRM & ERP Suite
-                      </h3>
-                      <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Beheer al je klanten, projecten en facturatie vanuit één centrale plek. 
-                        Automatiseer je workflow en laat je bedrijf groeien.
-                      </p>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Contact management
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Project tracking
-                        </span>
-                        <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
-                          ✓ Invoicing
-                        </span>
-                      </div>
-                    </div>
-                    <div className="absolute -right-8 -bottom-8 opacity-10 dark:opacity-5">
-                      <Building2 className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48" />
-                    </div>
-                  </div>
-
-                  {/* Sales Pipeline */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Sales Pipeline</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Visuele sales pipeline met drag-and-drop voor deal tracking.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Visual deal tracking
-                    </div>
-                  </div>
-
-                  {/* Project Management */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Project Management</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Taken en deadlines managen met team collaboration tools.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Task management
-                    </div>
-                  </div>
-
-                  {/* Invoicing */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Facturatie</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Professionele facturen maken en automatisch versturen.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <FileText className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Auto invoicing
-                    </div>
-                  </div>
-
-                  {/* Business Reports */}
-                  <div className="group relative bg-white dark:bg-black/40 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-all duration-300 shadow-sm hover:shadow-lg">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                      <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-white dark:text-black" />
-                    </div>
-                    <h4 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-1.5 sm:mb-2">Business Reports</h4>
-                    <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-                      Uitgebreide rapportages over sales en revenue.
-                    </p>
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-gray-400">
-                      <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Advanced analytics
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-
-            {/* Additional Features - Compact Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16">
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Globe2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Custom Status Pages</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Branded status pagina&apos;s</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Team Collaboration</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Real-time samenwerken</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">File Preview</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">100+ bestandstypes</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Real-time Sync</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Cross-device sync</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Activity className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Version History</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Complete versie-tracking</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Access Control</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Granulaire permissies</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Sales Pipeline</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Visual deal tracking</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Project Management</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Task & deadline tracking</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Gauge className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Performance Metrics</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Detailed load times</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Smart Sharing</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Veilige deellinks</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Contact Management</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Centraal klantoverzicht</p>
-              </div>
-
-              <div className="p-3 sm:p-4 bg-gray-50 dark:bg-black rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-800 hover:border-black dark:hover:border-white transition-colors">
-                <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-gray-900 dark:text-white mb-1.5 sm:mb-2" />
-                <h5 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm mb-0.5 sm:mb-1">Invoicing</h5>
-                <p className="text-[10px] sm:text-xs text-gray-400">Automatische facturatie</p>
-              </div>
-            </div>
-
-
-            {/* Trust Badges */}
-            <div className="mt-8 sm:mt-10 md:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 opacity-60 px-4">
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
-                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">ISO 27001</span>
-              </div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
-                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">GDPR Compliant</span>
-              </div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
-                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">99.9% Uptime SLA</span>
-              </div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <Globe2 className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900 dark:text-white" />
-                <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">15+ Regio&apos;s</span>
-              </div>
-            </div>
         </section>
 
 
@@ -964,52 +516,24 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 rounded-xl px-8 py-6 text-lg font-semibold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 group"
-              >
-                Start gratis trial
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-white hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
-              >
-                Bekijk prijzen
-              </Button>
-            </div>
-
-            {/* Benefits */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm mb-12 text-gray-700 dark:text-white/80">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-800">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="font-medium">Geen creditcard nodig</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-800">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="font-medium">14 dagen gratis</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 dark:border-gray-800">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="font-medium">Altijd opzegbaar</span>
-              </div>
-            </div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 pt-12 border-t border-gray-200 dark:border-gray-800">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">99.9%</div>
-                <div className="text-sm text-gray-600 dark:text-white/70">Uptime SLA</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">&lt;2s</div>
-                <div className="text-sm text-gray-600 dark:text-white/70">Response Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white">24/7</div>
-                <div className="text-sm text-gray-600 dark:text-white/70">Support</div>
-              </div>
+              <Link href="/guard">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-gray-100 rounded-xl px-8 py-6 text-lg font-semibold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 group"
+                >
+                  Start gratis trial
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-white hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
+                >
+                  Bekijk prijzen
+                </Button>
+              </Link>
             </div>
 
             {/* Social Links */}
