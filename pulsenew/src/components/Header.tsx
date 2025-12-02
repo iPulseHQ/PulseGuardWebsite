@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 py-6 px-6 pointer-events-none">
-      <header className="bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl max-w-[1400px] mx-auto pointer-events-auto">
+      <header className="bg-white/80 dark:bg-black/20 backdrop-blur-md border border-gray-200/50 dark:border-white/10 rounded-2xl max-w-[1400px] mx-auto pointer-events-auto">
         <div className="px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
@@ -112,8 +112,8 @@ export default function Header() {
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
             className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-black transition-all duration-200"
           >
-            <Sun size={20} className="text-white hidden dark:block" />
-            <Moon size={20} className="text-black dark:text-foreground block dark:hidden" />
+            <Sun size={20} className="text-gray-600 hidden dark:block" />
+            <Moon size={20} className="text-gray-900 dark:text-foreground block dark:hidden" />
           </button>
           {isFlowPage ? (
             <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-4 py-2 text-sm font-semibold">
@@ -136,10 +136,10 @@ export default function Header() {
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="flex items-center justify-center h-11 w-11 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200"
+            className="flex items-center justify-center h-11 w-11 text-gray-900 dark:text-foreground hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200"
           >
-            <Sun size={22} className="text-white hidden dark:block" />
-            <Moon size={22} className="text-black dark:text-foreground block dark:hidden" />
+            <Sun size={22} className="text-gray-600 hidden dark:block" />
+            <Moon size={22} className="text-gray-900 dark:text-foreground block dark:hidden" />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

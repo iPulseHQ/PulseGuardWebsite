@@ -13,13 +13,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-white/10 text-white pt-20 pb-12 mt-32">
+    <footer className="relative border-t border-gray-200 dark:border-white/10 text-gray-900 dark:text-white pt-20 pb-12 mt-32 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         
         {/* ProductHunt Badge */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <h3 className="text-xl font-semibold mb-6 text-white">{t('footerRateUs')}</h3>
+          <div className="inline-block bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
+            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">{t('footerRateUs')}</h3>
             <a href="https://www.producthunt.com/products/pulseguard-2/reviews" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform duration-300">
               <Image 
                 src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark" 
@@ -34,18 +34,26 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           {/* Company Info */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+          <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
             <div className="mb-6">
               <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
+                <Image
+                  src="/assets/logodark.png"
+                  alt="iPulse Logo"
+                  width={150}
+                  height={150}
+                  className="block dark:hidden"
+                />
                 <Image
                   src="/assets/logowhite.png"
                   alt="iPulse Logo"
                   width={150}
                   height={150}
+                  className="hidden dark:block"
                 />
               </Link>
             </div>
-            <p className="text-gray-300 mb-8 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm leading-relaxed">
               {t('homeSection1Desc')}
             </p>
             
@@ -53,55 +61,55 @@ export default function Footer() {
             <div className="flex gap-3 mb-8">
               <a 
                 href="https://www.linkedin.com/company/107398117/" 
-                className="bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-white/20 transition-all duration-300 group" 
+                className="bg-gray-100 dark:bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 group" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
               </a>
               <a 
                 href="https://x.com/ipulsedev" 
-                className="bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-white/20 transition-all duration-300 group" 
+                className="bg-gray-100 dark:bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 group" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
               </a>
               <a 
                 href="https://www.instagram.com/pulseguard_/" 
-                className="bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-white/20 transition-all duration-300 group" 
+                className="bg-gray-100 dark:bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 group" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <Instagram className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
               </a>
               <a 
                 href="https://github.com/iPulseHQ" 
-                className="bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-white/20 transition-all duration-300 group" 
+                className="bg-gray-100 dark:bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 group" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <Github className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+                <Github className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors" />
               </a>
             </div>
 
             {/* Language Switcher */}
             <div>
-              <label htmlFor="language-select" className="block text-sm text-gray-400 mb-2 font-medium">
+              <label htmlFor="language-select" className="block text-sm text-gray-500 dark:text-gray-400 mb-2 font-medium">
                 {t('language')}
               </label>
               <select
                 id="language-select"
                 value={currentLang}
                 onChange={(e) => changeLanguage(e.target.value as Language)}
-                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-4 py-2.5 text-sm text-white hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/30"
+                className="w-full bg-gray-100 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/20 rounded-xl px-4 py-2.5 text-sm text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-white/30"
               >
                 {languages.map((lang) => (
-                  <option key={lang.code} value={lang.code} className="bg-black text-white">
+                  <option key={lang.code} value={lang.code} className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
                     {lang.label}
                   </option>
                 ))}
@@ -110,36 +118,36 @@ export default function Footer() {
           </div>
           
           {/* Links */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-white">{t('footerLinks')}</h4>
+          <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerLinks')}</h4>
             <ul className="space-y-4">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerHome')}
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <Link href="/features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerFeatures')}
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <Link href="/pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerPricing')}
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <Link href="/team" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerOurTeam')}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerBlog')}
                 </Link>
               </li>
@@ -147,36 +155,36 @@ export default function Footer() {
           </div>
           
           {/* Platform */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-white">{t('footerPlatform')}</h4>
+          <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerPlatform')}</h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://guard.ipulse.one" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerDashboard')}
                 </a>
               </li>
               <li>
-                <a href="https://guard.ipulse.one/domains" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one/domains" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerDomains')}
                 </a>
               </li>
               <li>
-                <a href="https://guard.ipulse.one/device-monitoring" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one/devices" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerDevices')}
                 </a>
               </li>
               <li>
-                <a href="https://guard.ipulse.one/subscriptions" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one/subscriptions" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerSubscriptions')}
                 </a>
               </li>
               <li>
-                <a href="https://docs.pulseguard.pro/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerDocumentation')}
                 </a>
               </li>
@@ -184,30 +192,30 @@ export default function Footer() {
           </div>
           
           {/* Support */}
-          <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-white">{t('footerSupport')}</h4>
+          <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerSupport')}</h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerHelpCenter')}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@ipulse.one" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="mailto:info@ipulse.one" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerEmailSupport')}
                 </a>
               </li>
               <li>
-                <a href="https://guard.ipulse.one/privacy" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one/privacy" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerPrivacyPolicy')}
                 </a>
               </li>
               <li>
-                <a href="https://guard.ipulse.one/terms" className="text-gray-300 hover:text-white transition-colors inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-gray-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
+                <a href="https://guard.ipulse.one/terms" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerTerms')}
                 </a>
               </li>
@@ -215,18 +223,18 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-8 mt-8">
+        <div className="border-t border-gray-200 dark:border-white/10 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-gray-500 dark:text-gray-400 text-sm text-center md:text-left">
               &copy; {new Date().getFullYear()} iPulse {t('footerIsPartOf')}{" "}
-              <a href="https://imdigital.info" className="text-white hover:text-gray-300 transition-colors font-medium">
+              <a href="https://imdigital.info" className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors font-medium">
                 IMDigital
               </a>
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-400">
+            <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
               <span>{t('footerCopyright')}</span>
               <span className="hidden md:inline">•</span>
-              <a href="mailto:info@ipulse.one" className="text-white hover:text-gray-300 transition-colors font-medium">
+              <a href="mailto:info@ipulse.one" className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors font-medium">
                 info@ipulse.one
               </a>
             </div>

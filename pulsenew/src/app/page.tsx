@@ -67,7 +67,7 @@ export default function Home() {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <div className="relative min-h-screen text-white overflow-hidden">
+      <div className="relative min-h-screen text-gray-900 dark:text-white overflow-hidden">
         {/* Hero Section */}
         <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
@@ -104,7 +104,7 @@ export default function Home() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="rounded-lg border-2 w-full sm:w-auto"
+                      className="rounded-lg border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 w-full sm:w-auto"
                     >
                       Bekijk demo
                     </Button>
@@ -290,7 +290,7 @@ export default function Home() {
                             {index === 0 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Monitoring Dashboard</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Monitoring Dashboard</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 mr-1 sm:mr-2 animate-pulse"></div>
                                     Live
@@ -338,7 +338,7 @@ export default function Home() {
                             {index === 1 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Your Files</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Your Files</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <Lock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 sm:mr-2" />
                                     Encrypted
@@ -395,7 +395,7 @@ export default function Home() {
                             {index === 2 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Business Overview</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Business Overview</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 sm:mr-2" />
                                     Growing
@@ -529,7 +529,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-white hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
+                  className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
                 >
                   Bekijk prijzen
                 </Button>
