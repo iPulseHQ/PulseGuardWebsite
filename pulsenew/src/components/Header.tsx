@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, Moon, Sun, X, Globe } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useTheme } from "next-themes";
@@ -12,8 +12,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
   const pathname = usePathname();
-  const { t } = useTranslation();
+  const { t, currentLang, changeLanguage } = useTranslation();
   const { resolvedTheme, setTheme } = useTheme();
   const isFlowPage = pathname === '/flow';
 
@@ -34,24 +35,16 @@ export default function Header() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 py-6 px-6 pointer-events-none">
-      <header className="bg-black/20 backdrop-blur-md border border-white/10 rounded-2xl max-w-[1400px] mx-auto pointer-events-auto">
+      <header className="bg-black dark:bg-black/20 backdrop-blur-md border border-black/10 dark:border-white/10 rounded-2xl max-w-[1400px] mx-auto pointer-events-auto">
         <div className="px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
           <span className="relative inline-block">
             <Image
-              src="/assets/logodark.png"
-              alt="iPulse Logo"
-              width={140}
-              height={140}
-              className="block dark:hidden"
-            />
-            <Image
               src="/assets/logowhite.png"
               alt="iPulse Logo"
               width={140}
               height={140}
-              className="hidden dark:block"
             />
           </span>
         </Link>
@@ -61,9 +54,9 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setSolutionsOpen(!solutionsOpen)}
-              className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200 flex items-center gap-2"
+              className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200 flex items-center gap-2"
             >
-              Solutions
+              {t('solutions')}
               <svg className={`w-4 h-4 transition-transform duration-300 ${solutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -72,10 +65,10 @@ export default function Header() {
               <div className="absolute top-full left-0 mt-3 w-80 bg-white/98 dark:bg-black/98 backdrop-blur-2xl rounded-2xl shadow-2xl border-2 border-gray-200 dark:border-gray-800 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                 {/* Header */}
                 <div className="px-5 py-4 border-b-2 border-gray-100 dark:border-gray-900">
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wide">Our Solutions</h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Choose your perfect tool</p>
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wide">{t('ourSolutions')}</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{t('chooseYourTool')}</p>
                 </div>
-                
+
                 {/* Menu Items */}
                 <div className="p-3 space-y-1">
                   <Link href="/guard" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
@@ -84,32 +77,32 @@ export default function Header() {
                         <Image src="/assets/uptime-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseGuard</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">24/7 monitoring & uptime tracking</div>
+                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseGuardTitle')}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseGuardDesc')}</div>
                       </div>
                     </div>
                   </Link>
-                  
+
                   <Link href="/files" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
                         <Image src="/assets/files-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseFiles</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">Secure file sharing & storage</div>
+                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseFilesTitle')}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseFilesDesc')}</div>
                       </div>
                     </div>
                   </Link>
-                  
+
                   <Link href="/flow" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
                         <Image src="/assets/crm-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">PulseFlow</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">Business management & CRM</div>
+                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseFlowTitle')}</div>
+                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseFlowDesc')}</div>
                       </div>
                     </div>
                   </Link>
@@ -119,8 +112,8 @@ export default function Header() {
                 <div className="px-5 py-4 bg-white dark:bg-black border-t-2 border-gray-200 dark:border-gray-800">
                   <Link href="/pricing" className="flex items-center justify-between group" onClick={() => setSolutionsOpen(false)}>
                     <div>
-                      <div className="text-sm font-bold text-gray-900 dark:text-white">View all pricing</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Compare plans & features</div>
+                      <div className="text-sm font-bold text-gray-900 dark:text-white">{t('viewAllPricing')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('comparePlansFeatures')}</div>
                     </div>
                     <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -130,16 +123,16 @@ export default function Header() {
               </div>
             )}
           </div>
-          <Link href="/pricing" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+          <Link href="/pricing" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('pricing')}
           </Link>
-          <Link href="/team" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+          <Link href="/team" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('team')}
           </Link>
-          <Link href="/blog" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+          <Link href="/blog" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('blog')}
           </Link>
-          <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+          <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('docs')}
           </a>
         </nav>
@@ -149,21 +142,49 @@ export default function Header() {
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-black transition-all duration-200"
+            className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-white/10 dark:hover:bg-black transition-all duration-200"
           >
             <Sun size={20} className="text-white hidden dark:block" />
-            <Moon size={20} className="text-black dark:text-foreground block dark:hidden" />
+            <Moon size={20} className="text-white dark:text-foreground block dark:hidden" />
           </button>
+
+          {/* Language Selector */}
+          <div className="relative">
+            <button
+              onClick={() => setLanguageOpen(!languageOpen)}
+              className="h-10 px-3 inline-flex items-center justify-center gap-2 rounded-xl hover:bg-white/10 dark:hover:bg-black transition-all duration-200 text-white dark:text-gray-300 font-medium"
+            >
+              <Globe size={18} />
+              <span className="text-sm uppercase">{currentLang}</span>
+            </button>
+            {languageOpen && (
+              <div className="absolute top-full right-0 mt-2 w-40 bg-white/98 dark:bg-black/98 backdrop-blur-2xl rounded-xl shadow-2xl border-2 border-gray-200 dark:border-gray-800 z-50 overflow-hidden">
+                <button
+                  onClick={() => { changeLanguage('en'); setLanguageOpen(false); }}
+                  className={`w-full px-4 py-3 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors ${currentLang === 'en' ? 'bg-gray-100 dark:bg-gray-900 font-semibold text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-300'}`}
+                >
+                  {t('english')}
+                </button>
+                <button
+                  onClick={() => { changeLanguage('nl'); setLanguageOpen(false); }}
+                  className={`w-full px-4 py-3 text-left text-sm hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors ${currentLang === 'nl' ? 'bg-gray-100 dark:bg-gray-900 font-semibold text-gray-900 dark:text-white' : 'text-gray-700 dark:text-gray-300'}`}
+                >
+                  {t('dutch')}
+                </button>
+              </div>
+            )}
+          </div>
+
           {isFlowPage ? (
             <span className="inline-flex items-center gap-2 rounded-full bg-yellow-100 text-yellow-800 px-4 py-2 text-sm font-semibold">
               {t('comingSoonBadge')}
             </span>
           ) : (
             <>
-              <a href={getLoginLink()} className="px-5 py-2.5 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200">
+              <a href={getLoginLink()} className="px-5 py-2.5 text-white dark:text-gray-300 font-semibold hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
                 {t('login')}
               </a>
-              <a href={getSignupLink()} className="bg-black dark:bg-white text-white dark:text-black px-6 py-2.5 rounded-xl font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+              <a href={getSignupLink()} className="bg-white dark:bg-white text-black dark:text-black px-6 py-2.5 rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                 {t('register')} →
               </a>
             </>
@@ -175,14 +196,21 @@ export default function Header() {
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="flex items-center justify-center h-11 w-11 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200"
+            className="flex items-center justify-center h-11 w-11 text-white dark:text-foreground hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200"
           >
             <Sun size={22} className="text-white hidden dark:block" />
-            <Moon size={22} className="text-black dark:text-foreground block dark:hidden" />
+            <Moon size={22} className="text-white dark:text-foreground block dark:hidden" />
+          </button>
+          <button
+            aria-label="Change language"
+            onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
+            className="flex items-center justify-center h-11 w-11 text-white dark:text-foreground hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200"
+          >
+            <Globe size={22} />
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center justify-center h-11 w-11 text-black dark:text-foreground hover:bg-gray-100 dark:hover:bg-black rounded-xl transition-all duration-200"
+            className="flex items-center justify-center h-11 w-11 text-white dark:text-foreground hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -198,15 +226,15 @@ export default function Header() {
                 onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                 className="flex items-center justify-between w-full py-3 px-5 text-black dark:text-foreground font-semibold hover:bg-gray-100 dark:hover:bg-gray-900 rounded-xl transition-all duration-200"
               >
-                Solutions
+                {t('solutions')}
                 <svg className={`w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               {mobileSolutionsOpen && (
                 <div className="pl-2 pr-2 space-y-2 pt-2">
-                  <Link 
-                    href="/guard" 
+                  <Link
+                    href="/guard"
                     className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
@@ -214,12 +242,12 @@ export default function Header() {
                       <Image src="/assets/uptime-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">PulseGuard</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Monitoring & Uptime</div>
+                      <div className="font-bold text-base">{t('pulseGuardTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseGuardShortDesc')}</div>
                     </div>
                   </Link>
-                  <Link 
-                    href="/files" 
+                  <Link
+                    href="/files"
                     className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
@@ -227,12 +255,12 @@ export default function Header() {
                       <Image src="/assets/files-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">PulseFiles</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Secure File Sharing</div>
+                      <div className="font-bold text-base">{t('pulseFilesTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseFilesShortDesc')}</div>
                     </div>
                   </Link>
-                  <Link 
-                    href="/flow" 
+                  <Link
+                    href="/flow"
                     className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
@@ -240,8 +268,8 @@ export default function Header() {
                       <Image src="/assets/crm-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">PulseFlow</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">Business Management</div>
+                      <div className="font-bold text-base">{t('pulseFlowTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseFlowShortDesc')}</div>
                     </div>
                   </Link>
                 </div>
