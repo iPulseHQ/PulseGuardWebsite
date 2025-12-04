@@ -121,7 +121,7 @@ export default function PulseFiles() {
         <p className="text-xl text-gray-600 dark:text-muted-foreground mb-8">{t('filesCtaDesc')}</p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="https://files.pulseguard.pro" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('visitPulseFiles')}</a>
+          <a href="https://files.ipulse.one" className="bg-black text-white px-8 py-3 rounded-md hover:bg-gray-800 transition-colors">{t('visitPulseFiles')}</a>
         </div>
       </section>
     </div>

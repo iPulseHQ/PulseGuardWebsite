@@ -38,10 +38,18 @@ export default function Footer() {
             <div className="mb-6">
               <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
                 <Image
+                  src="/assets/logodark.png"
+                  alt="iPulse Logo"
+                  width={150}
+                  height={150}
+                  className="block dark:hidden"
+                />
+                <Image
                   src="/assets/logowhite.png"
                   alt="iPulse Logo"
                   width={150}
                   height={150}
+                  className="hidden dark:block"
                 />
               </Link>
             </div>

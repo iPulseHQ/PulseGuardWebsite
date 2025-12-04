@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Star, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
+import Link from "next/link";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -38,7 +39,8 @@ export default function Home() {
       tagline: t('productMonitorTagline'),
       description: t('productMonitorDesc'),
       gradient: "from-blue-500 to-blue-600",
-      features: [t('uptimeMonitoring'), t('sslCertificateCheck'), t('performanceMetrics'), t('statusPages')]
+      features: ["Uptime Monitoring", "SSL Certificaat Check", "Performance Metrics", "Status Pages"],
+      urlSlug: "guard"
     },
     {
       icon: FileText,
@@ -46,46 +48,18 @@ export default function Home() {
       tagline: t('productFilesTagline'),
       description: t('productFilesDesc'),
       gradient: "from-green-500 to-green-600",
-      features: [t('e2eEncryption'), t('accessControl'), t('versionHistory'), t('realtimeSync')]
-    },
-    {
-      icon: Building2,
-      name: t('pulseFlowTitle'),
-      tagline: t('productFlowTagline'),
-      description: t('productFlowDesc'),
-      gradient: "from-purple-500 to-purple-600",
-      features: [t('crmSystem'), t('invoicing'), t('projectManagement'), t('teamTools')]
+      features: ["E2E Encryption", "Access Control", "Version History", "Real-time Sync"],
+      urlSlug: "files"
     }
   ];
 
 
   const stats = [
-    { value: "99.9%", label: t('uptimeGuarantee') },
-    { value: "15+", label: t('happyCustomers') },
-    { value: "<2s", label: t('avgResponse') },
-    { value: "24/6", label: t('support') }
+    { value: "99.9%", label: "Uptime Guarantee" },
+    { value: "<2s", label: "Avg Response" },
+    { value: "24/6", label: "Support" }
   ];
 
-  const testimonials = [
-    {
-      quote: t('testimonial1Quote'),
-      author: t('testimonial1Author'),
-      role: t('testimonial1Role'),
-      rating: 5
-    },
-    {
-      quote: t('testimonial2Quote'),
-      author: t('testimonial2Author'),
-      role: t('testimonial2Role'),
-      rating: 5
-    },
-    {
-      quote: t('testimonial3Quote'),
-      author: t('testimonial3Author'),
-      role: t('testimonial3Role'),
-      rating: 5
-    }
-  ];
 
   return (
     <>
@@ -95,7 +69,7 @@ export default function Home() {
           __html: JSON.stringify(structuredData)
         }}
       />
-      <div className="relative min-h-screen text-white overflow-hidden">
+      <div className="relative min-h-screen text-gray-900 dark:text-white overflow-hidden">
         {/* Hero Section */}
         <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
@@ -118,20 +92,24 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 mb-4 sm:mb-6 px-4 sm:px-0 justify-center lg:justify-start">
-                  <Button
-                    size="lg"
-                    className="bg-white text-black hover:bg-gray-100 rounded-lg group w-full sm:w-auto"
-                  >
-                    {t('startFreeTrial')}
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="rounded-lg border-2 w-full sm:w-auto"
-                  >
-                    {t('viewDemo')}
-                  </Button>
+                  <Link href="/guard">
+                    <Button
+                      size="lg"
+                      className="bg-white text-black hover:bg-gray-100 rounded-lg group w-full sm:w-auto"
+                    >
+                      Start gratis trial
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link href="/features">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-lg border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 w-full sm:w-auto"
+                    >
+                      Bekijk demo
+                    </Button>
+                  </Link>
                 </div>
 
                 {/* Feature checkmarks */}
@@ -247,14 +225,14 @@ export default function Home() {
 
         {/* Stats Bar */}
         <section className="py-8 sm:py-10 md:py-12">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="max-w-7xl mx-auto px-4 flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 md:gap-16 max-w-4xl">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-1">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                     {stat.label}
                   </div>
                 </div>
@@ -303,7 +281,7 @@ export default function Home() {
                               <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></div>
                             </div>
                             <div className="flex-1 text-center">
-                              <span className="text-gray-500 text-[10px] sm:text-sm font-medium">{product.name.toLowerCase()}.ipulse.one</span>
+                              <span className="text-gray-500 text-[10px] sm:text-sm font-medium">{product.urlSlug}.ipulse.one</span>
                             </div>
                           </div>
 
@@ -313,7 +291,7 @@ export default function Home() {
                             {index === 0 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Monitoring Dashboard</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Monitoring Dashboard</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 mr-1 sm:mr-2 animate-pulse"></div>
                                     Live
@@ -361,7 +339,7 @@ export default function Home() {
                             {index === 1 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Your Files</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Your Files</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <Lock className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 sm:mr-2" />
                                     Encrypted
@@ -418,7 +396,7 @@ export default function Home() {
                             {index === 2 && (
                               <div className="space-y-3 sm:space-y-4">
                                 <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                  <h3 className="text-base sm:text-lg font-bold text-white">Business Overview</h3>
+                                  <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Business Overview</h3>
                                   <Badge variant="outline" className="text-xs sm:text-sm px-1.5 sm:px-2">
                                     <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-1 sm:mr-2" />
                                     Growing
@@ -495,13 +473,15 @@ export default function Home() {
                         ))}
                       </div>
 
-                      <Button
-                        size="lg"
-                        className="bg-white text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg group w-full sm:w-auto"
-                      >
-                        Learn more about {product.name}
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                      <Link href={`/${product.urlSlug}`}>
+                        <Button
+                          size="lg"
+                          className="bg-white text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors rounded-lg group w-full sm:w-auto"
+                        >
+                          Learn more about {product.name}
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 );

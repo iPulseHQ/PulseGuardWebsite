@@ -345,7 +345,7 @@ export default function Pricing() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12 pt-8 sm:pt-10 md:pt-12 border-t border-gray-200 dark:border-gray-800">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-8 s m:mb-10 md:mb-12 pt-8 sm:pt-10 md:pt-12 border-t border-gray-200 dark:border-gray-800">
             <div className="text-center">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">99.9%</div>
               <div className="text-xs sm:text-sm text-gray-400">Uptime SLA</div>
@@ -353,10 +353,6 @@ export default function Pricing() {
             <div className="text-center">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">&lt;2s</div>
               <div className="text-xs sm:text-sm text-gray-400">Response Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">150+</div>
-              <div className="text-xs sm:text-sm text-gray-400">Customers</div>
             </div>
             <div className="text-center">
               <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">24/7</div>

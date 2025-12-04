@@ -140,6 +140,13 @@ export default function Header() {
         {/* Desktop Right side buttons */}
         <div className="hidden lg:flex items-center gap-3">
           <button
+            onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
+            className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-black transition-all duration-200"
+            title={`Switch to ${currentLang === 'en' ? 'Dutch' : 'English'}`}
+          >
+            {currentLang === 'en' ? '🇬🇧' : '🇳🇱'}
+          </button>
+          <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
             className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-white/10 dark:hover:bg-black transition-all duration-200"
@@ -305,6 +312,17 @@ export default function Header() {
             >
               {t('docs')}
             </a>
+            
+            {/* Language Switcher */}
+            <div className="flex justify-center py-3 px-4">
+              <button
+                onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
+                className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition-all duration-200"
+                title={`Switch to ${currentLang === 'en' ? 'Dutch' : 'English'}`}
+              >
+                {currentLang === 'en' ? '🇬🇧' : '🇳🇱'}
+              </button>
+            </div>
             
             <div className="pt-4 border-t border-gray-200 mt-4">
               {isFlowPage ? (
