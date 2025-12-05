@@ -40,14 +40,6 @@ export const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
     instagram: "https://www.instagram.com/judazwemer/",
     email: "juda@pulseguard.pro"
-  },
-  {
-    name: "Wietse Bos",
-    role: "Marketing",
-    image: "/assets/team/wietse.jpeg",
-    linkedin: "https://www.linkedin.com/in/wietse-bos-2699a714b/",
-    instagram: "https://www.instagram.com/wietsebos/",
-    email: "marketing@pulseguard.pro"
   }
 ];
 

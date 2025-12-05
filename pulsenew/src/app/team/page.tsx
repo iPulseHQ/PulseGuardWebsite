@@ -39,7 +39,7 @@ export default function Team() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 dark:bg-white/10 rounded-2xl mb-4">
                 <Users className="w-8 h-8 text-gray-900 dark:text-white" />
               </div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">5+</div>
+              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">4</div>
               <div className="text-gray-600 dark:text-gray-300">{t('teamMembersLabel')}</div>
             </div>
             <div className="text-center bg-gray-100 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">

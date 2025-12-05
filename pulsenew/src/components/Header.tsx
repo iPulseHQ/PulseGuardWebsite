@@ -62,62 +62,46 @@ export default function Header() {
               </svg>
             </button>
             {solutionsOpen && (
-              <div className="absolute top-full left-0 mt-3 w-80 bg-white/98 dark:bg-black/98 backdrop-blur-2xl rounded-2xl shadow-2xl border-2 border-gray-200 dark:border-gray-800 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                {/* Header */}
-                <div className="px-5 py-4 border-b-2 border-gray-100 dark:border-gray-900">
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wide">{t('ourSolutions')}</h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{t('chooseYourTool')}</p>
-                </div>
-
-                {/* Menu Items */}
-                <div className="p-3 space-y-1">
-                  <Link href="/guard" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/uptime-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseGuardTitle')}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseGuardDesc')}</div>
-                      </div>
+              <div className="absolute top-full left-0 mt-3 w-64 bg-white/98 dark:bg-black/98 backdrop-blur-2xl rounded-2xl shadow-2xl border-2 border-gray-200 dark:border-gray-800 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="divide-y divide-gray-200 dark:divide-gray-800">
+                  <Link
+                    href="/guard"
+                    className="flex items-start gap-3 px-4 py-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-black dark:bg-white flex items-center justify-center">
+                      <Image src="/assets/uptime-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900 dark:text-white text-sm">PulseGuard</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Monitoring & security</div>
                     </div>
                   </Link>
-
-                  <Link href="/files" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/files-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseFilesTitle')}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseFilesDesc')}</div>
-                      </div>
+                  <Link
+                    href="/files"
+                    className="flex items-start gap-3 px-4 py-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-black dark:bg-white flex items-center justify-center">
+                      <Image src="/assets/files-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900 dark:text-white text-sm">PulseFiles</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Secure file sharing</div>
                     </div>
                   </Link>
-
-                  <Link href="/flow" className="group block px-4 py-4 text-black dark:text-foreground hover:bg-white dark:hover:bg-black rounded-xl transition-all duration-200 border-2 border-transparent hover:border-black dark:hover:border-white" onClick={() => setSolutionsOpen(false)}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-black dark:bg-white rounded-xl flex items-center justify-center border-2 border-black dark:border-white group-hover:scale-110 transition-transform">
-                        <Image src="/assets/crm-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-bold text-base text-gray-900 dark:text-white mb-1">{t('pulseFlowTitle')}</div>
-                        <div className="text-sm text-gray-600 dark:text-gray-400 leading-snug">{t('pulseFlowDesc')}</div>
-                      </div>
+                  <Link
+                    href="/flow"
+                    className="flex items-start gap-3 px-4 py-4 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    onClick={() => setSolutionsOpen(false)}
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-black dark:bg-white flex items-center justify-center">
+                      <Image src="/assets/crm-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
                     </div>
-                  </Link>
-                </div>
-
-                {/* Footer CTA */}
-                <div className="px-5 py-4 bg-white dark:bg-black border-t-2 border-gray-200 dark:border-gray-800">
-                  <Link href="/pricing" className="flex items-center justify-between group" onClick={() => setSolutionsOpen(false)}>
-                    <div>
-                      <div className="text-sm font-bold text-gray-900 dark:text-white">{t('viewAllPricing')}</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('comparePlansFeatures')}</div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900 dark:text.white text-sm">PulseFlow</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">ERP/CRM suite</div>
                     </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
                   </Link>
                 </div>
               </div>
@@ -139,13 +123,6 @@ export default function Header() {
 
         {/* Desktop Right side buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <button
-            onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
-            className="h-10 w-10 inline-flex items-center justify-center rounded-xl hover:bg-gray-100 dark:hover:bg-black transition-all duration-200"
-            title={`Switch to ${currentLang === 'en' ? 'Dutch' : 'English'}`}
-          >
-            {currentLang === 'en' ? '🇬🇧' : '🇳🇱'}
-          </button>
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
@@ -209,13 +186,6 @@ export default function Header() {
             <Moon size={22} className="text-white dark:text-foreground block dark:hidden" />
           </button>
           <button
-            aria-label="Change language"
-            onClick={() => changeLanguage(currentLang === 'en' ? 'nl' : 'en')}
-            className="flex items-center justify-center h-11 w-11 text-white dark:text-foreground hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200"
-          >
-            <Globe size={22} />
-          </button>
-          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center justify-center h-11 w-11 text-white dark:text-foreground hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200"
           >
@@ -242,41 +212,41 @@ export default function Header() {
                 <div className="pl-2 pr-2 space-y-2 pt-2">
                   <Link
                     href="/guard"
-                    className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-gray-900 rounded-xl transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
-                    <div className="w-10 h-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                      <Image src="/assets/uptime-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
+                    <div className="w-9 h-9 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                      <Image src="/assets/uptime-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">{t('pulseGuardTitle')}</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseGuardShortDesc')}</div>
+                      <div className="font-semibold text-sm">{t('pulseGuardTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Monitoring & security</div>
                     </div>
                   </Link>
                   <Link
                     href="/files"
-                    className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-gray-900 rounded-xl transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
-                    <div className="w-10 h-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                      <Image src="/assets/files-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
+                    <div className="w-9 h-9 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                      <Image src="/assets/files-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">{t('pulseFilesTitle')}</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseFilesShortDesc')}</div>
+                      <div className="font-semibold text-sm">{t('pulseFilesTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">Secure file sharing</div>
                     </div>
                   </Link>
                   <Link
                     href="/flow"
-                    className="flex items-center gap-4 py-4 px-4 text-black dark:text-foreground font-medium bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl border-2 border-black dark:border-white transition-all"
+                    className="flex items-center gap-3 py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-gray-900 rounded-xl transition-all"
                     onClick={() => {setMobileMenuOpen(false); setMobileSolutionsOpen(false);}}
                   >
-                    <div className="w-10 h-10 bg-black dark:bg-white rounded-lg flex items-center justify-center">
-                      <Image src="/assets/crm-icon.svg" alt="" width={20} height={20} className="invert dark:invert-0" />
+                    <div className="w-9 h-9 bg-black dark:bg-white rounded-lg flex items-center justify-center">
+                      <Image src="/assets/crm-icon.svg" alt="" width={18} height={18} className="invert dark:invert-0" />
                     </div>
                     <div className="flex-1">
-                      <div className="font-bold text-base">{t('pulseFlowTitle')}</div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">{t('pulseFlowShortDesc')}</div>
+                      <div className="font-semibold text-sm">{t('pulseFlowTitle')}</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">ERP/CRM suite</div>
                     </div>
                   </Link>
                 </div>

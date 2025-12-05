@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -58,6 +58,27 @@ export default function Home() {
     { value: "99.9%", label: "Uptime Guarantee" },
     { value: "<2s", label: "Avg Response" },
     { value: "24/6", label: "Support" }
+  ];
+
+  const testimonials = [
+    {
+      author: "Lisa de Vries",
+      role: "CTO, Noordwind",
+      rating: 5,
+      quote: "We zien storingen vanuit meerdere locaties binnen seconden. Het team weet meteen wat er misgaat en waar we moeten kijken."
+    },
+    {
+      author: "Jeroen Bakker",
+      role: "Ops Lead, Delta Hosting",
+      rating: 5,
+      quote: "SSL-verlopen en DNS-wijzigingen worden nu vroeg gesignaleerd. Minder nachtelijke paniek, meer rust in de operatie."
+    },
+    {
+      author: "Sanne Willems",
+      role: "Product Manager, Fintechly",
+      rating: 5,
+      quote: "De dashboards en rapporten zijn begrijpelijk voor het MT. We onderbouwen beslissingen met data in plaats van buikgevoel."
+    }
   ];
 
 
@@ -1042,20 +1063,24 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 rounded-xl px-8 py-6 text-lg font-semibold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 group"
-              >
-                {t('startFreeTrial')}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-white hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105"
-              >
-                {t('viewPricing')}
-              </Button>
+              <Link href="/guard">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-gray-100 rounded-xl px-8 py-6 text-lg font-semibold shadow-2xl hover:shadow-3xl transition-all hover:scale-105 group w-full sm:w-auto"
+                >
+                  {t('startFreeTrial')}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-xl px-8 py-6 text-lg font-semibold border-2 border-gray-300 dark:border-gray-700 text-white hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105 w-full sm:w-auto"
+                >
+                  {t('viewPricing')}
+                </Button>
+              </Link>
             </div>
 
             {/* Benefits */}

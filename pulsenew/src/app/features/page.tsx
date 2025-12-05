@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
 
@@ -111,9 +112,11 @@ export default function Features() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-black dark:text-foreground mb-6">{t('ctaReadyTitle')}</h2>
           <p className="text-xl text-gray-600 dark:text-muted-foreground mb-8">{t('ctaReadyDesc')}</p>
-          <Button className="bg-black text-white px-8 py-3 text-lg rounded-md">
-            {t('ctaStartTrial')}
-          </Button>
+          <Link href="/guard">
+            <Button className="bg-black text-white px-8 py-3 text-lg rounded-md w-full sm:w-auto">
+              {t('ctaStartTrial')}
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

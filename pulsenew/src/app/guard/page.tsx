@@ -59,13 +59,12 @@ export default function Guard() {
                 </Badge>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 sm:px-0 text-gray-900 dark:text-white">
-                  Complete monitoring{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">en security</span>
-        </h1>
+                  PulseGuard bewaakt je hele stack{" "}
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">zonder ruis</span>
+                </h1>
 
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed px-2 sm:px-0">
-                  Monitor je volledige digitale infrastructuur 24/7. Van websites tot servers, devices tot API&apos;s -
-                  alles onder één dak met AI-powered insights.
+                  Eén platform voor uptime, performance en security. We meten elke minuut, signaleren afwijkingen vroeg en geven meldingen die duidelijk maken wat er mis is en wat je moet doen.
                 </p>
 
                 {/* CTA Buttons */}
@@ -229,7 +228,7 @@ export default function Guard() {
                 </span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
-                Ontdek alle krachtige features die PulseGuard tot de ultieme monitoring oplossing maken
+                Van uptime tot security: dit krijg je standaard, zonder marketingpraat.
               </p>
           </div>
 
@@ -312,8 +311,7 @@ export default function Guard() {
                         24/7 Domain Monitoring
                       </h3>
                       <p className="text-gray-200 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Continue monitoring van al je websites, API&apos;s en services vanuit 15+ locaties wereldwijd.
-                        Ontvang instant alerts bij downtime, response time issues of SSL problemen.
+                        Metingen elke 30 seconden vanuit 15+ locaties. Alerting bij downtime, trage responses of SSL-gedoe, met context (impact, locatie, duur) zodat je sneller herstelt dan gebruikers merken.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
@@ -427,8 +425,7 @@ export default function Guard() {
                         SSL/TLS Certificate Monitoring
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Automatische monitoring van SSL certificaten met geavanceerde security checks.
-                        Krijg waarschuwingen voordat certificaten verlopen en detecteer configuratie problemen.
+                        Certificaten en configuraties altijd onder controle: we checken verloopdatums, chain-fouten, HSTS en ciphers. Meldingen komen ruim op tijd en met stappen om ze te fixen.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
@@ -542,8 +539,7 @@ export default function Guard() {
                         Advanced Dashboard & Analytics
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Uitgebreide analytics en real-time dashboards voor complete inzichten in je infrastructuur performance.
-                        Historische data, trends en custom rapporten voor data-driven beslissingen.
+                        Realtime dashboards plus historie en trends. Rapporten die ook buiten het tech-team te lezen zijn, met context per incident en duidelijke SLA-inslag.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
@@ -657,9 +653,7 @@ export default function Guard() {
                         PulseAI Chat Assistant
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Gesprek met AI over je monitoring data met natuurlijke taal queries.
-                        Proactieve probleemdetectie, intelligente analyses en automatische tool usage.
-                        Directe toegang tot al je monitoring data via chat interface.
+                        Stel gewone vragen over je eigen data en krijg concrete antwoorden. PulseAI ziet patronen, komt met next steps en onthoudt je context zodat je sneller besluit.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
@@ -773,8 +767,7 @@ export default function Guard() {
                         Complete REST API
                       </h3>
                       <p className="text-white/80 dark:text-black/70 text-sm sm:text-base mb-4 sm:mb-6 max-w-xl">
-                        Uitgebreide REST API voor volledige integratie met je bestaande systemen.
-                        Versioned endpoints, comprehensive documentation en rate limiting voor optimale performance.
+                        REST API met versiebeheer, rate limiting en logging. Sluit soepel aan op je CI/CD, chatops of ITSM; stabiel, voorspelbaar en goed gedocumenteerd.
                       </p>
                       <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-white/10 dark:bg-black/10 backdrop-blur-sm rounded-lg text-xs sm:text-sm text-white dark:text-black">
@@ -961,7 +954,7 @@ export default function Guard() {
             </h2>
 
             <p className="text-xl md:text-2xl mb-10 text-gray-700 dark:text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Start je <span className="font-bold">gratis trial</span> vandaag en ontdek hoe PulseGuard je monitoring kan optimaliseren.
+              Start je <span className="font-bold">gratis trial</span> en zie binnen minuten wat er goed gaat, wat niet, en welke stap je nu zet. Minder tijd kwijt aan zoeken, meer aan oplossen.
             </p>
 
             {/* CTA Buttons */}

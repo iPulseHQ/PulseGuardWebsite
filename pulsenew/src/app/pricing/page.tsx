@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, X, ArrowRight, Sparkles, Zap, Star, Crown, Rocket } from "lucide-react";
@@ -235,17 +236,24 @@ export default function Pricing() {
                     </ul>
 
                     <div className="mt-auto">
-                      <Button
-                        className={`w-full font-semibold py-5 sm:py-6 rounded-lg group ${
-                          isPopular 
-                            ? 'bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200' 
-                            : 'bg-transparent border-2 border-gray-700 text-white hover:bg-white/5'
-                        }`}
-                        size="lg"
+                      <Link
+                        href="https://guard.ipulse.one"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block"
                       >
-                        {plan.cta}
-                        <ArrowRight className="ml-2 w-4 h-4 inline-block group-hover:translate-x-1 transition-transform" />
-                      </Button>
+                        <Button
+                          className={`w-full font-semibold py-5 sm:py-6 rounded-lg group ${
+                            isPopular 
+                              ? 'bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200' 
+                              : 'bg-transparent border-2 border-gray-700 text-white hover:bg-white/5'
+                          }`}
+                          size="lg"
+                        >
+                          {plan.cta}
+                          <ArrowRight className="ml-2 w-4 h-4 inline-block group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -327,21 +335,25 @@ export default function Pricing() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-4">
-            <Button
-              size="lg"
-              className="bg-white text-black hover:bg-gray-100 rounded-lg group font-semibold px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-            >
-              Neem Contact Op
-              <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link href="mailto:info@pulseguard.nl" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-gray-100 rounded-lg group font-semibold px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
+                Neem Contact Op
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-lg border-2 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 w-full sm:w-auto"
-            >
-              Bekijk Demo
-            </Button>
+            <Link href="/guard" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-lg border-2 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              >
+                Bekijk Demo
+              </Button>
+            </Link>
           </div>
 
           {/* Stats Grid */}
