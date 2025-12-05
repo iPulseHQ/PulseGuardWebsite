@@ -246,7 +246,6 @@ export const translations: Translations = {
   businessManagement: { en: 'Business Management', nl: 'Business Management' },
   businessManagementDesc: { en: 'Complete ERP and CRM solution for small businesses. Manage customers, projects, invoices and more from one central platform.', nl: 'Complete ERP en CRM oplossing voor kleine bedrijven. Beheer klanten, projecten, facturen en meer vanuit één centraal platform.' },
   crmIntegration: { en: 'CRM integration', nl: 'CRM integratie' },
-  invoicing: { en: 'Invoicing', nl: 'Facturatie' },
   projectTracking: { en: 'Project tracking', nl: 'Project tracking' },
   customerManagementTitle: { en: 'Customer Management', nl: 'Klantbeheer' },
   customerManagementDesc: { en: 'Central customer overview with complete interaction history and contact management.', nl: 'Centraal klantoverzicht met complete interactiegeschiedenis en contactbeheer.' },
@@ -269,11 +268,9 @@ export const translations: Translations = {
   testimonials: { en: 'Testimonials', nl: 'Getuigenissen' },
   whatClientsSay: { en: 'What our clients say', nl: 'Wat onze klanten zeggen' },
   trustedByCompanies: { en: 'Trusted by companies across the Netherlands', nl: 'Vertrouwd door bedrijven door heel Nederland' },
-  trustedBy: { en: 'Trusted by', nl: 'Vertrouwd door' },
   teamsCount: { en: '150+ teams', nl: '150+ teams' },
   discoverWhyCompanies: { en: 'Discover why companies choose iPulse', nl: 'Ontdek waarom bedrijven kiezen voor iPulse' },
   happyCustomersStat: { en: 'Happy Customers', nl: 'Tevreden klanten' },
-  uptimeSLA: { en: 'Uptime SLA', nl: 'Uptime SLA' },
   averageRating: { en: 'Average Rating', nl: 'Gemiddelde beoordeling' },
 
   // Final CTA section
@@ -283,7 +280,6 @@ export const translations: Translations = {
   teamsMonitoring: { en: 'teams monitoring their infrastructure with iPulse. Start your', nl: 'teams die hun infrastructuur monitoren met iPulse. Start je' },
   freeTrial: { en: 'free trial', nl: 'gratis trial' },
   today: { en: 'today', nl: 'vandaag' },
-  startFreeTrial: { en: 'Start free trial', nl: 'Start gratis trial' },
   viewPricing: { en: 'View pricing', nl: 'Bekijk prijzen' },
   noCreditCard: { en: 'No credit card required', nl: 'Geen creditcard nodig' },
   fourteenDaysFree: { en: '14 days free', nl: '14 dagen gratis' },
@@ -322,7 +318,7 @@ export const translations: Translations = {
   guardSeeInActionDesc: { en: 'Our intuitive dashboard gives you complete visibility into your infrastructure with real-time monitoring and detailed insights.', nl: 'Ons intuïtieve dashboard geeft volledige zicht op je infrastructuur met realtime monitoring en uitgebreide inzichten.' },
   guardCtaTitle: { en: 'Ready to start monitoring?', nl: 'Klaar om te monitoren?' },
   guardCtaDesc: { en: 'Join thousands of users who trust iPulse to keep their infrastructure running smoothly.', nl: 'Sluit je aan bij duizenden gebruikers die iPulse vertrouwen om hun infrastructuur soepel te laten draaien.' },
-  viewPricing: { en: 'View Pricing →', nl: 'Bekijk prijzen →' },
+  // viewPricing duplicated earlier
 
   // Files page
   pulseFilesHeroSubtitle2: { en: 'Share files safe and temporarily with encryption. European data saving, GDPR compliant, and completely secure.', nl: 'Deel bestanden veilig en tijdelijk met encryptie. Europese dataopslag, GDPR-conform en volledig veilig.' },
@@ -352,12 +348,9 @@ export const translations: Translations = {
   // CRM page
   crmHeroSubtitle: { en: 'ERP and CRM solution designed for small companies. Manage your customers, projects, and business processes in one integrated platform.', nl: 'ERP- en CRM-oplossing voor kleine bedrijven. Beheer klanten, projecten en bedrijfsprocessen in één geïntegreerd platform.' },
   getStartedCta2: { en: 'Get Started', nl: 'Aan de slag' },
-  customerManagementTitle: { en: 'Customer Management', nl: 'Klantbeheer' },
-  customerManagementDesc: { en: 'Keep track of all your customers, their contact information, purchase history, and communication preferences.', nl: 'Houd al je klanten bij, met contactgegevens, aankoopgeschiedenis en communicatievoorkeuren.' },
   projectPlanningTitle: { en: 'Project Planning', nl: 'Projectplanning' },
   projectPlanningDesc: { en: 'Plan and track projects with deadlines, milestones, and resource allocation. Keep your team aligned and productive.', nl: 'Plan en volg projecten met deadlines, mijlpalen en resource-allocatie. Houd je team op één lijn en productief.' },
-  invoiceManagementTitle: { en: 'Invoice Management', nl: 'Factuurbeheer' },
-  invoiceManagementDesc: { en: 'Create professional invoices, track payments, and manage your financial workflow with automated reminders.', nl: 'Maak professionele facturen, volg betalingen en beheer je financiële workflow met automatische herinneringen.' },
+  // invoiceManagement* duplicated earlier
   businessAnalyticsTitle: { en: 'Business Analytics', nl: 'Business analytics' },
   businessAnalyticsDesc: { en: 'Get insights into your business performance with detailed reports and analytics on sales, customers, and projects.', nl: 'Krijg inzicht in je bedrijfsresultaten met gedetailleerde rapportages en analyses over verkoop, klanten en projecten.' },
   communicationToolsTitle: { en: 'Communication Tools', nl: 'Communicatietools' },
