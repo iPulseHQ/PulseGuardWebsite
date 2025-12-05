@@ -181,7 +181,6 @@ export const translations: Translations = {
   uptimeMonitoringDesc: { en: 'Continuous monitoring of all your websites and servers from 15+ locations worldwide. Get instant alerts on downtime and always keep track of your uptime percentage.', nl: 'Continue monitoring van al je websites en servers vanuit 15+ locaties wereldwijd. Krijg direct alerts bij downtime en hou je uptime percentage altijd in de gaten.' },
   multiLocationChecks: { en: 'Multi-location checks', nl: 'Multi-locatie checks' },
   thirtySecIntervals: { en: '30-sec intervals', nl: '30-sec intervals' },
-  instantAlerts: { en: 'Instant alerts', nl: 'Instant alerts' },
   sslCertificateTitle: { en: 'SSL Certificate Check', nl: 'SSL Certificate Check' },
   sslCertificateDesc: { en: 'Automatic SSL certificate check with warnings before they expire.', nl: 'Automatische controle van SSL certificaten met waarschuwingen voordat ze verlopen.' },
   autoRenewalReminders: { en: 'Auto-renewal reminders', nl: 'Auto-renewal reminders' },
