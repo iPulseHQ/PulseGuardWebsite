@@ -61,15 +61,16 @@ const nextConfig: NextConfig = {
   
   // Image optimization
   images: {
-    unoptimized: true,
-    domains: [
-      'pulseguard.pro',
-      'www.pulseguard.pro',
-      'ipulse.one',
-      'www.ipulse.one',
-      'imdigital.info',
-      'www.che.nl',
-      'arjandenhartog.com'
+    unoptimized: false,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'pulseguard.pro' },
+      { protocol: 'https', hostname: 'www.pulseguard.pro' },
+      { protocol: 'https', hostname: 'ipulse.one' },
+      { protocol: 'https', hostname: 'www.ipulse.one' },
+      { protocol: 'https', hostname: 'imdigital.info' },
+      { protocol: 'https', hostname: 'www.che.nl' },
+      { protocol: 'https', hostname: 'arjandenhartog.com' },
+      { protocol: 'https', hostname: 'prod-files-secure.s3.us-west-2.amazonaws.com' },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

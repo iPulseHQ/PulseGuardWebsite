@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import { 
   Calendar, 
@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 interface ChangelogContent {
-  type: 'paragraph' | 'heading_1' | 'heading_2' | 'heading_3' | 'bulleted_list_item' | 'numbered_list_item' | 'image' | 'video';
+  type: string;
   text?: string;
   url?: string;
   caption?: string;
@@ -36,7 +36,6 @@ interface ChangelogEntry {
   version: string;
   versionColor: string;
   createdTime: string;
-  url: string;
   content: ChangelogContent[];
 }
 
@@ -62,6 +61,20 @@ const VERSION_COLORS: Record<string, string> = {
   gray: 'bg-gray-500/20 text-gray-400 border-gray-500/30',
 };
 
+// Notion API configuration
+const NOTION_API_KEY = 'ntn_b16840128489vSt7VYFXALWZHJa6djiE5gX7CAKwdxNaWz';
+const DATABASE_ID = '2c10645fff30803d97b1e65ad67af91d';
+
+function getAppColor(app: string): string {
+  const colors: Record<string, string> = { 'PulseFlow': 'yellow', 'PulseFiles': 'purple', 'Pulseguard': 'orange' };
+  return colors[app] || 'gray';
+}
+
+function getVersionColor(version: string): string {
+  const colors: Record<string, string> = { '2.7': 'brown', 'v2.7.1': 'yellow', 'v2.7.0': 'blue', 'v2.6.9': 'pink' };
+  return colors[version] || 'gray';
+}
+
 export default function Changelog() {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -69,38 +82,162 @@ export default function Changelog() {
   const [expandedEntries, setExpandedEntries] = useState<Set<string>>(new Set());
   const [loadingContent, setLoadingContent] = useState<Set<string>>(new Set());
   const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [useStaticData, setUseStaticData] = useState(false);
 
-  // Fetch changelog entries
-  const fetchChangelog = async (app?: string, forceRefresh?: boolean) => {
-    setLoading(true);
+  // Fetch from Notion API via CORS proxy
+  const fetchFromNotion = useCallback(async () => {
     try {
-      const params = new URLSearchParams();
-      if (app && app !== 'all') {
-        params.set('app', app);
-      }
-      params.set('content', 'true');
-      if (forceRefresh) {
-        params.set('refresh', Date.now().toString());
-      }
+      const corsProxy = 'https://corsproxy.io/?';
+      const notionUrl = `https://api.notion.com/v1/databases/${DATABASE_ID}/query`;
       
-      const response = await fetch(`/api/changelog?${params.toString()}`, {
-        cache: forceRefresh ? 'no-store' : 'default',
+      const response = await fetch(corsProxy + encodeURIComponent(notionUrl), {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${NOTION_API_KEY}`,
+          'Notion-Version': '2022-06-28',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sorts: [
+            { property: 'Nummer', direction: 'descending' },
+            { timestamp: 'created_time', direction: 'descending' },
+          ],
+        }),
       });
+
+      if (!response.ok) throw new Error('Notion API failed');
+      return (await response.json()).results;
+    } catch (error) {
+      console.error('Notion API error:', error);
+      return null;
+    }
+  }, []);
+
+  // Fetch page content from Notion
+  const fetchPageContent = useCallback(async (pageId: string): Promise<ChangelogContent[]> => {
+    try {
+      const corsProxy = 'https://corsproxy.io/?';
+      const notionUrl = `https://api.notion.com/v1/blocks/${pageId}/children?page_size=100`;
+      
+      const response = await fetch(corsProxy + encodeURIComponent(notionUrl), {
+        headers: {
+          'Authorization': `Bearer ${NOTION_API_KEY}`,
+          'Notion-Version': '2022-06-28',
+        },
+      });
+
+      if (!response.ok) return [];
+
       const data = await response.json();
       
-      setEntries(data.entries || []);
-      setLastUpdated(data.lastUpdated);
+      interface NotionRichText { plain_text: string; }
+      interface NotionBlock {
+        type: string;
+        paragraph?: { rich_text: NotionRichText[] };
+        heading_1?: { rich_text: NotionRichText[] };
+        heading_2?: { rich_text: NotionRichText[] };
+        heading_3?: { rich_text: NotionRichText[] };
+        bulleted_list_item?: { rich_text: NotionRichText[] };
+        numbered_list_item?: { rich_text: NotionRichText[] };
+        image?: { type: 'external' | 'file'; external?: { url: string }; file?: { url: string }; caption?: NotionRichText[]; };
+        video?: { type: 'external' | 'file'; external?: { url: string }; file?: { url: string }; };
+      }
+      
+      return data.results.map((block: NotionBlock) => {
+        const content: ChangelogContent = { type: block.type };
+        switch (block.type) {
+          case 'paragraph': content.text = block.paragraph?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'heading_1': content.text = block.heading_1?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'heading_2': content.text = block.heading_2?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'heading_3': content.text = block.heading_3?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'bulleted_list_item': content.text = block.bulleted_list_item?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'numbered_list_item': content.text = block.numbered_list_item?.rich_text?.map(t => t.plain_text).join('') || ''; break;
+          case 'image':
+            content.url = block.image?.type === 'external' ? block.image.external?.url : block.image?.file?.url;
+            content.caption = block.image?.caption?.map(t => t.plain_text).join('') || '';
+            break;
+          case 'video':
+            content.url = block.video?.type === 'external' ? block.video.external?.url : block.video?.file?.url;
+            break;
+        }
+        return content;
+      }).filter((c: ChangelogContent) => c.text || c.url);
+    } catch (error) {
+      console.error('Error fetching page content:', error);
+      return [];
+    }
+  }, []);
+
+  // Fetch static JSON data as fallback
+  const fetchStaticData = useCallback(async () => {
+    try {
+      const response = await fetch('/changelog-data.json');
+      if (!response.ok) throw new Error('Static data not found');
+      return await response.json();
+    } catch { return null; }
+  }, []);
+
+  // Main fetch function
+  const fetchChangelog = useCallback(async (forceRefresh = false) => {
+    setLoading(true);
+    
+    try {
+      if (forceRefresh || !useStaticData) {
+        const notionPages = await fetchFromNotion();
+        
+        if (notionPages && notionPages.length > 0) {
+          interface NotionProperty { title?: Array<{ plain_text: string }>; select?: { name: string } | null; }
+          interface NotionPage { id: string; created_time: string; properties: { Naam: NotionProperty; App: NotionProperty; Nummer: NotionProperty; }; }
+          
+          const newEntries: ChangelogEntry[] = notionPages.map((page: NotionPage) => ({
+            id: page.id,
+            name: page.properties.Naam?.title?.[0]?.plain_text || 'Untitled',
+            app: page.properties.App?.select?.name || '',
+            appColor: getAppColor(page.properties.App?.select?.name || ''),
+            version: page.properties.Nummer?.select?.name || '',
+            versionColor: getVersionColor(page.properties.Nummer?.select?.name || ''),
+            createdTime: page.created_time,
+            content: [],
+          }));
+
+          newEntries.sort((a, b) => {
+            const versionCompare = b.version.localeCompare(a.version);
+            if (versionCompare !== 0) return versionCompare;
+            return new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime();
+          });
+
+          setEntries(newEntries);
+          setLastUpdated(new Date().toISOString());
+          setUseStaticData(false);
+          setLoading(false);
+          return;
+        }
+      }
+
+      const staticData = await fetchStaticData();
+      if (staticData) {
+        setEntries(staticData.entries || []);
+        setLastUpdated(staticData.lastUpdated);
+        setUseStaticData(true);
+      } else {
+        setEntries([]);
+      }
     } catch (error) {
       console.error('Error fetching changelog:', error);
-      setEntries([]);
+      const staticData = await fetchStaticData();
+      if (staticData) {
+        setEntries(staticData.entries || []);
+        setLastUpdated(staticData.lastUpdated);
+        setUseStaticData(true);
+      }
     } finally {
       setLoading(false);
     }
-  };
+  }, [fetchFromNotion, fetchStaticData, useStaticData]);
 
   useEffect(() => {
-    fetchChangelog(selectedApp);
-  }, [selectedApp]);
+    fetchChangelog();
+  }, []);
 
   // Fetch content for a specific entry
   const fetchEntryContent = async (entryId: string) => {
@@ -108,13 +245,9 @@ export default function Changelog() {
     setLoadingContent(prev => new Set(prev).add(entryId));
     
     try {
-      const response = await fetch(`/api/changelog?pageId=${pageId}`);
-      const data = await response.json();
-      
+      const content = await fetchPageContent(pageId);
       setEntries(prev => prev.map(entry => 
-        entry.id === entryId 
-          ? { ...entry, content: data.content || [] }
-          : entry
+        entry.id === entryId ? { ...entry, content } : entry
       ));
     } catch (error) {
       console.error('Error fetching entry content:', error);
@@ -132,15 +265,11 @@ export default function Changelog() {
     
     setExpandedEntries(prev => {
       const next = new Set(prev);
-      if (next.has(entryId)) {
-        next.delete(entryId);
-      } else {
-        next.add(entryId);
-      }
+      if (next.has(entryId)) next.delete(entryId);
+      else next.add(entryId);
       return next;
     });
 
-    // Fetch content if expanding and content not loaded
     if (isExpanding) {
       const entry = entries.find(e => e.id === entryId);
       if (entry && entry.content.length === 0) {
@@ -149,26 +278,25 @@ export default function Changelog() {
     }
   };
 
+  // Filter entries by app
+  const filteredEntries = useMemo(() => {
+    if (selectedApp === 'all') return entries;
+    return entries.filter(entry => entry.app.toLowerCase() === selectedApp.toLowerCase());
+  }, [entries, selectedApp]);
+
   // Group entries by version
   const groupedEntries = useMemo(() => {
     const groups: Record<string, ChangelogEntry[]> = {};
-    
-    entries.forEach(entry => {
+    filteredEntries.forEach(entry => {
       const version = entry.version || 'Overig';
-      if (!groups[version]) {
-        groups[version] = [];
-      }
+      if (!groups[version]) groups[version] = [];
       groups[version].push(entry);
     });
-    
-    // Sort versions (descending)
-    const sortedVersions = Object.keys(groups).sort((a, b) => b.localeCompare(a));
-    
-    return sortedVersions.map(version => ({
+    return Object.keys(groups).sort((a, b) => b.localeCompare(a)).map(version => ({
       version,
       entries: groups[version],
     }));
-  }, [entries]);
+  }, [filteredEntries]);
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('nl-NL', {
@@ -183,68 +311,31 @@ export default function Changelog() {
       switch (block.type) {
         case 'paragraph':
           return block.text ? (
-            <p key={index} className="text-gray-300 mb-3 leading-relaxed">
-              {block.text}
-            </p>
+            <p key={index} className="text-gray-300 mb-3 leading-relaxed">{block.text}</p>
           ) : null;
         case 'heading_1':
-          return (
-            <h3 key={index} className="text-2xl font-bold text-white mb-4 mt-6">
-              {block.text}
-            </h3>
-          );
+          return <h3 key={index} className="text-2xl font-bold text-white mb-4 mt-6">{block.text}</h3>;
         case 'heading_2':
-          return (
-            <h4 key={index} className="text-xl font-semibold text-white mb-3 mt-5">
-              {block.text}
-            </h4>
-          );
+          return <h4 key={index} className="text-xl font-semibold text-white mb-3 mt-5">{block.text}</h4>;
         case 'heading_3':
-          return (
-            <h5 key={index} className="text-lg font-medium text-white mb-2 mt-4">
-              {block.text}
-            </h5>
-          );
+          return <h5 key={index} className="text-lg font-medium text-white mb-2 mt-4">{block.text}</h5>;
         case 'bulleted_list_item':
-          return (
-            <li key={index} className="text-gray-300 ml-4 mb-1 list-disc">
-              {block.text}
-            </li>
-          );
+          return <li key={index} className="text-gray-300 ml-4 mb-1 list-disc">{block.text}</li>;
         case 'numbered_list_item':
-          return (
-            <li key={index} className="text-gray-300 ml-4 mb-1 list-decimal">
-              {block.text}
-            </li>
-          );
+          return <li key={index} className="text-gray-300 ml-4 mb-1 list-decimal">{block.text}</li>;
         case 'image':
           return block.url ? (
             <div key={index} className="my-6">
               <div className="relative w-full rounded-xl overflow-hidden border border-gray-700">
-                <Image
-                  src={block.url}
-                  alt={block.caption || 'Changelog afbeelding'}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto object-contain"
-                  unoptimized // For external Notion images
-                />
+                <Image src={block.url} alt={block.caption || 'Changelog afbeelding'} width={1200} height={800} className="w-full h-auto object-contain" unoptimized />
               </div>
-              {block.caption && (
-                <p className="text-sm text-gray-400 mt-2 text-center italic">
-                  {block.caption}
-                </p>
-              )}
+              {block.caption && <p className="text-sm text-gray-400 mt-2 text-center italic">{block.caption}</p>}
             </div>
           ) : null;
         case 'video':
           return block.url ? (
             <div key={index} className="my-6">
-              <video
-                src={block.url}
-                controls
-                className="w-full rounded-xl border border-gray-700"
-              />
+              <video src={block.url} controls className="w-full rounded-xl border border-gray-700" />
             </div>
           ) : null;
         default:
@@ -305,9 +396,10 @@ export default function Changelog() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => fetchChangelog(selectedApp, true)}
+            onClick={() => fetchChangelog(true)}
             disabled={loading}
             className="shrink-0"
+            title="Ververs data"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
           </Button>
@@ -316,6 +408,7 @@ export default function Changelog() {
         {lastUpdated && (
           <p className="text-sm text-gray-500 mt-4">
             Laatst bijgewerkt: {formatDate(lastUpdated)}
+            {useStaticData && <span className="ml-2 text-yellow-500">(cache)</span>}
           </p>
         )}
       </section>
@@ -326,11 +419,9 @@ export default function Changelog() {
           <div className="flex items-center justify-center py-20">
             <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
           </div>
-        ) : entries.length === 0 ? (
+        ) : filteredEntries.length === 0 ? (
           <div className="text-center py-20">
-            <p className="text-gray-400 text-lg">
-              Geen changelog entries gevonden.
-            </p>
+            <p className="text-gray-400 text-lg">Geen changelog entries gevonden.</p>
           </div>
         ) : (
           <div className="space-y-12">
@@ -340,9 +431,7 @@ export default function Changelog() {
                 <div className="sticky top-4 z-10 mb-6">
                   <Badge 
                     variant="outline" 
-                    className={`text-sm font-semibold px-4 py-1.5 ${
-                      VERSION_COLORS[versionEntries[0]?.versionColor] || VERSION_COLORS.gray
-                    }`}
+                    className={`text-sm font-semibold px-4 py-1.5 ${VERSION_COLORS[versionEntries[0]?.versionColor] || VERSION_COLORS.gray}`}
                   >
                     <Tag className="w-3 h-3 mr-2" />
                     {version}
@@ -358,56 +447,36 @@ export default function Changelog() {
 
                     return (
                       <div key={entry.id}>
-                        {/* Entry Card */}
                         <div 
                           className="group bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-gray-200 dark:border-white/10 transition-all duration-300 cursor-pointer"
                           onClick={() => toggleExpanded(entry.id)}
                         >
-                          {/* Entry Header */}
                           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                             <div className="flex-1">
                               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors">
                                 {entry.name}
                               </h3>
-                              
-                              {/* Date */}
                               <div className="flex items-center gap-2 text-sm text-gray-500 mt-2">
                                 <Calendar className="w-4 h-4" />
                                 <span>{formatDate(entry.createdTime)}</span>
                               </div>
                             </div>
 
-                            {/* Badges */}
                             <div className="flex items-center gap-2 shrink-0">
-                              <Badge 
-                                variant="outline" 
-                                className={`text-xs ${APP_COLORS[entry.appColor] || APP_COLORS.gray}`}
-                              >
+                              <Badge variant="outline" className={`text-xs ${APP_COLORS[entry.appColor] || APP_COLORS.gray}`}>
                                 {entry.app}
                               </Badge>
-                              
-                              {/* Expand/Collapse Indicator */}
                               <Button
                                 variant="ghost"
                                 size="icon"
                                 className="h-8 w-8"
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  toggleExpanded(entry.id);
-                                }}
+                                onClick={(e) => { e.stopPropagation(); toggleExpanded(entry.id); }}
                               >
-                                {isLoadingContent ? (
-                                  <Loader2 className="w-4 h-4 animate-spin" />
-                                ) : isExpanded ? (
-                                  <ChevronUp className="w-4 h-4" />
-                                ) : (
-                                  <ChevronDown className="w-4 h-4" />
-                                )}
+                                {isLoadingContent ? <Loader2 className="w-4 h-4 animate-spin" /> : isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                               </Button>
                             </div>
                           </div>
 
-                          {/* Expanded Content */}
                           {isExpanded && (
                             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-white/10">
                               {isLoadingContent ? (
@@ -415,13 +484,9 @@ export default function Changelog() {
                                   <Loader2 className="w-6 h-6 animate-spin text-gray-400" />
                                 </div>
                               ) : hasContent ? (
-                                <div className="prose prose-invert max-w-none">
-                                  {renderContent(entry.content)}
-                                </div>
+                                <div className="prose prose-invert max-w-none">{renderContent(entry.content)}</div>
                               ) : (
-                                <p className="text-gray-500 italic">
-                                  Geen aanvullende informatie beschikbaar.
-                                </p>
+                                <p className="text-gray-500 italic">Geen aanvullende informatie beschikbaar.</p>
                               )}
                             </div>
                           )}

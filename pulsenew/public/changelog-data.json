@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "id": "2c60645f-ff30-8099-8a45-ec9fa308dd95",
+      "name": "Frontend en service verbeteringen",
+      "app": "Pulseguard",
+      "appColor": "orange",
+      "version": "v2.7.1",
+      "versionColor": "yellow",
+      "createdTime": "2025-12-11T09:47:00.000Z",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Met 2.7.1 zijn er wat algemene bugs en problemen opgelost"
+        }
+      ]
+    },
+    {
+      "id": "2c60645f-ff30-80ba-b16b-e38d35e0e3d2",
+      "name": "Services integraties",
+      "app": "Pulseguard",
+      "appColor": "orange",
+      "version": "v2.7.0",
+      "versionColor": "blue",
+      "createdTime": "2025-12-11T09:49:00.000Z",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Sinds vandaag is het mogelijk om verschillende integraties toe te voegen:"
+        },
+        {
+          "type": "image",
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/87560c2e-bd3c-4cd2-9996-e415b1c10d8e/10d404b8-803f-4c18-8e40-79f9de0766a5/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZW2PLYMW%2F20251211%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251211T104955Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECMaCXVzLXdlc3QtMiJIMEYCIQCLtbWyCP9VusRbDgqXaAk21Ts9prVIFY8jSYgHkKfJ8wIhALRvRwdJ6O97EHfjnlLA%2BEDy07sXeCBTQYh%2FtPGDXZbwKogECOz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igy4qoRi8sPwfAz3t58q3ANEAySXehAmMhBh6jcL%2FLzEb8FSNE13j6pMbrYduMmD3pt7%2Fo44UNrWMmCzDGWxYsequYyYnCWWSZVAk0QXdwjWnJhiGJi7h%2F8Fu2XFlNLaPwqJJh6CSneFCIEajP7308mT2ygv7AbA%2Bb3jooDTT%2BQqYkd5mll0FWi0%2FoXwd2Nev2x3K2IdXRqgMQ32YlWevbcEj030H54X%2BpHxAuXIfTdBvPFCBIpi6TmQLDoQrdNEQPiph4b%2FiW%2FGpZmX8A4ITmTMFIlWNJnaUljRE%2Bv05UNG3q%2FVcEFV3EHBtfe%2FVWCPLCa6lbi9rXynXLw1E6am2uov9c0MGSKYkMvgurnGA8vLJ6B4oop0M1ILjP%2FApHFlhC5C%2FTkWK5Lm2ZgLBiSQZ3RDbY9bxBpEOWYcgHUvh9Cp6Z0%2BJuJD%2B74IglYXZBYnc0Dmri0lznfuvVWzR9pqg2ctLSkGz%2F8m2LHoQTc%2F1qxg0R3LzectDuFPj%2FL73R1bYXEild%2Fwse8Dq6Iyz%2BXGcR2efmPxg9RzqQnBxv6XQ9plxb4OswRUTsjnT%2F7wrAwsw8ZoY6IMhuJdSspk8M1hOkw5R45z4Wu3BYyogiWNORQNLfpWwaygM%2BmLwLf9%2BGQy7Y4r8qqVlXWUiyu5RjD%2Bu%2BrJBjqkAWS0PlDc%2BBpkI6drZX7yuSvpoqBC%2Bie6aN4n5Td9HJsWMeH2FcVV8udz77Pu4cJ25D99NPUHEJr17ow4y60Kf5KafqRVT%2BrkhJ2lY0S66JtqG%2FWuyeLXrfLfUo1%2B%2B%2BgEAPwDWauUfHZvJFFBwM2AjJkA79YLsvdNbHC%2FGI8hxG4Bt0FGbHZBQVVDhGd2Bu6kdzgOEScRM7ehiLm9KzLCMwal%2F4s8&X-Amz-Signature=7269abe2d840c85f5160b6592e177a4ecba87e847e9d0465104eaabb07568740&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "id": "2c60645f-ff30-8017-8444-f5f08dc47ecf",
+      "name": "Nieuw: Toegankelijkheid",
+      "app": "Pulseguard",
+      "appColor": "orange",
+      "version": "v2.6.9",
+      "versionColor": "pink",
+      "createdTime": "2025-12-11T09:49:00.000Z",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Je kan vanaf nu Toegankelijkheid checken van je domeinen: "
+        },
+        {
+          "type": "image",
+          "url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/87560c2e-bd3c-4cd2-9996-e415b1c10d8e/85b14b0b-a56d-4c1c-8321-e3c4983fa045/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663TIR2SCH%2F20251211%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251211T104956Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjECMaCXVzLXdlc3QtMiJHMEUCIQCfmOOXOVgZGwq7Q64mgLW8lJKIuAs8ckgS5gCUI%2FPt2wIgSD4fU1K4BKLpBYs9EXTMxtCtiMXQG7l7nhmmRVP2X5QqiAQI7P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGgTJwVD%2F12Vlgw4kyrcA8ST8YewvqkDgnbaTHaqFH25OpBW6DhC9q%2B6DJoqvkRN6Fe9KlFBhO7GqxbGcuqsDawXnbtqPuEe3k6wYZalOqKb5WdUTRgKxZYrKOaLsxcy8%2FEQLw9THStDIAcayanFUgyeHytMKu1xVQxarIXEEUUtf2wNaRyh90LMITXj1BjuohP6xtA6uIUL6vl3ypKmIzXKzmV6gmXk0BQm01w1Z%2B6MikXU7CHwUmcyUAjCDEdHJp2eYxkETX%2FtPAMLw6KBJCXh8Mjp3LktVAV%2B2POo3Fxwu1NqUqDLj4Udr7tuRPAPa0uFAsVWt%2Fg4gpG%2FBZkz2EKoe0BY2OBYQnqbqgDYWzaHcgOh2WKRk%2FNd8zLHwNI7fgfpk0rTadzDjwzGcvnab1RN9QFn0%2FSaMbxSHG0YNFaa4fQP9UnYnznPv8Mm0MGpRnyMwPkXTymr3vMBBDS7q%2BHdxaCJqDMNwkcUeNBOPpQ4Gf16E4sHN0FEYYBOmjMAHu69DwDPgkO%2BcDl2hoU%2FIPgRTT4ez2x1IYkiTYnoa8Yi%2BL%2BSsQV4fq%2Fj%2FYKfm1s3zgl41C%2FDJZ8C%2Bkod2dlKcG4KRLINYEto84QfvURw8w8KmPoAD1pk4iVJa%2BPppcZcoBk9d%2FaJcqiRhGvXMOW66skGOqUBHOnJyjWm1IUzEoFHk6THSywMM8VwJdciW%2BaGk8ZYSg9sbAXLcEsiP%2B5d28hjE2%2B1o92CcJjOrOMEW4s8KzhyPhBGX21VdmeReUNcGSeC0%2BoI0f72Q%2FU6MiMHKOBzqGnQSzr0U0quAK7EBXPPA8S65SoP47zQncBIOa3X0WZPRE1j4WlOoLShkRw6VTgnJl635DErcHqZF8HAH31boW7pnoBTnOU6&X-Amz-Signature=5095f3791b9bf8baab3b8620ebab73177b36bb990983d46836c02cf2fd851a50&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2025-12-11T10:49:58.068Z"
+}
