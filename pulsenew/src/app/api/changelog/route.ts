@@ -4,6 +4,9 @@ import { NextResponse } from 'next/server';
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const DATABASE_ID = '2c10645fff30803d97b1e65ad67af91d';
 
+// Force dynamic rendering for this API route
+export const dynamic = 'force-dynamic';
+
 // Cache configuration - revalidate every 5 minutes
 export const revalidate = 300;
 
