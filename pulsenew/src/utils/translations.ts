@@ -17,6 +17,7 @@ export const translations: Translations = {
   pricing: { en: 'Pricing', nl: 'Prijzen' },
   team: { en: 'Team', nl: 'Team' },
   blog: { en: 'Blog', nl: 'Blog' },
+  changelog: { en: 'Changelog', nl: 'Changelog' },
   docs: { en: 'Docs', nl: 'Docs' },
   register: { en: 'Sign up', nl: 'Registreren' },
   login: { en: 'Log in', nl: 'Inloggen' },

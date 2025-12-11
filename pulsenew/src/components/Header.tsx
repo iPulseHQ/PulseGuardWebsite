@@ -116,6 +116,9 @@ export default function Header() {
           <Link href="/blog" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('blog')}
           </Link>
+          <Link href="/changelog" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
+            {t('changelog')}
+          </Link>
           <a href="https://docs.ipulse.one/" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-white dark:text-gray-300 font-medium hover:bg-white/10 dark:hover:bg-black rounded-xl transition-all duration-200">
             {t('docs')}
           </a>
@@ -272,6 +275,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('blog')}
+            </Link>
+            <Link 
+              href="/changelog" 
+              className="block py-3 px-4 text-black dark:text-foreground font-medium hover:bg-gray-100 dark:hover:bg-input/50 rounded-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('changelog')}
             </Link>
             <a 
               href="https://docs.ipulse.one/" 
