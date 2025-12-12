@@ -105,7 +105,6 @@ export const translations: Translations = {
   followUs: { en: 'Follow us', nl: 'Volg ons' },
 
   // Footer groups
-  footerRateUs: { en: 'Rate us on Product Hunt', nl: 'Beoordeel ons op Product Hunt' },
   footerLinks: { en: 'Links', nl: 'Links' },
   footerPlatform: { en: 'Platform', nl: 'Platform' },
   footerSupport: { en: 'Support', nl: 'Ondersteuning' },

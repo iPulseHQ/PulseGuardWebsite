@@ -13,28 +13,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-gray-200 dark:border-white/10 text-gray-900 dark:text-white pt-20 pb-12 mt-32">
+    <footer className="relative border-t border-gray-200 dark:border-white/10 text-gray-900 dark:text-white pt-12 pb-8 mt-20">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
 
-        {/* ProductHunt Badge */}
-        <div className="text-center mb-16">
-          <div className="inline-block bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">{t('footerRateUs')}</h3>
-            <a href="https://www.producthunt.com/products/pulseguard-2/reviews" target="_blank" rel="noopener noreferrer" className="inline-block hover:scale-105 transition-transform duration-300">
-              <Image
-                src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1074601&theme=dark"
-                alt="PulseGuard - Complete monitoring solution for websites, devices & services | Product Hunt"
-                width={250}
-                height={54}
-                unoptimized
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
           {/* Company Info */}
-          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
+          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
             <div className="mb-6">
               <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
                 <Image
@@ -53,12 +37,12 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 text-sm leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm leading-relaxed">
               {t('homeSection1Desc')}
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-3 mb-8">
+            <div className="flex gap-3 mb-6">
               <a
                 href="https://www.linkedin.com/company/107398117/"
                 className="bg-gray-900 dark:bg-white/10 backdrop-blur-sm p-3 rounded-xl hover:bg-gray-800 dark:hover:bg-white/20 transition-all duration-300 group"
@@ -118,9 +102,9 @@ export default function Footer() {
           </div>
           
           {/* Links */}
-          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerLinks')}</h4>
-            <ul className="space-y-4">
+          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{t('footerLinks')}</h4>
+            <ul className="space-y-3">
               <li>
                 <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
@@ -155,9 +139,9 @@ export default function Footer() {
           </div>
           
           {/* Platform */}
-          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerPlatform')}</h4>
-            <ul className="space-y-4">
+          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{t('footerPlatform')}</h4>
+            <ul className="space-y-3">
               <li>
                 <a href="https://guard.ipulse.one" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
@@ -192,9 +176,9 @@ export default function Footer() {
           </div>
           
           {/* Support */}
-          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-            <h4 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">{t('footerSupport')}</h4>
-            <ul className="space-y-4">
+          <div className="bg-gray-100 dark:bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{t('footerSupport')}</h4>
+            <ul className="space-y-3">
               <li>
                 <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
@@ -223,8 +207,8 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-200 dark:border-white/10 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-gray-200 dark:border-white/10 pt-6 mt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 dark:text-gray-400 text-sm text-center md:text-left">
               &copy; {new Date().getFullYear()} iPulse {t('footerIsPartOf')}{" "}
               <a href="https://imdigital.info" className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors font-medium">

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge, Star } from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter, Monitor, FileText, Building2, ArrowRight, Shield, Zap, BarChart3, Clock, CheckCircle2, Users, Lock, Bell, Activity, TrendingUp, Globe2, Sparkles, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "@/hooks/useTranslation";
