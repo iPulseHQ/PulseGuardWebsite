@@ -41,33 +41,38 @@ interface NotionPage {
   };
 }
 
+interface NotionRichText {
+  plain_text: string;
+  href?: string | null;
+}
+
 interface NotionBlock {
   id: string;
   type: string;
   has_children?: boolean;
   paragraph?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   heading_1?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   heading_2?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   heading_3?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   bulleted_list_item?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   numbered_list_item?: {
-    rich_text: Array<{ plain_text: string }>;
+    rich_text: Array<NotionRichText>;
   };
   image?: {
     type: 'external' | 'file';
     external?: { url: string };
     file?: { url: string };
-    caption?: Array<{ plain_text: string }>;
+    caption?: Array<NotionRichText>;
   };
   video?: {
     type: 'external' | 'file';
@@ -88,9 +93,15 @@ export interface ChangelogEntry {
   content: ChangelogContent[];
 }
 
+export interface RichTextSegment {
+  text: string;
+  href?: string;
+}
+
 export interface ChangelogContent {
   type: 'paragraph' | 'heading_1' | 'heading_2' | 'heading_3' | 'bulleted_list_item' | 'numbered_list_item' | 'image' | 'video';
   text?: string;
+  richText?: RichTextSegment[];
   url?: string;
   caption?: string;
 }
@@ -153,6 +164,15 @@ async function fetchNotionDatabase(forceRefresh?: boolean): Promise<NotionPage[]
   }
 }
 
+function parseRichText(richTextArray: NotionRichText[]): { text: string; richText: RichTextSegment[] } {
+  const text = richTextArray.map(t => t.plain_text).join('');
+  const richText: RichTextSegment[] = richTextArray.map(t => ({
+    text: t.plain_text,
+    ...(t.href ? { href: t.href } : {})
+  }));
+  return { text, richText };
+}
+
 async function fetchPageContent(pageId: string): Promise<ChangelogContent[]> {
   if (!NOTION_API_KEY) return [];
 
@@ -191,28 +211,52 @@ async function fetchPageContent(pageId: string): Promise<ChangelogContent[]> {
 
       switch (block.type) {
         case 'paragraph':
-          content.type = 'paragraph';
-          content.text = block.paragraph?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.paragraph?.rich_text) {
+            const parsed = parseRichText(block.paragraph.rich_text);
+            content.type = 'paragraph';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'heading_1':
-          content.type = 'heading_1';
-          content.text = block.heading_1?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.heading_1?.rich_text) {
+            const parsed = parseRichText(block.heading_1.rich_text);
+            content.type = 'heading_1';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'heading_2':
-          content.type = 'heading_2';
-          content.text = block.heading_2?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.heading_2?.rich_text) {
+            const parsed = parseRichText(block.heading_2.rich_text);
+            content.type = 'heading_2';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'heading_3':
-          content.type = 'heading_3';
-          content.text = block.heading_3?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.heading_3?.rich_text) {
+            const parsed = parseRichText(block.heading_3.rich_text);
+            content.type = 'heading_3';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'bulleted_list_item':
-          content.type = 'bulleted_list_item';
-          content.text = block.bulleted_list_item?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.bulleted_list_item?.rich_text) {
+            const parsed = parseRichText(block.bulleted_list_item.rich_text);
+            content.type = 'bulleted_list_item';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'numbered_list_item':
-          content.type = 'numbered_list_item';
-          content.text = block.numbered_list_item?.rich_text.map(t => t.plain_text).join('') || '';
+          if (block.numbered_list_item?.rich_text) {
+            const parsed = parseRichText(block.numbered_list_item.rich_text);
+            content.type = 'numbered_list_item';
+            content.text = parsed.text;
+            content.richText = parsed.richText;
+          }
           break;
         case 'image':
           content.type = 'image';
