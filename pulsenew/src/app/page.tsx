@@ -60,28 +60,6 @@ export default function Home() {
     { value: "24/6", label: "Support" }
   ];
 
-  const testimonials = [
-    {
-      author: "Lisa de Vries",
-      role: "CTO, Noordwind",
-      rating: 5,
-      quote: "We zien storingen vanuit meerdere locaties binnen seconden. Het team weet meteen wat er misgaat en waar we moeten kijken."
-    },
-    {
-      author: "Jeroen Bakker",
-      role: "Ops Lead, Delta Hosting",
-      rating: 5,
-      quote: "SSL-verlopen en DNS-wijzigingen worden nu vroeg gesignaleerd. Minder nachtelijke paniek, meer rust in de operatie."
-    },
-    {
-      author: "Sanne Willems",
-      role: "Product Manager, Fintechly",
-      rating: 5,
-      quote: "De dashboards en rapporten zijn begrijpelijk voor het MT. We onderbouwen beslissingen met data in plaats van buikgevoel."
-    }
-  ];
-
-
   return (
     <>
       <script
@@ -449,7 +427,7 @@ export default function Home() {
                                       <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">75%</Badge>
                                     </div>
                                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
-                                      <div className="bg-purple-600 h-1.5 sm:h-2 rounded-full" style={{width: '75%'}}></div>
+                                      <div className="bg-purple-600 h-1.5 sm:h-2 rounded-full w-3/4" />
                                     </div>
                                   </div>
                                   <div className="bg-gray-50 dark:bg-black rounded-lg p-2 sm:p-3 border border-gray-200 dark:border-gray-700">
@@ -458,7 +436,7 @@ export default function Home() {
                                       <Badge variant="secondary" className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5">45%</Badge>
                                     </div>
                                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 sm:h-2">
-                                      <div className="bg-blue-600 h-1.5 sm:h-2 rounded-full" style={{width: '45%'}}></div>
+                                      <div className="bg-blue-600 h-1.5 sm:h-2 rounded-full w-[45%]" />
                                     </div>
                                   </div>
                                 </div>

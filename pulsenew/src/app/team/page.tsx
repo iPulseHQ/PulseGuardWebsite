@@ -1,8 +1,8 @@
 "use client";
-import { Mail, Users, Award, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import { teamMembers } from "@/data/team";
 import { useTranslation } from "@/hooks/useTranslation";
-import RollingGallery from "@/components/RollingGallery";
 
 export default function Team() {
   const { t } = useTranslation();
@@ -19,49 +19,87 @@ export default function Team() {
         </h1>
       </section>
 
-      {/* Rolling Gallery */}
-      <section className="relative max-w-7xl mx-auto px-4 mb-20">
-        <RollingGallery autoplay={true} pauseOnHover={true} teamMembers={teamMembers} />
-      </section>
+      {/* Team Grid */}
+      <section className="relative max-w-7xl mx-auto px-4 mb-14 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {teamMembers.map((member) => (
+            <div
+              key={member.email ?? member.name}
+              className="group relative bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-500 border border-gray-200 dark:border-white/10"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-100/50 dark:from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Company Info */}
-      <section className="relative max-w-7xl mx-auto px-4 py-20">
-        <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-gray-200 dark:border-white/10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About iPulse</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
-              iPulse is your all-in-one digital business platform. We combine monitoring, file management, and business tools to help modern teams work smarter and faster.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-gray-100 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 dark:bg-white/10 rounded-2xl mb-4">
-                <Users className="w-8 h-8 text-gray-900 dark:text-white" />
+              <div className="relative h-64 bg-black/20 overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               </div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">4</div>
-              <div className="text-gray-600 dark:text-gray-300">{t('teamMembersLabel')}</div>
-            </div>
-            <div className="text-center bg-gray-100 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 dark:bg-white/10 rounded-2xl mb-4">
-                <TrendingUp className="w-8 h-8 text-gray-900 dark:text-white" />
+
+              <div className="relative z-10 p-6">
+                <div className="text-lg font-bold text-gray-900 dark:text-white">
+                  {member.name}
+                </div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                  {member.role}
+                </div>
+
+                <div className="mt-5 flex items-center gap-2">
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 transition-colors"
+                    >
+                      <Linkedin className="h-4 w-4 text-gray-900 dark:text-white" />
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 transition-colors"
+                    >
+                      <Github className="h-4 w-4 text-gray-900 dark:text-white" />
+                    </a>
+                  )}
+                  {member.instagram && (
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-white/5 dark:hover:bg-white/10 border border-gray-200 dark:border-white/10 transition-colors"
+                    >
+                      <Instagram className="h-4 w-4 text-gray-900 dark:text-white" />
+                    </a>
+                  )}
+                  {member.email && (
+                    <a
+                      href={`mailto:${member.email}`}
+                      aria-label="Email"
+                      className="ml-auto inline-flex items-center gap-2 rounded-xl bg-gray-900 text-white dark:bg-white dark:text-black px-3 py-2 text-sm font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                    >
+                      <Mail className="h-4 w-4" />
+                      Email
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">1000+</div>
-              <div className="text-gray-600 dark:text-gray-300">{t('monitoredServicesLabel')}</div>
             </div>
-            <div className="text-center bg-gray-100 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-white/10 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-200 dark:bg-white/10 rounded-2xl mb-4">
-                <Award className="w-8 h-8 text-gray-900 dark:text-white" />
-              </div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">99.9%</div>
-              <div className="text-gray-600 dark:text-gray-300">{t('platformUptimeLabel')}</div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Hiring CTA */}
-      <section className="relative max-w-4xl mx-auto px-4 py-20 text-center">
+      <section className="relative max-w-4xl mx-auto px-4 pt-10 pb-12 sm:pt-12 sm:pb-14 text-center">
         <div className="bg-gray-50 dark:bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">{t('joinOurTeamTitle')}</h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">{t('joinOurTeamDesc')}</p>

@@ -11,7 +11,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     name: "Michan van der Hoek",
-    role: "Developer & CEO",
+    role: "CEO & Developer",
     image: "/assets/team/michan.jpeg",
     linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
     github: "https://github.com/IAMichan",
@@ -19,15 +19,15 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Arjan den Hartog",
-    role: "Developer & CTO",
-    image: "/assets/team/arjan.jpeg",
+    role: "CTO & Developer",
+    image: "/assets/team/arjan.jpg",
     linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
     github: "https://github.com/ArjanDenHartog",
     email: "arjan@pulseguard.pro"
   },
   {
     name: "Noah van den Broek",
-    role: "Marketing & CMO",
+    role: "CMO & Marketing",
     image: "/assets/team/noah.jpeg",
     linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
     instagram: "https://www.instagram.com/noahvandenbroek_/",
