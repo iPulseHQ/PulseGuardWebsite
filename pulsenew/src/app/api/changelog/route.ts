@@ -1,13 +1,27 @@
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 // Notion API configuration
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
-const DATABASE_ID = '2c10645fff30803d97b1e65ad67af91d';
+const DATABASE_ID = process.env.NOTION_CHANGELOG_DATABASE_ID || '2c10645fff30803d97b1e65ad67af91d';
 
 // Cache configuration - revalidate every 5 minutes
 export const revalidate = 300;
+
+const CORS_HEADERS: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '86400',
+};
+
+const DEFAULT_CACHE_HEADERS: Record<string, string> = {
+  // Allow CDN/proxy caching while keeping it reasonably fresh.
+  // Next's `revalidate` still applies internally.
+  'Cache-Control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400',
+};
 
 interface NotionProperty {
   type: string;
@@ -30,6 +44,7 @@ interface NotionPage {
 interface NotionBlock {
   id: string;
   type: string;
+  has_children?: boolean;
   paragraph?: {
     rich_text: Array<{ plain_text: string }>;
   };
@@ -80,6 +95,21 @@ export interface ChangelogContent {
   caption?: string;
 }
 
+function jsonWithCors(data: unknown, init?: { status?: number; headers?: Record<string, string> }) {
+  const response = NextResponse.json(data, { status: init?.status ?? 200 });
+  for (const [key, value] of Object.entries(CORS_HEADERS)) response.headers.set(key, value);
+  for (const [key, value] of Object.entries(DEFAULT_CACHE_HEADERS)) response.headers.set(key, value);
+  if (init?.headers) {
+    for (const [key, value] of Object.entries(init.headers)) response.headers.set(key, value);
+  }
+  return response;
+}
+
+function normalizeNotionId(id: string): string {
+  // Notion endpoints accept both dashed and non-dashed UUIDs.
+  return id.replace(/-/g, '');
+}
+
 async function fetchNotionDatabase(forceRefresh?: boolean): Promise<NotionPage[]> {
   if (!NOTION_API_KEY) {
     console.error('NOTION_API_KEY is not set');
@@ -127,20 +157,36 @@ async function fetchPageContent(pageId: string): Promise<ChangelogContent[]> {
   if (!NOTION_API_KEY) return [];
 
   try {
-    const response = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=100`, {
-      headers: {
-        'Authorization': `Bearer ${NOTION_API_KEY}`,
-        'Notion-Version': '2022-06-28',
-      },
-      next: { revalidate: 300 },
-    });
+    const allBlocks: NotionBlock[] = [];
+    let cursor: string | null = null;
 
-    if (!response.ok) return [];
+    // Pagination for blocks
+    for (;;) {
+      const url = new URL(`https://api.notion.com/v1/blocks/${pageId}/children`);
+      url.searchParams.set('page_size', '100');
+      if (cursor) url.searchParams.set('start_cursor', cursor);
 
-    const data = await response.json();
-    const blocks = data.results as NotionBlock[];
+      const response = await fetch(url.toString(), {
+        headers: {
+          'Authorization': `Bearer ${NOTION_API_KEY}`,
+          'Notion-Version': '2022-06-28',
+        },
+        next: { revalidate: 300 },
+      });
 
-    return blocks.map((block) => {
+      if (!response.ok) return [];
+      const data = await response.json();
+      const blocks = (data.results ?? []) as NotionBlock[];
+      allBlocks.push(...blocks);
+
+      if (!data.has_more) break;
+      cursor = data.next_cursor;
+      if (!cursor) break;
+    }
+
+    // Note: we intentionally do not recursively pull nested children here
+    // to avoid unexpected large Notion reads. (Can be added later if needed.)
+    return allBlocks.map((block) => {
       const content: ChangelogContent = { type: 'paragraph' };
 
       switch (block.type) {
@@ -213,14 +259,25 @@ function getVersionColor(version: string | null): string {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const appFilter = searchParams.get('app');
-  const withContent = searchParams.get('content') === 'true';
+  // Default: include content (needed for external consumers)
+  const withContent = searchParams.get('content') !== 'false';
   const pageId = searchParams.get('pageId');
   const forceRefresh = searchParams.get('refresh');
+  const limitParam = searchParams.get('limit');
+  const limit = limitParam ? Math.max(1, Math.min(200, Number(limitParam))) : undefined;
+
+  if (!NOTION_API_KEY) {
+    return jsonWithCors(
+      { error: 'NOTION_API_KEY is not set on the server' },
+      { status: 500 }
+    );
+  }
 
   // If requesting specific page content
   if (pageId) {
-    const content = await fetchPageContent(pageId);
-    return NextResponse.json({ content });
+    const normalizedPageId = normalizeNotionId(pageId);
+    const content = await fetchPageContent(normalizedPageId);
+    return jsonWithCors({ content });
   }
 
   const pages = await fetchNotionDatabase(!!forceRefresh);
@@ -231,8 +288,7 @@ export async function GET(request: Request) {
       const app = page.properties.App?.select?.name || '';
       const version = page.properties.Nummer?.select?.name || '';
       
-      // Format page ID for content fetching
-      const pageIdFormatted = page.id.replace(/-/g, '');
+      const pageIdFormatted = normalizeNotionId(page.id);
       
       const entry: ChangelogEntry = {
         id: page.id,
@@ -266,8 +322,21 @@ export async function GET(request: Request) {
     return new Date(b.createdTime).getTime() - new Date(a.createdTime).getTime();
   });
 
-  return NextResponse.json({ 
+  if (limit) entries = entries.slice(0, limit);
+
+  return jsonWithCors({
     entries,
     lastUpdated: new Date().toISOString(),
+    source: 'notion',
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      ...DEFAULT_CACHE_HEADERS,
+    },
   });
 }
