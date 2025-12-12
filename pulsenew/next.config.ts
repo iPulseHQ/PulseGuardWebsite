@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // NOTE: We run this site as a Next.js server (supports Route Handlers like /api/changelog).
+  // Static export (`output: 'export'`) disables `next start` and API routes.
   trailingSlash: true,
-  // Headers, redirects and rewrites don't work with 'export' mode
-  // They need to be handled by your hosting provider or CDN
+
+  // Headers, redirects and rewrites can be enabled when running as a server.
   /*
   async headers() {
     return [

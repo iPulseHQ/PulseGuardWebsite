@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 // Notion API configuration
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const DATABASE_ID = '2c10645fff30803d97b1e65ad67af91d';
