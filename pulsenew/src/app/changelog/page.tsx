@@ -21,9 +21,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+interface RichTextSegment {
+  text: string;
+  href?: string;
+}
+
 interface ChangelogContent {
   type: 'paragraph' | 'heading_1' | 'heading_2' | 'heading_3' | 'bulleted_list_item' | 'numbered_list_item' | 'image' | 'video';
   text?: string;
+  richText?: RichTextSegment[];
   url?: string;
   caption?: string;
 }
@@ -178,43 +184,67 @@ export default function Changelog() {
     });
   };
 
+  // Helper function to render rich text with links
+  const renderRichText = (block: ChangelogContent) => {
+    if (!block.richText || block.richText.length === 0) {
+      return block.text || '';
+    }
+
+    return block.richText.map((segment, segmentIndex) => {
+      if (segment.href) {
+        return (
+          <a
+            key={segmentIndex}
+            href={segment.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-400 hover:text-orange-300 underline transition-colors"
+          >
+            {segment.text}
+          </a>
+        );
+      }
+      return <span key={segmentIndex}>{segment.text}</span>;
+    });
+  };
+
   const renderContent = (content: ChangelogContent[]) => {
     return content.map((block, index) => {
       switch (block.type) {
         case 'paragraph':
           return block.text ? (
             <p key={index} className="text-gray-300 mb-3 leading-relaxed">
-              {block.text}
+              {renderRichText(block)}
             </p>
           ) : null;
         case 'heading_1':
           return (
             <h3 key={index} className="text-2xl font-bold text-white mb-4 mt-6">
-              {block.text}
+              {renderRichText(block)}
             </h3>
           );
         case 'heading_2':
           return (
             <h4 key={index} className="text-xl font-semibold text-white mb-3 mt-5">
-              {block.text}
+              {renderRichText(block)}
             </h4>
           );
         case 'heading_3':
           return (
             <h5 key={index} className="text-lg font-medium text-white mb-2 mt-4">
-              {block.text}
+              {renderRichText(block)}
             </h5>
           );
         case 'bulleted_list_item':
           return (
             <li key={index} className="text-gray-300 ml-4 mb-1 list-disc">
-              {block.text}
+              {renderRichText(block)}
             </li>
           );
         case 'numbered_list_item':
           return (
             <li key={index} className="text-gray-300 ml-4 mb-1 list-decimal">
-              {block.text}
+              {renderRichText(block)}
             </li>
           );
         case 'image':

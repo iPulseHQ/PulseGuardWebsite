@@ -44,6 +44,10 @@ interface NotionPage {
 interface NotionRichText {
   plain_text: string;
   href?: string | null;
+  text?: {
+    content?: string;
+    link?: { url: string } | null;
+  };
 }
 
 interface NotionBlock {
@@ -104,6 +108,7 @@ export interface ChangelogContent {
   richText?: RichTextSegment[];
   url?: string;
   caption?: string;
+  links?: Array<{ text: string; url: string }>;
 }
 
 function jsonWithCors(data: unknown, init?: { status?: number; headers?: Record<string, string> }) {
@@ -121,10 +126,33 @@ function normalizeNotionId(id: string): string {
   return id.replace(/-/g, '');
 }
 
+function notionRichTextToParts(richText?: NotionRichText[]): {
+  text: string;
+  richText: RichTextSegment[];
+  links: Array<{ text: string; url: string }>;
+} {
+  const segments: RichTextSegment[] = [];
+  const links: Array<{ text: string; url: string }> = [];
+
+  for (const rt of richText ?? []) {
+    const text = rt.plain_text ?? '';
+    const url = rt.href ?? rt.text?.link?.url ?? undefined;
+
+    segments.push({ text, href: url });
+    if (url) links.push({ text, url });
+  }
+
+  // Provide a convenient single-string too. If links exist, encode as markdown.
+  const text = segments
+    .map((s) => (s.href ? `[${s.text}](${s.href})` : s.text))
+    .join('');
+
+  return { text, richText: segments, links };
+}
+
 async function fetchNotionDatabase(forceRefresh?: boolean): Promise<NotionPage[]> {
   if (!NOTION_API_KEY) {
-    console.error('NOTION_API_KEY is not set');
-    return [];
+    throw new Error('NOTION_API_KEY is not set');
   }
 
   try {
@@ -152,15 +180,15 @@ async function fetchNotionDatabase(forceRefresh?: boolean): Promise<NotionPage[]
     });
 
     if (!response.ok) {
-      console.error('Notion API error:', response.statusText);
-      return [];
+      const body = await response.text().catch(() => '');
+      throw new Error(`Notion API error (${response.status}): ${response.statusText}${body ? ` - ${body}` : ''}`);
     }
 
     const data = await response.json();
     return data.results as NotionPage[];
   } catch (error) {
     console.error('Error fetching Notion database:', error);
-    return [];
+    throw error;
   }
 }
 
