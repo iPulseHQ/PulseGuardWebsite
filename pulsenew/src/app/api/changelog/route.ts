@@ -19,8 +19,8 @@ const CORS_HEADERS: Record<string, string> = {
 
 const DEFAULT_CACHE_HEADERS: Record<string, string> = {
   // Allow CDN/proxy caching while keeping it reasonably fresh.
-  // Next's `revalidate` still applies internally.
-  'Cache-Control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=86400',
+  // Check Notion every 5 minutes for new items.
+  'Cache-Control': 'public, max-age=60, s-maxage=300, stale-while-revalidate=300',
 };
 
 interface NotionProperty {
