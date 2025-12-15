@@ -1,8 +1,0 @@
-Contact: mailto:security@pulseguard.pro
-Contact: https://pulseguard.pro/security
-Expires: 2026-08-25T12:00:00.000Z
-Acknowledgments: https://pulseguard.pro/security/hall-of-fame
-Preferred-Languages: en, nl
-Canonical: https://pulseguard.pro/.well-known/security.txt
-Policy: https://pulseguard.pro/security/disclosure-policy
-Hiring: https://pulseguard.pro/careers

@@ -1,9 +1,0 @@
-<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="500" fill="#1e1e1e"/>
-  <text x="400" y="250" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle">
-    Replace with PulseGuard device monitoring interface
-  </text>
-  <text x="400" y="290" font-family="Arial" font-size="16" fill="#aaaaaa" text-anchor="middle">
-    This should show server statistics and hardware resource monitoring
-  </text>
-</svg> 
