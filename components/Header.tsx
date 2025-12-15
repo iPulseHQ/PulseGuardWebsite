@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Moon, Sun, Globe, Menu, X, ChevronDown, Zap, Upload } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -48,11 +49,20 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">i</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">Pulse</span>
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            {mounted && (
+              <Image
+                src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
+                alt="iPulse Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
+            )}
+            {!mounted && (
+              <div className="h-8 w-[120px]" />
+            )}
           </Link>
 
           {/* Desktop Navigation */}

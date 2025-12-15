@@ -1,11 +1,20 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const footerLinks = {
     product: [
@@ -30,11 +39,19 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">i</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">Pulse</span>
+            <Link href="/" className="flex items-center mb-4">
+              {mounted && (
+                <Image
+                  src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
+                  alt="iPulse Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              )}
+              {!mounted && (
+                <div className="h-8 w-[120px]" />
+              )}
             </Link>
             <p className="text-sm text-muted-foreground">
               Monitor everything. Miss nothing.
