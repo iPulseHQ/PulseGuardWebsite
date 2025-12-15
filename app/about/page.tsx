@@ -2,8 +2,9 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Shield, Zap, Users, Target, Heart, TrendingUp } from "lucide-react";
+import { Shield, Zap, Users, Target, Heart, TrendingUp, Linkedin, Github, Instagram, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { teamMembers } from "@/pulsenew/src/data/team";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -46,29 +47,6 @@ export default function AboutPage() {
     { number: "10K+", label: t("monitorsActive") },
     { number: "50+", label: t("countries") },
     { number: "24/7", label: t("support") },
-  ];
-
-  const team = [
-    {
-      name: "Sarah Johnson",
-      role: t("ceo"),
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-    },
-    {
-      name: "Michael Chen",
-      role: t("cto"),
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    },
-    {
-      name: "Emma Williams",
-      role: t("coo"),
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-    },
-    {
-      name: "David Martinez",
-      role: t("headOfEngineering"),
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    },
   ];
 
   return (
