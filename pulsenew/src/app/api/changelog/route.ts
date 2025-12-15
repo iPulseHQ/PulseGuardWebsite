@@ -5,7 +5,7 @@ export const runtime = 'nodejs';
 
 // Notion API configuration
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
-const DATABASE_ID = process.env.NOTION_CHANGELOG_DATABASE_ID || '2c10645fff30803d97b1e65ad67af91d';
+const DATABASE_ID = '2ca4306c6bc6815882a2f4985ed7e029';
 
 // Cache configuration - revalidate every 5 minutes
 export const revalidate = 300;
