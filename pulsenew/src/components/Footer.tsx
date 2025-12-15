@@ -180,7 +180,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">{t('footerSupport')}</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://arjandh.notion.site/1ff0645fff30819ab883fe1e29743e7c?pvs=105" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
+                <a href="https://ipulse.notion.site/2ca4306c6bc6816aa871d3413fdac5ad?pvs=105" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 group-hover:bg-gray-900 dark:group-hover:bg-white transition-colors"></span>
                   {t('footerHelpCenter')}
                 </a>

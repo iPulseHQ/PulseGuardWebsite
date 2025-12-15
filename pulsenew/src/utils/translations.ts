@@ -81,6 +81,7 @@ export const translations: Translations = {
   happyCustomers: { en: 'Happy Customers', nl: 'Tevreden Klanten' },
   avgResponse: { en: 'Avg Response', nl: 'Gem. Respons' },
   support: { en: 'Support', nl: 'Support' },
+  supportDesc: { en: 'Get help and support for all iPulse products', nl: 'Krijg hulp en ondersteuning voor alle iPulse producten' },
 
   // Dashboard mock text
   recentIssues: { en: 'Recent Issues', nl: 'Recente Problemen' },
