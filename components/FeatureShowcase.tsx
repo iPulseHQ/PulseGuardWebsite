@@ -1,0 +1,552 @@
+"use client";
+
+import { useLanguage } from "@/lib/LanguageContext";
+import {
+  Activity,
+  Shield,
+  Globe2,
+  Zap,
+  AlertTriangle,
+  BarChart3,
+  Eye,
+  Film,
+  Code,
+  Lock,
+  Scan,
+  Bell,
+  Clock,
+  CheckCircle,
+  XCircle,
+  TrendingUp
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+interface Feature {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  color: string;
+  bgColor: string;
+  preview: React.ReactNode;
+}
+
+export default function FeatureShowcase() {
+  const { t } = useLanguage();
+  const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
+
+  const features: Feature[] = [
+    {
+      icon: Activity,
+      title: "Real-time Uptime Monitoring",
+      description: "Monitor your websites 24/7 from multiple global locations with instant downtime detection and comprehensive uptime history.",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+              <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">All Systems Operational</span>
+            </div>
+            <span className="text-xs font-medium text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">99.9%</span>
+          </div>
+          <div className="space-y-2">
+            <div className="flex justify-between items-center text-xs">
+              <span className="text-gray-600 dark:text-gray-400">Response time</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">124ms</span>
+            </div>
+            <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "75%" }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="h-full bg-emerald-500 rounded-full"
+              />
+            </div>
+            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 pt-1">
+              <span>Last checked: 30s ago</span>
+              <span>Next: 30s</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Shield,
+      title: "SSL Certificate Monitoring",
+      description: "Automatic SSL/TLS certificate monitoring with expiration alerts. Track certificate issuer, validity, and security grades in real-time.",
+      color: "text-blue-600",
+      bgColor: "bg-blue-50 dark:bg-blue-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="flex items-center gap-2 mb-3">
+            <Lock className="h-4 w-4 text-blue-600" />
+            <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">SSL Certificate Status</span>
+          </div>
+          <div className="space-y-2 text-xs">
+            <div className="flex justify-between items-center p-2 bg-blue-50 dark:bg-blue-950/20 rounded">
+              <span className="text-gray-600 dark:text-gray-400">Expires in</span>
+              <span className="font-semibold text-blue-600">90 days</span>
+            </div>
+            <div className="flex justify-between items-center p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
+              <span className="text-gray-600 dark:text-gray-400">Security Grade</span>
+              <span className="font-bold text-emerald-600">A+</span>
+            </div>
+            <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-800 rounded">
+              <span className="text-gray-600 dark:text-gray-400">Issuer</span>
+              <span className="font-medium text-gray-900 dark:text-gray-100">Let's Encrypt</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Globe2,
+      title: "Multi-Location Monitoring",
+      description: "Monitor from 4 strategic global locations (NL, DE, US, GB) to ensure worldwide availability and detect regional issues instantly.",
+      color: "text-purple-600",
+      bgColor: "bg-purple-50 dark:bg-purple-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Monitoring Locations</div>
+          <div className="space-y-1.5">
+            {[
+              { flag: "🇳🇱", name: "Netherlands", time: "98ms", status: "online" },
+              { flag: "🇩🇪", name: "Germany", time: "112ms", status: "online" },
+              { flag: "🇺🇸", name: "United States", time: "245ms", status: "online" },
+              { flag: "🇬🇧", name: "United Kingdom", time: "134ms", status: "online" },
+            ].map((loc, i) => (
+              <motion.div
+                key={loc.name}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-base">{loc.flag}</span>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{loc.name}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-gray-500">{loc.time}</span>
+                  <CheckCircle className="h-3 w-3 text-emerald-500" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Eye,
+      title: "Accessibility Scanning",
+      description: "WCAG 2.1 compliance scanning with detailed reports. Identify and fix accessibility issues to ensure your site works for everyone.",
+      color: "text-pink-600",
+      bgColor: "bg-pink-50 dark:bg-pink-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">WCAG Compliance</span>
+            <div className="flex items-center gap-1">
+              <span className="text-2xl font-bold text-pink-600">92</span>
+              <span className="text-xs text-gray-500">/100</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-2 text-xs">
+            <div className="p-2 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-900">
+              <div className="font-bold text-red-600 text-lg">2</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Critical</div>
+            </div>
+            <div className="p-2 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-900">
+              <div className="font-bold text-orange-600 text-lg">5</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Major</div>
+            </div>
+            <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-900">
+              <div className="font-bold text-blue-600 text-lg">8</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Minor</div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Scan,
+      title: "DNS Monitoring",
+      description: "Track DNS record changes in real-time. Monitor A, AAAA, MX, TXT, CNAME records and get alerted of unauthorized changes.",
+      color: "text-orange-600",
+      bgColor: "bg-orange-50 dark:bg-orange-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">DNS Records</div>
+          <div className="space-y-1.5 text-xs">
+            {[
+              { type: "A", value: "192.0.2.1", status: "ok" },
+              { type: "AAAA", value: "2001:db8::1", status: "ok" },
+              { type: "MX", value: "mail.example.com", status: "ok" },
+              { type: "TXT", value: "v=spf1 include...", status: "ok" },
+            ].map((record) => (
+              <div key={record.type} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono font-bold text-orange-600 w-12">{record.type}</span>
+                  <span className="text-gray-600 dark:text-gray-400 truncate">{record.value}</span>
+                </div>
+                <CheckCircle className="h-3 w-3 text-emerald-500 flex-shrink-0" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Lock,
+      title: "Security Analysis",
+      description: "Comprehensive security scoring and vulnerability detection. Monitor security headers, SSL configuration, and potential threats.",
+      color: "text-red-600",
+      bgColor: "bg-red-50 dark:bg-red-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">Security Score</span>
+            <span className="text-2xl font-bold text-emerald-600">A</span>
+          </div>
+          <div className="space-y-1.5 text-xs">
+            <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
+              <span className="text-gray-600 dark:text-gray-400">HTTPS Enforced</span>
+              <CheckCircle className="h-3 w-3 text-emerald-500" />
+            </div>
+            <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
+              <span className="text-gray-600 dark:text-gray-400">Security Headers</span>
+              <CheckCircle className="h-3 w-3 text-emerald-500" />
+            </div>
+            <div className="flex items-center justify-between p-2 bg-yellow-50 dark:bg-yellow-950/20 rounded">
+              <span className="text-gray-600 dark:text-gray-400">HSTS Missing</span>
+              <AlertTriangle className="h-3 w-3 text-yellow-500" />
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Film,
+      title: "Filmstrip Analysis",
+      description: "Visual load timeline showing how your page renders over time. Identify rendering bottlenecks and optimize user experience.",
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Page Load Timeline</div>
+          <div className="flex gap-1 mb-2">
+            {[30, 50, 70, 85, 95, 100].map((progress, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex-1 aspect-square bg-indigo-100 dark:bg-indigo-950 rounded border border-indigo-300 dark:border-indigo-800 flex items-center justify-center"
+              >
+                <span className="text-[8px] font-bold text-indigo-600">{progress}%</span>
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex justify-between text-[10px] text-gray-500">
+            <span>0ms</span>
+            <span>500ms</span>
+            <span>1000ms</span>
+            <span>1500ms</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: BarChart3,
+      title: "Resource Timings",
+      description: "Detailed performance metrics for all page resources. Analyze load times, transfer sizes, and optimize resource delivery.",
+      color: "text-cyan-600",
+      bgColor: "bg-cyan-50 dark:bg-cyan-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Top Resources</div>
+          <div className="space-y-2">
+            {[
+              { name: "bundle.js", time: 245, size: "2.1 MB" },
+              { name: "styles.css", time: 89, size: "156 KB" },
+              { name: "image.jpg", time: 156, size: "432 KB" },
+            ].map((resource, i) => (
+              <motion.div
+                key={resource.name}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="space-y-1"
+              >
+                <div className="flex justify-between text-xs">
+                  <span className="font-mono text-gray-700 dark:text-gray-300">{resource.name}</span>
+                  <span className="text-gray-500">{resource.time}ms</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: `${(resource.time / 300) * 100}%` }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className="h-full bg-cyan-500 rounded-full"
+                    />
+                  </div>
+                  <span className="text-[10px] text-gray-500 w-12 text-right">{resource.size}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: AlertTriangle,
+      title: "Incident Management",
+      description: "Automatic incident creation and tracking. Organize incidents by severity, status, and affected services with full timeline views.",
+      color: "text-yellow-600",
+      bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Recent Incidents</div>
+          <div className="space-y-2">
+            {[
+              { title: "Site Downtime", severity: "critical", time: "2m ago", color: "red" },
+              { title: "Slow Response", severity: "warning", time: "15m ago", color: "yellow" },
+              { title: "High CPU Usage", severity: "info", time: "1h ago", color: "blue" },
+            ].map((incident, i) => (
+              <motion.div
+                key={incident.title}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded"
+              >
+                <div className="flex items-center gap-2">
+                  <div className={`h-2 w-2 rounded-full bg-${incident.color}-500`}></div>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{incident.title}</span>
+                </div>
+                <span className="text-[10px] text-gray-500 bg-gray-100 dark:bg-gray-700 px-2 py-0.5 rounded">{incident.time}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Bell,
+      title: "Smart Notifications",
+      description: "Customizable alert channels including email, Slack, Discord, and webhooks. Set up notification rules based on severity and time.",
+      color: "text-teal-600",
+      bgColor: "bg-teal-50 dark:bg-teal-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Alert Channels</div>
+          <div className="space-y-2">
+            {[
+              { name: "Email", icon: "📧", enabled: true },
+              { name: "Slack", icon: "💬", enabled: true },
+              { name: "Discord", icon: "🎮", enabled: false },
+              { name: "Webhook", icon: "🔗", enabled: true },
+            ].map((channel, i) => (
+              <motion.div
+                key={channel.name}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-sm">{channel.icon}</span>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{channel.name}</span>
+                </div>
+                <div className={`h-5 w-9 rounded-full transition-colors ${
+                  channel.enabled ? 'bg-teal-500' : 'bg-gray-300 dark:bg-gray-600'
+                } flex items-center px-0.5`}>
+                  <motion.div
+                    animate={{ x: channel.enabled ? 14 : 0 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    className="h-4 w-4 bg-white rounded-full shadow-sm"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Code,
+      title: "Embeddable Widgets",
+      description: "Share your uptime status with embeddable widgets. Display real-time status on your website or status page.",
+      color: "text-violet-600",
+      bgColor: "bg-violet-50 dark:bg-violet-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Status Widget</div>
+          <div className="p-3 bg-violet-50 dark:bg-violet-950/20 rounded-lg border border-violet-200 dark:border-violet-800">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">Service Status</span>
+              <div className="flex items-center gap-1">
+                <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                <span className="text-xs font-medium text-emerald-600">Operational</span>
+              </div>
+            </div>
+            <div className="space-y-1">
+              {["API", "Website", "Database"].map((service, i) => (
+                <div key={service} className="flex items-center justify-between text-xs">
+                  <span className="text-gray-600 dark:text-gray-400">{service}</span>
+                  <CheckCircle className="h-3 w-3 text-emerald-500" />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-2 text-[10px] text-center text-gray-500">
+            &lt;iframe src="..." /&gt;
+          </div>
+        </div>
+      ),
+    },
+    {
+      icon: Clock,
+      title: "Performance Metrics",
+      description: "Track average response time, P95 latency, and detailed performance statistics. Identify performance trends and optimize accordingly.",
+      color: "text-lime-600",
+      bgColor: "bg-lime-50 dark:bg-lime-950/20",
+      preview: (
+        <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Performance Stats</div>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { label: "Avg Response", value: "124ms", trend: "down" },
+              { label: "P95 Latency", value: "289ms", trend: "down" },
+              { label: "Success Rate", value: "99.9%", trend: "up" },
+              { label: "Total Requests", value: "52.4K", trend: "up" },
+            ].map((metric, i) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: i * 0.1 }}
+                className="p-2 bg-lime-50 dark:bg-lime-950/20 rounded-lg border border-lime-200 dark:border-lime-800"
+              >
+                <div className="text-[10px] text-gray-600 dark:text-gray-400 mb-1">{metric.label}</div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-bold text-gray-900 dark:text-gray-100">{metric.value}</span>
+                  <TrendingUp className={`h-3 w-3 ${
+                    metric.trend === "up" ? "text-emerald-500" : "text-red-500 rotate-180"
+                  }`} />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return (
+    <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium mb-6 shadow-sm">
+              <Zap className="h-4 w-4 text-primary" />
+              <span>{t("powerfulFeatures") || "Powerful Features"}</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
+              {t("featureShowcaseTitle") || "Go way beyond monitoring"}
+            </h2>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("featureShowcaseDesc") || "Everything you need to monitor, analyze, and optimize your websites and applications in one powerful platform"}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            const isSelected = selectedFeature === index;
+
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.05, duration: 0.5 }}
+                viewport={{ once: true }}
+                onMouseEnter={() => setSelectedFeature(index)}
+                onMouseLeave={() => setSelectedFeature(null)}
+                className={`
+                  group relative overflow-hidden rounded-2xl p-6
+                  border-2 transition-all duration-300 ease-out cursor-pointer
+                  ${isSelected
+                    ? `${feature.bgColor} border-primary/50 shadow-2xl shadow-primary/10 scale-[1.02]`
+                    : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg'
+                  }
+                `}
+              >
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className={`
+                    h-14 w-14 rounded-xl flex items-center justify-center mb-4
+                    transition-all duration-300
+                    ${isSelected
+                      ? `${feature.color} bg-white dark:bg-gray-900 shadow-lg scale-110`
+                      : 'bg-muted/50 group-hover:bg-muted'
+                    }
+                  `}>
+                    <Icon className={`h-7 w-7 transition-all duration-300 ${
+                      isSelected ? feature.color : 'text-muted-foreground group-hover:text-foreground'
+                    }`} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className={`
+                    text-lg font-bold mb-2 transition-colors duration-300
+                    ${isSelected ? 'text-foreground' : 'text-foreground/90 group-hover:text-foreground'}
+                  `}>
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className={`
+                    text-sm leading-relaxed transition-colors duration-300 mb-2
+                    ${isSelected ? 'text-foreground/80' : 'text-muted-foreground group-hover:text-foreground/70'}
+                  `}>
+                    {feature.description}
+                  </p>
+
+                  {/* Preview */}
+                  <AnimatePresence>
+                    {isSelected && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        {feature.preview}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+              </motion.div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}

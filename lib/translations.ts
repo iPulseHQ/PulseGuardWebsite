@@ -334,6 +334,14 @@ export const translations = {
     pulseQRCreateAccount: "Create account",
     pulseQROurTeam: "Meet our team",
     pulseQROurTeamDesc: "The passionate people behind PulseQR",
+
+    // Feature Showcase
+    powerfulFeatures: "Powerful Features",
+    featureShowcaseTitle: "Go way beyond monitoring",
+    featureShowcaseDesc: "Everything you need to monitor, analyze, and optimize your websites and applications in one powerful platform",
+    featuresAndTools: "Powerful Features",
+    globalLocations: "Global Monitoring Locations",
+    continuousMonitoring: "Continuous Monitoring",
   },
   nl: {
     // Navigation
@@ -670,6 +678,14 @@ export const translations = {
     pulseQRCreateAccount: "Account aanmaken",
     pulseQROurTeam: "Ontmoet ons team",
     pulseQROurTeamDesc: "De gepassioneerde mensen achter PulseQR",
+
+    // Feature Showcase
+    powerfulFeatures: "Krachtige Features",
+    featureShowcaseTitle: "Ga verder dan alleen monitoring",
+    featureShowcaseDesc: "Alles wat je nodig hebt om je websites en applicaties te monitoren, analyseren en optimaliseren in één krachtig platform",
+    featuresAndTools: "Krachtige Features",
+    globalLocations: "Wereldwijde Monitoring Locaties",
+    continuousMonitoring: "Continue Monitoring",
   },
 };
 
