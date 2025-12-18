@@ -104,7 +104,7 @@ export default function BlogClient({ blogPosts, availableCategories }: BlogClien
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-primary text-primary-foreground text-xs font-semibold">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-background/90 backdrop-blur-sm text-foreground border border-border/50 text-xs font-medium shadow-sm">
                         <Tag className="h-3 w-3" />
                         {post.category}
                       </span>
