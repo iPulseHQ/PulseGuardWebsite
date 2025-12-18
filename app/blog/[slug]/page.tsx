@@ -108,23 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article Content */}
         <section className="pb-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <article
-              className="prose prose-lg dark:prose-invert max-w-none
-                prose-headings:font-bold prose-headings:tracking-tight
-                prose-h1:text-4xl prose-h1:mb-4
-                prose-h2:text-3xl prose-h2:mb-3 prose-h2:mt-8
-                prose-h3:text-2xl prose-h3:mb-2 prose-h3:mt-6
-                prose-p:text-foreground/80 prose-p:leading-relaxed
-                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-foreground prose-strong:font-semibold
-                prose-code:text-primary prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                prose-pre:bg-muted prose-pre:border prose-pre:border-border/50
-                prose-blockquote:border-l-primary prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic
-                prose-ul:list-disc prose-ul:pl-6
-                prose-ol:list-decimal prose-ol:pl-6
-                prose-li:text-foreground/80
-                prose-img:rounded-lg prose-img:shadow-lg"
-            >
+            <article className="prose max-w-none">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw, rehypeSanitize]}

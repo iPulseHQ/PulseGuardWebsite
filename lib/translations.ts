@@ -115,6 +115,14 @@ export const translations = {
     mostPopular: "Most Popular",
     perMonth: "/month",
     startNow: "Start now",
+    pricingFaqPaymentTitle: "What payment methods do you accept?",
+    pricingFaqPaymentDesc: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for annual plans.",
+    pricingFaqChangePlanTitle: "Can I change my plan later?",
+    pricingFaqChangePlanDesc: "Yes! You can upgrade, downgrade, or cancel your plan at any time. Changes take effect immediately and we'll prorate the cost.",
+    pricingFaqTrialTitle: "How does the free trial work?",
+    pricingFaqTrialDesc: "Start with a 14-day free trial on any paid plan. No credit card required. After the trial, choose to upgrade or continue with our free plan.",
+    pricingFaqEnterpriseTitle: "Do you offer enterprise plans?",
+    pricingFaqEnterpriseDesc: "Yes! Our Enterprise plan is fully customizable to meet your specific needs. Contact us for a tailored quote and dedicated support.",
 
     // CTA
     ctaTitle: "Ready to get started?",
@@ -440,6 +448,14 @@ export const translations = {
     mostPopular: "Meest Populair",
     perMonth: "/maand",
     startNow: "Start nu",
+    pricingFaqPaymentTitle: "Welke betaalmethodes accepteren jullie?",
+    pricingFaqPaymentDesc: "We accepteren alle grote creditcards (Visa, MasterCard, American Express), PayPal en bankoverschrijvingen voor jaarplannen.",
+    pricingFaqChangePlanTitle: "Kan ik mijn plan later wijzigen?",
+    pricingFaqChangePlanDesc: "Ja! Je kunt op elk moment upgraden, downgraden of je plan annuleren. Wijzigingen gaan direct in en we verrekenen de kosten naar rato.",
+    pricingFaqTrialTitle: "Hoe werkt de gratis proefperiode?",
+    pricingFaqTrialDesc: "Start met een gratis proefperiode van 14 dagen op elk betaald plan. Geen creditcard vereist. Na de proefperiode kun je upgraden of doorgaan met ons gratis plan.",
+    pricingFaqEnterpriseTitle: "Bieden jullie enterprise plannen aan?",
+    pricingFaqEnterpriseDesc: "Ja! Ons Enterprise plan is volledig aanpasbaar aan jouw specifieke behoeften. Neem contact met ons op voor een offerte op maat en dedicated ondersteuning.",
 
     // CTA
     ctaTitle: "Klaar om te beginnen?",

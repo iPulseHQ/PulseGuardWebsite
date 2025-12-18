@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Globe, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
+import { GB, NL } from "country-flag-icons/react/3x2";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -132,10 +133,15 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === "en" ? "nl" : "en")}
-              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center overflow-hidden p-1"
               aria-label="Toggle language"
+              title={language === "en" ? "Switch to Nederlands" : "Switch to English"}
             >
-              <Globe className="h-4 w-4" />
+              {language === "en" ? (
+                <NL className="w-full h-full object-cover" />
+              ) : (
+                <GB className="w-full h-full object-cover" />
+              )}
             </button>
 
             {/* Theme Toggle */}
@@ -245,7 +251,13 @@ export default function Header() {
                 }}
                 className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all text-left flex items-center gap-2"
               >
-                <Globe className="h-4 w-4" />
+                <div className="w-6 h-4 overflow-hidden rounded-sm border border-border/30">
+                  {language === "en" ? (
+                    <NL className="w-full h-full object-cover" />
+                  ) : (
+                    <GB className="w-full h-full object-cover" />
+                  )}
+                </div>
                 {language === "en" ? "Nederlands" : "English"}
               </button>
               <Link

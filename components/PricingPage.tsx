@@ -4,10 +4,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, X, ArrowRight, Sparkles, Zap, Star, Crown, Rocket } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Pricing() {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
 
   const plans = [
     {
