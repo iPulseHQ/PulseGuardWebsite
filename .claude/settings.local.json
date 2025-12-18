@@ -18,7 +18,8 @@
       "Bash(ls:*)",
       "Bash(npm install:*)",
       "Bash(del getting-started-with-pulseguard.md 5-best-practices-server-monitoring.md waarom-uptime-monitoring-essentieel-is.md nieuwe-features-maart-2024.md)",
-      "Bash(npm uninstall next-mdx-remote)"
+      "Bash(npm uninstall next-mdx-remote)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": []

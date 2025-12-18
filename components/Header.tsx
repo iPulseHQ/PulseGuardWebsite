@@ -251,7 +251,13 @@ export default function Header() {
                 }}
                 className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all text-left flex items-center gap-2"
               >
-                <span className="text-lg">{language === "en" ? "🇳🇱" : "🇬🇧"}</span>
+                <div className="w-6 h-4 overflow-hidden rounded-sm border border-border/30">
+                  {language === "en" ? (
+                    <NL className="w-full h-full object-cover" />
+                  ) : (
+                    <GB className="w-full h-full object-cover" />
+                  )}
+                </div>
                 {language === "en" ? "Nederlands" : "English"}
               </button>
               <Link
