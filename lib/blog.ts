@@ -23,6 +23,7 @@ export interface BlogPostMetadata {
   excerpt: string;
   category: string;
   date: string;
+  formattedDate: string;
   readTime: string;
   image: string;
   author?: string;
@@ -45,12 +46,20 @@ export function getAllPosts(): BlogPostMetadata[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
 
+      const dateStr = data.date || new Date().toISOString();
+      const formattedDate = new Date(dateStr).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+
       return {
         slug,
         title: data.title || '',
         excerpt: data.excerpt || '',
         category: data.category || 'Algemeen',
-        date: data.date || new Date().toISOString(),
+        date: dateStr,
+        formattedDate,
         readTime: data.readTime || '5 min',
         image: data.image || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
         author: data.author,

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Linkedin, Github, Instagram, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import CTA from "@/components/CTA";
 
 const teamMembers = [
   {
@@ -66,9 +67,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
@@ -250,6 +248,9 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTA />
 
     </div>
   );

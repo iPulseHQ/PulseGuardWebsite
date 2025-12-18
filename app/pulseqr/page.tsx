@@ -4,6 +4,8 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
 import { QrCode, Zap, BarChart3, Shield, Cloud, CheckCircle2, Link2, FileText, Wifi, ArrowRight, Lock, Sparkles, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
+import CTA from "@/components/CTA";
+import PulseQRDashboardMockup from "@/components/PulseQRDashboardMockup";
 
 export default function PulseQRPage() {
   const { t } = useLanguage();
@@ -88,9 +90,6 @@ export default function PulseQRPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
@@ -155,6 +154,19 @@ export default function PulseQRPage() {
         </div>
       </section>
 
+      {/* Dashboard Mockup */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <PulseQRDashboardMockup />
+          </motion.div>
+        </div>
+      </section>
 
       {/* QR Types Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
@@ -363,62 +375,7 @@ export default function PulseQRPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glassmorphism rounded-xl p-12 text-center border border-border/50 shadow-xl bg-gradient-to-br from-primary/10 via-primary/5 to-background"
-          >
-            <div className="flex justify-center mb-6">
-              <div className="p-4 rounded-full bg-primary/20">
-                <Sparkles className="h-8 w-8 text-primary" />
-              </div>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("pulseQRCTATitle")}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t("pulseQRCTADesc")}
-            </p>
-            <div className="grid sm:grid-cols-3 gap-3 mb-8 text-sm max-w-lg mx-auto">
-              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                {t("pulseQRNoRegistration")}
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                {t("pulseQRFree")}
-              </div>
-              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                <CheckCircle2 className="h-4 w-4 text-primary" />
-                {t("pulseQRDirectUse")}
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://qr.ipulse.one"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-12 px-8 bg-primary text-primary-foreground text-base font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center gap-2"
-              >
-                {t("pulseQRStartNow")}
-                <ArrowRight className="h-5 w-5" />
-              </a>
-              <a
-                href="https://qr.ipulse.one/sign-in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-12 px-8 border border-border/50 text-base font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
-              >
-                {t("pulseQRCreateAccount")}
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }

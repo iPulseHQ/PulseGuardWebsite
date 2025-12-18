@@ -354,13 +354,13 @@ export const translations = {
     iPulseEcosystem: "iPulse Ecosysteem",
     iPulseHeroTitle: "Complete digitale oplossingen",
     iPulseHeroAccent: "voor moderne bedrijven",
-    iPulseHeroDesc: "Twee krachtige platforms onder één dak. Monitor je infrastructuur met PulseGuard en deel bestanden veilig met PulseFiles.",
+    iPulseHeroDesc: "Drie krachtige platforms onder één dak. Monitor je infrastructuur met PulseGuard, deel bestanden veilig met PulseFiles en creëer dynamische QR-codes met PulseQR.",
     exploreSolutions: "Ontdek oplossingen",
     learnMore: "Meer informatie",
-    twoProducts: "Twee krachtige platforms",
+    twoProducts: "Drie krachtige platforms",
     enterpriseGrade: "Enterprise-grade beveiliging",
     ourSolutions: "Onze Oplossingen",
-    twoProductsOnePlatform: "Twee platforms, één ecosysteem",
+    twoProductsOnePlatform: "Drie platforms, één ecosysteem",
     twoProductsDesc: "Onafhankelijke platforms die samenwerken om al je digitale behoeften te dekken",
     pulseGuardFullDesc: "Compleet monitoring platform voor websites en services met 24/7 uptime tracking, directe meldingen en gedetailleerde analytics",
     pulseFilesFullDesc: "Veilig bestandsdeel platform met end-to-end encryptie, slimme samenwerkingstools en onbeperkte opslag opties",
@@ -443,7 +443,7 @@ export const translations = {
 
     // CTA
     ctaTitle: "Klaar om te beginnen?",
-    ctaDescription: "Sluit je aan bij duizenden tevreden gebruikers en krijg complete controle over je infrastructuur",
+    ctaDescription: "Begin vandaag nog met monitoren en krijg complete controle over je infrastructuur",
     contactUs: "Neem contact op",
 
     // Footer
