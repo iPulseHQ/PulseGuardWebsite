@@ -5,6 +5,7 @@ import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, B
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import CTA from "@/components/CTA";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -304,7 +305,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      {/* <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
@@ -339,41 +340,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glassmorphism rounded-xl p-12 text-center border border-border/50 shadow-xl"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("ctaTitle")}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t("ctaDescription")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#register"
-                className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center"
-              >
-                {t("startFreeTrial")}
-              </a>
-              <a
-                href="/about"
-                className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
-              >
-                {t("contactUs")}
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }
