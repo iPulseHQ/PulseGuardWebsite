@@ -54,7 +54,7 @@ export default function Footer() {
               )}
             </Link>
             <p className="text-sm text-muted-foreground">
-              Monitor everything. Miss nothing.
+              Your digital peacemaker.
             </p>
           </div>
 
