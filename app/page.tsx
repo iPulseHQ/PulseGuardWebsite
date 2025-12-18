@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, Sparkles } from "lucide-react";
+import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, Sparkles, QrCode } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
