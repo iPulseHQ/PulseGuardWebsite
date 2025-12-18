@@ -69,7 +69,7 @@ export default function Home() {
     },
   ];
 
-  const trustedCompanies = ["TechCorp", "InnovateLab", "CloudScale", "DataFlow", "SecureNet"];
+  const trustedCompanies = ["IMDigital", "CHE", "ArjanDenHartog", "VanDenBroek Heteren"];
 
   return (
     <div className="min-h-screen">
@@ -215,10 +215,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "99.9%", label: t("uptime") },
-              { number: "10K+", label: t("monitorsActive") },
-              { number: "50+", label: t("countries") },
-              { number: "24/7", label: t("support") },
+              { number: "99.8%", label: t("uptime") },
+              { number: "5K+", label: t("monitorsActive") },
+              { number: "3+", label: t("countries") },
+              { number: "24/6", label: t("support") },
             ].map((stat, i) => (
               <motion.div
                 key={stat.label}
