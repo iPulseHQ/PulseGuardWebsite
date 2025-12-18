@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Bell, Globe2, Activity, Zap, Lock, BarChart3, Clock, Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import PulseGuardDashboardMockup from "@/components/PulseGuardDashboardMockup";
+import FeatureShowcase from "@/components/FeatureShowcase";
 
 export default function PulseGuardPage() {
   const { t } = useLanguage();
@@ -134,6 +135,9 @@ export default function PulseGuardPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Feature Showcase - Notion Style */}
+      <FeatureShowcase />
 
       {/* Features Grid */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">

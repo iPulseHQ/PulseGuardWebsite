@@ -18,14 +18,14 @@ export default function Footer() {
 
   const footerLinks = {
     product: [
-      { name: t("footerSolutions"), href: "#solutions" },
-      { name: t("footerPricing"), href: "#pricing" },
-      { name: t("footerDocs"), href: "/docs" },
+      { name: "Solutions", href: "#solutions" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "Documentation", href: "https://docs.ipulse.one", external: true },
     ],
     company: [
-      { name: t("footerAbout"), href: "#about" },
-      { name: t("footerBlog"), href: "/blog" },
-      { name: t("footerCareers"), href: "/careers" },
+      { name: "About", href: "#about" },
+      { name: "Blog", href: "/blog" },
+      { name: t("support"), href: "https://ipulse.notion.site/2ca4306c6bc6816aa871d3413fdac5ad?pvs=105", external: true },
     ],
     legal: [
       { name: t("privacy"), href: "/privacy" },
@@ -64,12 +64,23 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {(link as any).external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -81,12 +92,23 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {(link as any).external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

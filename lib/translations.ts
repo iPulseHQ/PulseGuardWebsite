@@ -35,6 +35,8 @@ export const translations = {
     pulseGuardDesc: "Website monitoring & uptime tracking",
     pulseFiles: "PulseFiles",
     pulseFilesDesc: "Secure file sharing & storage",
+    pulseQR: "PulseQR",
+    pulseQRDesc: "Dynamic QR code generator",
 
     // Hero
     heroTitle: "Your digital",
@@ -50,16 +52,17 @@ export const translations = {
     iPulseEcosystem: "iPulse Ecosystem",
     iPulseHeroTitle: "Complete digital solutions",
     iPulseHeroAccent: "for modern businesses",
-    iPulseHeroDesc: "Two powerful platforms under one roof. Monitor your infrastructure with PulseGuard and share files securely with PulseFiles.",
+    iPulseHeroDesc: "Three powerful platforms under one roof. Monitor your infrastructure with PulseGuard, share files securely with PulseFiles, and create dynamic QR codes with PulseQR.",
     exploreSolutions: "Explore solutions",
     learnMore: "Learn more",
-    twoProducts: "Two powerful platforms",
+    twoProducts: "Three powerful platforms",
     enterpriseGrade: "Enterprise-grade security",
     ourSolutions: "Our Solutions",
-    twoProductsOnePlatform: "Two platforms, one ecosystem",
+    twoProductsOnePlatform: "Three platforms, one ecosystem",
     twoProductsDesc: "Independent platforms working together to cover all your digital needs",
     pulseGuardFullDesc: "Complete monitoring platform for websites and services with 24/7 uptime tracking, instant alerts, and detailed analytics",
     pulseFilesFullDesc: "Secure file sharing platform with end-to-end encryption, smart collaboration tools, and unlimited storage options",
+    pulseQRFullDesc: "Dynamic QR code generator with analytics, custom designs, and cloud sync for managing all your QR codes",
     whyiPulse: "Why iPulse",
     builtForModernTeams: "Built for modern teams",
     builtForModernTeamsDesc: "Enterprise-grade features that scale with your business",
@@ -427,6 +430,13 @@ export const translations = {
     trustedByTeams: "Trusted by 10,000+ teams",
     monitorsTracked: "Monitors tracked",
     incidentsDetected: "Incidents detected",
+    // Feature Showcase
+    powerfulFeatures: "Powerful Features",
+    featureShowcaseTitle: "Go way beyond monitoring",
+    featureShowcaseDesc: "Everything you need to monitor, analyze, and optimize your websites and applications in one powerful platform",
+    featuresAndTools: "Powerful Features",
+    globalLocations: "Global Monitoring Locations",
+    continuousMonitoring: "Continuous Monitoring",
   },
   nl: {
     // Navigation
@@ -464,6 +474,8 @@ export const translations = {
     pulseGuardDesc: "Website monitoring & uptime tracking",
     pulseFiles: "PulseFiles",
     pulseFilesDesc: "Veilig bestanden delen & opslaan",
+    pulseQR: "PulseQR",
+    pulseQRDesc: "Dynamische QR-code generator",
 
     // Hero
     heroTitle: "Your digital",
@@ -489,6 +501,7 @@ export const translations = {
     twoProductsDesc: "Onafhankelijke platforms die samenwerken om al je digitale behoeften te dekken",
     pulseGuardFullDesc: "Compleet monitoring platform voor websites en services met 24/7 uptime tracking, directe meldingen en gedetailleerde analytics",
     pulseFilesFullDesc: "Veilig bestandsdeel platform met end-to-end encryptie, slimme samenwerkingstools en onbeperkte opslag opties",
+    pulseQRFullDesc: "Dynamische QR-code generator met analytics, aangepaste designs en cloud sync voor het beheren van al je QR-codes",
     whyiPulse: "Waarom iPulse",
     builtForModernTeams: "Gebouwd voor moderne teams",
     builtForModernTeamsDesc: "Enterprise-grade features die meeschalen met je bedrijf",
@@ -856,6 +869,13 @@ export const translations = {
     trustedByTeams: "Vertrouwd door 10.000+ teams",
     monitorsTracked: "Monitors gevolgd",
     incidentsDetected: "Incidenten gedetecteerd",
+    // Feature Showcase
+    powerfulFeatures: "Krachtige Features",
+    featureShowcaseTitle: "Ga verder dan alleen monitoring",
+    featureShowcaseDesc: "Alles wat je nodig hebt om je websites en applicaties te monitoren, analyseren en optimaliseren in één krachtig platform",
+    featuresAndTools: "Krachtige Features",
+    globalLocations: "Wereldwijde Monitoring Locaties",
+    continuousMonitoring: "Continue Monitoring",
   },
 };
 

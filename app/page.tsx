@@ -47,6 +47,19 @@ export default function Home() {
         t("teamCollaboration"),
       ],
     },
+    {
+      name: t("pulseQR"),
+      description: t("pulseQRFullDesc"),
+      icon: QrCode,
+      href: "/pulseqr",
+      color: "primary",
+      features: [
+        t("pulseQRInstant"),
+        t("pulseQRDynamic"),
+        t("pulseQRAnalytics"),
+        t("pulseQRPincode"),
+      ],
+    },
   ];
 
   const testimonials = [
@@ -166,7 +179,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, i) => (
               <motion.div
                 key={product.name}
