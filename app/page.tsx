@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell } from "lucide-react";
+import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, QrCode } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -45,6 +45,19 @@ export default function Home() {
         t("endToEndEncryption"),
         t("easySharing"),
         t("teamCollaboration"),
+      ],
+    },
+    {
+      name: t("pulseQR"),
+      description: t("pulseQRFullDesc"),
+      icon: QrCode,
+      href: "/pulseqr",
+      color: "primary",
+      features: [
+        t("pulseQRInstant"),
+        t("pulseQRDynamic"),
+        t("pulseQRAnalytics"),
+        t("pulseQRPincode"),
       ],
     },
   ];
@@ -169,7 +182,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, i) => (
               <motion.div
                 key={product.name}
