@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/guard',
+        destination: '/pulseguard',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
