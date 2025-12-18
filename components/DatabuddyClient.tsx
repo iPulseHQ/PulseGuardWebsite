@@ -10,10 +10,7 @@ export default function DatabuddyClient() {
       trackAttributes={true}
       trackOutgoingLinks={true}
       trackInteractions={true}
-      trackEngagement={true}
       trackScrollDepth={true}
-      trackExitIntent={true}
-      trackBounceRate={true}
       trackWebVitals={true}
       trackErrors={true}
       enableBatching={true}
