@@ -356,9 +356,6 @@ export const translations = {
     pulseQROurTeam: "Meet our team",
     pulseQROurTeamDesc: "The passionate people behind PulseQR",
 
-    // PulseQR Description
-    pulseQRDesc: "Create free QR codes",
-
     // Changelog
     changelogBadge: "Changelog",
     changelogTitle: "Product Updates",
@@ -794,9 +791,6 @@ export const translations = {
     pulseQRCreateAccount: "Account aanmaken",
     pulseQROurTeam: "Ontmoet ons team",
     pulseQROurTeamDesc: "De gepassioneerde mensen achter PulseQR",
-
-    // PulseQR Description
-    pulseQRDesc: "Gratis QR-codes maken",
 
     // Changelog
     changelogBadge: "Changelog",
