@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Moon, Sun, Globe, Menu, X, ChevronDown, Zap, Upload } from "lucide-react";
+import { Moon, Sun, Globe, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 
@@ -35,6 +35,12 @@ export default function Header() {
       description: t("pulseFilesDesc"),
       href: "/pulsefiles",
       icon: Upload,
+    },
+    {
+      name: "PulseQR",
+      description: "Gratis QR-codes maken",
+      href: "/pulseqr",
+      icon: QrCode,
     },
   ];
 

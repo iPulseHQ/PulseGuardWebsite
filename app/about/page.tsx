@@ -2,16 +2,61 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Shield, Zap, Users, Target, Heart, TrendingUp, Linkedin, Github, Instagram, Mail } from "lucide-react";
+import { Linkedin, Github, Instagram, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
-import { teamMembers } from "@/pulsenew/src/data/team";
+import Image from "next/image";
+
+const teamMembers = [
+  {
+    name: "Michan van der Hoek",
+    role: "CEO & Developer",
+    image: "/team/michan.jpeg",
+    linkedin: "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
+    github: "https://github.com/IAMichan",
+    email: "michan@ipulse.one"
+  },
+  {
+    name: "Arjan den Hartog",
+    role: "CTO & Developer",
+    image: "/team/arjan.jpeg",
+    linkedin: "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
+    github: "https://github.com/ArjanDenHartog",
+    email: "arjan@ipulse.one"
+  },
+  {
+    name: "Noah van den Broek",
+    role: "CMO & Marketing",
+    image: "/team/noah.jpeg",
+    linkedin: "https://www.linkedin.com/in/noah-van-den-broek-5a445034a/",
+    instagram: "https://www.instagram.com/noahvandenbroek_/",
+    email: "noah@ipulse.one"
+  },
+  {
+    name: "Juda Zwemer",
+    role: "Marketing & Content Manager",
+    image: "/team/juda.jpg",
+    linkedin: "https://www.linkedin.com/in/juda-zwemer-9aa759367/",
+    instagram: "https://www.instagram.com/judazwemer/",
+    email: "juda@ipulse.one"
+  }
+];
 
 export default function AboutPage() {
   const { t } = useLanguage();
   const [mounted, setMounted] = useState(false);
+  const [currentTeamPhoto, setCurrentTeamPhoto] = useState(0);
+
+  const teamPhotos = ["team1.jpeg", "team2.jpeg", "team3.jpeg", "team4.jpeg", "team5.jpeg"];
 
   useEffect(() => {
     setMounted(true);
+
+    // Rotate team photos every 3 seconds
+    const interval = setInterval(() => {
+      setCurrentTeamPhoto((prev) => (prev + 1) % teamPhotos.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const fadeInUp = {
@@ -19,54 +64,34 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const values = [
-    {
-      icon: Shield,
-      title: t("reliabilityTitle"),
-      description: t("reliabilityDesc"),
-    },
-    {
-      icon: Zap,
-      title: t("innovationTitle"),
-      description: t("innovationDesc"),
-    },
-    {
-      icon: Users,
-      title: t("customerFocusTitle"),
-      description: t("customerFocusDesc"),
-    },
-    {
-      icon: Heart,
-      title: t("transparencyTitle"),
-      description: t("transparencyDesc"),
-    },
-  ];
-
-  const stats = [
-    { number: "99.9%", label: t("uptime") },
-    { number: "10K+", label: t("monitorsActive") },
-    { number: "50+", label: t("countries") },
-    { number: "24/7", label: t("support") },
-  ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
-            className="text-center space-y-6"
+            className="text-center space-y-8"
           >
-            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-sm font-medium shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
               {t("about")}
             </div>
+
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
               {t("aboutTitle")}
             </h1>
+
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
               {t("aboutDescription")}
             </p>
@@ -74,101 +99,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
-                {t("ourMission")}
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-                {t("missionTitle")}
-              </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                {t("missionDescription")}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold">{t("ourGoal")}</h3>
-                  <p className="text-sm text-muted-foreground">{t("goalDescription")}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="glassmorphism rounded-2xl p-8 border border-border/50"
-            >
-              <div className="grid grid-cols-2 gap-6">
-                {stats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.1, duration: 0.3 }}
-                    viewport={{ once: true }}
-                    className="text-center"
-                  >
-                    <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
-              {t("ourValues")}
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("valuesTitle")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("valuesDescription")}
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, i) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all"
-              >
-                <div className="h-12 w-12 rounded-md bg-primary/10 flex items-center justify-center mb-4">
-                  <value.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
@@ -183,68 +115,143 @@ export default function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, i) => (
+            {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all text-center"
+                className="glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all group"
               >
                 <div className="mb-4 relative">
-                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-muted">
-                    <img
+                  <div className="w-32 h-32 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all">
+                    <Image
                       src={member.image}
                       alt={member.name}
+                      width={128}
+                      height={128}
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
+                <div className="text-center mb-4">
+                  <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
+                  <p className="text-sm text-muted-foreground">{member.role}</p>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex items-center justify-center gap-2">
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-8 w-8 rounded-md bg-muted hover:bg-primary/10 flex items-center justify-center transition-colors"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-8 w-8 rounded-md bg-muted hover:bg-primary/10 flex items-center justify-center transition-colors"
+                      aria-label="GitHub"
+                    >
+                      <Github className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </a>
+                  )}
+                  {member.instagram && (
+                    <a
+                      href={member.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-8 w-8 rounded-md bg-muted hover:bg-primary/10 flex items-center justify-center transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <Instagram className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </a>
+                  )}
+                  {member.email && (
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="h-8 w-8 rounded-md bg-muted hover:bg-primary/10 flex items-center justify-center transition-colors"
+                      aria-label="Email"
+                    >
+                      <Mail className="h-4 w-4 text-muted-foreground hover:text-primary transition-colors" />
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Join Us Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glassmorphism rounded-xl p-12 text-center border border-border/50 shadow-xl"
-          >
-            <div className="h-16 w-16 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <TrendingUp className="h-8 w-8 text-primary" />
+      {/* Team Photos Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
+              {t("ourTeam")}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("joinUsTitle")}
+              {t("teamDescription")}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t("joinUsDescription")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#careers"
-                className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center"
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden glassmorphism border border-border/50"
+          >
+            {teamPhotos.map((photo, index) => (
+              <motion.div
+                key={photo}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: currentTeamPhoto === index ? 1 : 0,
+                  scale: currentTeamPhoto === index ? 1 : 1.1,
+                }}
+                transition={{ duration: 1 }}
+                className="absolute inset-0"
               >
-                {t("viewOpenings")}
-              </a>
-              <a
-                href="#contact"
-                className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
-              >
-                {t("contactUs")}
-              </a>
+                <Image
+                  src={`/teamfotos/${photo}`}
+                  alt={`Team photo ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                />
+              </motion.div>
+            ))}
+
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+
+            {/* Indicators */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+              {teamPhotos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTeamPhoto(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    currentTeamPhoto === index ? "w-8 bg-primary" : "w-2 bg-primary/30"
+                  }`}
+                  aria-label={`View team photo ${index + 1}`}
+                />
+              ))}
             </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 }
+
