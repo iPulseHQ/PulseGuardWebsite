@@ -111,13 +111,13 @@ export default function Pricing() {
           <div className="text-center">
             <Badge variant="outline" className="mb-4 sm:mb-6 text-xs sm:text-sm">
               <Sparkles className="w-3 h-3 mr-1.5 sm:mr-2" />
-              Flexibele Prijzen
+              {t("flexiblePricing")}
             </Badge>
-            
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight px-4 sm:px-0">
-              Kies het perfecte plan{" "}
+              {t("choosePerfectPlan")}{" "}
               <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-100 dark:to-gray-400 bg-clip-text text-transparent">
-                voor jouw organisatie
+                {t("forYourOrganization")}
               </span>
             </h1>
             
@@ -165,7 +165,7 @@ export default function Pricing() {
                     <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 z-10">
                       <Badge className="bg-black dark:bg-white text-white dark:text-black font-semibold px-3 sm:px-4 py-1 sm:py-1.5 text-xs shadow-lg">
                         <Star className="h-3 w-3 mr-1 fill-white dark:fill-black" />
-                        Meest Populair
+                        {t("mostPopular")}
                       </Badge>
                     </div>
                   )}
@@ -193,7 +193,7 @@ export default function Pricing() {
                       <div className="text-3xl sm:text-4xl font-bold text-white mb-1">
                         €{plan.price.toFixed(2).replace('.', ',')}
                       </div>
-                      <div className="text-gray-500 text-sm">/maand</div>
+                      <div className="text-gray-500 text-sm">{t("perMonth")}</div>
                     </div>
                   </div>
 
@@ -268,13 +268,13 @@ export default function Pricing() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <Badge variant="outline" className="mb-2 sm:mb-3 text-xs sm:text-sm">
-              Veelgestelde Vragen
+              {t("faq")}
             </Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 px-4">
-              Alles wat je moet weten
+              {t("faqSubtitle")}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto px-4">
-              Nog vragen over onze prijzen of functionaliteiten? We hebben de antwoorden.
+              {t("faqDescription")}
             </p>
           </div>
 
@@ -340,18 +340,18 @@ export default function Pricing() {
                 size="lg"
                 className="bg-white text-black hover:bg-gray-100 rounded-lg group font-semibold px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
-                Neem Contact Op
+                {t("contactSales")}
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            
+
             <Link href="/guard" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-lg border-2 px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg font-semibold hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
-                Bekijk Demo
+                {t("viewDemoAlt")}
               </Button>
             </Link>
           </div>

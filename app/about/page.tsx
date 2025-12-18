@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Instagram, Mail } from "lucide-react";
+import { Linkedin, Github, Instagram, Mail, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import CTA from "@/components/CTA";
@@ -79,10 +79,7 @@ export default function AboutPage() {
             className="text-center space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 border border-primary/20 text-sm font-medium shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
+              <Users className="h-4 w-4 text-primary" />
               {t("about")}
             </div>
 

@@ -121,7 +121,7 @@ export default function PulseQRPage() {
                 href="https://qr.ipulse.one"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 px-8 bg-primary text-primary-foreground text-base font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+                className="h-12 px-8 bg-white text-black text-base font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2"
               >
                 {t("pulseQRCreateFree")}
                 <ArrowRight className="h-5 w-5" />
@@ -130,7 +130,7 @@ export default function PulseQRPage() {
                 href="https://qr.ipulse.one/sign-in"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-12 px-8 border border-border/50 text-base font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
+                className="h-12 px-8 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-base font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
               >
                 {t("pulseQRSignIn")}
               </a>

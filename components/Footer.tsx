@@ -18,14 +18,14 @@ export default function Footer() {
 
   const footerLinks = {
     product: [
-      { name: "Solutions", href: "#solutions" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "Documentation", href: "/docs" },
+      { name: t("footerSolutions"), href: "#solutions" },
+      { name: t("footerPricing"), href: "#pricing" },
+      { name: t("footerDocs"), href: "/docs" },
     ],
     company: [
-      { name: "About", href: "#about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Careers", href: "/careers" },
+      { name: t("footerAbout"), href: "#about" },
+      { name: t("footerBlog"), href: "/blog" },
+      { name: t("footerCareers"), href: "/careers" },
     ],
     legal: [
       { name: t("privacy"), href: "/privacy" },
@@ -54,7 +54,7 @@ export default function Footer() {
               )}
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your digital peacemaker.
+              {t("tagline")}
             </p>
           </div>
 

@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Check, Star, Crown, Rocket, Zap, X } from "lucide-react";
+import { Check, Star, Crown, Rocket, Zap, X, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
 import CTA from "@/components/CTA";
 
@@ -143,7 +143,8 @@ export default function PricingPage() {
             transition={{ duration: 0.5 }}
             className="text-center space-y-6"
           >
-            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted border border-border/50 text-sm font-medium shadow-sm">
+              <Tag className="h-4 w-4 text-primary" />
               {t("pricing")}
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">

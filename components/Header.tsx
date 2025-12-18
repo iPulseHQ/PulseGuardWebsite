@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -14,6 +15,7 @@ export default function Header() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -22,6 +24,30 @@ export default function Header() {
   const toggleTheme = () => {
     const newTheme = resolvedTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
+  };
+
+  // Determine sign-in URL based on current page
+  const getSignInUrl = () => {
+    if (pathname?.includes('/pulsefiles')) {
+      return 'https://files.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulseqr')) {
+      return 'https://qr.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulseguard')) {
+      return 'https://guard.ipulse.one/sign-in';
+    }
+    return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
+  };
+
+  // Determine register URL based on current page
+  const getRegisterUrl = () => {
+    if (pathname?.includes('/pulsefiles')) {
+      return 'https://files.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulseqr')) {
+      return 'https://qr.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulseguard')) {
+      return 'https://guard.ipulse.one/sign-in';
+    }
+    return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
   };
 
   const solutions = [
@@ -39,7 +65,7 @@ export default function Header() {
     },
     {
       name: "PulseQR",
-      description: "Gratis QR-codes maken",
+      description: t("pulseQRDesc"),
       href: "/pulseqr",
       icon: QrCode,
     },
@@ -48,9 +74,17 @@ export default function Header() {
   const navigation = [
     { name: t("pricing"), href: "/pricing" },
     { name: t("about"), href: "/about" },
-    { name: "Changelog", href: "/changelog" },
+    { name: t("changelog"), href: "/changelog" },
     { name: t("blog"), href: "/blog" },
   ];
+
+  // Helper function to check if a path is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname?.startsWith(href + "/");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 glassmorphism">
@@ -75,6 +109,18 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
+            {/* Home Link */}
+            <Link
+              href="/"
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                isActive("/")
+                  ? "bg-white/10 text-white border border-white/20"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
+              }`}
+            >
+              {t("home")}
+            </Link>
+
             {/* Solutions Dropdown */}
             <div
               className="relative"
@@ -83,7 +129,11 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all flex items-center gap-1"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-1 ${
+                  pathname?.includes('/pulseguard') || pathname?.includes('/pulsefiles') || pathname?.includes('/pulseqr')
+                    ? "bg-white/10 text-white border border-white/20"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                }`}
               >
                 {t("solutions")}
                 <ChevronDown className="h-3 w-3" />
@@ -97,7 +147,11 @@ export default function Header() {
                       <Link
                         key={solution.name}
                         href={solution.href}
-                        className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted transition-all group"
+                        className={`flex items-start gap-3 p-3 rounded-lg transition-all group ${
+                          isActive(solution.href)
+                            ? "bg-white/10 border border-white/20"
+                            : "hover:bg-muted"
+                        }`}
                       >
                         <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                           <solution.icon className="h-5 w-5 text-primary" />
@@ -121,7 +175,11 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                  isActive(item.href)
+                    ? "bg-white/10 text-white border border-white/20"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                }`}
               >
                 {item.name}
               </Link>
@@ -135,12 +193,12 @@ export default function Header() {
               onClick={() => setLanguage(language === "en" ? "nl" : "en")}
               className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center overflow-hidden p-1"
               aria-label="Toggle language"
-              title={language === "en" ? "Switch to Nederlands" : "Switch to English"}
+              title={language === "en" ? t("switchToNL") : t("switchToEN")}
             >
               {language === "en" ? (
-                <NL className="w-full h-full object-cover" />
+                <NL className="w-full h-full object-cover rounded-md" />
               ) : (
-                <GB className="w-full h-full object-cover" />
+                <GB className="w-full h-full object-cover rounded-md" />
               )}
             </button>
 
@@ -163,14 +221,14 @@ export default function Header() {
 
             {/* CTA Buttons */}
             <Link
-              href="#login"
-              className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all"
+              href={getSignInUrl()}
+              className="px-5 py-2 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200"
             >
               {t("login")}
             </Link>
             <Link
-              href="#register"
-              className="h-9 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-sm inline-flex items-center justify-center"
+              href={getRegisterUrl()}
+              className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
             >
               {t("register")}
             </Link>
@@ -206,6 +264,19 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2 border-t border-border/50">
+            {/* Home Link */}
+            <Link
+              href="/"
+              className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                isActive("/")
+                  ? "bg-white/10 text-white border border-white/20"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("home")}
+            </Link>
+
             {/* Solutions Section */}
             <div className="px-4 py-2">
               <div className="text-xs font-semibold text-muted-foreground mb-2">
@@ -215,7 +286,11 @@ export default function Header() {
                 <Link
                   key={solution.name}
                   href={solution.href}
-                  className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted transition-all"
+                  className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
+                    isActive(solution.href)
+                      ? "bg-white/10 border border-white/20"
+                      : "hover:bg-muted"
+                  }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
@@ -237,7 +312,11 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all"
+                className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                  isActive(item.href)
+                    ? "bg-white/10 text-white border border-white/20"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted"
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -253,23 +332,23 @@ export default function Header() {
               >
                 <div className="w-6 h-4 overflow-hidden rounded-sm border border-border/30">
                   {language === "en" ? (
-                    <NL className="w-full h-full object-cover" />
+                    <NL className="w-full h-full object-cover rounded-sm" />
                   ) : (
-                    <GB className="w-full h-full object-cover" />
+                    <GB className="w-full h-full object-cover rounded-sm" />
                   )}
                 </div>
-                {language === "en" ? "Nederlands" : "English"}
+                {language === "en" ? t("languageNL") : t("languageEN")}
               </button>
               <Link
-                href="#login"
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all"
+                href={getSignInUrl()}
+                className="px-5 py-2.5 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200 text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("login")}
               </Link>
               <Link
-                href="#register"
-                className="px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-sm text-center"
+                href={getRegisterUrl()}
+                className="px-6 py-2.5 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 text-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("register")}

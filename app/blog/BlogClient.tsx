@@ -144,7 +144,7 @@ export default function BlogClient({ blogPosts, availableCategories }: BlogClien
           {/* No posts message */}
           {filteredPosts.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">Geen blog posts gevonden in deze categorie.</p>
+              <p className="text-muted-foreground">{t("noBlogPosts")}</p>
             </div>
           )}
         </div>
