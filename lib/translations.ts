@@ -801,7 +801,7 @@ export const translations = {
     // Changelog
     changelogBadge: "Changelog",
     changelogTitle: "Product Updates",
-    changelogTitleAccent: "& Release Notes",
+    changelogTitleAccent: "& Releasenotities",
     changelogDescription: "Blijf op de hoogte van de nieuwste features, verbeteringen en bugfixes voor alle iPulse producten.",
     filterByApp: "Filter op app:",
     allApps: "Alle Apps",
