@@ -8,8 +8,61 @@ import Footer from "@/components/Footer";
 import DatabuddyClient from "@/components/DatabuddyClient";
 
 export const metadata: Metadata = {
-  title: "iPulse - Monitor Alles. Mis Niets.",
-  description: "De ultieme monitoring oplossing voor moderne teams. Real-time inzicht, instant alerts, en complete controle over je digitale infrastructuur.",
+  metadataBase: new URL('https://ipulse.one'),
+  title: {
+    default: "iPulse - Monitor Everything. Miss Nothing.",
+    template: "%s | iPulse"
+  },
+  description: "The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.",
+  keywords: ["website monitoring", "uptime monitoring", "SSL monitoring", "server monitoring", "downtime alerts", "performance monitoring", "infrastructure monitoring"],
+  authors: [{ name: "iPulse Team" }],
+  creator: "iPulse",
+  publisher: "iPulse",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['nl_NL'],
+    url: 'https://ipulse.one',
+    siteName: 'iPulse',
+    title: 'iPulse - Monitor Everything. Miss Nothing.',
+    description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'iPulse - Website Monitoring Platform',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'iPulse - Monitor Everything. Miss Nothing.',
+    description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control.',
+    images: ['/twitter-image.png'],
+    creator: '@ipulse',
+  },
+  verification: {
+    google: 'google-site-verification-code',
+  },
+  alternates: {
+    canonical: 'https://ipulse.one',
+    languages: {
+      'en-US': 'https://ipulse.one',
+      'nl-NL': 'https://ipulse.one',
+    },
+  },
 };
 
 export default function RootLayout({

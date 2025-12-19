@@ -6,6 +6,7 @@ import { Bell, Globe2, Activity, Zap, Lock, BarChart3, Clock, Check, ArrowRight 
 import { useEffect, useState } from "react";
 import PulseGuardDashboardMockup from "@/components/PulseGuardDashboardMockup";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import StructuredData from "@/components/StructuredData";
 
 // Note: Metadata is handled in layout.tsx for this page
 // Consider creating a separate metadata export if this becomes a server component
@@ -65,6 +66,62 @@ export default function PulseGuardPage() {
   ];
 
   return (
+    <>
+      {/* Structured Data for SEO */}
+      <StructuredData
+        type="WebApplication"
+        data={{
+          name: "PulseGuard",
+          description: "Monitor your websites 24/7 with instant downtime alerts, SSL certificate monitoring, and performance tracking from 4 global locations.",
+          url: "https://ipulse.one/pulseguard",
+          price: "0",
+          rating: {
+            value: "4.8",
+            count: "150"
+          },
+          features: [
+            "Real-time Uptime Monitoring",
+            "SSL Certificate Monitoring",
+            "Multi-Location Monitoring",
+            "Instant Alerts",
+            "Performance Metrics",
+            "Incident Management"
+          ]
+        }}
+      />
+
+      <StructuredData
+        type="FAQPage"
+        data={{
+          questions: [
+            {
+              question: "How fast can I set up my first monitor?",
+              answer: "You can create your first monitor in under 2 minutes. Simply sign up, add your website URL, and you're done. No complex configuration needed."
+            },
+            {
+              question: "What happens when my site goes down?",
+              answer: "You'll receive instant notifications via email, SMS, Slack, Discord, or webhook. Our system checks your site every 30 seconds and alerts you immediately when issues are detected."
+            },
+            {
+              question: "Can I monitor from multiple locations?",
+              answer: "Yes! We monitor from 4 global locations (Netherlands, Germany, United States, United Kingdom) to ensure accurate worldwide availability tracking."
+            },
+            {
+              question: "Do you offer SSL certificate monitoring?",
+              answer: "Absolutely. We automatically track your SSL certificates and send alerts before they expire, so you never have to worry about certificate-related downtime."
+            },
+            {
+              question: "What's included in the free plan?",
+              answer: "Our free plan includes up to 5 monitors with 5-minute check intervals, email notifications, and 30 days of data retention. Perfect for getting started!"
+            },
+            {
+              question: "Can I integrate with my existing tools?",
+              answer: "Yes! PulseGuard integrates with Slack, Discord, Microsoft Teams, webhooks, and provides a full API for custom integrations."
+            }
+          ]
+        }}
+      />
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -286,13 +343,13 @@ export default function PulseGuardPage() {
                 className="group glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all"
               >
                 <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">
-                  <span>{t(`faqPulseGuard${num}Q` as keyof typeof translations.en)}</span>
+                  <span>{t(`faqPulseGuard${num}Q` as any)}</span>
                   <div className="ml-4 flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
                     <ArrowRight className="h-4 w-4 text-primary transition-transform group-open:rotate-90" />
                   </div>
                 </summary>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  {t(`faqPulseGuard${num}A` as keyof typeof translations.en)}
+                  {t(`faqPulseGuard${num}A` as any)}
                 </p>
               </motion.details>
             ))}
@@ -338,5 +395,6 @@ export default function PulseGuardPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
