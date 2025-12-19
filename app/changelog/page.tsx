@@ -196,7 +196,7 @@ export default function ChangelogPage() {
               controls
               className="rounded-lg w-full max-w-2xl border border-border/50"
             >
-              Your browser does not support the video tag.
+              {t("videoNotSupported")}
             </video>
           </div>
         );
@@ -228,17 +228,17 @@ export default function ChangelogPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted border border-border/50 text-sm font-medium shadow-sm">
               <Package className="h-4 w-4 text-primary" />
-              Changelog
+              {t("changelogBadge")}
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Product Updates
+              {t("changelogTitle")}
               <br />
-              <span className="text-gradient">& Release Notes</span>
+              <span className="text-gradient">{t("changelogTitleAccent")}</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Stay up to date with the latest features, improvements, and bug fixes across all iPulse products.
+              {t("changelogDescription")}
             </p>
           </motion.div>
         </div>
@@ -248,13 +248,13 @@ export default function ChangelogPage() {
       <section className="pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3">
-            <span className="text-sm font-medium text-muted-foreground">Filter by app:</span>
+            <span className="text-sm font-medium text-muted-foreground">{t("filterByApp")}</span>
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="px-4 py-2 pr-10 rounded-lg border border-border/50 bg-card text-sm font-medium hover:bg-muted transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary min-w-[150px] text-left"
               >
-                {selectedApp === 'all' ? 'All Apps' : selectedApp}
+                {selectedApp === 'all' ? t("allApps") : selectedApp}
                 <ChevronDown className={`absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -274,7 +274,7 @@ export default function ChangelogPage() {
                         selectedApp === 'all' ? 'bg-muted font-semibold' : ''
                       }`}
                     >
-                      All Apps
+                      {t("allApps")}
                     </button>
                     {availableApps.map((app) => (
                       <button
@@ -311,7 +311,7 @@ export default function ChangelogPage() {
             </div>
           ) : entries.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">No changelog entries found.</p>
+              <p className="text-muted-foreground">{t("noChangelogEntries")}</p>
             </div>
           ) : (
             <div className="space-y-3">

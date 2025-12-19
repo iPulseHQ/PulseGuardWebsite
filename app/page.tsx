@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, QrCode } from "lucide-react";
+import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, Sparkles, QrCode } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -98,10 +98,7 @@ export default function Home() {
             className="text-center space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted border border-border/50 text-sm font-medium shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
+              <Sparkles className="h-4 w-4 text-primary" />
               {t("iPulseEcosystem")}
             </div>
 

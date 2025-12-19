@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 import DatabuddyClient from "@/components/DatabuddyClient";
 
 export const metadata: Metadata = {
-  title: "iPulse - Monitor Everything. Miss Nothing.",
-  description: "The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.",
+  title: "iPulse - Monitor Alles. Mis Niets.",
+  description: "De ultieme monitoring oplossing voor moderne teams. Real-time inzicht, instant alerts, en complete controle over je digitale infrastructuur.",
 };
 
 export default function RootLayout({

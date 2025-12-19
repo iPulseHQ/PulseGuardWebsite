@@ -54,7 +54,7 @@ export default function Footer() {
               )}
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your digital peacemaker.
+              {t("tagline")}
             </p>
           </div>
 
