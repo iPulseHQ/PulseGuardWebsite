@@ -507,6 +507,22 @@ export const translations = {
     successRate: "Success Rate",
     totalRequests: "Total Requests",
     ago: "ago",
+
+    // PulseGuard FAQ
+    faqPulseGuardTitle: "Frequently Asked Questions",
+    faqPulseGuardSubtitle: "Everything you need to know about PulseGuard",
+    faqPulseGuard1Q: "How fast can I set up my first monitor?",
+    faqPulseGuard1A: "You can create your first monitor in under 2 minutes. Simply sign up, add your website URL, and you're done. No complex configuration needed.",
+    faqPulseGuard2Q: "What happens when my site goes down?",
+    faqPulseGuard2A: "You'll receive instant notifications via email, SMS, Slack, Discord, or webhook. Our system checks your site every 30 seconds and alerts you immediately when issues are detected.",
+    faqPulseGuard3Q: "Can I monitor from multiple locations?",
+    faqPulseGuard3A: "Yes! We monitor from 4 global locations (Netherlands, Germany, United States, United Kingdom) to ensure accurate worldwide availability tracking.",
+    faqPulseGuard4Q: "Do you offer SSL certificate monitoring?",
+    faqPulseGuard4A: "Absolutely. We automatically track your SSL certificates and send alerts before they expire, so you never have to worry about certificate-related downtime.",
+    faqPulseGuard5Q: "What's included in the free plan?",
+    faqPulseGuard5A: "Our free plan includes up to 5 monitors with 5-minute check intervals, email notifications, and 30 days of data retention. Perfect for getting started!",
+    faqPulseGuard6Q: "Can I integrate with my existing tools?",
+    faqPulseGuard6A: "Yes! PulseGuard integrates with Slack, Discord, Microsoft Teams, webhooks, and provides a full API for custom integrations.",
   },
   nl: {
     // Navigation
@@ -1016,6 +1032,22 @@ export const translations = {
     successRate: "Succes Rate",
     totalRequests: "Totaal Requests",
     ago: "geleden",
+
+    // PulseGuard FAQ
+    faqPulseGuardTitle: "Veelgestelde Vragen",
+    faqPulseGuardSubtitle: "Alles wat je moet weten over PulseGuard",
+    faqPulseGuard1Q: "Hoe snel kan ik mijn eerste monitor instellen?",
+    faqPulseGuard1A: "Je kunt je eerste monitor in minder dan 2 minuten aanmaken. Gewoon aanmelden, je website URL toevoegen en klaar. Geen complexe configuratie nodig.",
+    faqPulseGuard2Q: "Wat gebeurt er wanneer mijn site offline gaat?",
+    faqPulseGuard2A: "Je ontvangt direct notificaties via email, SMS, Slack, Discord of webhook. Ons systeem controleert je site elke 30 seconden en waarschuwt je onmiddellijk wanneer problemen worden gedetecteerd.",
+    faqPulseGuard3Q: "Kan ik monitoren vanaf meerdere locaties?",
+    faqPulseGuard3A: "Ja! We monitoren vanaf 4 wereldwijde locaties (Nederland, Duitsland, Verenigde Staten, Verenigd Koninkrijk) om nauwkeurige wereldwijde beschikbaarheid tracking te garanderen.",
+    faqPulseGuard4Q: "Bieden jullie SSL certificaat monitoring aan?",
+    faqPulseGuard4A: "Absoluut. We volgen automatisch je SSL certificaten en sturen meldingen voordat ze verlopen, zodat je je nooit zorgen hoeft te maken over certificaat-gerelateerde downtime.",
+    faqPulseGuard5Q: "Wat zit er in het gratis plan?",
+    faqPulseGuard5A: "Ons gratis plan bevat tot 5 monitors met 5-minuten check intervallen, email notificaties en 30 dagen data opslag. Perfect om mee te beginnen!",
+    faqPulseGuard6Q: "Kan ik integreren met mijn bestaande tools?",
+    faqPulseGuard6A: "Ja! PulseGuard integreert met Slack, Discord, Microsoft Teams, webhooks en biedt een volledige API voor custom integraties.",
   },
 };
 

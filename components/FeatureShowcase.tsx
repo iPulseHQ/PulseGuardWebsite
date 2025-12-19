@@ -35,8 +35,9 @@ export default function FeatureShowcase() {
   const { t } = useLanguage();
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
   const [expandedFeatures, setExpandedFeatures] = useState<Set<number>>(new Set());
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Initialize random expanded features on mount
+  // Initialize random expanded features on mount and detect touch device
   useEffect(() => {
     const numFeatures = 12; // Total number of features
     const numToExpand = Math.floor(Math.random() * 3) + 2; // Random 2-4 features
@@ -47,7 +48,25 @@ export default function FeatureShowcase() {
     }
 
     setExpandedFeatures(randomIndices);
+
+    // Detect touch device
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
   }, []);
+
+  // Handle click/tap for touch devices
+  const handleFeatureInteraction = (index: number) => {
+    if (isTouchDevice) {
+      setExpandedFeatures(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(index)) {
+          newSet.delete(index);
+        } else {
+          newSet.add(index);
+        }
+        return newSet;
+      });
+    }
+  };
 
   const features: Feature[] = [
     {
@@ -499,14 +518,15 @@ export default function FeatureShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
                 viewport={{ once: true }}
-                onMouseEnter={() => setSelectedFeature(index)}
-                onMouseLeave={() => setSelectedFeature(null)}
+                onMouseEnter={() => !isTouchDevice && setSelectedFeature(index)}
+                onMouseLeave={() => !isTouchDevice && setSelectedFeature(null)}
+                onClick={() => handleFeatureInteraction(index)}
                 className={`
                   group relative overflow-hidden rounded-2xl p-6
                   border-2 transition-all duration-300 ease-out cursor-pointer
                   ${shouldShowPreview
                     ? `${feature.bgColor} border-primary/50 shadow-2xl shadow-primary/10 scale-[1.02]`
-                    : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg'
+                    : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg active:scale-[0.98]'
                   }
                 `}
               >

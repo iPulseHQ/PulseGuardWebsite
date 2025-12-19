@@ -83,7 +83,7 @@ export default function Home() {
     },
   ];
 
-  const trustedCompanies = ["IMDigital", "CHE", "ArjanDenHartog", "VanDenBroek Heteren"];
+  const trustedCompanies = ["IMDigital", "CHE", "Arjan den Hartog", "Van den Broek Heteren"];
 
   return (
     <div className="min-h-screen">

@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import PulseGuardDashboardMockup from "@/components/PulseGuardDashboardMockup";
 import FeatureShowcase from "@/components/FeatureShowcase";
 
+// Note: Metadata is handled in layout.tsx for this page
+// Consider creating a separate metadata export if this becomes a server component
+
 export default function PulseGuardPage() {
   const { t } = useLanguage();
   const [mounted, setMounted] = useState(false);
@@ -97,7 +100,7 @@ export default function PulseGuardPage() {
                 {t("startFreeTrial")}
               </a>
               <a
-                href="#demo"
+                href="#dashboard-preview"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
               >
                 {t("viewDemo")}
@@ -123,7 +126,7 @@ export default function PulseGuardPage() {
       </section>
 
       {/* Dashboard Mockup */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="dashboard-preview" className="py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -191,9 +194,9 @@ export default function PulseGuardPage() {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
                 {t("stayAhead")}
               </h2>
-              <ul className="space-y-4">
+              <div className="space-y-4">
                 {benefits.map((benefit, i) => (
-                  <motion.li
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -205,9 +208,9 @@ export default function PulseGuardPage() {
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-muted-foreground">{benefit}</span>
-                  </motion.li>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
 
             <motion.div
@@ -247,6 +250,52 @@ export default function PulseGuardPage() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
+              FAQ
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("faqPulseGuardTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {t("faqPulseGuardSubtitle")}
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              <motion.details
+                key={num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all"
+              >
+                <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">
+                  <span>{t(`faqPulseGuard${num}Q` as keyof typeof translations.en)}</span>
+                  <div className="ml-4 flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <ArrowRight className="h-4 w-4 text-primary transition-transform group-open:rotate-90" />
+                  </div>
+                </summary>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
+                  {t(`faqPulseGuard${num}A` as keyof typeof translations.en)}
+                </p>
+              </motion.details>
+            ))}
           </div>
         </div>
       </section>
