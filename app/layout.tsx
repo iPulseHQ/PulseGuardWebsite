@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     creator: '@ipulse',
   },
   verification: {
-    google: 'google-site-verification-code',
+    google: 'OeS14SUrKgADkLyDtjSIAzmfeOXgvtaILEfnLUiGyoI',
   },
   alternates: {
     canonical: 'https://ipulse.one',

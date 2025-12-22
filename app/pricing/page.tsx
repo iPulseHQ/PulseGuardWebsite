@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check, Star, Crown, Rocket, Zap, X, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
 import CTA from "@/components/CTA";
+import StructuredData from "@/components/StructuredData";
 
 interface Plan {
   id: string;
@@ -132,8 +133,25 @@ export default function PricingPage() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      {/* Structured Data for SEO */}
+      <StructuredData
+        type="Product"
+        data={{
+          name: "iPulse - Website Monitoring & Infrastructure Management",
+          description: "Professional monitoring solutions starting from free. Choose the plan that fits your needs.",
+          lowPrice: "0",
+          highPrice: "15",
+          offerCount: "3",
+          rating: {
+            value: "4.8",
+            count: "150"
+          }
+        }}
+      />
+
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -259,6 +277,7 @@ export default function PricingPage() {
 
       {/* CTA Section */}
       <CTA />
-    </div>
+      </div>
+    </>
   );
 }

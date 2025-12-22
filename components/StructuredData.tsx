@@ -1,7 +1,7 @@
 import Script from 'next/script';
 
 interface StructuredDataProps {
-  type: 'WebApplication' | 'Organization' | 'FAQPage' | 'Product';
+  type: 'WebApplication' | 'Organization' | 'FAQPage' | 'Product' | 'WebSite' | 'Article';
   data: Record<string, any>;
 }
 
@@ -82,6 +82,58 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             ratingCount: data.rating.count,
             bestRating: '5',
             worstRating: '1',
+          },
+        };
+
+      case 'WebSite':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: data.name || 'iPulse',
+          url: data.url || 'https://ipulse.one',
+          description: data.description,
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+              '@type': 'EntryPoint',
+              urlTemplate: `${data.url || 'https://ipulse.one'}/blog?search={search_term_string}`,
+            },
+            'query-input': 'required name=search_term_string',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: data.name || 'iPulse',
+            logo: {
+              '@type': 'ImageObject',
+              url: data.logo || 'https://ipulse.one/logofinal.png',
+            },
+          },
+        };
+
+      case 'Article':
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: data.title,
+          description: data.description || data.excerpt,
+          image: data.image,
+          datePublished: data.datePublished,
+          dateModified: data.dateModified || data.datePublished,
+          author: {
+            '@type': data.authorType || 'Organization',
+            name: data.author || 'iPulse Team',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'iPulse',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://ipulse.one/logofinal.png',
+            },
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': data.url,
           },
         };
 
