@@ -1,8 +1,8 @@
 export default function PulseGuardDashboardMockup() {
   return (
-    <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-[#0A0A0A]">
+    <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-background">
       {/* Header */}
-      <div className="bg-[#0F0F0F] px-6 py-4 border-b border-border/30">
+      <div className="bg-card px-6 py-4 border-b border-border/30">
         <h2 className="text-xl font-bold text-foreground">Dashboard</h2>
         <p className="text-xs text-muted-foreground">Overzicht</p>
       </div>
@@ -12,7 +12,7 @@ export default function PulseGuardDashboardMockup() {
         {/* Top Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Uptime */}
-          <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-6">
+          <div className="bg-card border border-border/50 rounded-xl p-6">
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">UPTIME</p>
@@ -28,7 +28,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Active Incidents */}
-          <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-6">
+          <div className="bg-card border border-border/50 rounded-xl p-6">
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">ACTIEVE INCIDENTEN</p>
@@ -44,7 +44,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Response Time */}
-          <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-6">
+          <div className="bg-card border border-border/50 rounded-xl p-6">
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">RESPONSE TIJD</p>
@@ -62,7 +62,7 @@ export default function PulseGuardDashboardMockup() {
 
         {/* Secondary Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-emerald-500/10 p-2 rounded-lg">
                 <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
@@ -73,7 +73,7 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">10 up</p>
           </div>
 
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-emerald-500/10 p-2 rounded-lg">
                 <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">0 healthy</p>
           </div>
 
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-emerald-500/10 p-2 rounded-lg">
                 <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">0 online</p>
           </div>
 
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-3">
               <div className="bg-emerald-500/10 p-2 rounded-lg">
                 <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,13 +124,13 @@ export default function PulseGuardDashboardMockup() {
         {/* Charts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Uptime Status */}
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-6">
+          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">Uptime Status</h4>
             <p className="text-xs text-muted-foreground mb-6">Huidige status van alle gemonitorde domeinen</p>
             <div className="flex flex-col items-center justify-center py-8">
               <div className="relative w-32 h-32">
                 <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -156,13 +156,13 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* SSL Certificaten */}
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-6">
+          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">SSL Certificaten</h4>
             <p className="text-xs text-muted-foreground mb-6">SSL certificaat status overzicht</p>
             <div className="flex flex-col items-center justify-center py-8">
               <div className="relative w-32 h-32">
                 <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -188,7 +188,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Security Score */}
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-6">
+          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">Security Score</h4>
             <p className="text-xs text-muted-foreground mb-6">Average security score</p>
             <div className="flex flex-col items-center justify-center py-8">
@@ -216,13 +216,13 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Incidenten */}
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-6">
+          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">Incidenten Overzicht</h4>
             <p className="text-xs text-muted-foreground mb-6">Laatste monitoring alerts</p>
             <div className="flex flex-col items-center justify-center py-8">
               <div className="relative w-32 h-32">
                 <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">

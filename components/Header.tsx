@@ -76,6 +76,7 @@ export default function Header() {
     { name: t("about"), href: "/about" },
     { name: t("changelog"), href: "/changelog" },
     { name: t("blog"), href: "/blog" },
+    { name: t("contact"), href: "/contact" },
   ];
 
   // Helper function to check if a path is active
@@ -114,7 +115,7 @@ export default function Header() {
               href="/"
               className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 isActive("/")
-                  ? "bg-white/10 text-white border border-white/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
             >
@@ -131,7 +132,7 @@ export default function Header() {
                 type="button"
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-1 ${
                   pathname?.includes('/pulseguard') || pathname?.includes('/pulsefiles') || pathname?.includes('/pulseqr')
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
               >
@@ -149,7 +150,7 @@ export default function Header() {
                         href={solution.href}
                         className={`flex items-start gap-3 p-3 rounded-lg transition-all group ${
                           isActive(solution.href)
-                            ? "bg-white/10 border border-white/20"
+                            ? "bg-primary/10 border border-primary/20"
                             : "hover:bg-muted"
                         }`}
                       >
@@ -177,7 +178,7 @@ export default function Header() {
                 href={item.href}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                   isActive(item.href)
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
               >
@@ -269,7 +270,7 @@ export default function Header() {
               href="/"
               className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 isActive("/")
-                  ? "bg-white/10 text-white border border-white/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
               onClick={() => setMobileMenuOpen(false)}
@@ -288,7 +289,7 @@ export default function Header() {
                   href={solution.href}
                   className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
                     isActive(solution.href)
-                      ? "bg-white/10 border border-white/20"
+                      ? "bg-primary/10 border border-primary/20"
                       : "hover:bg-muted"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
@@ -314,7 +315,7 @@ export default function Header() {
                 href={item.href}
                 className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
                   isActive(item.href)
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
