@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DatabuddyClient from "@/components/DatabuddyClient";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ipulse.one'),
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/seoimage.png',
         width: 1200,
         height: 630,
         alt: 'iPulse - Website Monitoring Platform',
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'iPulse - Monitor Everything. Miss Nothing.',
     description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control.',
-    images: ['/twitter-image.png'],
+    images: ['/seoimage.png'],
     creator: '@ipulse',
   },
   verification: {
@@ -95,6 +96,7 @@ export default function RootLayout({
           </LanguageProvider>
         </ThemeProvider>
         <DatabuddyClient />
+        <Analytics />
       </body>
     </html>
   );

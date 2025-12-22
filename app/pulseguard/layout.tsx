@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-pulseguard.png",
+        url: "/seoimage.png",
         width: 1200,
         height: 630,
         alt: "PulseGuard - Website Monitoring Dashboard",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PulseGuard - Website Uptime Monitoring",
     description: "Monitor your websites 24/7 with instant downtime alerts, SSL monitoring, and performance tracking from 4 global locations.",
-    images: ["/twitter-pulseguard.png"],
+    images: ["/seoimage.png"],
   },
   alternates: {
     canonical: "https://ipulse.one/pulseguard",

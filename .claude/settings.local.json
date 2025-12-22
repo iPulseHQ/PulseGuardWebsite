@@ -21,7 +21,8 @@
       "Bash(npm uninstall next-mdx-remote)",
       "Bash(npm uninstall:*)",
       "Bash(findstr:*)",
-      "Bash(Select-String -Pattern \"\\(HTTP|Access-Control\\)\")"
+      "Bash(Select-String -Pattern \"\\(HTTP|Access-Control\\)\")",
+      "Bash(npm i:*)"
     ],
     "deny": [],
     "ask": []
