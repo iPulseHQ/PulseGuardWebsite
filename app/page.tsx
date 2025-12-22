@@ -9,7 +9,7 @@ import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -150,7 +150,7 @@ export default function Home() {
                 href="/about"
                 className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
               >
-                {t("learnMore")}
+                {language === "nl" ? "Meer over ons team" : "Learn about our team"}
               </a>
             </div>
 
@@ -238,8 +238,9 @@ export default function Home() {
                 <Link
                   href={product.href}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                  aria-label={`${language === "nl" ? "Meer over" : "Learn more about"} ${product.name}`}
                 >
-                  {t("learnMore")}
+                  {language === "nl" ? `Ontdek ${product.name}` : `Discover ${product.name}`}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </motion.div>

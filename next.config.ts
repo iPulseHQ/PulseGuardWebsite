@@ -2,13 +2,34 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+
+  // Performance optimizations
+  reactStrictMode: true,
+  poweredByHeader: false,
+
+  // Modern JavaScript - reduce polyfills for modern browsers
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'api.dicebear.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60,
   },
   async redirects() {
     return [
