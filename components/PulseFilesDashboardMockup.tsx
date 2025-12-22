@@ -1,6 +1,6 @@
 export default function PulseFilesDashboardMockup() {
   return (
-    <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-gradient-to-br from-[#0A1520] to-[#0A0A0A]">
+    <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-background">
       {/* Content */}
       <div className="p-6 md:p-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -9,7 +9,7 @@ export default function PulseFilesDashboardMockup() {
             {/* Animated Border */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20 rounded-2xl blur-xl animate-pulse"></div>
 
-            <div className="relative bg-[#0F1419] border-2 border-dashed border-primary/30 rounded-2xl p-12 text-center hover:border-primary/50 transition-all">
+            <div className="relative bg-muted/30 border-2 border-dashed border-primary/30 rounded-2xl p-12 text-center hover:border-primary/50 transition-all">
               <div className="flex flex-col items-center gap-6">
                 <div className="bg-primary/10 p-6 rounded-full">
                   <svg className="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function PulseFilesDashboardMockup() {
                   <p className="text-xs font-medium text-muted-foreground mb-3">Ondersteunde bestandstypes</p>
                   <div className="grid grid-cols-4 gap-3">
                     {['Documenten', 'Afbeeldingen', "Video's", 'Archieven'].map((type) => (
-                      <div key={type} className="bg-[#0A0A0A]/50 rounded-lg p-3 text-center">
+                      <div key={type} className="bg-card/50 rounded-lg p-3 text-center">
                         <div className="bg-primary/5 p-2 rounded-md mb-2 mx-auto w-fit">
                           <svg className="w-5 h-5 text-primary/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -77,7 +77,7 @@ export default function PulseFilesDashboardMockup() {
 
             <div className="grid gap-4">
               {/* Feature 1 */}
-              <div className="bg-[#0F1419] border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
+              <div className="bg-muted/30 border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg shrink-0">
                     <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export default function PulseFilesDashboardMockup() {
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-[#0F1419] border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
+              <div className="bg-muted/30 border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg shrink-0">
                     <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@ export default function PulseFilesDashboardMockup() {
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-[#0F1419] border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
+              <div className="bg-muted/30 border border-border/30 rounded-xl p-4 hover:border-primary/30 transition-all">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-lg shrink-0">
                     <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
