@@ -130,9 +130,9 @@ export default function PulseGuardDashboardMockup() {
             <div className="flex flex-col items-center justify-center py-4 sm:py-8">
               <div className="relative w-24 h-24 sm:w-32 sm:h-32">
                 <svg className="w-24 h-24 sm:w-32 sm:h-32 transform -rotate-90">
-                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-gray-200 dark:stroke-gray-800 sm:hidden" strokeWidth="10" />
+                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-border/30 sm:hidden" strokeWidth="10" />
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-gray-200 dark:stroke-gray-800 hidden sm:block" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border/30 hidden sm:block" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -146,7 +146,7 @@ export default function PulseGuardDashboardMockup() {
                   <span className="text-muted-foreground">Down</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/50"></div>
                   <span className="text-muted-foreground">Unknown</span>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -164,9 +164,9 @@ export default function PulseGuardDashboardMockup() {
             <div className="flex flex-col items-center justify-center py-4 sm:py-8">
               <div className="relative w-24 h-24 sm:w-32 sm:h-32">
                 <svg className="w-24 h-24 sm:w-32 sm:h-32 transform -rotate-90">
-                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-gray-200 dark:stroke-gray-800 sm:hidden" strokeWidth="10" />
+                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-border/30 sm:hidden" strokeWidth="10" />
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-gray-200 dark:stroke-gray-800 hidden sm:block" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border/30 hidden sm:block" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -198,9 +198,9 @@ export default function PulseGuardDashboardMockup() {
             <div className="flex flex-col items-center justify-center py-4 sm:py-8">
               <div className="relative w-24 h-24 sm:w-32 sm:h-32">
                 <svg className="w-24 h-24 sm:w-32 sm:h-32 transform -rotate-90">
-                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-gray-200 dark:stroke-gray-800 sm:hidden" strokeWidth="10" />
+                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-border/30 sm:hidden" strokeWidth="10" />
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="66" className="sm:hidden" />
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-gray-200 dark:stroke-gray-800 hidden sm:block" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border/30 hidden sm:block" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="88" className="hidden sm:block" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -214,7 +214,7 @@ export default function PulseGuardDashboardMockup() {
                   <span className="text-muted-foreground">Good</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-gray-600"></div>
+                  <div className="w-2 h-2 rounded-full bg-muted-foreground/50"></div>
                   <span className="text-muted-foreground">Remaining</span>
                 </div>
               </div>
@@ -228,9 +228,9 @@ export default function PulseGuardDashboardMockup() {
             <div className="flex flex-col items-center justify-center py-4 sm:py-8">
               <div className="relative w-24 h-24 sm:w-32 sm:h-32">
                 <svg className="w-24 h-24 sm:w-32 sm:h-32 transform -rotate-90">
-                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-gray-200 dark:stroke-gray-800 sm:hidden" strokeWidth="10" />
+                  <circle cx="48" cy="48" r="42" fill="none" className="stroke-border/30 sm:hidden" strokeWidth="10" />
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-gray-200 dark:stroke-gray-800 hidden sm:block" strokeWidth="12" />
+                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border/30 hidden sm:block" strokeWidth="12" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">

@@ -82,12 +82,12 @@ export default function FeatureShowcase() {
               <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
               <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{t("allSystemsOperational")}</span>
             </div>
-            <span className="text-xs font-medium text-gray-600 dark:text-gray-400 bg-muted px-2 py-1 rounded">99.9%</span>
+                <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">99.9%</span>
           </div>
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-gray-600 dark:text-gray-400">{t("responseTimeLabel")}</span>
-              <span className="font-semibold text-gray-900 dark:text-white">124ms</span>
+              <span className="text-muted-foreground">{t("responseTimeLabel")}</span>
+              <span className="font-semibold text-foreground">124ms</span>
             </div>
             <div className="h-2 bg-muted rounded-full overflow-hidden">
               <motion.div
@@ -97,7 +97,7 @@ export default function FeatureShowcase() {
                 className="h-full bg-emerald-500 rounded-full"
               />
             </div>
-            <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 pt-1">
+            <div className="flex justify-between text-xs text-muted-foreground pt-1">
               <span>{t("lastChecked")} 30s {t("ago")}</span>
               <span>{t("nextCheck")} 30s</span>
             </div>
@@ -115,20 +115,20 @@ export default function FeatureShowcase() {
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <Lock className="h-4 w-4 text-blue-600" />
-            <span className="text-sm font-semibold text-gray-900 dark:text-white">{t("sslCertificateStatus")}</span>
+            <span className="text-sm font-semibold text-foreground">{t("sslCertificateStatus")}</span>
           </div>
           <div className="space-y-2 text-xs">
             <div className="flex justify-between items-center p-2 bg-blue-50 dark:bg-blue-950/20 rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("expiresIn")}</span>
+              <span className="text-foreground/70">{t("expiresIn")}</span>
               <span className="font-semibold text-blue-600">90 days</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("securityGrade")}</span>
+              <span className="text-foreground/70">{t("securityGrade")}</span>
               <span className="font-bold text-emerald-600">A+</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("issuer")}</span>
-              <span className="font-medium text-gray-900 dark:text-white">Let's Encrypt</span>
+              <span className="text-foreground/70">{t("issuer")}</span>
+              <span className="font-medium text-foreground">Let's Encrypt</span>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-purple-50 dark:bg-purple-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("monitoringLocations")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("monitoringLocations")}</div>
           <div className="space-y-1.5">
             {[
               { flag: "🇳🇱", name: t("netherlands"), time: "98ms", status: "online" },
@@ -159,10 +159,10 @@ export default function FeatureShowcase() {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-base">{loc.flag}</span>
-                  <span className="text-xs font-medium text-gray-900 dark:text-white">{loc.name}</span>
+                  <span className="text-xs font-medium text-foreground">{loc.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-600 dark:text-gray-400">{loc.time}</span>
+                  <span className="text-xs text-muted-foreground">{loc.time}</span>
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
                 </div>
               </motion.div>
@@ -180,24 +180,24 @@ export default function FeatureShowcase() {
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-gray-900 dark:text-white">{t("wcagCompliance")}</span>
+            <span className="text-xs font-semibold text-foreground">{t("wcagCompliance")}</span>
             <div className="flex items-center gap-1">
               <span className="text-2xl font-bold text-pink-600">92</span>
-              <span className="text-xs text-gray-600 dark:text-gray-400">/100</span>
+              <span className="text-xs text-muted-foreground">/100</span>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-2 text-xs">
             <div className="p-2 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-900">
               <div className="font-bold text-red-600 text-lg">2</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("criticalIssues")}</div>
+              <div className="text-muted-foreground text-[10px] font-medium">{t("criticalIssues")}</div>
             </div>
             <div className="p-2 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-900">
               <div className="font-bold text-orange-600 text-lg">5</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("majorIssues")}</div>
+              <div className="text-muted-foreground text-[10px] font-medium">{t("majorIssues")}</div>
             </div>
             <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-900">
               <div className="font-bold text-blue-600 text-lg">8</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("minorIssues")}</div>
+              <div className="text-muted-foreground text-[10px] font-medium">{t("minorIssues")}</div>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-orange-50 dark:bg-orange-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("dnsRecords")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("dnsRecords")}</div>
           <div className="space-y-1.5 text-xs">
             {[
               { type: "A", value: "192.0.2.1", status: "ok" },
@@ -222,7 +222,7 @@ export default function FeatureShowcase() {
               <div key={record.type} className="flex items-center justify-between p-2 bg-muted rounded">
                 <div className="flex items-center gap-2">
                   <span className="font-mono font-bold text-orange-600 w-12">{record.type}</span>
-                  <span className="text-gray-600 dark:text-gray-400 truncate">{record.value}</span>
+                  <span className="text-muted-foreground truncate">{record.value}</span>
                 </div>
                 <CheckCircle className="h-3 w-3 text-emerald-500 flex-shrink-0" />
               </div>
@@ -240,20 +240,20 @@ export default function FeatureShowcase() {
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-gray-900 dark:text-white">{t("securityScoreLabel")}</span>
+            <span className="text-xs font-semibold text-foreground">{t("securityScoreLabel")}</span>
             <span className="text-2xl font-bold text-emerald-600">A</span>
           </div>
           <div className="space-y-1.5 text-xs">
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("httpsEnforced")}</span>
+              <span className="text-foreground/70">{t("httpsEnforced")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("securityHeaders")}</span>
+              <span className="text-foreground/70">{t("securityHeaders")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-yellow-50 dark:bg-yellow-950/20 rounded">
-              <span className="text-gray-700 dark:text-gray-300">{t("hstsMissing")}</span>
+              <span className="text-foreground/70">{t("hstsMissing")}</span>
               <AlertTriangle className="h-3 w-3 text-yellow-500" />
             </div>
           </div>
@@ -265,10 +265,10 @@ export default function FeatureShowcase() {
       title: t("featureFilmstripTitle"),
       description: t("featureFilmstripDesc"),
       color: "text-indigo-600",
-      bgColor: "bg-indigo-50 dark:bg-indigo-950/50/20",
+      bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("pageLoadTimeline")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("pageLoadTimeline")}</div>
           <div className="flex gap-1 mb-2">
             {[30, 50, 70, 85, 95, 100].map((progress, i) => (
               <motion.div
@@ -282,7 +282,7 @@ export default function FeatureShowcase() {
               </motion.div>
             ))}
           </div>
-          <div className="flex justify-between text-[10px] text-gray-500 dark:text-gray-400">
+          <div className="flex justify-between text-[10px] text-muted-foreground">
             <span>0ms</span>
             <span>500ms</span>
             <span>1000ms</span>
@@ -299,7 +299,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-cyan-50 dark:bg-cyan-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("topResources")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("topResources")}</div>
           <div className="space-y-2">
             {[
               { name: "bundle.js", time: 245, size: "2.1 MB" },
@@ -314,8 +314,8 @@ export default function FeatureShowcase() {
                 className="space-y-1"
               >
                 <div className="flex justify-between text-xs">
-                  <span className="font-mono text-gray-900 dark:text-white">{resource.name}</span>
-                  <span className="text-gray-600 dark:text-gray-400">{resource.time}ms</span>
+                  <span className="font-mono text-foreground">{resource.name}</span>
+                  <span className="text-muted-foreground">{resource.time}ms</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
@@ -326,7 +326,7 @@ export default function FeatureShowcase() {
                       className="h-full bg-cyan-500 rounded-full"
                     />
                   </div>
-                  <span className="text-[10px] text-gray-600 dark:text-gray-400 w-12 text-right">{resource.size}</span>
+                  <span className="text-[10px] text-muted-foreground w-12 text-right">{resource.size}</span>
                 </div>
               </motion.div>
             ))}
@@ -342,7 +342,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("recentIncidents")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("recentIncidents")}</div>
           <div className="space-y-2">
             {[
               { title: t("siteDowntime"), severity: "critical", time: `2m ${t("ago")}`, color: "red" },
@@ -358,9 +358,9 @@ export default function FeatureShowcase() {
               >
                 <div className="flex items-center gap-2">
                   <div className={`h-2 w-2 rounded-full bg-${incident.color}-500`}></div>
-                  <span className="text-xs font-medium text-gray-900 dark:text-white">{incident.title}</span>
+                  <span className="text-xs font-medium text-foreground">{incident.title}</span>
                 </div>
-                <span className="text-[10px] text-gray-600 dark:text-gray-400 bg-muted px-2 py-0.5 rounded">{incident.time}</span>
+                <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded">{incident.time}</span>
               </motion.div>
             ))}
           </div>
@@ -375,7 +375,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-teal-50 dark:bg-teal-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("alertChannels")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("alertChannels")}</div>
           <div className="space-y-2">
             {[
               { name: t("email"), icon: "📧", enabled: true },
@@ -392,7 +392,7 @@ export default function FeatureShowcase() {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-sm">{channel.icon}</span>
-                  <span className="text-xs font-medium text-gray-900 dark:text-white">{channel.name}</span>
+                  <span className="text-xs font-medium text-foreground">{channel.name}</span>
                 </div>
                 <div className={`h-5 w-9 rounded-full transition-colors ${
                   channel.enabled ? 'bg-teal-500' : 'bg-muted-foreground/30'
@@ -400,7 +400,7 @@ export default function FeatureShowcase() {
                   <motion.div
                     animate={{ x: channel.enabled ? 14 : 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    className="h-4 w-4 bg-white rounded-full shadow-sm"
+                    className="h-4 w-4 bg-white dark:bg-gray-100 rounded-full shadow-sm"
                   />
                 </div>
               </motion.div>
@@ -417,10 +417,10 @@ export default function FeatureShowcase() {
       bgColor: "bg-violet-50 dark:bg-violet-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("statusWidget")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("statusWidget")}</div>
           <div className="p-3 bg-violet-50 dark:bg-violet-950/20 rounded-lg border border-violet-200 dark:border-violet-800">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-gray-900 dark:text-white">{t("serviceStatus")}</span>
+              <span className="text-xs font-semibold text-foreground">{t("serviceStatus")}</span>
               <div className="flex items-center gap-1">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
                 <span className="text-xs font-medium text-emerald-600">{t("operational")}</span>
@@ -429,13 +429,13 @@ export default function FeatureShowcase() {
             <div className="space-y-1">
               {[t("api"), t("website"), t("database")].map((service, i) => (
                 <div key={service} className="flex items-center justify-between text-xs">
-                  <span className="text-gray-700 dark:text-gray-300">{service}</span>
+                  <span className="text-foreground/70">{service}</span>
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
                 </div>
               ))}
             </div>
           </div>
-          <div className="mt-2 text-[10px] text-center text-gray-600 dark:text-gray-400">
+          <div className="mt-2 text-[10px] text-center text-muted-foreground">
             &lt;iframe src="..." /&gt;
           </div>
         </div>
@@ -449,7 +449,7 @@ export default function FeatureShowcase() {
       bgColor: "bg-lime-50 dark:bg-lime-950/20",
       preview: (
         <div className="mt-4 p-4 bg-card rounded-lg border border-border shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-white mb-3">{t("performanceStats")}</div>
+          <div className="text-xs font-semibold text-foreground mb-3">{t("performanceStats")}</div>
           <div className="grid grid-cols-2 gap-2">
             {[
               { label: t("avgResponse"), value: "124ms", trend: "down" },
@@ -464,9 +464,9 @@ export default function FeatureShowcase() {
                 transition={{ delay: i * 0.1 }}
                 className="p-2 bg-lime-50 dark:bg-lime-950/20 rounded-lg border border-lime-200 dark:border-lime-800"
               >
-                <div className="text-[10px] text-gray-600 dark:text-gray-400 mb-1">{metric.label}</div>
+                <div className="text-[10px] text-muted-foreground mb-1">{metric.label}</div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-gray-900 dark:text-white">{metric.value}</span>
+                  <span className="text-sm font-bold text-foreground">{metric.value}</span>
                   <TrendingUp className={`h-3 w-3 ${
                     metric.trend === "up" ? "text-emerald-500" : "text-red-500 rotate-180"
                   }`} />
@@ -549,7 +549,7 @@ export default function FeatureShowcase() {
                   {/* Title */}
                   <h3 className={`
                     text-lg font-bold mb-2 transition-colors duration-300
-                    ${shouldShowPreview ? 'text-gray-900 dark:text-white' : 'text-foreground/90 group-hover:text-foreground'}
+                    ${shouldShowPreview ? 'text-foreground' : 'text-foreground/90 group-hover:text-foreground'}
                   `}>
                     {feature.title}
                   </h3>
@@ -557,7 +557,7 @@ export default function FeatureShowcase() {
                   {/* Description */}
                   <p className={`
                     text-sm leading-relaxed transition-colors duration-300 mb-2
-                    ${shouldShowPreview ? 'text-gray-700 dark:text-gray-200' : 'text-muted-foreground group-hover:text-foreground/70'}
+                    ${shouldShowPreview ? 'text-foreground/80' : 'text-muted-foreground group-hover:text-foreground/70'}
                   `}>
                     {feature.description}
                   </p>
