@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
+import { analytics } from "@/lib/analytics";
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -143,12 +144,14 @@ export default function Home() {
               <a
                 href="#products"
                 className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center"
+                onClick={() => analytics.trackButtonClick("explore_solutions", "hero")}
               >
                 {t("exploreSolutions")}
               </a>
               <a
                 href="/about"
                 className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
+                onClick={() => analytics.trackNavigation("/about", "learn_about_team")}
               >
                 {language === "nl" ? "Meer over ons team" : "Learn about our team"}
               </a>
@@ -239,6 +242,7 @@ export default function Home() {
                   href={product.href}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
                   aria-label={`${language === "nl" ? "Meer over" : "Learn more about"} ${product.name}`}
+                  onClick={() => analytics.trackProductLinkClick(product.name, "home_products")}
                 >
                   {language === "nl" ? `Ontdek ${product.name}` : `Discover ${product.name}`}
                   <ArrowRight className="h-4 w-4" />

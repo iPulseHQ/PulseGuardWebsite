@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { analytics } from "@/lib/analytics";
 
 export default function ContactPage() {
   const { t, language } = useLanguage();
@@ -48,15 +49,16 @@ export default function ContactPage() {
 
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
+      analytics.trackFormSubmit("contact_form", true);
     } catch (error) {
       setSubmitStatus("error");
-      setErrorMessage(
-        error instanceof Error
-          ? error.message
-          : language === "nl"
-          ? "Er is een fout opgetreden bij het verzenden van je bericht."
-          : "An error occurred while sending your message."
-      );
+      const errorMsg = error instanceof Error
+        ? error.message
+        : language === "nl"
+        ? "Er is een fout opgetreden bij het verzenden van je bericht."
+        : "An error occurred while sending your message.";
+      setErrorMessage(errorMsg);
+      analytics.trackFormSubmit("contact_form", false, errorMsg);
     } finally {
       setIsSubmitting(false);
     }

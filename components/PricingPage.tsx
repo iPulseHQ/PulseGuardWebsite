@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, X, ArrowRight, Sparkles, Zap, Star, Crown, Rocket } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { analytics } from "@/lib/analytics";
 
 export default function Pricing() {
   const { t } = useLanguage();
@@ -241,6 +242,7 @@ export default function Pricing() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block"
+                        onClick={() => analytics.trackCTAClick(`plan_${plan.id}`, "pricing_page")}
                       >
                         <Button
                           className={`w-full font-semibold py-5 sm:py-6 rounded-lg group ${
@@ -335,7 +337,11 @@ export default function Pricing() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-4">
-            <Link href="mailto:info@pulseguard.nl" className="w-full sm:w-auto">
+            <Link 
+              href="mailto:info@pulseguard.nl" 
+              className="w-full sm:w-auto"
+              onClick={() => analytics.trackCTAClick("contact_sales", "pricing_cta")}
+            >
               <Button
                 size="lg"
                 className="bg-white text-black hover:bg-gray-100 rounded-lg group font-semibold px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto"
@@ -345,7 +351,11 @@ export default function Pricing() {
               </Button>
             </Link>
 
-            <Link href="/guard" className="w-full sm:w-auto">
+            <Link 
+              href="/guard" 
+              className="w-full sm:w-auto"
+              onClick={() => analytics.trackButtonClick("view_demo", "pricing_cta")}
+            >
               <Button
                 size="lg"
                 variant="outline"

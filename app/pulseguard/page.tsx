@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import PulseGuardDashboardMockup from "@/components/PulseGuardDashboardMockup";
 import FeatureShowcase from "@/components/FeatureShowcase";
 import StructuredData from "@/components/StructuredData";
+import { analytics } from "@/lib/analytics";
 
 // Note: Metadata is handled in layout.tsx for this page
 // Consider creating a separate metadata export if this becomes a server component
@@ -153,12 +154,14 @@ export default function PulseGuardPage() {
               <a
                 href="https://guard.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center"
+                onClick={() => analytics.trackCTAClick("start_free_trial", "pulseguard_hero")}
               >
                 {t("startFreeTrial")}
               </a>
               <a
                 href="#dashboard-preview"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackButtonClick("view_demo", "pulseguard_hero")}
               >
                 {t("viewDemo")}
               </a>
@@ -380,6 +383,7 @@ export default function PulseGuardPage() {
               <a
                 href="https://guard.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2"
+                onClick={() => analytics.trackCTAClick("get_started", "pulseguard_cta")}
               >
                 {t("getStarted")}
                 <ArrowRight className="h-4 w-4" />
@@ -387,6 +391,7 @@ export default function PulseGuardPage() {
               <a
                 href="/pricing"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackNavigation("/pricing", "view_pricing_pulseguard")}
               >
                 {t("viewPricing")}
               </a>
