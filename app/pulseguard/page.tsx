@@ -153,14 +153,14 @@ export default function PulseGuardPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <a
                 href="https://guard.ipulse.one/sign-in"
-                className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center"
+                className="h-10 px-6 bg-foreground text-background text-sm font-semibold rounded-lg hover:bg-foreground/90 transition-all duration-200 shadow-lg shadow-foreground/10 hover:shadow-xl hover:shadow-foreground/20 inline-flex items-center justify-center"
                 onClick={() => analytics.trackCTAClick("start_free_trial", "pulseguard_hero")}
               >
                 {t("startFreeTrial")}
               </a>
               <a
                 href="#dashboard-preview"
-                className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                className="h-10 px-6 border border-border text-foreground hover:bg-muted text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
                 onClick={() => analytics.trackButtonClick("view_demo", "pulseguard_hero")}
               >
                 {t("viewDemo")}
@@ -382,7 +382,7 @@ export default function PulseGuardPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://guard.ipulse.one/sign-in"
-                className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2"
+                className="h-10 px-6 bg-foreground text-background text-sm font-semibold rounded-lg hover:bg-foreground/90 transition-all duration-200 shadow-lg shadow-foreground/10 hover:shadow-xl hover:shadow-foreground/20 inline-flex items-center justify-center gap-2"
                 onClick={() => analytics.trackCTAClick("get_started", "pulseguard_cta")}
               >
                 {t("getStarted")}
@@ -390,7 +390,7 @@ export default function PulseGuardPage() {
               </a>
               <a
                 href="/pricing"
-                className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                className="h-10 px-6 border border-border text-foreground hover:bg-muted text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
                 onClick={() => analytics.trackNavigation("/pricing", "view_pricing_pulseguard")}
               >
                 {t("viewPricing")}
