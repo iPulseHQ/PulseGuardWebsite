@@ -2,13 +2,8 @@ export default function PulseGuardDashboardMockup() {
   return (
     <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-background">
       {/* Header */}
-<<<<<<< HEAD
       <div className="bg-[#0F0F0F] px-4 sm:px-6 py-3 sm:py-4 border-b border-border/30">
         <h2 className="text-lg sm:text-xl font-bold text-foreground">Dashboard</h2>
-=======
-      <div className="bg-card px-6 py-4 border-b border-border/30">
-        <h2 className="text-xl font-bold text-foreground">Dashboard</h2>
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
         <p className="text-xs text-muted-foreground">Overzicht</p>
       </div>
 
@@ -17,11 +12,7 @@ export default function PulseGuardDashboardMockup() {
         {/* Top Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Uptime */}
-<<<<<<< HEAD
           <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-4 sm:p-6">
-=======
-          <div className="bg-card border border-border/50 rounded-xl p-6">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">UPTIME</p>
@@ -37,11 +28,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Active Incidents */}
-<<<<<<< HEAD
           <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-4 sm:p-6">
-=======
-          <div className="bg-card border border-border/50 rounded-xl p-6">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">ACTIEVE INCIDENTEN</p>
@@ -57,11 +44,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Response Time */}
-<<<<<<< HEAD
           <div className="bg-[#111111] border border-[#1F1F1F] rounded-xl p-4 sm:p-6">
-=======
-          <div className="bg-card border border-border/50 rounded-xl p-6">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-medium text-muted-foreground tracking-wider mb-2">RESPONSE TIJD</p>
@@ -78,19 +61,11 @@ export default function PulseGuardDashboardMockup() {
         </div>
 
         {/* Secondary Stats Row */}
-<<<<<<< HEAD
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
               <div className="bg-emerald-500/10 p-1.5 sm:p-2 rounded-lg">
                 <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500"></div>
-=======
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="bg-emerald-500/10 p-2 rounded-lg">
-                <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
               </div>
             </div>
             <p className="text-xs font-medium text-muted-foreground mb-1">DOMEINEN</p>
@@ -98,17 +73,10 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">10 up</p>
           </div>
 
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
               <div className="bg-emerald-500/10 p-1.5 sm:p-2 rounded-lg">
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="bg-emerald-500/10 p-2 rounded-lg">
-                <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
@@ -118,17 +86,10 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">0 healthy</p>
           </div>
 
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
               <div className="bg-emerald-500/10 p-1.5 sm:p-2 rounded-lg">
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="bg-emerald-500/10 p-2 rounded-lg">
-                <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -138,17 +99,10 @@ export default function PulseGuardDashboardMockup() {
             <p className="text-xs text-muted-foreground">0 online</p>
           </div>
 
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
               <div className="bg-emerald-500/10 p-1.5 sm:p-2 rounded-lg">
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-lg p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="bg-emerald-500/10 p-2 rounded-lg">
-                <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
@@ -170,7 +124,6 @@ export default function PulseGuardDashboardMockup() {
         {/* Charts Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {/* Uptime Status */}
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 sm:p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">Uptime Status</h4>
             <p className="text-xs text-muted-foreground mb-4 sm:mb-6">Huidige status van alle gemonitorde domeinen</p>
@@ -181,16 +134,6 @@ export default function PulseGuardDashboardMockup() {
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" className="hidden sm:block" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
-            <h4 className="text-sm font-semibold text-foreground mb-1">Uptime Status</h4>
-            <p className="text-xs text-muted-foreground mb-6">Huidige status van alle gemonitorde domeinen</p>
-            <div className="flex flex-col items-center justify-center py-8">
-              <div className="relative w-32 h-32">
-                <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <span className="text-2xl sm:text-3xl font-bold text-foreground">100%</span>
@@ -215,7 +158,6 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* SSL Certificaten */}
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 sm:p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">SSL Certificaten</h4>
             <p className="text-xs text-muted-foreground mb-4 sm:mb-6">SSL certificaat status overzicht</p>
@@ -226,16 +168,6 @@ export default function PulseGuardDashboardMockup() {
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" className="hidden sm:block" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
-            <h4 className="text-sm font-semibold text-foreground mb-1">SSL Certificaten</h4>
-            <p className="text-xs text-muted-foreground mb-6">SSL certificaat status overzicht</p>
-            <div className="flex flex-col items-center justify-center py-8">
-              <div className="relative w-32 h-32">
-                <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <span className="text-2xl sm:text-3xl font-bold text-foreground">10</span>
@@ -260,11 +192,7 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Security Score */}
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 sm:p-6">
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
             <h4 className="text-sm font-semibold text-foreground mb-1">Security Score</h4>
             <p className="text-xs text-muted-foreground mb-4 sm:mb-6">Average security score</p>
             <div className="flex flex-col items-center justify-center py-4 sm:py-8">
@@ -294,7 +222,6 @@ export default function PulseGuardDashboardMockup() {
           </div>
 
           {/* Incidenten */}
-<<<<<<< HEAD
           <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 sm:p-6">
             <h4 className="text-sm font-semibold text-foreground mb-1">Incidenten Overzicht</h4>
             <p className="text-xs text-muted-foreground mb-4 sm:mb-6">Laatste monitoring alerts</p>
@@ -305,16 +232,6 @@ export default function PulseGuardDashboardMockup() {
                   <circle cx="48" cy="48" r="42" fill="none" stroke="#10B981" strokeWidth="10" strokeDasharray="264" strokeDashoffset="0" className="sm:hidden" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#1F1F1F" strokeWidth="12" className="hidden sm:block" />
                   <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" className="hidden sm:block" />
-=======
-          <div className="bg-muted/30 border border-border/50 rounded-xl p-6">
-            <h4 className="text-sm font-semibold text-foreground mb-1">Incidenten Overzicht</h4>
-            <p className="text-xs text-muted-foreground mb-6">Laatste monitoring alerts</p>
-            <div className="flex flex-col items-center justify-center py-8">
-              <div className="relative w-32 h-32">
-                <svg className="w-32 h-32 transform -rotate-90">
-                  <circle cx="64" cy="64" r="56" fill="none" className="stroke-border" strokeWidth="12" />
-                  <circle cx="64" cy="64" r="56" fill="none" stroke="#10B981" strokeWidth="12" strokeDasharray="352" strokeDashoffset="0" />
->>>>>>> 249843e47df339367269361ae8a2c3793fa44154
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <span className="text-2xl sm:text-3xl font-bold text-foreground">20</span>

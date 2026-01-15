@@ -150,35 +150,6 @@ export default function BlogClient({ blogPosts, availableCategories }: BlogClien
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="glassmorphism rounded-xl p-12 text-center border border-border/50 shadow-xl"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-              {t("newsletterTitle")}
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t("newsletterDescription")}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder={t("emailPlaceholder")}
-                className="flex-1 h-10 px-4 rounded-md border border-border/50 bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg whitespace-nowrap">
-                {t("subscribe")}
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }
