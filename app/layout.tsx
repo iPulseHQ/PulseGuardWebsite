@@ -6,21 +6,64 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DatabuddyClient from "@/components/DatabuddyClient";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "iPulse - Monitor Alles. Mis Niets.",
-  description: "De ultieme monitoring oplossing voor moderne teams. Real-time inzicht, instant alerts, en complete controle over je digitale infrastructuur.",
-  icons: {
-    icon: [
-      { url: "/favicon-final/favicon.ico" },
-      { url: "/favicon-final/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-final/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [
-      { url: "/favicon-final/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+  metadataBase: new URL('https://ipulse.one'),
+  title: {
+    default: "iPulse - Monitor Everything. Miss Nothing.",
+    template: "%s | iPulse"
+  },
+  description: "The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.",
+  keywords: ["website monitoring", "uptime monitoring", "SSL monitoring", "server monitoring", "downtime alerts", "performance monitoring", "infrastructure monitoring"],
+  authors: [{ name: "iPulse Team" }],
+  creator: "iPulse",
+  publisher: "iPulse",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['nl_NL'],
+    url: 'https://ipulse.one',
+    siteName: 'iPulse',
+    title: 'iPulse - Monitor Everything. Miss Nothing.',
+    description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.',
+    images: [
+      {
+        url: '/seoimage.png',
+        width: 1200,
+        height: 630,
+        alt: 'iPulse - Website Monitoring Platform',
+      },
     ],
   },
-  manifest: "/favicon-final/site.webmanifest",
+  twitter: {
+    card: 'summary_large_image',
+    title: 'iPulse - Monitor Everything. Miss Nothing.',
+    description: 'The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control.',
+    images: ['/seoimage.png'],
+    creator: '@ipulse',
+  },
+  verification: {
+    google: 'OeS14SUrKgADkLyDtjSIAzmfeOXgvtaILEfnLUiGyoI',
+  },
+  alternates: {
+    canonical: 'https://ipulse.one',
+    languages: {
+      'en-US': 'https://ipulse.one',
+      'nl-NL': 'https://ipulse.one',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +74,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-9SR2WJTZK1"
           strategy="afterInteractive"
@@ -53,6 +102,7 @@ export default function RootLayout({
           </LanguageProvider>
         </ThemeProvider>
         <DatabuddyClient />
+        <Analytics />
       </body>
     </html>
   );

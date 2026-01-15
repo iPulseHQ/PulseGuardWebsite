@@ -6,6 +6,7 @@ import { Linkedin, Github, Instagram, Mail, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import CTA from "@/components/CTA";
+import StructuredData from "@/components/StructuredData";
 
 const teamMembers = [
   {
@@ -66,9 +67,27 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <>
+      {/* Structured Data for SEO */}
+      <StructuredData
+        type="Organization"
+        data={{
+          name: "iPulse",
+          url: "https://ipulse.one",
+          logo: "https://ipulse.one/logofinal.png",
+          description: "iPulse is a modern monitoring platform built by a passionate team of developers and entrepreneurs. We provide innovative solutions for website monitoring, file sharing, and QR code management.",
+          socialLinks: [
+            "https://www.linkedin.com/in/michan-van-der-hoek-267308215/",
+            "https://www.linkedin.com/in/arjan-den-hartog-142741220/",
+            "https://github.com/IAMichan"
+          ],
+          email: "support@ipulse.one"
+        }}
+      />
 
-      {/* Hero Section */}
+      <div className="min-h-screen relative overflow-hidden">
+
+        {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -249,7 +268,8 @@ export default function AboutPage() {
       {/* CTA Section */}
       <CTA />
 
-    </div>
+      </div>
+    </>
   );
 }
 

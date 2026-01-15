@@ -20,7 +20,7 @@ import {
   TrendingUp
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Feature {
   icon: React.ElementType;
@@ -34,12 +34,45 @@ interface Feature {
 export default function FeatureShowcase() {
   const { t } = useLanguage();
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
+  const [expandedFeatures, setExpandedFeatures] = useState<Set<number>>(new Set());
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // Initialize random expanded features on mount and detect touch device
+  useEffect(() => {
+    const numFeatures = 12; // Total number of features
+    const numToExpand = Math.floor(Math.random() * 3) + 2; // Random 2-4 features
+    const randomIndices = new Set<number>();
+
+    while (randomIndices.size < numToExpand) {
+      randomIndices.add(Math.floor(Math.random() * numFeatures));
+    }
+
+    setExpandedFeatures(randomIndices);
+
+    // Detect touch device
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  // Handle click/tap for touch devices
+  const handleFeatureInteraction = (index: number) => {
+    if (isTouchDevice) {
+      setExpandedFeatures(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(index)) {
+          newSet.delete(index);
+        } else {
+          newSet.add(index);
+        }
+        return newSet;
+      });
+    }
+  };
 
   const features: Feature[] = [
     {
       icon: Activity,
-      title: "Real-time Uptime Monitoring",
-      description: "Monitor your websites 24/7 from multiple global locations with instant downtime detection and comprehensive uptime history.",
+      title: t("featureUptimeTitle"),
+      description: t("featureUptimeDesc"),
       color: "text-emerald-600",
       bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
       preview: (
@@ -47,13 +80,13 @@ export default function FeatureShowcase() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">All Systems Operational</span>
+              <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{t("allSystemsOperational")}</span>
             </div>
             <span className="text-xs font-medium text-gray-500 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">99.9%</span>
           </div>
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-gray-600 dark:text-gray-400">Response time</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("responseTimeLabel")}</span>
               <span className="font-semibold text-gray-900 dark:text-gray-100">124ms</span>
             </div>
             <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
@@ -65,8 +98,8 @@ export default function FeatureShowcase() {
               />
             </div>
             <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 pt-1">
-              <span>Last checked: 30s ago</span>
-              <span>Next: 30s</span>
+              <span>{t("lastChecked")} 30s {t("ago")}</span>
+              <span>{t("nextCheck")} 30s</span>
             </div>
           </div>
         </div>
@@ -74,27 +107,27 @@ export default function FeatureShowcase() {
     },
     {
       icon: Shield,
-      title: "SSL Certificate Monitoring",
-      description: "Automatic SSL/TLS certificate monitoring with expiration alerts. Track certificate issuer, validity, and security grades in real-time.",
+      title: t("featureSSLTitle"),
+      description: t("featureSSLDesc"),
       color: "text-blue-600",
       bgColor: "bg-blue-50 dark:bg-blue-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <Lock className="h-4 w-4 text-blue-600" />
-            <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">SSL Certificate Status</span>
+            <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">{t("sslCertificateStatus")}</span>
           </div>
           <div className="space-y-2 text-xs">
             <div className="flex justify-between items-center p-2 bg-blue-50 dark:bg-blue-950/20 rounded">
-              <span className="text-gray-600 dark:text-gray-400">Expires in</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("expiresIn")}</span>
               <span className="font-semibold text-blue-600">90 days</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-600 dark:text-gray-400">Security Grade</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("securityGrade")}</span>
               <span className="font-bold text-emerald-600">A+</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-gray-50 dark:bg-gray-800 rounded">
-              <span className="text-gray-600 dark:text-gray-400">Issuer</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("issuer")}</span>
               <span className="font-medium text-gray-900 dark:text-gray-100">Let's Encrypt</span>
             </div>
           </div>
@@ -103,19 +136,19 @@ export default function FeatureShowcase() {
     },
     {
       icon: Globe2,
-      title: "Multi-Location Monitoring",
-      description: "Monitor from 4 strategic global locations (NL, DE, US, GB) to ensure worldwide availability and detect regional issues instantly.",
+      title: t("featureMultiLocationTitle"),
+      description: t("featureMultiLocationDesc"),
       color: "text-purple-600",
       bgColor: "bg-purple-50 dark:bg-purple-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Monitoring Locations</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("monitoringLocations")}</div>
           <div className="space-y-1.5">
             {[
-              { flag: "🇳🇱", name: "Netherlands", time: "98ms", status: "online" },
-              { flag: "🇩🇪", name: "Germany", time: "112ms", status: "online" },
-              { flag: "🇺🇸", name: "United States", time: "245ms", status: "online" },
-              { flag: "🇬🇧", name: "United Kingdom", time: "134ms", status: "online" },
+              { flag: "🇳🇱", name: t("netherlands"), time: "98ms", status: "online" },
+              { flag: "🇩🇪", name: t("germany"), time: "112ms", status: "online" },
+              { flag: "🇺🇸", name: t("unitedStates"), time: "245ms", status: "online" },
+              { flag: "🇬🇧", name: t("unitedKingdom"), time: "134ms", status: "online" },
             ].map((loc, i) => (
               <motion.div
                 key={loc.name}
@@ -140,14 +173,14 @@ export default function FeatureShowcase() {
     },
     {
       icon: Eye,
-      title: "Accessibility Scanning",
-      description: "WCAG 2.1 compliance scanning with detailed reports. Identify and fix accessibility issues to ensure your site works for everyone.",
+      title: t("featureAccessibilityTitle"),
+      description: t("featureAccessibilityDesc"),
       color: "text-pink-600",
       bgColor: "bg-pink-50 dark:bg-pink-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">WCAG Compliance</span>
+            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">{t("wcagCompliance")}</span>
             <div className="flex items-center gap-1">
               <span className="text-2xl font-bold text-pink-600">92</span>
               <span className="text-xs text-gray-500">/100</span>
@@ -156,15 +189,15 @@ export default function FeatureShowcase() {
           <div className="grid grid-cols-3 gap-2 text-xs">
             <div className="p-2 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200 dark:border-red-900">
               <div className="font-bold text-red-600 text-lg">2</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Critical</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("criticalIssues")}</div>
             </div>
             <div className="p-2 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200 dark:border-orange-900">
               <div className="font-bold text-orange-600 text-lg">5</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Major</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("majorIssues")}</div>
             </div>
             <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-900">
               <div className="font-bold text-blue-600 text-lg">8</div>
-              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">Minor</div>
+              <div className="text-gray-600 dark:text-gray-400 text-[10px] font-medium">{t("minorIssues")}</div>
             </div>
           </div>
         </div>
@@ -172,13 +205,13 @@ export default function FeatureShowcase() {
     },
     {
       icon: Scan,
-      title: "DNS Monitoring",
-      description: "Track DNS record changes in real-time. Monitor A, AAAA, MX, TXT, CNAME records and get alerted of unauthorized changes.",
+      title: t("featureDNSTitle"),
+      description: t("featureDNSDesc"),
       color: "text-orange-600",
       bgColor: "bg-orange-50 dark:bg-orange-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">DNS Records</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("dnsRecords")}</div>
           <div className="space-y-1.5 text-xs">
             {[
               { type: "A", value: "192.0.2.1", status: "ok" },
@@ -200,27 +233,27 @@ export default function FeatureShowcase() {
     },
     {
       icon: Lock,
-      title: "Security Analysis",
-      description: "Comprehensive security scoring and vulnerability detection. Monitor security headers, SSL configuration, and potential threats.",
+      title: t("featureSecurityTitle"),
+      description: t("featureSecurityDesc"),
       color: "text-red-600",
       bgColor: "bg-red-50 dark:bg-red-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">Security Score</span>
+            <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">{t("securityScoreLabel")}</span>
             <span className="text-2xl font-bold text-emerald-600">A</span>
           </div>
           <div className="space-y-1.5 text-xs">
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-600 dark:text-gray-400">HTTPS Enforced</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("httpsEnforced")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-gray-600 dark:text-gray-400">Security Headers</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("securityHeaders")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-yellow-50 dark:bg-yellow-950/20 rounded">
-              <span className="text-gray-600 dark:text-gray-400">HSTS Missing</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("hstsMissing")}</span>
               <AlertTriangle className="h-3 w-3 text-yellow-500" />
             </div>
           </div>
@@ -229,13 +262,13 @@ export default function FeatureShowcase() {
     },
     {
       icon: Film,
-      title: "Filmstrip Analysis",
-      description: "Visual load timeline showing how your page renders over time. Identify rendering bottlenecks and optimize user experience.",
+      title: t("featureFilmstripTitle"),
+      description: t("featureFilmstripDesc"),
       color: "text-indigo-600",
       bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Page Load Timeline</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("pageLoadTimeline")}</div>
           <div className="flex gap-1 mb-2">
             {[30, 50, 70, 85, 95, 100].map((progress, i) => (
               <motion.div
@@ -260,13 +293,13 @@ export default function FeatureShowcase() {
     },
     {
       icon: BarChart3,
-      title: "Resource Timings",
-      description: "Detailed performance metrics for all page resources. Analyze load times, transfer sizes, and optimize resource delivery.",
+      title: t("featureResourceTimingsTitle"),
+      description: t("featureResourceTimingsDesc"),
       color: "text-cyan-600",
       bgColor: "bg-cyan-50 dark:bg-cyan-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Top Resources</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("topResources")}</div>
           <div className="space-y-2">
             {[
               { name: "bundle.js", time: 245, size: "2.1 MB" },
@@ -303,18 +336,18 @@ export default function FeatureShowcase() {
     },
     {
       icon: AlertTriangle,
-      title: "Incident Management",
-      description: "Automatic incident creation and tracking. Organize incidents by severity, status, and affected services with full timeline views.",
+      title: t("featureIncidentTitle"),
+      description: t("featureIncidentDesc"),
       color: "text-yellow-600",
       bgColor: "bg-yellow-50 dark:bg-yellow-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Recent Incidents</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("recentIncidents")}</div>
           <div className="space-y-2">
             {[
-              { title: "Site Downtime", severity: "critical", time: "2m ago", color: "red" },
-              { title: "Slow Response", severity: "warning", time: "15m ago", color: "yellow" },
-              { title: "High CPU Usage", severity: "info", time: "1h ago", color: "blue" },
+              { title: t("siteDowntime"), severity: "critical", time: `2m ${t("ago")}`, color: "red" },
+              { title: t("slowResponse"), severity: "warning", time: `15m ${t("ago")}`, color: "yellow" },
+              { title: t("highCPUUsage"), severity: "info", time: `1h ${t("ago")}`, color: "blue" },
             ].map((incident, i) => (
               <motion.div
                 key={incident.title}
@@ -336,19 +369,19 @@ export default function FeatureShowcase() {
     },
     {
       icon: Bell,
-      title: "Smart Notifications",
-      description: "Customizable alert channels including email, Slack, Discord, and webhooks. Set up notification rules based on severity and time.",
+      title: t("featureNotificationsTitle"),
+      description: t("featureNotificationsDesc"),
       color: "text-teal-600",
       bgColor: "bg-teal-50 dark:bg-teal-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Alert Channels</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("alertChannels")}</div>
           <div className="space-y-2">
             {[
-              { name: "Email", icon: "📧", enabled: true },
-              { name: "Slack", icon: "💬", enabled: true },
-              { name: "Discord", icon: "🎮", enabled: false },
-              { name: "Webhook", icon: "🔗", enabled: true },
+              { name: t("email"), icon: "📧", enabled: true },
+              { name: t("slack"), icon: "💬", enabled: true },
+              { name: t("discord"), icon: "🎮", enabled: false },
+              { name: t("webhook"), icon: "🔗", enabled: true },
             ].map((channel, i) => (
               <motion.div
                 key={channel.name}
@@ -378,23 +411,23 @@ export default function FeatureShowcase() {
     },
     {
       icon: Code,
-      title: "Embeddable Widgets",
-      description: "Share your uptime status with embeddable widgets. Display real-time status on your website or status page.",
+      title: t("featureWidgetsTitle"),
+      description: t("featureWidgetsDesc"),
       color: "text-violet-600",
       bgColor: "bg-violet-50 dark:bg-violet-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Status Widget</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("statusWidget")}</div>
           <div className="p-3 bg-violet-50 dark:bg-violet-950/20 rounded-lg border border-violet-200 dark:border-violet-800">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">Service Status</span>
+              <span className="text-xs font-semibold text-gray-900 dark:text-gray-100">{t("serviceStatus")}</span>
               <div className="flex items-center gap-1">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                <span className="text-xs font-medium text-emerald-600">Operational</span>
+                <span className="text-xs font-medium text-emerald-600">{t("operational")}</span>
               </div>
             </div>
             <div className="space-y-1">
-              {["API", "Website", "Database"].map((service, i) => (
+              {[t("api"), t("website"), t("database")].map((service, i) => (
                 <div key={service} className="flex items-center justify-between text-xs">
                   <span className="text-gray-600 dark:text-gray-400">{service}</span>
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
@@ -410,19 +443,19 @@ export default function FeatureShowcase() {
     },
     {
       icon: Clock,
-      title: "Performance Metrics",
-      description: "Track average response time, P95 latency, and detailed performance statistics. Identify performance trends and optimize accordingly.",
+      title: t("featurePerformanceTitle"),
+      description: t("featurePerformanceDesc"),
       color: "text-lime-600",
       bgColor: "bg-lime-50 dark:bg-lime-950/20",
       preview: (
         <div className="mt-4 p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 shadow-sm">
-          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">Performance Stats</div>
+          <div className="text-xs font-semibold text-gray-900 dark:text-gray-100 mb-3">{t("performanceStats")}</div>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { label: "Avg Response", value: "124ms", trend: "down" },
-              { label: "P95 Latency", value: "289ms", trend: "down" },
-              { label: "Success Rate", value: "99.9%", trend: "up" },
-              { label: "Total Requests", value: "52.4K", trend: "up" },
+              { label: t("avgResponse"), value: "124ms", trend: "down" },
+              { label: t("p95Latency"), value: "289ms", trend: "down" },
+              { label: t("successRate"), value: "99.9%", trend: "up" },
+              { label: t("totalRequests"), value: "52.4K", trend: "up" },
             ].map((metric, i) => (
               <motion.div
                 key={metric.label}
@@ -459,13 +492,13 @@ export default function FeatureShowcase() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium mb-6 shadow-sm">
               <Zap className="h-4 w-4 text-primary" />
-              <span>{t("powerfulFeatures") || "Powerful Features"}</span>
+              <span>{t("powerfulFeatures")}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
-              {t("featureShowcaseTitle") || "Go way beyond monitoring"}
+              {t("featureShowcaseTitle")}
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {t("featureShowcaseDesc") || "Everything you need to monitor, analyze, and optimize your websites and applications in one powerful platform"}
+              {t("featureShowcaseDesc")}
             </p>
           </motion.div>
         </div>
@@ -475,6 +508,8 @@ export default function FeatureShowcase() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             const isSelected = selectedFeature === index;
+            const isExpanded = expandedFeatures.has(index);
+            const shouldShowPreview = isSelected || isExpanded;
 
             return (
               <motion.div
@@ -483,14 +518,15 @@ export default function FeatureShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
                 viewport={{ once: true }}
-                onMouseEnter={() => setSelectedFeature(index)}
-                onMouseLeave={() => setSelectedFeature(null)}
+                onMouseEnter={() => !isTouchDevice && setSelectedFeature(index)}
+                onMouseLeave={() => !isTouchDevice && setSelectedFeature(null)}
+                onClick={() => handleFeatureInteraction(index)}
                 className={`
                   group relative overflow-hidden rounded-2xl p-6
                   border-2 transition-all duration-300 ease-out cursor-pointer
-                  ${isSelected
+                  ${shouldShowPreview
                     ? `${feature.bgColor} border-primary/50 shadow-2xl shadow-primary/10 scale-[1.02]`
-                    : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg'
+                    : 'bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg active:scale-[0.98]'
                   }
                 `}
               >
@@ -500,20 +536,20 @@ export default function FeatureShowcase() {
                   <div className={`
                     h-14 w-14 rounded-xl flex items-center justify-center mb-4
                     transition-all duration-300
-                    ${isSelected
+                    ${shouldShowPreview
                       ? `${feature.color} bg-white dark:bg-gray-900 shadow-lg scale-110`
                       : 'bg-muted/50 group-hover:bg-muted'
                     }
                   `}>
                     <Icon className={`h-7 w-7 transition-all duration-300 ${
-                      isSelected ? feature.color : 'text-muted-foreground group-hover:text-foreground'
+                      shouldShowPreview ? feature.color : 'text-muted-foreground group-hover:text-foreground'
                     }`} />
                   </div>
 
                   {/* Title */}
                   <h3 className={`
                     text-lg font-bold mb-2 transition-colors duration-300
-                    ${isSelected ? 'text-foreground' : 'text-foreground/90 group-hover:text-foreground'}
+                    ${shouldShowPreview ? 'text-foreground' : 'text-foreground/90 group-hover:text-foreground'}
                   `}>
                     {feature.title}
                   </h3>
@@ -521,14 +557,14 @@ export default function FeatureShowcase() {
                   {/* Description */}
                   <p className={`
                     text-sm leading-relaxed transition-colors duration-300 mb-2
-                    ${isSelected ? 'text-foreground/80' : 'text-muted-foreground group-hover:text-foreground/70'}
+                    ${shouldShowPreview ? 'text-foreground/80' : 'text-muted-foreground group-hover:text-foreground/70'}
                   `}>
                     {feature.description}
                   </p>
 
                   {/* Preview */}
                   <AnimatePresence>
-                    {isSelected && (
+                    {shouldShowPreview && (
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}

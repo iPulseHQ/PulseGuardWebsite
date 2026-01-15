@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
+import { analytics } from "@/lib/analytics";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -39,7 +40,11 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center mb-4">
+            <Link 
+              href="/" 
+              className="flex items-center mb-4"
+              onClick={() => analytics.trackFooterLink("/", "logo")}
+            >
               {mounted && (
                 <Image
                   src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
@@ -70,6 +75,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => analytics.trackExternalLink(link.href, link.name)}
                     >
                       {link.name}
                     </a>
@@ -77,6 +83,7 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => analytics.trackFooterLink(link.href, link.name)}
                     >
                       {link.name}
                     </Link>
@@ -123,6 +130,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    onClick={() => analytics.trackFooterLink(link.href, link.name)}
                   >
                     {link.name}
                   </Link>

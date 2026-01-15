@@ -8,6 +8,7 @@ import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-rea
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 import { GB, NL } from "country-flag-icons/react/3x2";
+import { analytics, trackEvent, AnalyticsEvents } from "@/lib/analytics";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,6 +25,7 @@ export default function Header() {
   const toggleTheme = () => {
     const newTheme = resolvedTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
+    analytics.trackThemeToggle(newTheme);
   };
 
   // Determine sign-in URL based on current page
@@ -76,6 +78,7 @@ export default function Header() {
     { name: t("about"), href: "/about" },
     { name: t("changelog"), href: "/changelog" },
     { name: t("blog"), href: "/blog" },
+    { name: t("contact"), href: "/contact" },
   ];
 
   // Helper function to check if a path is active
@@ -91,7 +94,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Link 
+            href="/" 
+            className="flex items-center hover:opacity-80 transition-opacity"
+            onClick={() => analytics.trackNavigation("/", "logo")}
+          >
             {mounted && (
               <Image
                 src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
@@ -114,9 +121,10 @@ export default function Header() {
               href="/"
               className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 isActive("/")
-                  ? "bg-white/10 text-white border border-white/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
+              onClick={() => analytics.trackNavigation("/", "home")}
             >
               {t("home")}
             </Link>
@@ -124,14 +132,17 @@ export default function Header() {
             {/* Solutions Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setSolutionsOpen(true)}
+              onMouseEnter={() => {
+                setSolutionsOpen(true);
+                trackEvent(AnalyticsEvents.SOLUTIONS_DROPDOWN_OPEN, { location: 'header_desktop' });
+              }}
               onMouseLeave={() => setSolutionsOpen(false)}
             >
               <button
                 type="button"
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-1 ${
                   pathname?.includes('/pulseguard') || pathname?.includes('/pulsefiles') || pathname?.includes('/pulseqr')
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
               >
@@ -149,9 +160,10 @@ export default function Header() {
                         href={solution.href}
                         className={`flex items-start gap-3 p-3 rounded-lg transition-all group ${
                           isActive(solution.href)
-                            ? "bg-white/10 border border-white/20"
+                            ? "bg-primary/10 border border-primary/20"
                             : "hover:bg-muted"
                         }`}
+                        onClick={() => analytics.trackSolutionClick(solution.name)}
                       >
                         <div className="h-10 w-10 rounded-md bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                           <solution.icon className="h-5 w-5 text-primary" />
@@ -177,9 +189,10 @@ export default function Header() {
                 href={item.href}
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
                   isActive(item.href)
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
+                onClick={() => analytics.trackNavigation(item.href, item.name)}
               >
                 {item.name}
               </Link>
@@ -190,7 +203,11 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-2">
             {/* Language Toggle */}
             <button
-              onClick={() => setLanguage(language === "en" ? "nl" : "en")}
+              onClick={() => {
+                const newLanguage = language === "en" ? "nl" : "en";
+                setLanguage(newLanguage);
+                analytics.trackLanguageToggle(newLanguage);
+              }}
               className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center overflow-hidden p-1"
               aria-label="Toggle language"
               title={language === "en" ? t("switchToNL") : t("switchToEN")}
@@ -223,12 +240,14 @@ export default function Header() {
             <Link
               href={getSignInUrl()}
               className="px-5 py-2 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200"
+              onClick={() => analytics.trackLogin("header_desktop")}
             >
               {t("login")}
             </Link>
             <Link
               href={getRegisterUrl()}
               className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
+              onClick={() => analytics.trackRegister("header_desktop")}
             >
               {t("register")}
             </Link>
@@ -269,10 +288,13 @@ export default function Header() {
               href="/"
               className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
                 isActive("/")
-                  ? "bg-white/10 text-white border border-white/20"
+                  ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-foreground/80 hover:text-foreground hover:bg-muted"
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                analytics.trackNavigation("/", "home_mobile");
+              }}
             >
               {t("home")}
             </Link>
@@ -288,7 +310,7 @@ export default function Header() {
                   href={solution.href}
                   className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
                     isActive(solution.href)
-                      ? "bg-white/10 border border-white/20"
+                      ? "bg-primary/10 border border-primary/20"
                       : "hover:bg-muted"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
@@ -314,10 +336,13 @@ export default function Header() {
                 href={item.href}
                 className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
                   isActive(item.href)
-                    ? "bg-white/10 text-white border border-white/20"
+                    ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  analytics.trackNavigation(item.href, `${item.name}_mobile`);
+                }}
               >
                 {item.name}
               </Link>
@@ -325,8 +350,10 @@ export default function Header() {
             <div className="pt-2 flex flex-col gap-2">
               <button
                 onClick={() => {
-                  setLanguage(language === "en" ? "nl" : "en");
+                  const newLanguage = language === "en" ? "nl" : "en";
+                  setLanguage(newLanguage);
                   setMobileMenuOpen(false);
+                  analytics.trackLanguageToggle(newLanguage);
                 }}
                 className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all text-left flex items-center gap-2"
               >
@@ -342,14 +369,20 @@ export default function Header() {
               <Link
                 href={getSignInUrl()}
                 className="px-5 py-2.5 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200 text-center"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  analytics.trackLogin("header_mobile");
+                }}
               >
                 {t("login")}
               </Link>
               <Link
                 href={getRegisterUrl()}
                 className="px-6 py-2.5 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 text-center"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  analytics.trackRegister("header_mobile");
+                }}
               >
                 {t("register")}
               </Link>

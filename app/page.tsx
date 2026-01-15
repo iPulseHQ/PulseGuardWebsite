@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import CTA from "@/components/CTA";
+import StructuredData from "@/components/StructuredData";
+import { analytics } from "@/lib/analytics";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -83,11 +85,37 @@ export default function Home() {
     },
   ];
 
-  const trustedCompanies = ["IMDigital", "CHE", "ArjanDenHartog", "VanDenBroek Heteren"];
+  const trustedCompanies = ["IMDigital", "CHE", "Arjan den Hartog", "Van den Broek Heteren"];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      {/* Structured Data for SEO */}
+      <StructuredData
+        type="Organization"
+        data={{
+          name: "iPulse",
+          url: "https://ipulse.one",
+          logo: "https://ipulse.one/logofinal.png",
+          description: "The ultimate monitoring solution for modern teams. Real-time insights, instant alerts, and complete control over your digital infrastructure.",
+          socialLinks: [
+            "https://twitter.com/ipulse",
+            "https://linkedin.com/company/ipulse"
+          ],
+          email: "support@ipulse.one"
+        }}
+      />
+      <StructuredData
+        type="WebSite"
+        data={{
+          name: "iPulse",
+          url: "https://ipulse.one",
+          description: "Monitor Everything. Miss Nothing. The ultimate monitoring solution for modern teams.",
+          logo: "https://ipulse.one/logofinal.png"
+        }}
+      />
+
+      <div className="min-h-screen">
+        {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -116,14 +144,16 @@ export default function Home() {
               <a
                 href="#products"
                 className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center"
+                onClick={() => analytics.trackButtonClick("explore_solutions", "hero")}
               >
                 {t("exploreSolutions")}
               </a>
               <a
                 href="/about"
                 className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
+                onClick={() => analytics.trackNavigation("/about", "learn_about_team")}
               >
-                {t("learnMore")}
+                {language === "nl" ? "Meer over ons team" : "Learn about our team"}
               </a>
             </div>
 
@@ -211,8 +241,10 @@ export default function Home() {
                 <Link
                   href={product.href}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                  aria-label={`${language === "nl" ? "Meer over" : "Learn more about"} ${product.name}`}
+                  onClick={() => analytics.trackProductLinkClick(product.name, "home_products")}
                 >
-                  {t("learnMore")}
+                  {language === "nl" ? `Ontdek ${product.name}` : `Discover ${product.name}`}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </motion.div>
@@ -354,6 +386,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <CTA />
-    </div>
+      </div>
+    </>
   );
 }

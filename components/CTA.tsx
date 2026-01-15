@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { analytics } from "@/lib/analytics";
 
 export default function CTA() {
   const { t } = useLanguage();
@@ -62,6 +63,7 @@ export default function CTA() {
             <a
               href={getSignInUrl()}
               className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2 group"
+              onClick={() => analytics.trackCTAClick("start_free_trial", pathname || "unknown")}
             >
               {t("startFreeTrial")}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -69,6 +71,7 @@ export default function CTA() {
             <a
               href="/about"
               className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+              onClick={() => analytics.trackCTAClick("contact_us", pathname || "unknown")}
             >
               {t("contactUs")}
             </a>

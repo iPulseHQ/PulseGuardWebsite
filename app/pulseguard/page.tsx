@@ -6,6 +6,11 @@ import { Bell, Globe2, Activity, Zap, Lock, BarChart3, Clock, Check, ArrowRight 
 import { useEffect, useState } from "react";
 import PulseGuardDashboardMockup from "@/components/PulseGuardDashboardMockup";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import StructuredData from "@/components/StructuredData";
+import { analytics } from "@/lib/analytics";
+
+// Note: Metadata is handled in layout.tsx for this page
+// Consider creating a separate metadata export if this becomes a server component
 
 export default function PulseGuardPage() {
   const { t } = useLanguage();
@@ -62,6 +67,62 @@ export default function PulseGuardPage() {
   ];
 
   return (
+    <>
+      {/* Structured Data for SEO */}
+      <StructuredData
+        type="WebApplication"
+        data={{
+          name: "PulseGuard",
+          description: "Monitor your websites 24/7 with instant downtime alerts, SSL certificate monitoring, and performance tracking from 4 global locations.",
+          url: "https://ipulse.one/pulseguard",
+          price: "0",
+          rating: {
+            value: "4.8",
+            count: "150"
+          },
+          features: [
+            "Real-time Uptime Monitoring",
+            "SSL Certificate Monitoring",
+            "Multi-Location Monitoring",
+            "Instant Alerts",
+            "Performance Metrics",
+            "Incident Management"
+          ]
+        }}
+      />
+
+      <StructuredData
+        type="FAQPage"
+        data={{
+          questions: [
+            {
+              question: "How fast can I set up my first monitor?",
+              answer: "You can create your first monitor in under 2 minutes. Simply sign up, add your website URL, and you're done. No complex configuration needed."
+            },
+            {
+              question: "What happens when my site goes down?",
+              answer: "You'll receive instant notifications via email, SMS, Slack, Discord, or webhook. Our system checks your site every 30 seconds and alerts you immediately when issues are detected."
+            },
+            {
+              question: "Can I monitor from multiple locations?",
+              answer: "Yes! We monitor from 4 global locations (Netherlands, Germany, United States, United Kingdom) to ensure accurate worldwide availability tracking."
+            },
+            {
+              question: "Do you offer SSL certificate monitoring?",
+              answer: "Absolutely. We automatically track your SSL certificates and send alerts before they expire, so you never have to worry about certificate-related downtime."
+            },
+            {
+              question: "What's included in the free plan?",
+              answer: "Our free plan includes up to 5 monitors with 5-minute check intervals, email notifications, and 30 days of data retention. Perfect for getting started!"
+            },
+            {
+              question: "Can I integrate with my existing tools?",
+              answer: "Yes! PulseGuard integrates with Slack, Discord, Microsoft Teams, webhooks, and provides a full API for custom integrations."
+            }
+          ]
+        }}
+      />
+
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -93,12 +154,14 @@ export default function PulseGuardPage() {
               <a
                 href="https://guard.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center"
+                onClick={() => analytics.trackCTAClick("start_free_trial", "pulseguard_hero")}
               >
                 {t("startFreeTrial")}
               </a>
               <a
-                href="#demo"
+                href="#dashboard-preview"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackButtonClick("view_demo", "pulseguard_hero")}
               >
                 {t("viewDemo")}
               </a>
@@ -123,7 +186,7 @@ export default function PulseGuardPage() {
       </section>
 
       {/* Dashboard Mockup */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section id="dashboard-preview" className="py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -191,9 +254,9 @@ export default function PulseGuardPage() {
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
                 {t("stayAhead")}
               </h2>
-              <ul className="space-y-4">
+              <div className="space-y-4">
                 {benefits.map((benefit, i) => (
-                  <motion.li
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -205,9 +268,9 @@ export default function PulseGuardPage() {
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <span className="text-muted-foreground">{benefit}</span>
-                  </motion.li>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
 
             <motion.div
@@ -251,6 +314,52 @@ export default function PulseGuardPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
+              FAQ
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("faqPulseGuardTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {t("faqPulseGuardSubtitle")}
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              <motion.details
+                key={num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group glassmorphism rounded-xl p-6 border border-border/50 hover:shadow-lg transition-all"
+              >
+                <summary className="cursor-pointer list-none flex items-center justify-between font-semibold text-lg">
+                  <span>{t(`faqPulseGuard${num}Q` as any)}</span>
+                  <div className="ml-4 flex-shrink-0 h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <ArrowRight className="h-4 w-4 text-primary transition-transform group-open:rotate-90" />
+                  </div>
+                </summary>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
+                  {t(`faqPulseGuard${num}A` as any)}
+                </p>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-4xl mx-auto">
@@ -274,6 +383,7 @@ export default function PulseGuardPage() {
               <a
                 href="https://guard.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2"
+                onClick={() => analytics.trackCTAClick("get_started", "pulseguard_cta")}
               >
                 {t("getStarted")}
                 <ArrowRight className="h-4 w-4" />
@@ -281,6 +391,7 @@ export default function PulseGuardPage() {
               <a
                 href="/pricing"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackNavigation("/pricing", "view_pricing_pulseguard")}
               >
                 {t("viewPricing")}
               </a>
@@ -289,5 +400,6 @@ export default function PulseGuardPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

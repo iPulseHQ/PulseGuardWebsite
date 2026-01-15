@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Upload, Lock, Share2, FileText, Zap, Shield, Users, Cloud, Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import PulseFilesDashboardMockup from "@/components/PulseFilesDashboardMockup";
+import { analytics } from "@/lib/analytics";
 
 export default function PulseFilesPage() {
   const { t } = useLanguage();
@@ -92,12 +93,14 @@ export default function PulseFilesPage() {
               <a
                 href="https://files.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center"
+                onClick={() => analytics.trackCTAClick("start_free_trial", "pulsefiles_hero")}
               >
                 {t("startFreeTrial")}
               </a>
               <a
                 href="#demo"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackButtonClick("view_demo", "pulsefiles_hero")}
               >
                 {t("viewDemo")}
               </a>
@@ -311,6 +314,7 @@ export default function PulseFilesPage() {
               <a
                 href="https://files.ipulse.one/sign-in"
                 className="h-10 px-6 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2"
+                onClick={() => analytics.trackCTAClick("get_started", "pulsefiles_cta")}
               >
                 {t("getStarted")}
                 <ArrowRight className="h-4 w-4" />
@@ -318,6 +322,7 @@ export default function PulseFilesPage() {
               <a
                 href="/pricing"
                 className="h-10 px-6 border border-white/50 text-foreground hover:text-white hover:border-white hover:bg-white/5 text-sm font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center"
+                onClick={() => analytics.trackNavigation("/pricing", "view_pricing_pulsefiles")}
               >
                 {t("viewPricing")}
               </a>
