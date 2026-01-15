@@ -82,11 +82,11 @@ export default function FeatureShowcase() {
               <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
               <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{t("allSystemsOperational")}</span>
             </div>
-            <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-1 rounded">99.9%</span>
+            <span className="text-xs font-medium text-gray-600 dark:text-gray-400 bg-muted px-2 py-1 rounded">99.9%</span>
           </div>
           <div className="space-y-2">
             <div className="flex justify-between items-center text-xs">
-              <span className="text-muted-foreground">{t("responseTimeLabel")}</span>
+              <span className="text-gray-600 dark:text-gray-400">{t("responseTimeLabel")}</span>
               <span className="font-semibold text-gray-900 dark:text-white">124ms</span>
             </div>
             <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -97,7 +97,7 @@ export default function FeatureShowcase() {
                 className="h-full bg-emerald-500 rounded-full"
               />
             </div>
-            <div className="flex justify-between text-xs text-muted-foreground pt-1">
+            <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400 pt-1">
               <span>{t("lastChecked")} 30s {t("ago")}</span>
               <span>{t("nextCheck")} 30s</span>
             </div>
@@ -119,15 +119,15 @@ export default function FeatureShowcase() {
           </div>
           <div className="space-y-2 text-xs">
             <div className="flex justify-between items-center p-2 bg-blue-50 dark:bg-blue-950/20 rounded">
-              <span className="text-muted-foreground">{t("expiresIn")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("expiresIn")}</span>
               <span className="font-semibold text-blue-600">90 days</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-muted-foreground">{t("securityGrade")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("securityGrade")}</span>
               <span className="font-bold text-emerald-600">A+</span>
             </div>
             <div className="flex justify-between items-center p-2 bg-muted rounded">
-              <span className="text-muted-foreground">{t("issuer")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("issuer")}</span>
               <span className="font-medium text-gray-900 dark:text-white">Let's Encrypt</span>
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function FeatureShowcase() {
                   <span className="text-xs font-medium text-gray-900 dark:text-white">{loc.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-muted-foreground">{loc.time}</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-400">{loc.time}</span>
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
                 </div>
               </motion.div>
@@ -183,7 +183,7 @@ export default function FeatureShowcase() {
             <span className="text-xs font-semibold text-gray-900 dark:text-white">{t("wcagCompliance")}</span>
             <div className="flex items-center gap-1">
               <span className="text-2xl font-bold text-pink-600">92</span>
-              <span className="text-xs text-muted-foreground">/100</span>
+              <span className="text-xs text-gray-600 dark:text-gray-400">/100</span>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-2 text-xs">
@@ -222,7 +222,7 @@ export default function FeatureShowcase() {
               <div key={record.type} className="flex items-center justify-between p-2 bg-muted rounded">
                 <div className="flex items-center gap-2">
                   <span className="font-mono font-bold text-orange-600 w-12">{record.type}</span>
-                  <span className="text-muted-foreground truncate">{record.value}</span>
+                  <span className="text-gray-600 dark:text-gray-400 truncate">{record.value}</span>
                 </div>
                 <CheckCircle className="h-3 w-3 text-emerald-500 flex-shrink-0" />
               </div>
@@ -245,15 +245,15 @@ export default function FeatureShowcase() {
           </div>
           <div className="space-y-1.5 text-xs">
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-muted-foreground">{t("httpsEnforced")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("httpsEnforced")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-950/20 rounded">
-              <span className="text-muted-foreground">{t("securityHeaders")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("securityHeaders")}</span>
               <CheckCircle className="h-3 w-3 text-emerald-500" />
             </div>
             <div className="flex items-center justify-between p-2 bg-yellow-50 dark:bg-yellow-950/20 rounded">
-              <span className="text-muted-foreground">{t("hstsMissing")}</span>
+              <span className="text-gray-700 dark:text-gray-300">{t("hstsMissing")}</span>
               <AlertTriangle className="h-3 w-3 text-yellow-500" />
             </div>
           </div>
@@ -315,7 +315,7 @@ export default function FeatureShowcase() {
               >
                 <div className="flex justify-between text-xs">
                   <span className="font-mono text-gray-900 dark:text-white">{resource.name}</span>
-                  <span className="text-muted-foreground">{resource.time}ms</span>
+                  <span className="text-gray-600 dark:text-gray-400">{resource.time}ms</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
@@ -326,7 +326,7 @@ export default function FeatureShowcase() {
                       className="h-full bg-cyan-500 rounded-full"
                     />
                   </div>
-                  <span className="text-[10px] text-muted-foreground w-12 text-right">{resource.size}</span>
+                  <span className="text-[10px] text-gray-600 dark:text-gray-400 w-12 text-right">{resource.size}</span>
                 </div>
               </motion.div>
             ))}
@@ -360,7 +360,7 @@ export default function FeatureShowcase() {
                   <div className={`h-2 w-2 rounded-full bg-${incident.color}-500`}></div>
                   <span className="text-xs font-medium text-gray-900 dark:text-white">{incident.title}</span>
                 </div>
-                <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded">{incident.time}</span>
+                <span className="text-[10px] text-gray-600 dark:text-gray-400 bg-muted px-2 py-0.5 rounded">{incident.time}</span>
               </motion.div>
             ))}
           </div>
@@ -429,13 +429,13 @@ export default function FeatureShowcase() {
             <div className="space-y-1">
               {[t("api"), t("website"), t("database")].map((service, i) => (
                 <div key={service} className="flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">{service}</span>
+                  <span className="text-gray-700 dark:text-gray-300">{service}</span>
                   <CheckCircle className="h-3 w-3 text-emerald-500" />
                 </div>
               ))}
             </div>
           </div>
-          <div className="mt-2 text-[10px] text-center text-muted-foreground">
+          <div className="mt-2 text-[10px] text-center text-gray-600 dark:text-gray-400">
             &lt;iframe src="..." /&gt;
           </div>
         </div>
