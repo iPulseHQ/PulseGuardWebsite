@@ -10,6 +10,17 @@ import DatabuddyClient from "@/components/DatabuddyClient";
 export const metadata: Metadata = {
   title: "iPulse - Monitor Alles. Mis Niets.",
   description: "De ultieme monitoring oplossing voor moderne teams. Real-time inzicht, instant alerts, en complete controle over je digitale infrastructuur.",
+  icons: {
+    icon: [
+      { url: "/favicon-final/favicon.ico" },
+      { url: "/favicon-final/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-final/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/favicon-final/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
+  manifest: "/favicon-final/site.webmanifest",
 };
 
 export default function RootLayout({

@@ -2,24 +2,24 @@ export default function PulseQRDashboardMockup() {
   return (
     <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border/50 shadow-2xl bg-[#0A0A0A]">
       {/* Header */}
-      <div className="bg-[#0F0F0F] px-6 py-4 border-b border-border/30">
-        <h2 className="text-xl font-bold text-foreground">Nieuwe QR-code</h2>
+      <div className="bg-[#0F0F0F] px-4 sm:px-6 py-3 sm:py-4 border-b border-border/30">
+        <h2 className="text-lg sm:text-xl font-bold text-foreground">Nieuwe QR-code</h2>
         <p className="text-xs text-muted-foreground">Maak in een paar seconden een gratis QR-code die niet verloopt. Alles wordt lokaal opgeslagen in jouw browser – geen account nodig.</p>
       </div>
 
       {/* Main Content */}
-      <div className="p-6 space-y-6">
+      <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
         {/* Type QR-code Section */}
-        <div className="mb-6">
-          <h3 className="text-base font-semibold text-foreground mb-2">Type QR-code</h3>
-          <p className="text-xs text-muted-foreground mb-4">Kies wat je met deze QR-code wilt doen.</p>
+        <div className="mb-4 sm:mb-6">
+          <h3 className="text-sm sm:text-base font-semibold text-foreground mb-2">Type QR-code</h3>
+          <p className="text-xs text-muted-foreground mb-3 sm:mb-4">Kies wat je met deze QR-code wilt doen.</p>
 
           {/* QR Type Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
             {/* Tekst / notitie - Selected */}
-            <div className="bg-[#111111] border-2 border-primary rounded-xl p-4 cursor-pointer hover:bg-[#151515] transition-colors">
-              <div className="bg-primary/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#111111] border-2 border-primary rounded-xl p-3 sm:p-4 cursor-pointer hover:bg-[#151515] transition-colors">
+              <div className="bg-primary/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
@@ -28,9 +28,9 @@ export default function PulseQRDashboardMockup() {
             </div>
 
             {/* Link / URL */}
-            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 cursor-pointer hover:bg-[#151515] transition-colors">
-              <div className="bg-muted/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-3 sm:p-4 cursor-pointer hover:bg-[#151515] transition-colors">
+              <div className="bg-muted/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.102m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
               </div>
@@ -39,9 +39,9 @@ export default function PulseQRDashboardMockup() {
             </div>
 
             {/* WiFi */}
-            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 cursor-pointer hover:bg-[#151515] transition-colors">
-              <div className="bg-muted/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-3 sm:p-4 cursor-pointer hover:bg-[#151515] transition-colors">
+              <div className="bg-muted/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
                 </svg>
               </div>
@@ -50,9 +50,9 @@ export default function PulseQRDashboardMockup() {
             </div>
 
             {/* V-card */}
-            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 cursor-pointer hover:bg-[#151515] transition-colors">
-              <div className="bg-muted/10 w-10 h-10 rounded-lg flex items-center justify-center mb-3">
-                <svg className="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-3 sm:p-4 cursor-pointer hover:bg-[#151515] transition-colors">
+              <div className="bg-muted/10 w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mb-2 sm:mb-3">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
                 </svg>
               </div>
@@ -63,9 +63,9 @@ export default function PulseQRDashboardMockup() {
         </div>
 
         {/* Form Section */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
           {/* Left Column - Form */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Label Input */}
             <div>
               <label className="text-sm font-semibold text-foreground mb-2 block">Label</label>
@@ -87,7 +87,7 @@ export default function PulseQRDashboardMockup() {
                 <textarea
                   placeholder="Bijv. huisregels, instructies, uitleg..."
                   className="w-full bg-transparent text-sm text-muted-foreground outline-none resize-none"
-                  rows={6}
+                  rows={4}
                   disabled
                 />
               </div>
@@ -110,8 +110,8 @@ export default function PulseQRDashboardMockup() {
           </div>
 
           {/* Right Column - QR Code Preview */}
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-6 flex flex-col">
-            <div className="w-64 h-64 mx-auto bg-white rounded-lg flex items-center justify-center mb-4">
+          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-xl p-4 sm:p-6 flex flex-col">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 mx-auto bg-white rounded-lg flex items-center justify-center mb-4">
               {/* QR Code Placeholder */}
               <div className="w-full h-full p-8">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -166,11 +166,11 @@ export default function PulseQRDashboardMockup() {
         </div>
 
         {/* Bottom Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 pt-4">
+          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-3">
-              <div className="bg-primary/10 p-2 rounded-lg">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-primary/10 p-1.5 sm:p-2 rounded-lg">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
@@ -181,10 +181,10 @@ export default function PulseQRDashboardMockup() {
             </div>
           </div>
 
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-3">
-              <div className="bg-emerald-500/10 p-2 rounded-lg">
-                <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-emerald-500/10 p-1.5 sm:p-2 rounded-lg">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -195,10 +195,10 @@ export default function PulseQRDashboardMockup() {
             </div>
           </div>
 
-          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-4">
+          <div className="bg-[#0F0F0F] border border-[#1A1A1A] rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-3">
-              <div className="bg-blue-500/10 p-2 rounded-lg">
-                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-500/10 p-1.5 sm:p-2 rounded-lg">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
