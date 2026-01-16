@@ -239,7 +239,7 @@ export default function Header() {
             {/* CTA Buttons */}
             <Link
               href={getSignInUrl()}
-              className="px-5 py-2 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200"
+              className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
               onClick={() => analytics.trackLogin("header_desktop")}
             >
               {t("login")}
@@ -368,7 +368,7 @@ export default function Header() {
               </button>
               <Link
                 href={getSignInUrl()}
-                className="px-5 py-2.5 text-sm font-medium text-foreground hover:text-white border border-border/50 hover:border-white/50 hover:bg-white/5 rounded-lg transition-all duration-200 text-center"
+                className="px-5 py-2.5 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200 text-center"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   analytics.trackLogin("header_mobile");
