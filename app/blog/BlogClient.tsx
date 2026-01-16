@@ -70,12 +70,13 @@ export default function BlogClient({ blogPosts, availableCategories }: BlogClien
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                className={`inline-flex items-center gap-1.5 pl-3 pr-4 py-1.5 text-xs font-semibold rounded-r-full transition-all ${
                   selectedCategory === category
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-muted hover:bg-muted/80 text-foreground"
+                    ? "bg-zinc-900 text-white shadow-lg border-r border-y border-zinc-700"
+                    : "bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-300 dark:hover:bg-zinc-700 border-r border-y border-zinc-300 dark:border-zinc-600"
                 }`}
               >
+                <Tag className={`h-3 w-3 ${selectedCategory === category ? "text-emerald-400" : "text-zinc-500 dark:text-zinc-400"}`} />
                 {category}
               </button>
             ))}
@@ -103,9 +104,9 @@ export default function BlogClient({ blogPosts, availableCategories }: BlogClien
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-background/90 backdrop-blur-sm text-foreground border border-border/50 text-xs font-medium shadow-sm">
-                        <Tag className="h-3 w-3" />
+                    <div className="absolute top-4 left-0">
+                      <span className="inline-flex items-center gap-1.5 pl-3 pr-4 py-1.5 bg-zinc-900 text-white text-xs font-semibold shadow-xl rounded-r-full border-r border-y border-zinc-700">
+                        <Tag className="h-3.5 w-3.5 text-emerald-400" />
                         {post.category}
                       </span>
                     </div>
