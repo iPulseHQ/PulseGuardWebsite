@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode, Calendar } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 import { GB, NL } from "country-flag-icons/react/3x2";
@@ -36,6 +36,8 @@ export default function Header() {
       return 'https://qr.ipulse.one/sign-in';
     } else if (pathname?.includes('/pulseguard')) {
       return 'https://guard.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulsesync')) {
+      return 'https://sync.ipulse.one/sign-in';
     }
     return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
   };
@@ -48,6 +50,8 @@ export default function Header() {
       return 'https://qr.ipulse.one/sign-in';
     } else if (pathname?.includes('/pulseguard')) {
       return 'https://guard.ipulse.one/sign-in';
+    } else if (pathname?.includes('/pulsesync')) {
+      return 'https://sync.ipulse.one/sign-in';
     }
     return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
   };
@@ -70,6 +74,12 @@ export default function Header() {
       description: t("pulseQRDesc"),
       href: "/pulseqr",
       icon: QrCode,
+    },
+    {
+      name: "PulseSync",
+      description: t("pulseSyncDesc"),
+      href: "/pulsesync",
+      icon: Calendar,
     },
   ];
 
@@ -141,7 +151,7 @@ export default function Header() {
               <button
                 type="button"
                 className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-1 ${
-                  pathname?.includes('/pulseguard') || pathname?.includes('/pulsefiles') || pathname?.includes('/pulseqr')
+                  pathname?.includes('/pulseguard') || pathname?.includes('/pulsefiles') || pathname?.includes('/pulseqr') || pathname?.includes('/pulsesync')
                     ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
