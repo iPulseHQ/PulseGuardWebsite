@@ -2,10 +2,9 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Instagram, Mail, Users } from "lucide-react";
+import { Linkedin, Github, Instagram, Mail, Users, Send } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
 
 const teamMembers = [
@@ -265,8 +264,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <CTA />
+      {/* Join Team Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="glassmorphism rounded-2xl p-8 sm:p-12 border border-border/50 text-center"
+          >
+            <div className="inline-block px-4 py-1 rounded-md bg-primary/10 border border-primary/20 text-sm font-medium mb-6">
+              {t("joinTeamBadge")}
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+              {t("joinTeamTitle")}
+            </h2>
+
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              {t("joinTeamDescription")}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="mailto:contact@ipulse.one"
+                className="h-12 px-8 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 inline-flex items-center justify-center gap-2 group"
+              >
+                <Mail className="h-4 w-4" />
+                {t("joinTeamEmailButton")}
+                <Send className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+            <p className="text-sm text-muted-foreground mt-6">
+              {t("joinTeamEmailLabel")}: contact@ipulse.one
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       </div>
     </>

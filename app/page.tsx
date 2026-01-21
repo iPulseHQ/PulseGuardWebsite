@@ -230,22 +230,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2, duration: 0.5 }}
                 viewport={{ once: true }}
-                className="glassmorphism rounded-2xl p-8 border border-border/50 hover:shadow-2xl transition-all group"
+                className="glassmorphism rounded-2xl p-6 border border-border/50 hover:shadow-2xl transition-all group flex flex-col h-full"
               >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className={`h-14 w-14 rounded-xl bg-${product.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <product.icon className={`h-7 w-7 text-${product.color}`} />
+                <div className="mb-4">
+                  <div className={`h-12 w-12 rounded-xl bg-${product.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform mb-4`}>
+                    <product.icon className={`h-6 w-6 text-${product.color}`} />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2">{product.name}</h3>
-                    <p className="text-muted-foreground">{product.description}</p>
-                  </div>
+                  <h3 className="text-xl font-bold mb-2">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground">{product.description}</p>
                 </div>
 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-6 flex-grow">
                   {product.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
-                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                      <Check className="h-4 w-4 text-primary shrink-0" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -253,7 +251,7 @@ export default function Home() {
 
                 <Link
                   href={product.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-auto"
                   aria-label={`${language === "nl" ? "Meer over" : "Learn more about"} ${product.name}`}
                   onClick={() => analytics.trackProductLinkClick(product.name, "home_products")}
                 >

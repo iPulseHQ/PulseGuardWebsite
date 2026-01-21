@@ -199,6 +199,13 @@ export const translations = {
     joinUsDescription: "We're always looking for talented individuals who want to make a difference. Check out our open positions.",
     viewOpenings: "View openings",
 
+    // Join Team Section (About page)
+    joinTeamBadge: "Join the Team",
+    joinTeamTitle: "Want to join our team?",
+    joinTeamDescription: "Are you passionate about technology and innovation? We're always looking for talented people who want to help build the future of digital solutions. Get in touch with us!",
+    joinTeamEmailLabel: "Send us an email",
+    joinTeamEmailButton: "Contact us",
+
     // Blog Page
     blogTitle: "Latest insights & updates",
     blogDescription: "Stay up to date with the latest monitoring best practices, product updates, and industry insights.",
@@ -772,6 +779,13 @@ export const translations = {
     joinUsTitle: "Doe mee aan onze missie",
     joinUsDescription: "We zijn altijd op zoek naar getalenteerde mensen die een verschil willen maken. Bekijk onze openstaande posities.",
     viewOpenings: "Bekijk vacatures",
+
+    // Join Team Section (About page)
+    joinTeamBadge: "Word onderdeel van het team",
+    joinTeamTitle: "Wil je bij ons team komen?",
+    joinTeamDescription: "Ben je gepassioneerd over technologie en innovatie? We zijn altijd op zoek naar getalenteerde mensen die willen helpen de toekomst van digitale oplossingen te bouwen. Neem contact met ons op!",
+    joinTeamEmailLabel: "Stuur ons een e-mail",
+    joinTeamEmailButton: "Neem contact op",
 
     // Blog Page
     blogTitle: "Laatste inzichten & updates",
