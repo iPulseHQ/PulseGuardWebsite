@@ -22,7 +22,8 @@
       "Bash(npm uninstall:*)",
       "Bash(findstr:*)",
       "Bash(Select-String -Pattern \"\\(HTTP|Access-Control\\)\")",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

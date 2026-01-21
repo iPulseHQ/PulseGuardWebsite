@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/lib/LanguageContext";
-import { Shield, Upload, Zap, Globe2, Activity, Check, Star, ArrowRight, Lock, Bell, Sparkles, QrCode } from "lucide-react";
+import { Shield, Upload, Zap, Globe2, Activity, Check, ArrowRight, Lock, Bell, Sparkles, QrCode, Users, Building2, ShoppingCart, Rocket, Mail, Webhook, ChevronDown, UserPlus, Settings, BellRing } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -269,9 +269,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "99.8%", label: t("uptime") },
-              { number: "5K+", label: t("monitorsActive") },
-              { number: "3+", label: t("countries") },
+              { number: "99.9%", label: t("uptime") },
+              { number: "6K+", label: t("monitorsActive") },
+              { number: "3", label: t("monitoringLocations") },
               { number: "24/6", label: t("support") },
             ].map((stat, i) => (
               <motion.div
@@ -352,6 +352,412 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
+              {t("howItWorksSubtitle")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("howItWorksTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("howItWorksDesc")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                icon: UserPlus,
+                title: t("howItWorksStep1Title"),
+                description: t("howItWorksStep1Desc"),
+              },
+              {
+                step: "02",
+                icon: Settings,
+                title: t("howItWorksStep2Title"),
+                description: t("howItWorksStep2Desc"),
+              },
+              {
+                step: "03",
+                icon: BellRing,
+                title: t("howItWorksStep3Title"),
+                description: t("howItWorksStep3Desc"),
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="glassmorphism rounded-2xl p-8 border border-border/50 h-full">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="text-5xl font-bold text-primary/20">{item.step}</div>
+                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <item.icon className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </div>
+                {i < 2 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="h-8 w-8 text-primary/30" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
+              {t("useCasesSubtitle")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("useCasesTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("useCasesDesc")}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Rocket,
+                title: t("useCaseStartupTitle"),
+                description: t("useCaseStartupDesc"),
+                color: "from-blue-500/20 to-cyan-500/20",
+              },
+              {
+                icon: Users,
+                title: t("useCaseAgencyTitle"),
+                description: t("useCaseAgencyDesc"),
+                color: "from-purple-500/20 to-pink-500/20",
+              },
+              {
+                icon: Building2,
+                title: t("useCaseEnterpriseTitle"),
+                description: t("useCaseEnterpriseDesc"),
+                color: "from-orange-500/20 to-red-500/20",
+              },
+              {
+                icon: ShoppingCart,
+                title: t("useCaseEcommerceTitle"),
+                description: t("useCaseEcommerceDesc"),
+                color: "from-green-500/20 to-emerald-500/20",
+              },
+            ].map((useCase, i) => (
+              <motion.div
+                key={useCase.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className={`glassmorphism rounded-2xl p-6 border border-border/50 h-full hover:shadow-xl transition-all bg-gradient-to-br ${useCase.color}`}>
+                  <div className="h-12 w-12 rounded-xl bg-background/80 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <useCase.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">{useCase.title}</h3>
+                  <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
+              {t("integrationsTitle")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("integrationsSubtitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("integrationsDesc")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {/* Email */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <Mail className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="text-sm font-semibold">Email</span>
+            </motion.div>
+
+            {/* Push Notifications */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <Bell className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="text-sm font-semibold">Push</span>
+            </motion.div>
+
+            {/* Telegram */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <svg className="h-10 w-10 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="#26A5E4">
+                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+              </div>
+              <span className="text-sm font-semibold">Telegram</span>
+            </motion.div>
+
+            {/* Discord */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <svg className="h-10 w-10 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="#5865F2">
+                  <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                </svg>
+              </div>
+              <span className="text-sm font-semibold">Discord</span>
+            </motion.div>
+
+            {/* Slack */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <svg className="h-10 w-10 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/>
+                  <path fill="#36C5F0" d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z"/>
+                  <path fill="#2EB67D" d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z"/>
+                  <path fill="#ECB22E" d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/>
+                </svg>
+              </div>
+              <span className="text-sm font-semibold">Slack</span>
+            </motion.div>
+
+            {/* Microsoft Teams */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <svg className="h-10 w-10 group-hover:scale-110 transition-transform" viewBox="0 0 2228.833 2073.333">
+                  <path fill="#5059C9" d="M1554.637,777.5h575.713c54.391,0,98.483,44.092,98.483,98.483v524.398 c0,199.901-162.051,361.952-361.952,361.952h0c-199.901,0-361.952-162.051-361.952-361.952V875.98 C1505.93,821.589,1500.246,777.5,1554.637,777.5z"/>
+                  <circle fill="#5059C9" cx="1943.75" cy="440.583" r="233.25"/>
+                  <circle fill="#7B83EB" cx="1218.083" cy="336.917" r="336.917"/>
+                  <path fill="#7B83EB" d="M1667.323,777.5H717.01c-53.743,1.33-96.257,45.931-95.01,99.676v598.105 c-7.505,322.519,247.657,590.16,570.167,598.053c322.51-7.893,577.671-275.534,570.167-598.053V877.176 C1763.58,823.431,1721.066,778.83,1667.323,777.5z"/>
+                  <path fill="#000000" opacity="0.1" d="M1244,777.5v838.145c-0.258,38.435-23.549,72.964-59.09,87.598 c-11.316,4.787-23.478,7.254-35.765,7.257H667.613c-6.738-17.105-12.958-34.21-18.142-51.833 c-18.144-59.477-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1244z"/>
+                  <path fill="#000000" opacity="0.2" d="M1192.167,777.5v889.978c0,12.287-2.47,24.449-7.257,35.765 c-14.634,35.541-49.163,58.833-87.598,59.09H691.975c-8.812-17.105-17.105-34.21-24.362-51.833 c-7.257-17.623-12.958-34.21-18.142-51.833c-18.144-59.476-27.402-121.307-27.472-183.49V877.02 c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"/>
+                  <path fill="#000000" opacity="0.2" d="M1192.167,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855h-447.84 c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1192.167z"/>
+                  <path fill="#000000" opacity="0.2" d="M1140.333,777.5v786.312c-0.395,52.223-42.632,94.46-94.855,94.855H649.472 c-18.144-59.476-27.402-121.307-27.472-183.49V877.02c-1.246-53.659,41.198-98.19,94.855-99.52H1140.333z"/>
+                  <linearGradient id="teams_gradient" gradientUnits="userSpaceOnUse" x1="198.0993" y1="1683.0726" x2="942.2344" y2="394.2611" gradientTransform="matrix(1 0 0 -1 0 2075.3333)">
+                    <stop offset="0" style={{stopColor:"#5A62C3"}}/>
+                    <stop offset="0.5" style={{stopColor:"#4D55BD"}}/>
+                    <stop offset="1" style={{stopColor:"#3940AB"}}/>
+                  </linearGradient>
+                  <path fill="url(#teams_gradient)" d="M95.01,777.5h950.312c52.473,0,95.01,42.538,95.01,95.01v950.312c0,52.473-42.538,95.01-95.01,95.01 H95.01c-52.473,0-95.01-42.538-95.01-95.01V872.51C0,820.038,42.538,777.5,95.01,777.5z"/>
+                  <path fill="#FFFFFF" d="M820.211,1100.missedShotH630.241v517.297H509.211V1100.missedShotH320.122V999.161h500.089V1100.missedShot z"/>
+                </svg>
+              </div>
+              <span className="text-sm font-semibold">Teams</span>
+            </motion.div>
+
+            {/* Webhooks */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <Webhook className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="text-sm font-semibold">Webhooks</span>
+            </motion.div>
+
+            {/* MCP / AI */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="glassmorphism rounded-2xl p-6 border border-border/50 flex flex-col items-center justify-center gap-3 hover:shadow-xl hover:border-primary/50 transition-all group bg-gradient-to-br from-primary/5 to-primary/10"
+            >
+              <div className="h-12 w-12 flex items-center justify-center">
+                <Sparkles className="h-10 w-10 text-primary group-hover:scale-110 transition-transform" />
+              </div>
+              <span className="text-sm font-semibold">MCP (AI)</span>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes iPulse Special Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-muted border border-border/50 text-sm font-medium mb-4">
+              {t("comparisonSubtitle")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("comparisonTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("comparisonDesc")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Globe2,
+                title: t("comparisonAllInOne"),
+                description: t("comparisonAllInOneDesc"),
+              },
+              {
+                icon: Bell,
+                title: t("comparisonMultiChannel"),
+                description: t("comparisonMultiChannelDesc"),
+              },
+              {
+                icon: Sparkles,
+                title: t("comparisonMCP"),
+                description: t("comparisonMCPDesc"),
+              },
+              {
+                icon: Shield,
+                title: t("comparisonDutchHosting"),
+                description: t("comparisonDutchHostingDesc"),
+              },
+              {
+                icon: Settings,
+                title: t("comparisonCustomIntervals"),
+                description: t("comparisonCustomIntervalsDesc"),
+              },
+              {
+                icon: Lock,
+                title: t("comparisonE2EEncryption"),
+                description: t("comparisonE2EEncryptionDesc"),
+              },
+              {
+                icon: QrCode,
+                title: t("comparisonQRCodes"),
+                description: t("comparisonQRCodesDesc"),
+              },
+              {
+                icon: Zap,
+                title: t("comparisonFreeForever"),
+                description: t("comparisonFreeForeverDesc"),
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.4 }}
+                viewport={{ once: true }}
+                className="glassmorphism rounded-2xl p-6 border border-border/50 hover:shadow-xl hover:border-primary/30 transition-all group"
+              >
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <item.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
+              {t("homeFaqSubtitle")}
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              {t("homeFaqTitle")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("homeFaqDesc")}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              { q: t("homeFaq1Q"), a: t("homeFaq1A") },
+              { q: t("homeFaq2Q"), a: t("homeFaq2A") },
+              { q: t("homeFaq3Q"), a: t("homeFaq3A") },
+              { q: t("homeFaq4Q"), a: t("homeFaq4A") },
+              { q: t("homeFaq5Q"), a: t("homeFaq5A") },
+              { q: t("homeFaq6Q"), a: t("homeFaq6A") },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1, duration: 0.3 }}
+                viewport={{ once: true }}
+                className="group glassmorphism rounded-xl border border-border/50 overflow-hidden"
+              >
+                <summary className="flex items-center justify-between p-5 cursor-pointer list-none font-semibold hover:bg-muted/50 transition-colors">
+                  {faq.q}
+                  <ChevronDown className="h-5 w-5 text-muted-foreground group-open:rotate-180 transition-transform" />
+                </summary>
+                <div className="px-5 pb-5 text-muted-foreground">
+                  {faq.a}
+                </div>
+              </motion.details>
             ))}
           </div>
         </div>
