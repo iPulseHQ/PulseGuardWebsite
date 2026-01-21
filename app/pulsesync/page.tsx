@@ -200,7 +200,7 @@ export default function PulseSyncPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
-              {t("pulseSyncFeaturesTitle")}
+              {t("pulseSyncFeatures")}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
               {t("pulseSyncFeaturesTitle")}
