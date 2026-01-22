@@ -137,6 +137,11 @@ export const translations = {
     // Pricing
     pricingTitle: "Choose your plan",
     pricingDescription: "Transparent pricing for every business",
+    pricingFreeAppsTitle: "Free apps included",
+    pricingFreeAppsDescription: "These apps are completely free to use, no subscription required",
+    pricingPulseGuardTitle: "PulseGuard Plans",
+    pricingPulseGuardDescription: "Choose the right monitoring plan for your needs",
+    freeForever: "Free forever",
     starter: "Starter",
     professional: "Professional",
     enterprise: "Enterprise",
@@ -793,6 +798,11 @@ export const translations = {
     // Pricing
     pricingTitle: "Kies je plan",
     pricingDescription: "Transparante prijzen voor ieder bedrijf",
+    pricingFreeAppsTitle: "Gratis apps inbegrepen",
+    pricingFreeAppsDescription: "Deze apps zijn volledig gratis te gebruiken, geen abonnement nodig",
+    pricingPulseGuardTitle: "PulseGuard Plannen",
+    pricingPulseGuardDescription: "Kies het juiste monitoring plan voor jouw behoeften",
+    freeForever: "Altijd gratis",
     starter: "Starter",
     professional: "Professional",
     enterprise: "Enterprise",

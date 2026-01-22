@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Check, Star, Crown, Rocket, Zap, X, Tag } from "lucide-react";
+import { Check, Star, Crown, Rocket, Zap, X, Tag, FileText, QrCode, Calendar, Gift } from "lucide-react";
 import { useEffect, useState } from "react";
 import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
@@ -175,9 +175,155 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Pricing Cards Section */}
+      {/* Free Apps Section */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial="hidden"
+            animate={mounted ? "visible" : "hidden"}
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/30 text-sm font-medium text-green-600 dark:text-green-400 mb-4">
+              <Gift className="h-4 w-4" />
+              {t("pricingFreeAppsTitle")}
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {t("pricingFreeAppsDescription")}
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-3 mb-16">
+            {/* PulseFiles - Free */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="relative flex flex-col glassmorphism rounded-xl border border-green-500/30 transition-all hover:shadow-xl"
+            >
+              <div className="text-center p-6 border-b border-border/50">
+                <div className="flex items-center justify-center mb-3">
+                  <FileText className="h-6 w-6 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">PulseFiles</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("pulseFilesDesc")}
+                </p>
+                <div className="text-4xl font-bold text-green-500">
+                  {t("freeForever")}
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col p-6">
+                <ul className="space-y-3 text-sm flex-grow">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Veilig bestanden delen" : "Secure file sharing"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "End-to-end encryptie" : "End-to-end encryption"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Gratis tot 2GB opslag" : "Free up to 2GB storage"}</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* PulseQR - Free */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="relative flex flex-col glassmorphism rounded-xl border border-green-500/30 transition-all hover:shadow-xl"
+            >
+              <div className="text-center p-6 border-b border-border/50">
+                <div className="flex items-center justify-center mb-3">
+                  <QrCode className="h-6 w-6 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">PulseQR</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("pulseQRDesc")}
+                </p>
+                <div className="text-4xl font-bold text-green-500">
+                  {t("freeForever")}
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col p-6">
+                <ul className="space-y-3 text-sm flex-grow">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Onbeperkte QR-codes" : "Unlimited QR codes"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Geen account nodig" : "No account needed"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Dynamische QR-codes" : "Dynamic QR codes"}</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* PulseSync - Free */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="relative flex flex-col glassmorphism rounded-xl border border-green-500/30 transition-all hover:shadow-xl"
+            >
+              <div className="text-center p-6 border-b border-border/50">
+                <div className="flex items-center justify-center mb-3">
+                  <Calendar className="h-6 w-6 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">PulseSync</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {t("pulseSyncDesc")}
+                </p>
+                <div className="text-4xl font-bold text-green-500">
+                  {t("freeForever")}
+                </div>
+              </div>
+              <div className="flex-grow flex flex-col p-6">
+                <ul className="space-y-3 text-sm flex-grow">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Automatische agenda sync" : "Automatic calendar sync"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Geen login voor deelnemers" : "No login for participants"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>{language === "nl" ? "Tijdzone ondersteuning" : "Timezone support"}</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* PulseGuard Section Header */}
+          <motion.div
+            initial="hidden"
+            animate={mounted ? "visible" : "hidden"}
+            variants={fadeInUp}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 border border-primary/30 text-sm font-medium text-primary mb-4">
+              <Zap className="h-4 w-4" />
+              {t("pricingPulseGuardTitle")}
+            </div>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              {t("pricingPulseGuardDescription")}
+            </p>
+          </motion.div>
+
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan, index) => {
               const isPopular = plan.id === "pro";
