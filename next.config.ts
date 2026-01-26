@@ -31,6 +31,22 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'sync.ipulse.one',
       },
+      {
+        protocol: 'https',
+        hostname: 'imdigital.info',
+      },
+      {
+        protocol: 'https',
+        hostname: 'che.nl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vandenbroekheteren.nl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.clerk.com',
+      },
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,

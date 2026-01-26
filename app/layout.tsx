@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import Header from "@/components/Header";
@@ -94,13 +95,15 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="antialiased" suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LanguageProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </LanguageProvider>
-        </ThemeProvider>
+        <ClerkProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <LanguageProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </LanguageProvider>
+          </ThemeProvider>
+        </ClerkProvider>
         <DatabuddyClient />
         <Analytics />
       </body>
