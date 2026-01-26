@@ -371,7 +371,7 @@ export default function Header() {
               {isLoaded && isSignedIn && (
                 <a
                   href={getAppUrl()}
-                  className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10 mr-1"
+                  className="h-9 w-9 rounded-full overflow-hidden flex items-center justify-center bg-primary/10 mr-1"
                 >
                   {user?.imageUrl ? (
                     <Image
@@ -388,7 +388,7 @@ export default function Header() {
               )}
               <button
                 onClick={toggleTheme}
-                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                className="h-9 w-9 rounded-md hover:bg-muted transition-all flex items-center justify-center"
                 aria-label="Toggle theme"
                 disabled={!mounted}
               >
@@ -403,7 +403,7 @@ export default function Header() {
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                className="h-9 w-9 rounded-md hover:bg-muted transition-all flex items-center justify-center"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -419,7 +419,7 @@ export default function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "100dvh" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden fixed inset-x-0 top-16 bg-white dark:bg-black z-[100] overflow-y-auto border-t border-border"
+              className="md:hidden fixed inset-x-0 top-16 bg-white dark:bg-black z-[100] overflow-y-auto"
             >
               <div className="p-4 space-y-6 pb-20">
                 {/* Home Link */}
