@@ -310,7 +310,7 @@ export default function Header() {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                className="h-9 w-9 rounded-md hover:bg-muted transition-all flex items-center justify-center"
                 aria-label="Toggle theme"
                 disabled={!mounted}
               >
@@ -331,14 +331,14 @@ export default function Header() {
                     <div className="flex items-center gap-3">
                       <a
                         href={getAppUrl()}
-                        className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
+                        className="px-5 py-2 text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
                         onClick={() => analytics.trackLogin("header_desktop")}
                       >
                         {language === "nl" ? "Inloggen" : "Sign In"}
                       </a>
                       <a
                         href={getAppUrl()}
-                        className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10"
+                        className="h-9 w-9 rounded-full overflow-hidden hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10"
                       >
                         {user?.imageUrl ? (
                           <Image
