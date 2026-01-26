@@ -270,37 +270,34 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={mounted ? { opacity: 1 } : {}}
               transition={{ delay: 0.9, duration: 1 }}
-              className="relative pt-20 pb-8"
+              className="relative pt-16 pb-8 max-w-4xl mx-auto"
             >
-              <div className="flex justify-center items-center gap-4 flex-wrap">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
                 {[
-                  { icon: Shield, label: "Security", color: "from-blue-500/10 to-cyan-500/10" },
-                  { icon: Zap, label: "Performance", color: "from-yellow-500/10 to-orange-500/10" },
-                  { icon: Activity, label: "Analytics", color: "from-green-500/10 to-emerald-500/10" },
-                  { icon: Globe2, label: "Global", color: "from-purple-500/10 to-pink-500/10" }
+                  { icon: Shield, label: "Security", color: "from-blue-500/5 to-cyan-500/5" },
+                  { icon: Zap, label: "Performance", color: "from-yellow-500/5 to-orange-500/5" },
+                  { icon: Activity, label: "Analytics", color: "from-green-500/5 to-emerald-500/5" },
+                  { icon: Globe2, label: "Global", color: "from-purple-500/5 to-pink-500/5" }
                 ].map((card, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={mounted ? { 
                       opacity: 1, 
-                      y: 0,
-                      rotate: [0, 2, -2, 0]
+                      y: 0
                     } : {}}
                     transition={{ 
                       delay: 1 + i * 0.1, 
-                      duration: 0.6,
-                      rotate: {
-                        delay: 1.5 + i * 0.1,
-                        duration: 3,
-                        repeat: Infinity,
-                        repeatType: "reverse"
-                      }
+                      duration: 0.5
                     }}
-                    className={`glassmorphism rounded-2xl p-6 border border-border/50 shadow-xl bg-gradient-to-br ${card.color} hover:scale-105 transition-transform cursor-pointer`}
+                    className={`glassmorphism rounded-xl p-4 lg:p-5 border border-border/30 shadow-sm bg-gradient-to-br ${card.color} hover:border-border/50 hover:shadow-md transition-all duration-200 cursor-pointer group`}
                   >
-                    <card.icon className="h-8 w-8 text-primary mb-2" />
-                    <p className="text-sm font-semibold text-foreground">{card.label}</p>
+                    <div className="flex flex-col items-center text-center gap-2">
+                      <div className="p-2 rounded-lg bg-card/30 border border-border/20 group-hover:bg-card/40 transition-colors duration-200">
+                        <card.icon className="h-5 w-5 lg:h-6 lg:w-6 text-primary/80" />
+                      </div>
+                      <p className="text-xs lg:text-sm font-semibold text-muted-foreground group-hover:text-foreground transition-colors">{card.label}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -408,7 +405,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
                 >
-                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden p-2">
                     <Image
                       src="https://imdigital.info/logo.png"
                       alt="IMDigital logo"
@@ -429,7 +426,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
                 >
-                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden p-2">
                     <Image
                       src="https://che.nl/images/christelijke-hogeschool-ede-logo.svg"
                       alt="CHE logo"
@@ -450,7 +447,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
                 >
-                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden p-2">
                     <Image
                       src="https://vandenbroekheteren.nl/wp-content/uploads/2020/08/vandenbroek-logo-header.svg"
                       alt="Van den Broek Heteren logo"
