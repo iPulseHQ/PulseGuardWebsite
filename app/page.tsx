@@ -418,7 +418,6 @@ export default function Home() {
                   </div>
                   <div className="flex-grow">
                     <p className="font-bold text-foreground group-hover:text-primary transition-colors">IMDigital</p>
-                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Digitale oplossingen" : "Digital solutions"}</p>
                   </div>
                 </motion.div>
 
@@ -440,7 +439,6 @@ export default function Home() {
                   </div>
                   <div className="flex-grow">
                     <p className="font-bold text-foreground group-hover:text-primary transition-colors">CHE</p>
-                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Christelijke Hogeschool" : "Christian University"}</p>
                   </div>
                 </motion.div>
 
@@ -462,7 +460,6 @@ export default function Home() {
                   </div>
                   <div className="flex-grow">
                     <p className="font-bold text-foreground group-hover:text-primary transition-colors">Van den Broek Heteren</p>
-                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Tuincentrum" : "Garden center"}</p>
                   </div>
                 </motion.div>
               </div>
@@ -782,7 +779,7 @@ export default function Home() {
                     <stop offset="1" style={{stopColor:"#3940AB"}}/>
                   </linearGradient>
                   <path fill="url(#teams_gradient)" d="M95.01,777.5h950.312c52.473,0,95.01,42.538,95.01,95.01v950.312c0,52.473-42.538,95.01-95.01,95.01 H95.01c-52.473,0-95.01-42.538-95.01-95.01V872.51C0,820.038,42.538,777.5,95.01,777.5z"/>
-                  <path fill="#FFFFFF" d="M820.211,1100.missedShotH630.241v517.297H509.211V1100.missedShotH320.122V999.161h500.089V1100.missedShot z"/>
+                  <path fill="#FFFFFF" d="M820.211,1100.5H630.241v517.297H509.211V1100.5H320.122V999.161h500.089V1100.5z"/>
                 </svg>
               </div>
               <span className="text-sm font-semibold">Teams</span>
