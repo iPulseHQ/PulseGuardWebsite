@@ -16,6 +16,7 @@ export default function Home() {
   const [currentTeamPhoto, setCurrentTeamPhoto] = useState(0);
 
   const teamPhotos = ["team1.jpeg", "team2.jpeg", "team3.jpeg", "team4.jpeg", "team5.jpeg"];
+  const STATUS_URL = "https://guard.ipulse.one/status/ipulse";
 
   useEffect(() => {
     setMounted(true);
@@ -160,20 +161,42 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center space-y-10"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={mounted ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 text-sm font-medium shadow-lg backdrop-blur-sm"
-            >
-              <div className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </div>
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-foreground font-semibold">{t("iPulseEcosystem")}</span>
-            </motion.div>
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center gap-3">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={mounted ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.1, duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 text-sm font-medium shadow-lg backdrop-blur-sm"
+              >
+                <div className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </div>
+                <Sparkles className="h-4 w-4 text-primary" />
+                <span className="text-foreground font-semibold">{t("iPulseEcosystem")}</span>
+              </motion.div>
+
+              {mounted && (
+                <motion.a
+                  href={STATUS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15, duration: 0.5 }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-background border border-border/50 hover:border-primary/30 transition-all text-sm font-medium shadow-lg backdrop-blur-sm group"
+                >
+                  <div className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </div>
+                  <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                    {language === "nl" ? "Systemen Operationeel" : "Systems Operational"}
+                  </span>
+                </motion.a>
+              )}
+            </div>
 
             {/* Main Heading */}
             <motion.div

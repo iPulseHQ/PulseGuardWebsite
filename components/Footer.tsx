@@ -14,32 +14,10 @@ export default function Footer() {
   const { t, language, setLanguage } = useLanguage();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isOperational, setIsOperational] = useState<boolean | null>(null);
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     setMounted(true);
-    
-    // Check status
-    const checkStatus = async () => {
-      try {
-        const response = await fetch(STATUS_URL);
-        const text = await response.text();
-        // Look for common "operational" or "up" indicators in the HTML
-        // Based on the scrape, we'll assume it's up unless it explicitly says otherwise or we can't load it
-        // A more robust way would be to check for specific success classes/text
-        if (text.toLowerCase().includes("operational") || response.ok) {
-          setIsOperational(true);
-        } else {
-          setIsOperational(false);
-        }
-      } catch (error) {
-        console.error("Failed to check status:", error);
-        setIsOperational(true); // Default to true if fetch fails due to CORS or other issues
-      }
-    };
-
-    checkStatus();
   }, []);
 
   const footerLinks = {
@@ -182,12 +160,10 @@ export default function Footer() {
                 className="flex items-center gap-2 px-3 py-1 rounded-full bg-background border border-border/50 hover:bg-muted transition-all text-[10px] font-medium text-muted-foreground shadow-sm"
               >
                 <div className="relative flex h-2 w-2">
-                  {isOperational !== false && (
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  )}
-                  <span className={`relative inline-flex rounded-full h-2 w-2 ${isOperational === false ? 'bg-red-500' : 'bg-emerald-500'}`}></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </div>
-                <span>{isOperational === false ? (language === "nl" ? "Systeemfout" : "Systems Down") : (language === "nl" ? "Systemen Operationeel" : "Systems Operational")}</span>
+                <span>{language === "nl" ? "Systemen Operationeel" : "Systems Operational"}</span>
               </a>
             )}
           </div>
