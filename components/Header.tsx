@@ -119,9 +119,9 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 glassmorphism">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+        <div className="flex items-center justify-between h-16 relative">
+          {/* Logo - Left aligned */}
+          <div className="flex-shrink-0 z-10">
             <Link 
               href="/" 
               className="flex items-center hover:opacity-80 transition-opacity"
@@ -143,8 +143,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
+          {/* Desktop Navigation - Absolute Centered */}
+          <nav className="hidden md:flex items-center gap-1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {/* Home Link */}
             <Link
               href="/"
@@ -300,91 +300,94 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
-              aria-label="Toggle theme"
-              disabled={!mounted}
-            >
-              {mounted ? (
-                <>
-                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                </>
-              ) : (
-                <div className="h-4 w-4" />
-              )}
-            </button>
-
-            {/* CTA Buttons / User Profile */}
-            {isLoaded && (
-              <>
-                {isSignedIn ? (
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={getAppUrl()}
-                      className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
-                      onClick={() => analytics.trackLogin("header_desktop")}
-                    >
-                      {language === "nl" ? "Inloggen" : "Sign In"}
-                    </a>
-                    <a
-                      href={getAppUrl()}
-                      className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10"
-                    >
-                      {user?.imageUrl ? (
-                        <Image
-                          src={user.imageUrl}
-                          alt={user.firstName || "Profile"}
-                          width={36}
-                          height={36}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <Users className="h-5 w-5 text-primary" />
-                      )}
-                    </a>
-                  </div>
+          {/* Actions - Right aligned */}
+          <div className="flex items-center gap-2 z-10">
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center gap-2">
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                aria-label="Toggle theme"
+                disabled={!mounted}
+              >
+                {mounted ? (
+                  <>
+                    <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  </>
                 ) : (
-                  <a
-                    href={`${getAppUrl()}/sign-in`}
-                    className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
-                    onClick={() => analytics.trackRegister("header_desktop")}
-                  >
-                    {language === "nl" ? "Aan de slag" : "Get Started"}
-                  </a>
+                  <div className="h-4 w-4" />
                 )}
-              </>
-            )}
-          </div>
+              </button>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
-              aria-label="Toggle theme"
-              disabled={!mounted}
-            >
-              {mounted ? (
+              {/* CTA Buttons / User Profile */}
+              {isLoaded && (
                 <>
-                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  {isSignedIn ? (
+                    <div className="flex items-center gap-3">
+                      <a
+                        href={getAppUrl()}
+                        className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
+                        onClick={() => analytics.trackLogin("header_desktop")}
+                      >
+                        {language === "nl" ? "Inloggen" : "Sign In"}
+                      </a>
+                      <a
+                        href={getAppUrl()}
+                        className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10"
+                      >
+                        {user?.imageUrl ? (
+                          <Image
+                            src={user.imageUrl}
+                            alt={user.firstName || "Profile"}
+                            width={36}
+                            height={36}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <Users className="h-5 w-5 text-primary" />
+                        )}
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={`${getAppUrl()}/sign-in`}
+                      className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
+                      onClick={() => analytics.trackRegister("header_desktop")}
+                    >
+                      {language === "nl" ? "Aan de slag" : "Get Started"}
+                    </a>
+                  )}
                 </>
-              ) : (
-                <div className="h-4 w-4" />
               )}
-            </button>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-            </button>
+            </div>
+
+            {/* Mobile Actions */}
+            <div className="flex md:hidden items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                aria-label="Toggle theme"
+                disabled={!mounted}
+              >
+                {mounted ? (
+                  <>
+                    <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  </>
+                ) : (
+                  <div className="h-4 w-4" />
+                )}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              </button>
+            </div>
           </div>
         </div>
 
