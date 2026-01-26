@@ -16,6 +16,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
@@ -366,6 +368,24 @@ export default function Header() {
 
             {/* Mobile Actions */}
             <div className="flex md:hidden items-center gap-2">
+              {isLoaded && isSignedIn && (
+                <a
+                  href={getAppUrl()}
+                  className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10 mr-1"
+                >
+                  {user?.imageUrl ? (
+                    <Image
+                      src={user.imageUrl}
+                      alt={user.firstName || "Profile"}
+                      width={36}
+                      height={36}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <Users className="h-5 w-5 text-primary" />
+                  )}
+                </a>
+              )}
               <button
                 onClick={toggleTheme}
                 className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center"
@@ -397,9 +417,9 @@ export default function Header() {
           {mobileMenuOpen && (
             <motion.div 
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
+              animate={{ opacity: 1, height: "100dvh" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden fixed inset-x-0 top-16 bottom-0 bg-background/95 backdrop-blur-xl z-40 overflow-y-auto border-t border-border/50"
+              className="md:hidden fixed inset-x-0 top-16 bg-white dark:bg-black z-[100] overflow-y-auto border-t border-border"
             >
               <div className="p-4 space-y-6 pb-20">
                 {/* Home Link */}
@@ -420,35 +440,50 @@ export default function Header() {
 
                 {/* Solutions Section */}
                 <div className="space-y-2">
-                  <div className="px-4 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                  <button
+                    onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                    className="w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-muted-foreground uppercase tracking-widest hover:text-foreground transition-colors"
+                  >
                     {t("solutions")}
-                  </div>
-                  <div className="grid grid-cols-1 gap-1">
-                    {solutions.map((solution) => (
-                      <Link
-                        key={solution.name}
-                        href={solution.href}
-                        className={`flex items-center gap-3 p-3 rounded-xl transition-all ${
-                          isActive(solution.href)
-                            ? "bg-primary/10 border border-primary/20 text-primary"
-                            : "hover:bg-muted"
-                        }`}
-                        onClick={() => setMobileMenuOpen(false)}
+                    <ChevronDown className={`h-3 w-3 transition-transform ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileSolutionsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
                       >
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                          <solution.icon className="h-5 w-5 text-primary" />
+                        <div className="grid grid-cols-1 gap-1 pb-2">
+                          {solutions.map((solution) => (
+                            <Link
+                              key={solution.name}
+                              href={solution.href}
+                              className={`flex items-center gap-3 p-3 rounded-xl transition-all ${
+                                isActive(solution.href)
+                                  ? "bg-primary/10 border border-primary/20 text-primary"
+                                  : "hover:bg-muted"
+                              }`}
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                                <solution.icon className="h-5 w-5 text-primary" />
+                              </div>
+                              <div>
+                                <div className="font-bold text-sm">
+                                  {solution.name}
+                                </div>
+                                <div className="text-[11px] text-muted-foreground line-clamp-1">
+                                  {solution.description}
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
                         </div>
-                        <div>
-                          <div className="font-bold text-sm">
-                            {solution.name}
-                          </div>
-                          <div className="text-[11px] text-muted-foreground line-clamp-1">
-                            {solution.description}
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Pricing Link */}
@@ -469,46 +504,61 @@ export default function Header() {
 
                 {/* Resources Section */}
                 <div className="space-y-2">
-                  <div className="px-4 text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                  <button
+                    onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                    className="w-full flex items-center justify-between px-4 py-2 text-[10px] font-bold text-muted-foreground uppercase tracking-widest hover:text-foreground transition-colors"
+                  >
                     {language === "nl" ? "Meer" : "Resources"}
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {resources.map((resource) => (
-                      resource.external ? (
-                        <a
-                          key={resource.name}
-                          href={resource.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex flex-col gap-2 p-3 rounded-xl border border-border/50 bg-muted/30 hover:bg-muted transition-all"
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            analytics.trackExternalLink(resource.href, resource.name);
-                          }}
-                        >
-                          <resource.icon className="h-4 w-4 text-primary" />
-                          <span className="font-bold text-xs">{resource.name}</span>
-                        </a>
-                      ) : (
-                        <Link
-                          key={resource.name}
-                          href={resource.href}
-                          className={`flex flex-col gap-2 p-3 rounded-xl border border-border/50 transition-all ${
-                            isActive(resource.href)
-                              ? "bg-primary/10 border border-primary/20 text-primary"
-                              : "bg-muted/30 hover:bg-muted"
-                          }`}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            analytics.trackNavigation(resource.href, `${resource.name}_mobile`);
-                          }}
-                        >
-                          <resource.icon className="h-4 w-4 text-primary" />
-                          <span className="font-bold text-xs">{resource.name}</span>
-                        </Link>
-                      )
-                    ))}
-                  </div>
+                    <ChevronDown className={`h-3 w-3 transition-transform ${mobileResourcesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileResourcesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="grid grid-cols-2 gap-2 pb-2">
+                          {resources.map((resource) => (
+                            resource.external ? (
+                              <a
+                                key={resource.name}
+                                href={resource.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex flex-col gap-2 p-3 rounded-xl border border-border/50 bg-muted/30 hover:bg-muted transition-all"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  analytics.trackExternalLink(resource.href, resource.name);
+                                }}
+                              >
+                                <resource.icon className="h-4 w-4 text-primary" />
+                                <span className="font-bold text-xs">{resource.name}</span>
+                              </a>
+                            ) : (
+                              <Link
+                                key={resource.name}
+                                href={resource.href}
+                                className={`flex flex-col gap-2 p-3 rounded-xl border border-border/50 transition-all ${
+                                  isActive(resource.href)
+                                    ? "bg-primary/10 border border-primary/20 text-primary"
+                                    : "bg-muted/30 hover:bg-muted"
+                                }`}
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  analytics.trackNavigation(resource.href, `${resource.name}_mobile`);
+                                }}
+                              >
+                                <resource.icon className="h-4 w-4 text-primary" />
+                                <span className="font-bold text-xs">{resource.name}</span>
+                              </Link>
+                            )
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Actions */}
