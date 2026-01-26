@@ -14,12 +14,30 @@ export default function Home() {
   const { t, language } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [currentTeamPhoto, setCurrentTeamPhoto] = useState(0);
+  const [status, setStatus] = useState<"operational" | "degraded" | "loading">("loading");
 
   const teamPhotos = ["team1.jpeg", "team2.jpeg", "team3.jpeg", "team4.jpeg", "team5.jpeg"];
   const STATUS_URL = "https://guard.ipulse.one/status/ipulse";
+  const STATUS_API = "https://api.ipulse.one/public/status/ipulse/check";
 
   useEffect(() => {
     setMounted(true);
+
+    const checkStatus = async () => {
+      try {
+        const response = await fetch(STATUS_API);
+        const data = await response.json();
+        if (data.status === "operational") {
+          setStatus("operational");
+        } else {
+          setStatus("degraded");
+        }
+      } catch (error) {
+        setStatus("degraded");
+      }
+    };
+
+    checkStatus();
 
     // Rotate team photos every 3 seconds
     const interval = setInterval(() => {
@@ -188,11 +206,15 @@ export default function Home() {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-background border border-border/50 hover:border-primary/30 transition-all text-sm font-medium shadow-lg backdrop-blur-sm group"
                 >
                   <div className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${status === "operational" ? "bg-emerald-400" : status === "degraded" ? "bg-yellow-400" : "bg-muted"}`}></span>
+                    <span className={`relative inline-flex rounded-full h-2 w-2 ${status === "operational" ? "bg-emerald-500" : status === "degraded" ? "bg-yellow-500" : "bg-muted"}`}></span>
                   </div>
                   <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                    {language === "nl" ? "Systemen Operationeel" : "Systems Operational"}
+                    {status === "loading" 
+                      ? (language === "nl" ? "Status Laden..." : "Loading Status...") 
+                      : status === "degraded" 
+                        ? (language === "nl" ? "Systeemfout" : "Degraded Status") 
+                        : (language === "nl" ? "Systemen Operationeel" : "Systems Operational")}
                   </span>
                 </motion.a>
               )}

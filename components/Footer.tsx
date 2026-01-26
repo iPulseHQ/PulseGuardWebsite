@@ -9,15 +9,33 @@ import { analytics } from "@/lib/analytics";
 import { GB, NL } from "country-flag-icons/react/3x2";
 
 const STATUS_URL = "https://guard.ipulse.one/status/ipulse";
+const STATUS_API = "https://api.ipulse.one/public/status/ipulse/check";
 
 export default function Footer() {
   const { t, language, setLanguage } = useLanguage();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [status, setStatus] = useState<"operational" | "degraded" | "loading">("loading");
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     setMounted(true);
+
+    const checkStatus = async () => {
+      try {
+        const response = await fetch(STATUS_API);
+        const data = await response.json();
+        if (data.status === "operational") {
+          setStatus("operational");
+        } else {
+          setStatus("degraded");
+        }
+      } catch (error) {
+        setStatus("degraded");
+      }
+    };
+
+    checkStatus();
   }, []);
 
   const footerLinks = {
@@ -160,10 +178,16 @@ export default function Footer() {
                 className="flex items-center gap-2 px-3 py-1 rounded-full bg-background border border-border/50 hover:bg-muted transition-all text-[10px] font-medium text-muted-foreground shadow-sm"
               >
                 <div className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${status === "operational" ? "bg-emerald-400" : status === "degraded" ? "bg-yellow-400" : "bg-muted"}`}></span>
+                  <span className={`relative inline-flex rounded-full h-2 w-2 ${status === "operational" ? "bg-emerald-500" : status === "degraded" ? "bg-yellow-500" : "bg-muted"}`}></span>
                 </div>
-                <span>{language === "nl" ? "Systemen Operationeel" : "Systems Operational"}</span>
+                <span>
+                  {status === "loading" 
+                    ? (language === "nl" ? "Status Laden..." : "Loading Status...") 
+                    : status === "degraded" 
+                      ? (language === "nl" ? "Systeemfout" : "Degraded Status") 
+                      : (language === "nl" ? "Systemen Operationeel" : "Systems Operational")}
+                </span>
               </a>
             )}
           </div>
