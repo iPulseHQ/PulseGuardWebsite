@@ -6,9 +6,10 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 import { analytics } from "@/lib/analytics";
+import { GB, NL } from "country-flag-icons/react/3x2";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const currentYear = new Date().getFullYear();
@@ -76,6 +77,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       onClick={() => analytics.trackExternalLink(link.href, link.name)}
+                      suppressHydrationWarning
                     >
                       {link.name}
                     </a>
@@ -105,6 +107,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      suppressHydrationWarning
                     >
                       {link.name}
                     </a>
@@ -140,10 +143,30 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/50">
-          <p className="text-sm text-muted-foreground text-center">
+        <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
             © {currentYear} iPulse. {t("allRightsReserved")}
           </p>
+          
+          {/* Language Toggle */}
+          <button
+            onClick={() => {
+              const newLanguage = language === "en" ? "nl" : "en";
+              setLanguage(newLanguage);
+              analytics.trackLanguageToggle(newLanguage);
+            }}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-md border border-border/50 hover:bg-muted transition-all text-sm font-medium"
+            aria-label="Toggle language"
+          >
+            <div className="w-5 h-3.5 overflow-hidden rounded-sm border border-border/30">
+              {language === "en" ? (
+                <NL className="w-full h-full object-cover" />
+              ) : (
+                <GB className="w-full h-full object-cover" />
+              )}
+            </div>
+            <span className="text-xs">{language === "en" ? "Nederlands" : "English"}</span>
+          </button>
         </div>
       </div>
     </footer>

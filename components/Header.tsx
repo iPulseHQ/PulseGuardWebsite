@@ -4,23 +4,40 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode, Calendar } from "lucide-react";
+import { Moon, Sun, Menu, X, ChevronDown, Zap, Upload, QrCode, Calendar, BookOpen, Users, FileText, Mail, Newspaper } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/lib/LanguageContext";
 import { GB, NL } from "country-flag-icons/react/3x2";
 import { analytics, trackEvent, AnalyticsEvents } from "@/lib/analytics";
+import { useUser, UserButton, SignInButton } from "@clerk/nextjs";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const pathname = usePathname();
+  const { isSignedIn, user, isLoaded } = useUser();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Determine the correct app URL based on current page
+  const getAppUrl = () => {
+    if (pathname?.includes('/pulsefiles')) {
+      return 'https://files.ipulse.one';
+    } else if (pathname?.includes('/pulseqr')) {
+      return 'https://qr.ipulse.one';
+    } else if (pathname?.includes('/pulseguard')) {
+      return 'https://guard.ipulse.one';
+    } else if (pathname?.includes('/pulsesync')) {
+      return 'https://sync.ipulse.one';
+    }
+    return 'https://guard.ipulse.one'; // Default to PulseGuard
+  };
 
   const toggleTheme = () => {
     const newTheme = resolvedTheme === "dark" ? "light" : "dark";
@@ -28,33 +45,7 @@ export default function Header() {
     analytics.trackThemeToggle(newTheme);
   };
 
-  // Determine sign-in URL based on current page
-  const getSignInUrl = () => {
-    if (pathname?.includes('/pulsefiles')) {
-      return 'https://files.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulseqr')) {
-      return 'https://qr.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulseguard')) {
-      return 'https://guard.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulsesync')) {
-      return 'https://sync.ipulse.one/sign-in';
-    }
-    return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
-  };
 
-  // Determine register URL based on current page
-  const getRegisterUrl = () => {
-    if (pathname?.includes('/pulsefiles')) {
-      return 'https://files.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulseqr')) {
-      return 'https://qr.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulseguard')) {
-      return 'https://guard.ipulse.one/sign-in';
-    } else if (pathname?.includes('/pulsesync')) {
-      return 'https://sync.ipulse.one/sign-in';
-    }
-    return 'https://guard.ipulse.one/sign-in'; // Default to PulseGuard
-  };
 
   const solutions = [
     {
@@ -83,12 +74,38 @@ export default function Header() {
     },
   ];
 
-  const navigation = [
-    { name: t("pricing"), href: "/pricing" },
-    { name: t("about"), href: "/about" },
-    { name: t("changelog"), href: "/changelog" },
-    { name: t("blog"), href: "/blog" },
-    { name: t("contact"), href: "/contact" },
+  const resources = [
+    {
+      name: t("about"),
+      description: language === "nl" ? "Leer ons team kennen" : "Meet our team",
+      href: "/about",
+      icon: Users,
+    },
+    {
+      name: t("blog"),
+      description: language === "nl" ? "Artikelen en updates" : "Articles and updates",
+      href: "/blog",
+      icon: Newspaper,
+    },
+    {
+      name: t("changelog"),
+      description: language === "nl" ? "Laatste wijzigingen" : "Latest changes",
+      href: "/changelog",
+      icon: FileText,
+    },
+    {
+      name: t("contact"),
+      description: language === "nl" ? "Neem contact met ons op" : "Get in touch with us",
+      href: "/contact",
+      icon: Mail,
+    },
+    {
+      name: "Documentation",
+      description: language === "nl" ? "Technische documentatie" : "Technical documentation",
+      href: "https://docs.ipulse.one",
+      icon: BookOpen,
+      external: true,
+    },
   ];
 
   // Helper function to check if a path is active
@@ -102,30 +119,32 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 glassmorphism">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center hover:opacity-80 transition-opacity"
-            onClick={() => analytics.trackNavigation("/", "logo")}
-          >
-            {mounted && (
-              <Image
-                src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
-                alt="iPulse Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto"
-                priority
-              />
-            )}
-            {!mounted && (
-              <div className="h-8 w-[120px]" />
-            )}
-          </Link>
+          <div className="flex-shrink-0">
+            <Link 
+              href="/" 
+              className="flex items-center hover:opacity-80 transition-opacity"
+              onClick={() => analytics.trackNavigation("/", "logo")}
+            >
+              {mounted && (
+                <Image
+                  src={resolvedTheme === "dark" ? "/logowhite.png" : "/logodark.png"}
+                  alt="iPulse Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto"
+                  priority
+                />
+              )}
+              {!mounted && (
+                <div className="h-8 w-[120px]" />
+              )}
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
             {/* Home Link */}
             <Link
               href="/"
@@ -193,42 +212,96 @@ export default function Header() {
               )}
             </div>
 
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
-                  isActive(item.href)
+            {/* Pricing Link */}
+            <Link
+              href="/pricing"
+              className={`px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                isActive("/pricing")
+                  ? "bg-primary/10 text-primary border border-primary/20"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
+              }`}
+              onClick={() => analytics.trackNavigation("/pricing", "pricing")}
+            >
+              {t("pricing")}
+            </Link>
+
+            {/* Resources Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setResourcesOpen(true)}
+              onMouseLeave={() => setResourcesOpen(false)}
+            >
+              <button
+                type="button"
+                className={`px-4 py-2 text-sm font-medium rounded-md transition-all flex items-center gap-1 ${
+                  pathname?.includes('/about') || pathname?.includes('/blog') || pathname?.includes('/changelog') || pathname?.includes('/contact')
                     ? "bg-primary/10 text-primary border border-primary/20"
                     : "text-foreground/80 hover:text-foreground hover:bg-muted"
                 }`}
-                onClick={() => analytics.trackNavigation(item.href, item.name)}
               >
-                {item.name}
-              </Link>
-            ))}
+                {language === "nl" ? "Meer" : "Resources"}
+                <ChevronDown className="h-3 w-3" />
+              </button>
+
+              {/* Dropdown Menu */}
+              {resourcesOpen && (
+                <div className="absolute top-full right-0 pt-2">
+                  <div className="w-72 glassmorphism rounded-xl border border-border/50 shadow-xl p-2">
+                    {resources.map((resource) => (
+                      resource.external ? (
+                        <a
+                          key={resource.name}
+                          href={resource.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-start gap-3 p-3 rounded-lg transition-all group hover:bg-muted"
+                          onClick={() => analytics.trackExternalLink(resource.href, resource.name)}
+                        >
+                          <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                            <resource.icon className="h-4 w-4 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-sm mb-0.5 group-hover:text-primary transition-colors">
+                              {resource.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {resource.description}
+                            </div>
+                          </div>
+                        </a>
+                      ) : (
+                        <Link
+                          key={resource.name}
+                          href={resource.href}
+                          className={`flex items-start gap-3 p-3 rounded-lg transition-all group ${
+                            isActive(resource.href)
+                              ? "bg-primary/10 border border-primary/20"
+                              : "hover:bg-muted"
+                          }`}
+                          onClick={() => analytics.trackNavigation(resource.href, resource.name)}
+                        >
+                          <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                            <resource.icon className="h-4 w-4 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="font-semibold text-sm mb-0.5 group-hover:text-primary transition-colors">
+                              {resource.name}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {resource.description}
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-2">
-            {/* Language Toggle */}
-            <button
-              onClick={() => {
-                const newLanguage = language === "en" ? "nl" : "en";
-                setLanguage(newLanguage);
-                analytics.trackLanguageToggle(newLanguage);
-              }}
-              className="h-9 w-9 rounded-md border border-border/50 hover:bg-muted transition-all flex items-center justify-center overflow-hidden p-1"
-              aria-label="Toggle language"
-              title={language === "en" ? t("switchToNL") : t("switchToEN")}
-            >
-              {language === "en" ? (
-                <NL className="w-full h-full object-cover rounded-md" />
-              ) : (
-                <GB className="w-full h-full object-cover rounded-md" />
-              )}
-            </button>
-
+          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -246,21 +319,46 @@ export default function Header() {
               )}
             </button>
 
-            {/* CTA Buttons */}
-            <Link
-              href={getSignInUrl()}
-              className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => analytics.trackLogin("header_desktop")}
-            >
-              {t("login")}
-            </Link>
-            <Link
-              href={getRegisterUrl()}
-              className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
-              onClick={() => analytics.trackRegister("header_desktop")}
-            >
-              {t("register")}
-            </Link>
+            {/* CTA Buttons / User Profile */}
+            {isLoaded && (
+              <>
+                {isSignedIn ? (
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={getAppUrl()}
+                      className="px-5 py-2 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200"
+                      onClick={() => analytics.trackLogin("header_desktop")}
+                    >
+                      {language === "nl" ? "Inloggen" : "Sign In"}
+                    </a>
+                    <a
+                      href={getAppUrl()}
+                      className="h-9 w-9 rounded-full overflow-hidden ring-2 ring-border/50 hover:ring-primary/50 transition-all flex items-center justify-center bg-primary/10"
+                    >
+                      {user?.imageUrl ? (
+                        <Image
+                          src={user.imageUrl}
+                          alt={user.firstName || "Profile"}
+                          width={36}
+                          height={36}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <Users className="h-5 w-5 text-primary" />
+                      )}
+                    </a>
+                  </div>
+                ) : (
+                  <a
+                    href={`${getAppUrl()}/sign-in`}
+                    className="px-6 py-2 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 hover:shadow-xl hover:shadow-white/20 hover:-translate-y-0.5"
+                    onClick={() => analytics.trackRegister("header_desktop")}
+                  >
+                    {language === "nl" ? "Aan de slag" : "Get Started"}
+                  </a>
+                )}
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -340,62 +438,131 @@ export default function Header() {
               ))}
             </div>
 
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
-                  isActive(item.href)
-                    ? "bg-primary/10 text-primary border border-primary/20"
-                    : "text-foreground/80 hover:text-foreground hover:bg-muted"
-                }`}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  analytics.trackNavigation(item.href, `${item.name}_mobile`);
-                }}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {/* Pricing Link */}
+            <Link
+              href="/pricing"
+              className={`block px-4 py-2 text-sm font-medium rounded-md transition-all ${
+                isActive("/pricing")
+                  ? "bg-primary/10 text-primary border border-primary/20"
+                  : "text-foreground/80 hover:text-foreground hover:bg-muted"
+              }`}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                analytics.trackNavigation("/pricing", "pricing_mobile");
+              }}
+            >
+              {t("pricing")}
+            </Link>
+
+            {/* Resources Section */}
+            <div className="px-4 py-2">
+              <div className="text-xs font-semibold text-muted-foreground mb-2">
+                {language === "nl" ? "Meer" : "Resources"}
+              </div>
+              {resources.map((resource) => (
+                resource.external ? (
+                  <a
+                    key={resource.name}
+                    href={resource.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 p-3 rounded-lg transition-all hover:bg-muted"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      analytics.trackExternalLink(resource.href, resource.name);
+                    }}
+                  >
+                    <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                      <resource.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-sm mb-0.5">
+                        {resource.name}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {resource.description}
+                      </div>
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    key={resource.name}
+                    href={resource.href}
+                    className={`flex items-start gap-3 p-3 rounded-lg transition-all ${
+                      isActive(resource.href)
+                        ? "bg-primary/10 border border-primary/20"
+                        : "hover:bg-muted"
+                    }`}
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      analytics.trackNavigation(resource.href, `${resource.name}_mobile`);
+                    }}
+                  >
+                    <div className="h-9 w-9 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                      <resource.icon className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-sm mb-0.5">
+                        {resource.name}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {resource.description}
+                      </div>
+                    </div>
+                  </Link>
+                )
+              ))}
+            </div>
             <div className="pt-2 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  const newLanguage = language === "en" ? "nl" : "en";
-                  setLanguage(newLanguage);
-                  setMobileMenuOpen(false);
-                  analytics.trackLanguageToggle(newLanguage);
-                }}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted rounded-md transition-all text-left flex items-center gap-2"
-              >
-                <div className="w-6 h-4 overflow-hidden rounded-sm border border-border/30">
-                  {language === "en" ? (
-                    <NL className="w-full h-full object-cover rounded-sm" />
+              {isLoaded && (
+                <>
+                  {isSignedIn ? (
+                    <>
+                      <a
+                        href={getAppUrl()}
+                        className="px-5 py-2.5 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200 text-center"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          analytics.trackLogin("header_mobile");
+                        }}
+                      >
+                        {language === "nl" ? "Inloggen" : "Sign In"}
+                      </a>
+                      <a
+                        href={getAppUrl()}
+                        className="flex items-center gap-3 px-4 py-2.5 rounded-lg border border-border/50 bg-muted/30 hover:bg-muted transition-all"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <div className="h-8 w-8 rounded-full overflow-hidden ring-2 ring-border/50 flex items-center justify-center bg-primary/10 flex-shrink-0">
+                          {user?.imageUrl ? (
+                            <Image
+                              src={user.imageUrl}
+                              alt={user.firstName || "Profile"}
+                              width={32}
+                              height={32}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <Users className="h-4 w-4 text-primary" />
+                          )}
+                        </div>
+                        <span className="text-sm font-medium">{user?.firstName || user?.emailAddresses[0].emailAddress}</span>
+                      </a>
+                    </>
                   ) : (
-                    <GB className="w-full h-full object-cover rounded-sm" />
+                    <a
+                      href={`${getAppUrl()}/sign-in`}
+                      className="px-6 py-2.5 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 text-center"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        analytics.trackRegister("header_mobile");
+                      }}
+                    >
+                      {language === "nl" ? "Aan de slag" : "Get Started"}
+                    </a>
                   )}
-                </div>
-                {language === "en" ? t("languageNL") : t("languageEN")}
-              </button>
-              <Link
-                href={getSignInUrl()}
-                className="px-5 py-2.5 text-sm font-medium text-foreground border border-border/50 hover:border-primary hover:bg-primary/10 hover:text-primary rounded-lg transition-all duration-200 text-center"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  analytics.trackLogin("header_mobile");
-                }}
-              >
-                {t("login")}
-              </Link>
-              <Link
-                href={getRegisterUrl()}
-                className="px-6 py-2.5 bg-white text-black text-sm font-semibold rounded-lg hover:bg-white/90 transition-all duration-200 shadow-lg shadow-white/10 text-center"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  analytics.trackRegister("header_mobile");
-                }}
-              >
-                {t("register")}
-              </Link>
+                </>
+              )}
             </div>
           </div>
         )}

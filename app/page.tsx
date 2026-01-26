@@ -5,6 +5,7 @@ import { Shield, Upload, Zap, Globe2, Activity, Check, ArrowRight, Lock, Bell, S
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
 import { analytics } from "@/lib/analytics";
@@ -12,9 +13,19 @@ import { analytics } from "@/lib/analytics";
 export default function Home() {
   const { t, language } = useLanguage();
   const [mounted, setMounted] = useState(false);
+  const [currentTeamPhoto, setCurrentTeamPhoto] = useState(0);
+
+  const teamPhotos = ["team1.jpeg", "team2.jpeg", "team3.jpeg", "team4.jpeg", "team5.jpeg"];
 
   useEffect(() => {
     setMounted(true);
+
+    // Rotate team photos every 3 seconds
+    const interval = setInterval(() => {
+      setCurrentTeamPhoto((prev) => (prev + 1) % teamPhotos.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const fadeInUp = {
@@ -98,7 +109,7 @@ export default function Home() {
     },
   ];
 
-  const trustedCompanies = ["IMDigital", "CHE", "Arjan den Hartog", "Van den Broek Heteren"];
+  const trustedCompanies = ["IMDigital", "CHE", "Van den Broek Heteren"];
 
   return (
     <>
@@ -129,80 +140,334 @@ export default function Home() {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 -z-10">
+          {/* Gradient Mesh */}
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20" />
+        </div>
+
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             animate={mounted ? "visible" : "hidden"}
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
-            className="text-center space-y-8"
+            className="text-center space-y-10"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted border border-border/50 text-sm font-medium shadow-sm">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 text-sm font-medium shadow-lg backdrop-blur-sm"
+            >
+              <div className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </div>
               <Sparkles className="h-4 w-4 text-primary" />
-              {t("iPulseEcosystem")}
-            </div>
+              <span className="text-foreground font-semibold">{t("iPulseEcosystem")}</span>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              {t("iPulseHeroTitle")}
-              <br />
-              <span className="text-gradient">{t("iPulseHeroAccent")}</span>
-            </h1>
+            {/* Main Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={mounted ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.7 }}
+              className="space-y-6"
+            >
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1]">
+                {t("iPulseHeroTitle")}
+                <br />
+                <span className="relative inline-block">
+                  <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-foreground via-primary to-foreground animate-gradient bg-[length:200%_auto]">
+                    {t("iPulseHeroAccent")}
+                  </span>
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={mounted ? { scaleX: 1 } : {}}
+                    transition={{ delay: 0.8, duration: 0.8 }}
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent origin-left"
+                  />
+                </span>
+              </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-              {t("iPulseHeroDesc")}
-            </p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={mounted ? { opacity: 1 } : {}}
+                transition={{ delay: 0.4, duration: 0.7 }}
+                className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium"
+              >
+                {t("iPulseHeroDesc")}
+              </motion.p>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.5, duration: 0.7 }}
+              className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-6"
+            >
               <a
                 href="#products"
-                className="h-10 px-6 bg-primary text-primary-foreground text-sm font-semibold rounded-md hover:opacity-90 transition-all shadow-lg inline-flex items-center justify-center"
+                className="group relative h-14 px-10 bg-primary text-primary-foreground text-base font-bold rounded-xl hover:scale-105 active:scale-95 transition-all duration-200 shadow-2xl shadow-primary/25 inline-flex items-center justify-center overflow-hidden"
                 onClick={() => analytics.trackButtonClick("explore_solutions", "hero")}
               >
-                {t("exploreSolutions")}
+                <span className="relative z-10 flex items-center gap-2">
+                  {t("exploreSolutions")}
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-foreground/90 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               <a
                 href="/about"
-                className="h-10 px-6 border border-border/50 text-sm font-semibold rounded-md hover:bg-muted transition-all inline-flex items-center justify-center"
+                className="group h-14 px-10 border-2 border-border/50 text-base font-bold rounded-xl hover:border-primary/50 hover:bg-primary/5 active:scale-95 transition-all duration-200 inline-flex items-center justify-center backdrop-blur-sm"
                 onClick={() => analytics.trackNavigation("/about", "learn_about_team")}
               >
-                {language === "nl" ? "Meer over ons team" : "Learn about our team"}
+                <span className="flex items-center gap-2">
+                  {language === "nl" ? "Meer over ons team" : "Learn about our team"}
+                  <Users className="h-5 w-5 group-hover:scale-110 transition-transform" />
+                </span>
               </a>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground pt-4">
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                {t("twoProducts")}
+            {/* Feature Pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={mounted ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.6, duration: 0.7 }}
+              className="flex flex-wrap justify-center gap-4 text-sm pt-8"
+            >
+              {[
+                { icon: Check, text: t("twoProducts") },
+                { icon: Check, text: t("freeTrial") },
+                { icon: Check, text: t("enterpriseGrade") }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={mounted ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
+                  className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-card/50 border border-border/50 shadow-sm backdrop-blur-sm hover:shadow-md hover:border-primary/30 transition-all group"
+                >
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="h-3 w-3 text-primary" />
+                  </div>
+                  <span className="font-medium text-foreground">{item.text}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Floating Cards Animation */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={mounted ? { opacity: 1 } : {}}
+              transition={{ delay: 0.9, duration: 1 }}
+              className="relative pt-20 pb-8"
+            >
+              <div className="flex justify-center items-center gap-4 flex-wrap">
+                {[
+                  { icon: Shield, label: "Security", color: "from-blue-500/10 to-cyan-500/10" },
+                  { icon: Zap, label: "Performance", color: "from-yellow-500/10 to-orange-500/10" },
+                  { icon: Activity, label: "Analytics", color: "from-green-500/10 to-emerald-500/10" },
+                  { icon: Globe2, label: "Global", color: "from-purple-500/10 to-pink-500/10" }
+                ].map((card, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={mounted ? { 
+                      opacity: 1, 
+                      y: 0,
+                      rotate: [0, 2, -2, 0]
+                    } : {}}
+                    transition={{ 
+                      delay: 1 + i * 0.1, 
+                      duration: 0.6,
+                      rotate: {
+                        delay: 1.5 + i * 0.1,
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "reverse"
+                      }
+                    }}
+                    className={`glassmorphism rounded-2xl p-6 border border-border/50 shadow-xl bg-gradient-to-br ${card.color} hover:scale-105 transition-transform cursor-pointer`}
+                  >
+                    <card.icon className="h-8 w-8 text-primary mb-2" />
+                    <p className="text-sm font-semibold text-foreground">{card.label}</p>
+                  </motion.div>
+                ))}
               </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                {t("freeTrial")}
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-primary" />
-                {t("enterpriseGrade")}
-              </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={mounted ? { opacity: 1, y: [0, 10, 0] } : {}}
+          transition={{ 
+            opacity: { delay: 1.5, duration: 0.5 },
+            y: { delay: 2, duration: 2, repeat: Infinity }
+          }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+              {language === "nl" ? "Scroll voor meer" : "Scroll for more"}
+            </span>
+            <ChevronDown className="h-5 w-5 text-primary" />
+          </div>
+        </motion.div>
       </section>
 
-      {/* Trusted By Section */}
-      <section className="py-12 px-4 border-y border-border/50 bg-muted/30">
+      {/* Team Photos & Trusted By Combined Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/20 border-y border-border/50">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-xs font-semibold text-muted-foreground mb-8 tracking-wide">
-            {t("trustedBy")}
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            {trustedCompanies.map((company) => (
-              <div
-                key={company}
-                className="text-xl font-bold text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {company}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Team Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-col"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-medium">
+                  <Users className="h-3.5 w-3.5 text-primary" />
+                  <span className="font-semibold">{language === "nl" ? "Ons Team" : "Our Team"}</span>
+                </div>
+                <h2 className="text-xl font-bold tracking-tight">
+                  {language === "nl" ? "Maak kennis met het team" : "Meet the team"}
+                </h2>
               </div>
-            ))}
+
+              <Link href="/about" className="block group">
+                <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden glassmorphism border-2 border-border/50 group-hover:border-primary/50 transition-all duration-300 shadow-xl group-hover:shadow-2xl">
+                  <Image
+                    src="/teamfotos/team1.jpeg"
+                    alt="iPulse Team"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-50 group-hover:opacity-30 transition-opacity" />
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* CTA Text Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="text-center bg-background/95 backdrop-blur-sm rounded-xl px-6 py-4 border border-primary/50 shadow-2xl">
+                      <p className="text-sm font-bold text-foreground mb-1">
+                        {language === "nl" ? "Leer ons beter kennen" : "Get to know us better"}
+                      </p>
+                      <div className="flex items-center gap-2 text-primary font-semibold text-xs">
+                        <span>{language === "nl" ? "Bekijk ons verhaal" : "View our story"}</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Trusted By */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex flex-col justify-center"
+            >
+              <div className="mb-8">
+                <p className="text-xs font-bold text-muted-foreground tracking-widest uppercase mb-2">
+                  {t("trustedBy")}
+                </p>
+                <h3 className="text-2xl font-bold tracking-tight">
+                  {language === "nl" ? "Onze Partners" : "Our Partners"}
+                </h3>
+              </div>
+
+              <div className="space-y-6">
+                {/* IMDigital */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
+                >
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="https://imdigital.info/logo.png"
+                      alt="IMDigital logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <p className="font-bold text-foreground group-hover:text-primary transition-colors">IMDigital</p>
+                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Digitale oplossingen" : "Digital solutions"}</p>
+                  </div>
+                </motion.div>
+
+                {/* CHE */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
+                >
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="https://che.nl/images/christelijke-hogeschool-ede-logo.svg"
+                      alt="CHE logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <p className="font-bold text-foreground group-hover:text-primary transition-colors">CHE</p>
+                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Christelijke Hogeschool" : "Christian University"}</p>
+                  </div>
+                </motion.div>
+
+                {/* Van den Broek Heteren */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="flex items-center gap-4 p-4 rounded-xl glassmorphism border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all group"
+                >
+                  <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden bg-white p-2">
+                    <Image
+                      src="https://vandenbroekheteren.nl/wp-content/uploads/2020/08/vandenbroek-logo-header.svg"
+                      alt="Van den Broek Heteren logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <p className="font-bold text-foreground group-hover:text-primary transition-colors">Van den Broek Heteren</p>
+                    <p className="text-xs text-muted-foreground">{language === "nl" ? "Tuincentrum" : "Garden center"}</p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -264,31 +529,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "99.9%", label: t("uptime") },
-              { number: "6K+", label: t("monitorsActive") },
-              { number: "3", label: t("monitoringLocations") },
-              { number: "24/6", label: t("support") },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.1, duration: 0.3 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Features Overview */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
@@ -357,70 +598,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 rounded-md bg-card border border-border/50 text-sm font-medium mb-4">
-              {t("howItWorksSubtitle")}
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
-              {t("howItWorksTitle")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("howItWorksDesc")}
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "01",
-                icon: UserPlus,
-                title: t("howItWorksStep1Title"),
-                description: t("howItWorksStep1Desc"),
-              },
-              {
-                step: "02",
-                icon: Settings,
-                title: t("howItWorksStep2Title"),
-                description: t("howItWorksStep2Desc"),
-              },
-              {
-                step: "03",
-                icon: BellRing,
-                title: t("howItWorksStep3Title"),
-                description: t("howItWorksStep3Desc"),
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="glassmorphism rounded-2xl p-8 border border-border/50 h-full">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="text-5xl font-bold text-primary/20">{item.step}</div>
-                    <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <item.icon className="h-6 w-6 text-primary" />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-                {i < 2 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="h-8 w-8 text-primary/30" />
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Use Cases Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
