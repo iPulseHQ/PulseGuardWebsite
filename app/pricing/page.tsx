@@ -2,34 +2,40 @@
 
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion } from "framer-motion";
-import { Check, Star, Crown, Rocket, Zap, X, Tag, FileText, QrCode, Calendar, Gift, ArrowRight } from "lucide-react";
+import {
+  FileText,
+  Users,
+  Send,
+  Calculator,
+  Gift,
+  ArrowRight,
+  QrCode,
+  Calendar,
+  Check
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import CTA from "@/components/CTA";
 import StructuredData from "@/components/StructuredData";
 
-interface Plan {
-  id: string;
-  name: string;
-  description?: string;
-  price?: number;
-  currency: string;
-  features: string[];
-  isContactUs: boolean;
-  promoPrice?: number;
+interface QuoteFormData {
+  requirements: string;
+  companyName: string;
+  email: string;
+  message: string;
 }
 
-const formatPrice = (price?: number, currency = "eur") => {
-  if (price === null || price === undefined) return "Contact Ons";
-  return new Intl.NumberFormat("nl-NL", {
-    style: "currency",
-    currency: currency.toUpperCase(),
-  }).format(price);
-};
-
 export default function PricingPage() {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const [formData, setFormData] = useState<QuoteFormData>({
+    requirements: "",
+    companyName: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     setMounted(true);
@@ -43,7 +49,9 @@ export default function PricingPage() {
   const freeApps = [
     {
       name: "PulseFiles",
-      description: t("pulseFilesDesc"),
+      description: language === "nl"
+        ? "Veilig bestanden delen met end-to-end encryptie"
+        : "Secure file sharing with end-to-end encryption",
       icon: FileText,
       href: "/pulsefiles",
       features: language === "nl"
@@ -52,7 +60,9 @@ export default function PricingPage() {
     },
     {
       name: "PulseQR",
-      description: t("pulseQRDesc"),
+      description: language === "nl"
+        ? "Genereer onbeperkt QR-codes zonder account"
+        : "Generate unlimited QR codes without an account",
       icon: QrCode,
       href: "/pulseqr",
       features: language === "nl"
@@ -61,7 +71,9 @@ export default function PricingPage() {
     },
     {
       name: "PulseSync",
-      description: t("pulseSyncDesc"),
+      description: language === "nl"
+        ? "Deel agenda's eenvoudig met iedereen"
+        : "Share calendars easily with anyone",
       icon: Calendar,
       href: "/pulsesync",
       features: language === "nl"
@@ -70,80 +82,33 @@ export default function PricingPage() {
     },
   ];
 
-  const plans: Plan[] = [
-    {
-      id: "free",
-      name: "Free",
-      description: language === "nl"
-        ? "Perfect om te beginnen"
-        : "Perfect to get started",
-      price: 0,
-      currency: "eur",
-      features: [
-        language === "nl" ? "2 domeinen" : "2 domains",
-        language === "nl" ? "1 apparaat monitoring" : "1 device monitoring",
-        language === "nl" ? "1 service monitor" : "1 service monitor",
-        language === "nl" ? "PulseAI inbegrepen" : "PulseAI included",
-        language === "nl" ? "Basis rapporten" : "Basic reports",
-      ],
-      isContactUs: false,
-    },
-    {
-      id: "standard",
-      name: "Standard",
-      description: language === "nl"
-        ? "Ideaal voor kleine teams"
-        : "Ideal for small teams",
-      price: 5.99,
-      currency: "eur",
-      features: [
-        language === "nl" ? "5 domeinen (volledig)" : "5 domains (full)",
-        language === "nl" ? "2 apparaten (volledig)" : "2 devices (full)",
-        language === "nl" ? "3 service monitors" : "3 service monitors",
-        language === "nl" ? "E-mail notificaties" : "Email notifications",
-        language === "nl" ? "1 status pagina" : "1 status page",
-        language === "nl" ? "Toolbox met DNS" : "Toolbox with DNS",
-      ],
-      isContactUs: false,
-    },
-    {
-      id: "pro",
-      name: "Pro",
-      description: language === "nl"
-        ? "Voor groeiende bedrijven"
-        : "For growing businesses",
-      price: 12.50,
-      currency: "eur",
-      features: [
-        language === "nl" ? "10 domeinen (volledig)" : "10 domains (full)",
-        language === "nl" ? "7 apparaten (volledig)" : "7 devices (full)",
-        language === "nl" ? "5 service monitors" : "5 service monitors",
-        language === "nl" ? "Meerdere status pagina's" : "Multiple status pages",
-        language === "nl" ? "E-mail & Telegram" : "Email & Telegram",
-        language === "nl" ? "Volledige toolbox" : "Full toolbox",
-        language === "nl" ? "API toegang" : "API access",
-      ],
-      isContactUs: false,
-    },
-    {
-      id: "enterprise",
-      name: "Enterprise",
-      description: language === "nl"
-        ? "Volledig configureerbaar"
-        : "Fully configurable",
-      price: 15.00,
-      currency: "eur",
-      features: [
-        language === "nl" ? "10+ domeinen (€0,50/extra)" : "10+ domains (€0.50/extra)",
-        language === "nl" ? "7+ apparaten (€2,00/extra)" : "7+ devices (€2.00/extra)",
-        language === "nl" ? "5+ services (€3,00/extra)" : "5+ services (€3.00/extra)",
-        language === "nl" ? "Organisatie rollen & MFA" : "Organization roles & MFA",
-        language === "nl" ? "Alle notificatie kanalen" : "All notification channels",
-        language === "nl" ? "API & integraties" : "API & integrations",
-      ],
-      isContactUs: false,
-    },
-  ];
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Er is een fout opgetreden");
+      }
+
+      setSubmitSuccess(true);
+    } catch (error) {
+      console.error("Error submitting quote request:", error);
+      alert(language === "nl"
+        ? "Er is een fout opgetreden bij het verzenden. Probeer het opnieuw."
+        : "An error occurred while sending. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -151,10 +116,7 @@ export default function PricingPage() {
         type="Product"
         data={{
           name: "iPulse - Website Monitoring & Infrastructure Management",
-          description: "Professional monitoring solutions starting from free. Choose the plan that fits your needs.",
-          lowPrice: "0",
-          highPrice: "15",
-          offerCount: "4",
+          description: "Professional monitoring solutions with custom pricing. Request a quote based on your needs.",
           rating: {
             value: "4.8",
             count: "150"
@@ -174,68 +136,143 @@ export default function PricingPage() {
               className="text-center space-y-6"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-muted border border-border/50 text-sm font-medium shadow-sm">
-                <Tag className="h-4 w-4 text-primary" />
-                {t("pricing")}
+                <Calculator className="h-4 w-4 text-primary" />
+                {language === "nl" ? "Prijs Op Maat" : "Custom Pricing"}
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                {t("pricingTitle")}
+                {language === "nl" ? "Wat heeft u nodig?" : "What do you need?"}
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-                {t("pricingDescription")}
+                {language === "nl"
+                  ? "Configureer uw ideale monitoring pakket en ontvang een persoonlijke offerte. Betaal alleen voor wat u gebruikt."
+                  : "Configure your ideal monitoring package and receive a personalized quote. Pay only for what you use."}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Free Apps Banner */}
+        {/* Quote Request Form */}
         <section className="py-8 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="glassmorphism rounded-2xl border border-green-500/30 bg-gradient-to-r from-green-500/5 via-green-500/10 to-green-500/5 p-8"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                <div className="flex-shrink-0">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/20 border border-green-500/30 text-sm font-semibold text-green-600 dark:text-green-400">
-                    <Gift className="h-4 w-4" />
-                    {t("pricingFreeAppsTitle")}
+              {submitSuccess ? (
+                <div className="glassmorphism rounded-2xl border border-green-500/30 bg-gradient-to-r from-green-500/5 via-green-500/10 to-green-500/5 p-12 text-center">
+                  <div className="h-16 w-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-6">
+                    <Check className="h-8 w-8 text-green-500" />
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-                    {t("pricingFreeAppsDescription")}
+                  <h2 className="text-2xl font-bold mb-2">
+                    {language === "nl" ? "Aanvraag Verzonden!" : "Request Sent!"}
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    {language === "nl"
+                      ? "Wij nemen binnen 24 uur contact met u op met een persoonlijke offerte."
+                      : "We'll get back to you within 24 hours with a personalized quote."}
                   </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSubmitSuccess(false);
+                      setFormData({
+                        requirements: "",
+                        companyName: "",
+                        email: "",
+                        message: "",
+                      });
+                    }}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                  >
+                    {language === "nl" ? "Nieuwe Aanvraag" : "New Request"}
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {/* Contact Information */}
+                  <div className="glassmorphism rounded-2xl border border-border/50 p-6 sm:p-8">
+                    <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                      <Users className="h-5 w-5 text-primary" />
+                      {language === "nl" ? "Contactgegevens" : "Contact Information"}
+                    </h2>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          {language === "nl" ? "Bedrijfsnaam" : "Company Name"}
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.companyName}
+                          onChange={(e) => setFormData(prev => ({ ...prev, companyName: e.target.value }))}
+                          className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                          placeholder={language === "nl" ? "Uw bedrijf" : "Your company"}
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          {language === "nl" ? "E-mailadres" : "Email Address"}
+                        </label>
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                          className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                          placeholder="naam@bedrijf.nl"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className="mt-4">
+                      <label className="block text-sm font-medium mb-2">
+                        {language === "nl" ? "Wat heeft u nodig?" : "What do you need?"}
+                      </label>
+                      <p className="text-xs text-muted-foreground mb-2">
+                        {language === "nl"
+                          ? "Beschrijf wat u wilt monitoren. Bijvoorbeeld: 50 domeinen, 10 servers, 5 API endpoints, notificaties via Telegram, etc."
+                          : "Describe what you want to monitor. For example: 50 domains, 10 servers, 5 API endpoints, notifications via Telegram, etc."}
+                      </p>
+                      <textarea
+                        value={formData.requirements}
+                        onChange={(e) => setFormData(prev => ({ ...prev, requirements: e.target.value }))}
+                        className="w-full px-4 py-3 rounded-xl bg-muted/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+                        rows={5}
+                        placeholder={language === "nl"
+                          ? "Bijv: Ik wil 100 domeinen monitoren, 25 servers, en 10 API endpoints. Ook heb ik 3 status pagina's nodig en notificaties via e-mail en Telegram..."
+                          : "E.g: I want to monitor 100 domains, 25 servers, and 10 API endpoints. I also need 3 status pages and notifications via email and Telegram..."}
+                        required
+                      />
+                    </div>
+                  </div>
 
-                <div className="flex-grow grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {freeApps.map((app, index) => (
-                    <Link
-                      key={app.name}
-                      href={app.href}
-                      className="group flex items-center gap-4 p-4 rounded-xl bg-background/50 border border-border/50 hover:border-green-500/50 hover:shadow-lg transition-all"
+                  {/* Submit Button */}
+                  <div className="flex justify-center">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-foreground text-background font-semibold text-lg hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
                     >
-                      <div className="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <app.icon className="h-5 w-5 text-green-500" />
-                      </div>
-                      <div className="flex-grow min-w-0">
-                        <div className="flex items-center gap-2">
-                          <h3 className="font-semibold truncate">{app.name}</h3>
-                          <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-green-500/20 text-green-600 dark:text-green-400 whitespace-nowrap">
-                            {t("freeForever")}
-                          </span>
-                        </div>
-                        <p className="text-xs text-muted-foreground truncate">{app.description}</p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-green-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
+                      {isSubmitting ? (
+                        <>
+                          <div className="h-5 w-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                          {language === "nl" ? "Verzenden..." : "Sending..."}
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-5 w-5" />
+                          {language === "nl" ? "Offerte Aanvragen" : "Request Quote"}
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              )}
             </motion.div>
           </div>
         </section>
 
-        {/* PulseGuard Pricing Section */}
+        {/* Free Apps Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -245,88 +282,63 @@ export default function PricingPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 border border-primary/30 text-sm font-semibold text-primary mb-4">
-                <Zap className="h-4 w-4" />
-                {t("pricingPulseGuardTitle")}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-green-500/10 border border-green-500/30 text-sm font-semibold text-green-600 dark:text-green-400 mb-4">
+                <Gift className="h-4 w-4" />
+                {language === "nl" ? "Altijd Gratis" : "Always Free"}
               </div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                {language === "nl" ? "Gratis Tools" : "Free Tools"}
+              </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                {t("pricingPulseGuardDescription")}
+                {language === "nl"
+                  ? "Deze tools zijn en blijven gratis. Geen creditcard nodig, geen verborgen kosten."
+                  : "These tools are and will remain free. No credit card required, no hidden fees."}
               </p>
             </motion.div>
 
-            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-              {plans.map((plan, index) => {
-                const isPopular = plan.id === "pro";
-                const isFree = plan.id === "free";
-
-                return (
-                  <motion.div
-                    key={plan.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                    className={`relative flex flex-col glassmorphism rounded-2xl border transition-all hover:shadow-xl ${
-                      isPopular
-                        ? "border-primary ring-2 ring-primary/20 scale-[1.02]"
-                        : "border-border/50"
-                    }`}
+            <div className="grid md:grid-cols-3 gap-6">
+              {freeApps.map((app, index) => (
+                <motion.div
+                  key={app.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
+                >
+                  <Link
+                    href={app.href}
+                    className="group flex flex-col h-full glassmorphism rounded-2xl border border-green-500/20 hover:border-green-500/50 p-6 transition-all hover:shadow-xl"
                   >
-                    {isPopular && (
-                      <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                        <div className="bg-primary text-primary-foreground shadow-lg px-4 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
-                          <Star className="h-3 w-3 fill-current" />
-                          {language === "nl" ? "Populair" : "Popular"}
-                        </div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="h-12 w-12 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <app.icon className="h-6 w-6 text-green-500" />
                       </div>
-                    )}
-
-                    <div className="p-6 border-b border-border/50">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${
-                          isPopular ? "bg-primary/20" : isFree ? "bg-muted" : "bg-primary/10"
-                        }`}>
-                          {plan.id === "enterprise" && <Crown className="h-5 w-5 text-yellow-600" />}
-                          {plan.id === "pro" && <Star className="h-5 w-5 text-primary" />}
-                          {plan.id === "standard" && <Rocket className="h-5 w-5 text-primary" />}
-                          {plan.id === "free" && <Zap className="h-5 w-5 text-muted-foreground" />}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold">{plan.name}</h3>
-                          <p className="text-xs text-muted-foreground">{plan.description}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-baseline gap-1">
-                        <span className={`text-4xl font-bold ${isFree ? "text-muted-foreground" : isPopular ? "text-primary" : ""}`}>
-                          {formatPrice(plan.price, plan.currency)}
+                      <div>
+                        <h3 className="text-xl font-bold">{app.name}</h3>
+                        <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-green-500/20 text-green-600 dark:text-green-400">
+                          {language === "nl" ? "Altijd Gratis" : "Always Free"}
                         </span>
-                        {plan.price !== null && plan.price !== undefined && (
-                          <span className="text-sm text-muted-foreground">
-                            {t("perMonth")}
-                          </span>
-                        )}
                       </div>
                     </div>
-
-                    <div className="flex-grow p-6">
-                      <ul className="space-y-3">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start gap-2 text-sm">
-                            <Check className={`h-4 w-4 flex-shrink-0 mt-0.5 ${isPopular ? "text-primary" : "text-green-600"}`} />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <p className="text-muted-foreground mb-4 grow">{app.description}</p>
+                    <ul className="space-y-2 mb-4">
+                      {app.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm">
+                          <Check className="h-4 w-4 text-green-500 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex items-center gap-2 text-green-600 dark:text-green-400 font-medium group-hover:gap-3 transition-all">
+                      {language === "nl" ? "Meer Info" : "Learn More"}
+                      <ArrowRight className="h-4 w-4" />
                     </div>
-                  </motion.div>
-                );
-              })}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <CTA />
       </div>
     </>
   );
